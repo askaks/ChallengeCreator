@@ -40,4 +40,15 @@
 
 - (IBAction)AddSchoolFilters:(id)sender {
 }
+- (IBAction)ExcludeSchoolHappy:(id)sender {
+}
+
+- (IBAction)ExcludeWorkHappy:(id)sender {
+}
+
+- (IBAction)ExcludeLoveHappy:(id)sender {
+}
+
+- (IBAction)ExcludeFemales:(id)sender {
+}
 @end
