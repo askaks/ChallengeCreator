@@ -1,18 +1,18 @@
 //
-//  CreatorOptionsViewController.m
+//  PickerPopUpViewController.m
 //  ChallengeCreator
 //
-//  Created by Joanna Szymczyk on 1/4/14.
+//  Created by Joanna Szymczyk on 1/5/14.
 //  Copyright (c) 2014 Joanna Szymczyk. All rights reserved.
 //
 
-#import "CreatorOptionsViewController.h"
+#import "PickerPopUpViewController.h"
 
-@interface CreatorOptionsViewController ()
+@interface PickerPopUpViewController ()
 
 @end
 
-@implementation CreatorOptionsViewController
+@implementation PickerPopUpViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,9 +35,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)CreateChallenge:(id)sender {
-}
-
-- (IBAction)AddSchoolFilters:(id)sender {
-}
 @end
