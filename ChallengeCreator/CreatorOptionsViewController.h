@@ -13,13 +13,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *ChallengeTitle;
 @property (weak, nonatomic) IBOutlet UITextField *AgeMin;
 @property (weak, nonatomic) IBOutlet UITextField *AgeMax;
-@property (weak, nonatomic) IBOutlet UIButton *SchoolFilters;
 @property (weak, nonatomic) IBOutlet UITextField *RiskFactor;
 @property (weak, nonatomic) IBOutlet UITextField *LanguageRating;
+
 @property (weak, nonatomic) IBOutlet UISwitch *ExcludeFemalesSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *SchoolHappySwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *WorkHappySwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *LoveHappySwitch;
+
 @property (weak, nonatomic) IBOutlet UIButton *LookingFilter;
 @property (weak, nonatomic) IBOutlet UIButton *SchoolFilter;
 @property (weak, nonatomic) IBOutlet UIButton *LoveFilter;
@@ -38,8 +39,6 @@
 - (IBAction)ExcludeSchoolHappy:(id)sender;
 - (IBAction)ExcludeWorkHappy:(id)sender;
 - (IBAction)ExcludeLoveHappy:(id)sender;
-
-
 - (IBAction)ExcludeFemales:(id)sender;
 
 - (IBAction)FilterLookingFor:(id)sender;

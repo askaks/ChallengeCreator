@@ -204,7 +204,7 @@
                                     </button>
                                     <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oz4-3R-JzP">
                                         <connections>
-                                            <action selector="ExcludeLoveHappy:" destination="sDE-RR-EHX" eventType="valueChanged" id="ziF-gj-Fqa"/>
+                                            <action selector="ExcludeLoveHappy:" destination="sDE-RR-EHX" eventType="valueChanged" id="h0N-5e-85u"/>
                                         </connections>
                                     </switch>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Age Min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqr-Xq-PP4">
@@ -219,17 +219,17 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rwX-yS-YL8">
                                         <connections>
-                                            <action selector="ExcludeWorkHappy:" destination="sDE-RR-EHX" eventType="valueChanged" id="Rnf-Fn-w3h"/>
+                                            <action selector="ExcludeWorkHappy:" destination="sDE-RR-EHX" eventType="valueChanged" id="yfW-8L-xTg"/>
                                         </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iur-kv-3w0">
                                         <connections>
-                                            <action selector="ExcludeSchoolHappy:" destination="sDE-RR-EHX" eventType="valueChanged" id="UHQ-3S-Vny"/>
+                                            <action selector="ExcludeSchoolHappy:" destination="sDE-RR-EHX" eventType="valueChanged" id="zN4-L3-8DS"/>
                                         </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JTx-Hv-y5y">
                                         <connections>
-                                            <action selector="ExcludeFemales:" destination="sDE-RR-EHX" eventType="valueChanged" id="BTM-UL-jbV"/>
+                                            <action selector="ExcludeFemales:" destination="sDE-RR-EHX" eventType="valueChanged" id="xIv-tl-FvM"/>
                                         </connections>
                                     </switch>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BDC-Mr-Yyb">
@@ -311,30 +311,24 @@
                                     </textView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ev2-Cv-x8e">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="118" id="IXL-8u-fzj"/>
+                                        </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="School Exclusions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5K-P5-7yh">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="183" id="kFQ-qM-elT"/>
-                                        </constraints>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Relationship Exclusions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5K-P5-7yh">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Work Exclusions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWf-9c-e2f">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="183" id="yRc-W1-lkC"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCX-bU-qd4">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="142" id="o5I-8C-e2c"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Relationshipl Filters">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -344,13 +338,10 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="AddSchoolFilters:" destination="sDE-RR-EHX" eventType="touchUpInside" id="ixg-WP-bIg"/>
+                                            <action selector="FilterLove:" destination="sDE-RR-EHX" eventType="touchUpInside" id="SOe-GV-ZKu"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzd-Vk-BwX">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="109" id="05D-tt-HlK"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Work Filters">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -359,6 +350,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="FilterWork:" destination="sDE-RR-EHX" eventType="touchUpInside" id="qaV-qq-V9x"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N12-Wf-Cd3">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -379,12 +373,18 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="School Exclusions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxA-5N-xlA">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Children Exclusions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxA-5N-xlA">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="183" id="XD3-QO-hnM"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Work Exclusions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrD-hd-aUE">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pet Exclusions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrD-hd-aUE">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="183" id="IiZ-Cj-flG"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -402,7 +402,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="AddSchoolFilters:" destination="sDE-RR-EHX" eventType="touchUpInside" id="p5y-nU-h37"/>
+                                            <action selector="FilterChildren:" destination="sDE-RR-EHX" eventType="touchUpInside" id="Aug-Od-POV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZK-EB-d4q">
@@ -417,6 +417,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="FilterPets:" destination="sDE-RR-EHX" eventType="touchUpInside" id="jbc-0z-lIr"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pU-8I-HnA">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -437,7 +440,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="School Exclusions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orb-95-O21">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="InterestedIn Exclusions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orb-95-O21">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="183" id="lbk-NT-a8Z"/>
                                         </constraints>
@@ -445,7 +448,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Work Exclusions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yef-4f-ftn">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="School Exclusions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yef-4f-ftn">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="183" id="OQV-w4-Jox"/>
                                         </constraints>
@@ -455,7 +458,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="675-MO-yLa">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="163" id="mIw-qj-d61"/>
+                                            <constraint firstAttribute="width" constant="178" id="1N4-6F-8dH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Exclude Interested In">
@@ -466,7 +469,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="AddSchoolFilters:" destination="sDE-RR-EHX" eventType="touchUpInside" id="7dG-7F-euZ"/>
+                                            <action selector="FilterLookingFor:" destination="sDE-RR-EHX" eventType="touchUpInside" id="MCB-9q-o6x"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAS-eu-MGC">
@@ -481,47 +484,53 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="FilterSchool:" destination="sDE-RR-EHX" eventType="touchUpInside" id="v0F-24-fIy"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="elY-WF-Zjj" firstAttribute="baseline" secondItem="HJJ-yr-hVn" secondAttribute="baseline" type="default" id="16c-Lq-J5o"/>
                                     <constraint firstItem="YJi-Cr-1au" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="224" id="1Rh-lQ-iWG"/>
+                                    <constraint firstItem="8YK-wT-ALh" firstAttribute="leading" secondItem="J81-Zp-zyW" secondAttribute="leading" constant="189" id="1oB-Oe-IRF"/>
                                     <constraint firstItem="F5K-P5-7yh" firstAttribute="top" secondItem="5pU-8I-HnA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="2fZ-yF-WcR"/>
+                                    <constraint firstItem="gk5-QY-TWb" firstAttribute="leading" secondItem="8YK-wT-ALh" secondAttribute="leading" type="default" id="2hL-QH-9dP"/>
                                     <constraint firstItem="oz4-3R-JzP" firstAttribute="leading" secondItem="rwX-yS-YL8" secondAttribute="leading" type="default" id="2rV-ni-pY5"/>
                                     <constraint firstItem="hsi-qZ-rIB" firstAttribute="baseline" secondItem="R6W-bg-YcD" secondAttribute="baseline" type="default" id="32l-6R-fye"/>
                                     <constraint firstItem="oz4-3R-JzP" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="260" id="3Ap-Q1-Pgz"/>
                                     <constraint firstItem="Fzd-Vk-BwX" firstAttribute="baseline" secondItem="uCX-bU-qd4" secondAttribute="baseline" type="default" id="3o9-C7-6p7"/>
                                     <constraint firstItem="hKO-on-yR5" firstAttribute="leading" secondItem="Jjw-0l-ax8" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="41L-4h-LXw"/>
                                     <constraint firstItem="Iur-kv-3w0" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="185" id="4sv-TZ-sbh"/>
-                                    <constraint firstItem="Fzd-Vk-BwX" firstAttribute="centerX" secondItem="t5W-IA-2Jg" secondAttribute="centerX" type="default" id="5et-8v-p9X"/>
                                     <constraint firstItem="JTx-Hv-y5y" firstAttribute="leading" secondItem="J81-Zp-zyW" secondAttribute="leading" constant="249" id="5h3-F7-AHE"/>
                                     <constraint firstItem="YxA-5N-xlA" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="706" id="7h9-kM-laP"/>
                                     <constraint firstItem="cIr-2s-dX9" firstAttribute="leading" secondItem="YJi-Cr-1au" secondAttribute="leading" type="default" id="7t8-IK-Z2P"/>
-                                    <constraint firstItem="DrD-hd-aUE" firstAttribute="leading" secondItem="CWf-9c-e2f" secondAttribute="leading" type="default" id="8bt-7y-dIc"/>
+                                    <constraint firstItem="8YK-wT-ALh" firstAttribute="trailing" secondItem="oZK-EB-d4q" secondAttribute="trailing" type="default" id="8Sc-Uq-1Yd"/>
+                                    <constraint firstItem="cAS-eu-MGC" firstAttribute="leading" secondItem="CWf-9c-e2f" secondAttribute="leading" type="default" id="8cS-NN-rsw"/>
+                                    <constraint firstItem="uCX-bU-qd4" firstAttribute="leading" secondItem="F5K-P5-7yh" secondAttribute="leading" type="default" id="8mA-MQ-69U"/>
                                     <constraint firstItem="hKO-on-yR5" firstAttribute="trailing" secondItem="HJJ-yr-hVn" secondAttribute="trailing" type="default" id="8rq-ps-oUF"/>
-                                    <constraint firstItem="S4u-3l-X5C" firstAttribute="leading" secondItem="F5K-P5-7yh" secondAttribute="leading" type="default" id="Bx7-v0-lUQ"/>
-                                    <constraint firstItem="8YK-wT-ALh" firstAttribute="leading" secondItem="Ev2-Cv-x8e" secondAttribute="leading" type="default" id="CaV-qy-bws"/>
-                                    <constraint firstItem="CWf-9c-e2f" firstAttribute="leading" secondItem="hsi-qZ-rIB" secondAttribute="leading" type="default" id="CnZ-yN-LBw"/>
+                                    <constraint firstItem="Fzd-Vk-BwX" firstAttribute="trailing" secondItem="t5W-IA-2Jg" secondAttribute="trailing" type="default" id="9wa-yt-Ux4"/>
+                                    <constraint firstItem="uCX-bU-qd4" firstAttribute="top" secondItem="F5K-P5-7yh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="B4v-Hu-IlN"/>
+                                    <constraint firstItem="uCX-bU-qd4" firstAttribute="trailing" secondItem="675-MO-yLa" secondAttribute="trailing" type="default" id="DGG-GT-KkH"/>
                                     <constraint firstItem="bsN-r4-oPv" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="736" id="DNz-v7-d1q"/>
-                                    <constraint firstItem="yef-4f-ftn" firstAttribute="leading" secondItem="J81-Zp-zyW" secondAttribute="leading" constant="189" id="DQA-gm-yIY"/>
-                                    <constraint firstItem="orb-95-O21" firstAttribute="leading" secondItem="uCX-bU-qd4" secondAttribute="leading" type="default" id="Fds-n4-kkm"/>
+                                    <constraint firstItem="bsN-r4-oPv" firstAttribute="leading" secondItem="J81-Zp-zyW" secondAttribute="leading" constant="29" id="ELq-ae-1LF"/>
+                                    <constraint firstItem="CWf-9c-e2f" firstAttribute="leading" secondItem="Fzd-Vk-BwX" secondAttribute="leading" type="default" id="FT8-Rf-OlQ"/>
                                     <constraint firstItem="5pU-8I-HnA" firstAttribute="top" secondItem="8YK-wT-ALh" secondAttribute="top" type="default" id="Fxe-7B-3bF"/>
                                     <constraint firstItem="Ev2-Cv-x8e" firstAttribute="top" secondItem="Fzd-Vk-BwX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="IHF-0K-Bl4"/>
                                     <constraint firstItem="675-MO-yLa" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="337" id="Iot-jk-PGl"/>
                                     <constraint firstItem="orb-95-O21" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="307" id="KcF-og-gOF"/>
-                                    <constraint firstItem="N12-Wf-Cd3" firstAttribute="trailing" secondItem="uCX-bU-qd4" secondAttribute="trailing" type="default" id="LQm-CT-PF4"/>
                                     <constraint firstItem="YxA-5N-xlA" firstAttribute="baseline" secondItem="DrD-hd-aUE" secondAttribute="baseline" type="default" id="LSl-cF-qPH"/>
                                     <constraint firstItem="cIr-2s-dX9" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="264" id="Lzn-Um-wBB"/>
                                     <constraint firstItem="YxA-5N-xlA" firstAttribute="leading" secondItem="S4u-3l-X5C" secondAttribute="leading" type="default" id="NHC-FP-JGe"/>
                                     <constraint firstAttribute="trailing" secondItem="JTx-Hv-y5y" secondAttribute="trailing" constant="16" id="O0J-VX-Yjf"/>
-                                    <constraint firstItem="uCX-bU-qd4" firstAttribute="trailing" secondItem="675-MO-yLa" secondAttribute="trailing" type="default" id="O0Z-i2-rE6"/>
                                     <constraint firstItem="N12-Wf-Cd3" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="786" id="O1R-5k-UPm"/>
                                     <constraint firstItem="Ev2-Cv-x8e" firstAttribute="bottom" secondItem="S4u-3l-X5C" secondAttribute="bottom" type="default" id="OYT-Uz-YUZ"/>
                                     <constraint firstItem="HJJ-yr-hVn" firstAttribute="leading" secondItem="zqr-Xq-PP4" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Opj-GU-YZn"/>
+                                    <constraint firstItem="5pU-8I-HnA" firstAttribute="leading" secondItem="J81-Zp-zyW" secondAttribute="leading" constant="19" id="PYG-6t-gE1"/>
+                                    <constraint firstItem="hsi-qZ-rIB" firstAttribute="leading" secondItem="DrD-hd-aUE" secondAttribute="leading" type="default" id="Qox-fn-cLZ"/>
                                     <constraint firstItem="elY-WF-Zjj" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="9" id="Rbt-2L-XRR"/>
-                                    <constraint firstItem="675-MO-yLa" firstAttribute="leading" secondItem="J81-Zp-zyW" secondAttribute="leading" constant="8" id="RfN-Gk-B1q"/>
                                     <constraint firstItem="E0Q-Vo-R9Y" firstAttribute="leading" secondItem="Jjw-0l-ax8" secondAttribute="leading" type="default" id="TOL-1A-25u"/>
+                                    <constraint firstItem="cAS-eu-MGC" firstAttribute="leading" secondItem="yef-4f-ftn" secondAttribute="leading" type="default" id="UTW-Od-lyi"/>
                                     <constraint firstItem="Iur-kv-3w0" firstAttribute="leading" secondItem="rwX-yS-YL8" secondAttribute="leading" type="default" id="UZp-Ri-LqO"/>
                                     <constraint firstItem="hKO-on-yR5" firstAttribute="bottom" secondItem="R6W-bg-YcD" secondAttribute="bottom" type="default" id="UrH-eg-O3e"/>
                                     <constraint firstItem="F5K-P5-7yh" firstAttribute="baseline" secondItem="CWf-9c-e2f" secondAttribute="baseline" type="default" id="VT9-Vc-dRC"/>
@@ -529,52 +538,50 @@
                                     <constraint firstItem="Jjw-0l-ax8" firstAttribute="centerX" secondItem="ZED-CZ-lz8" secondAttribute="centerX" type="default" id="Vtk-CN-5TQ"/>
                                     <constraint firstItem="hKO-on-yR5" firstAttribute="trailing" secondItem="5pU-8I-HnA" secondAttribute="trailing" type="default" id="W3N-QZ-sw5"/>
                                     <constraint firstItem="HJJ-yr-hVn" firstAttribute="baseline" secondItem="o2c-tV-LOr" secondAttribute="baseline" type="default" id="WnT-xL-Evt"/>
-                                    <constraint firstItem="8YK-wT-ALh" firstAttribute="leading" secondItem="yef-4f-ftn" secondAttribute="leading" type="default" id="XVJ-mY-D5s"/>
                                     <constraint firstItem="BDC-Mr-Yyb" firstAttribute="leading" secondItem="R6W-bg-YcD" secondAttribute="leading" type="default" id="Xqz-fZ-3AH"/>
+                                    <constraint firstItem="orb-95-O21" firstAttribute="trailing" secondItem="F5K-P5-7yh" secondAttribute="trailing" type="default" id="Xv9-bd-RkG"/>
                                     <constraint firstItem="Jjw-0l-ax8" firstAttribute="leading" secondItem="zqr-Xq-PP4" secondAttribute="leading" type="default" id="Y0s-Li-WRg"/>
-                                    <constraint firstItem="Ev2-Cv-x8e" firstAttribute="leading" secondItem="gk5-QY-TWb" secondAttribute="leading" type="default" id="YmE-m2-xFK"/>
                                     <constraint firstAttribute="bottom" secondItem="ZED-CZ-lz8" secondAttribute="bottom" constant="190" id="YtE-oC-rRX"/>
                                     <constraint firstItem="t5W-IA-2Jg" firstAttribute="leading" secondItem="J81-Zp-zyW" secondAttribute="leading" constant="191" id="Zbu-ud-N3Z"/>
                                     <constraint firstItem="JTx-Hv-y5y" firstAttribute="centerX" secondItem="R6W-bg-YcD" secondAttribute="centerX" type="default" id="a1x-Ml-GlT"/>
                                     <constraint firstItem="orb-95-O21" firstAttribute="baseline" secondItem="yef-4f-ftn" secondAttribute="baseline" type="default" id="aUP-6y-MsU"/>
+                                    <constraint firstItem="675-MO-yLa" firstAttribute="leading" secondItem="orb-95-O21" secondAttribute="leading" type="default" id="av0-uU-nFv"/>
                                     <constraint firstItem="zqr-Xq-PP4" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="51" id="b8P-bf-Btq"/>
                                     <constraint firstItem="E0Q-Vo-R9Y" firstAttribute="trailing" secondItem="Bgs-Go-C5h" secondAttribute="trailing" type="default" id="bLp-e0-Tf7"/>
                                     <constraint firstItem="ZED-CZ-lz8" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="917" id="cIZ-Ju-pW4"/>
                                     <constraint firstItem="hKO-on-yR5" firstAttribute="baseline" secondItem="hsi-qZ-rIB" secondAttribute="baseline" type="default" id="d3y-BJ-Rck"/>
-                                    <constraint firstItem="F5K-P5-7yh" firstAttribute="top" secondItem="8YK-wT-ALh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dGl-kJ-cxp"/>
                                     <constraint firstItem="bsN-r4-oPv" firstAttribute="baseline" secondItem="oZK-EB-d4q" secondAttribute="baseline" type="default" id="dXf-OD-pZh"/>
-                                    <constraint firstItem="DrD-hd-aUE" firstAttribute="trailing" secondItem="CWf-9c-e2f" secondAttribute="trailing" type="default" id="dnr-6d-md2"/>
                                     <constraint firstItem="BDC-Mr-Yyb" firstAttribute="baseline" secondItem="o2c-tV-LOr" secondAttribute="baseline" type="default" id="dpz-Gn-wZ9"/>
                                     <constraint firstItem="elY-WF-Zjj" firstAttribute="leading" secondItem="J81-Zp-zyW" secondAttribute="leading" constant="110" id="e8B-pO-PNY"/>
                                     <constraint firstItem="675-MO-yLa" firstAttribute="baseline" secondItem="cAS-eu-MGC" secondAttribute="baseline" type="default" id="enJ-wY-tMF"/>
-                                    <constraint firstItem="oZK-EB-d4q" firstAttribute="trailing" secondItem="Ev2-Cv-x8e" secondAttribute="trailing" type="default" id="gWQ-TL-afl"/>
                                     <constraint firstItem="YJi-Cr-1au" firstAttribute="trailing" secondItem="Bgs-Go-C5h" secondAttribute="trailing" type="default" id="gco-mU-Zxa"/>
                                     <constraint firstItem="hKO-on-yR5" firstAttribute="leading" secondItem="HJJ-yr-hVn" secondAttribute="leading" type="default" id="gqa-j2-vta"/>
+                                    <constraint firstItem="Fzd-Vk-BwX" firstAttribute="trailing" secondItem="cAS-eu-MGC" secondAttribute="trailing" type="default" id="h3P-IY-v8D"/>
+                                    <constraint firstItem="orb-95-O21" firstAttribute="leading" secondItem="J81-Zp-zyW" secondAttribute="leading" constant="8" id="h6p-rA-ckj"/>
                                     <constraint firstItem="Jjw-0l-ax8" firstAttribute="baseline" secondItem="hsi-qZ-rIB" secondAttribute="baseline" type="default" id="hOf-hx-yTe"/>
-                                    <constraint firstItem="F5K-P5-7yh" firstAttribute="leading" secondItem="5pU-8I-HnA" secondAttribute="leading" type="default" id="hVs-Ft-48y"/>
                                     <constraint firstItem="hKO-on-yR5" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="94" id="ha6-2J-hc1"/>
-                                    <constraint firstItem="uCX-bU-qd4" firstAttribute="top" secondItem="F5K-P5-7yh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="iJr-oP-0cW"/>
                                     <constraint firstItem="Iur-kv-3w0" firstAttribute="leading" secondItem="JTx-Hv-y5y" secondAttribute="leading" type="default" id="iR6-uu-aNr"/>
                                     <constraint firstItem="JTx-Hv-y5y" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="140" id="icd-h7-Fyv"/>
+                                    <constraint firstItem="F5K-P5-7yh" firstAttribute="top" secondItem="8YK-wT-ALh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jPc-1M-jtH"/>
                                     <constraint firstItem="o2c-tV-LOr" firstAttribute="leading" secondItem="hsi-qZ-rIB" secondAttribute="leading" type="default" id="jl1-ti-NPn"/>
-                                    <constraint firstItem="uCX-bU-qd4" firstAttribute="leading" secondItem="bsN-r4-oPv" secondAttribute="leading" type="default" id="ly8-tK-61Y"/>
+                                    <constraint firstItem="5pU-8I-HnA" firstAttribute="leading" secondItem="S4u-3l-X5C" secondAttribute="leading" type="default" id="kcM-H8-Mv1"/>
                                     <constraint firstItem="Bgs-Go-C5h" firstAttribute="leading" secondItem="E0Q-Vo-R9Y" secondAttribute="leading" type="default" id="mDo-sz-hxh"/>
                                     <constraint firstItem="rwX-yS-YL8" firstAttribute="top" secondItem="Iur-kv-3w0" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="neh-0Q-FcV"/>
-                                    <constraint firstItem="8YK-wT-ALh" firstAttribute="trailing" secondItem="Ev2-Cv-x8e" secondAttribute="trailing" type="default" id="om6-of-udJ"/>
                                     <constraint firstItem="gk5-QY-TWb" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="787" id="p2c-3k-kYz"/>
-                                    <constraint firstItem="cAS-eu-MGC" firstAttribute="trailing" secondItem="t5W-IA-2Jg" secondAttribute="trailing" type="default" id="pHf-Zj-qUl"/>
                                     <constraint firstItem="S4u-3l-X5C" firstAttribute="top" secondItem="uCX-bU-qd4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="puT-K2-4F5"/>
                                     <constraint firstItem="YJi-Cr-1au" firstAttribute="leading" secondItem="Bgs-Go-C5h" secondAttribute="leading" type="default" id="qhd-7f-OIN"/>
                                     <constraint firstItem="E0Q-Vo-R9Y" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="145" id="rPn-Zt-Cxl"/>
+                                    <constraint firstItem="CWf-9c-e2f" firstAttribute="trailing" secondItem="yef-4f-ftn" secondAttribute="trailing" type="default" id="rq6-EF-W9d"/>
+                                    <constraint firstItem="675-MO-yLa" firstAttribute="leading" secondItem="F5K-P5-7yh" secondAttribute="leading" type="default" id="sMj-km-tXv"/>
+                                    <constraint firstItem="oZK-EB-d4q" firstAttribute="top" secondItem="YxA-5N-xlA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tVm-qP-at4"/>
                                     <constraint firstItem="N12-Wf-Cd3" firstAttribute="leading" secondItem="YxA-5N-xlA" secondAttribute="leading" type="default" id="tgN-Ib-djC"/>
                                     <constraint firstItem="5pU-8I-HnA" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="387" id="u0q-hk-lvz"/>
                                     <constraint firstItem="t5W-IA-2Jg" firstAttribute="baseline" secondItem="ZED-CZ-lz8" secondAttribute="baseline" type="default" id="xIv-4D-bvT"/>
                                     <constraint firstItem="Iur-kv-3w0" firstAttribute="centerY" secondItem="Bgs-Go-C5h" secondAttribute="centerY" type="default" id="xP9-kO-xkk"/>
                                     <constraint firstItem="Jjw-0l-ax8" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="98" id="xWP-Uo-7qK"/>
-                                    <constraint firstItem="YxA-5N-xlA" firstAttribute="trailing" secondItem="F5K-P5-7yh" secondAttribute="trailing" type="default" id="y3u-jX-3cV"/>
+                                    <constraint firstItem="t5W-IA-2Jg" firstAttribute="centerX" secondItem="Ev2-Cv-x8e" secondAttribute="centerX" type="default" id="xmi-b3-ax8"/>
                                     <constraint firstItem="HJJ-yr-hVn" firstAttribute="top" secondItem="elY-WF-Zjj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ypZ-9W-tjR"/>
                                     <constraint firstItem="elY-WF-Zjj" firstAttribute="centerX" secondItem="J81-Zp-zyW" secondAttribute="centerX" type="default" id="zAB-an-Vjn"/>
-                                    <constraint firstItem="oZK-EB-d4q" firstAttribute="top" secondItem="YxA-5N-xlA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="zIB-jo-bRR"/>
                                     <constraint firstItem="oZK-EB-d4q" firstAttribute="trailing" secondItem="gk5-QY-TWb" secondAttribute="trailing" type="default" id="zjh-m1-hec"/>
                                     <constraint firstItem="YJi-Cr-1au" firstAttribute="trailing" secondItem="cIr-2s-dX9" secondAttribute="trailing" type="default" id="zmO-cT-MeA"/>
                                 </constraints>
@@ -593,29 +600,25 @@
                         <outlet property="AgeMax" destination="hKO-on-yR5" id="LWj-Tm-px9"/>
                         <outlet property="AgeMin" destination="HJJ-yr-hVn" id="wBR-jD-hrT"/>
                         <outlet property="ChallengeTitle" destination="elY-WF-Zjj" id="CeR-9T-7yQ"/>
-                        <outlet property="ChildFilter" destination="bsN-r4-oPv" id="dIw-Ma-7jC"/>
+                        <outlet property="ChildFilter" destination="bsN-r4-oPv" id="49S-oU-ZJz"/>
                         <outlet property="ChildInfoBox" destination="N12-Wf-Cd3" id="Sje-6g-Pbl"/>
                         <outlet property="CreateChallengeButton" destination="t5W-IA-2Jg" id="Gff-c5-KOr"/>
-                        <outlet property="ExcludeFemales" destination="JTx-Hv-y5y" id="TxV-C9-hat"/>
-                        <outlet property="ExcludeLoveHappy" destination="oz4-3R-JzP" id="IJU-wJ-U17"/>
-                        <outlet property="ExcludeSchoolHappy" destination="Iur-kv-3w0" id="Ijr-K2-rca"/>
+                        <outlet property="ExcludeFemalesSwitch" destination="JTx-Hv-y5y" id="N41-oN-bxS"/>
                         <outlet property="LanguageRating" destination="BDC-Mr-Yyb" id="Zgf-uw-WeX"/>
-                        <outlet property="LookingFIlter" destination="675-MO-yLa" id="HbJ-J4-vGx"/>
+                        <outlet property="LookingFilter" destination="675-MO-yLa" id="XWH-oU-dex"/>
                         <outlet property="LookingInfoBox" destination="5pU-8I-HnA" id="1cW-hz-Qy2"/>
-                        <outlet property="LoveFilter" destination="uCX-bU-qd4" id="dS0-de-d99"/>
-                        <outlet property="LoveHappySwitch" destination="oz4-3R-JzP" id="U01-ee-9lW"/>
+                        <outlet property="LoveFilter" destination="uCX-bU-qd4" id="WGm-Xa-eRw"/>
+                        <outlet property="LoveHappySwitch" destination="oz4-3R-JzP" id="qsz-25-bXn"/>
                         <outlet property="LoveInfoBox" destination="S4u-3l-X5C" id="bEN-vy-mdB"/>
-                        <outlet property="PetFilter" destination="oZK-EB-d4q" id="3iP-9q-Cxf"/>
+                        <outlet property="PetFilter" destination="oZK-EB-d4q" id="OKy-yn-B5T"/>
                         <outlet property="PetInfoBox" destination="gk5-QY-TWb" id="0AK-3u-26Q"/>
                         <outlet property="RiskFactor" destination="R6W-bg-YcD" id="tZm-ak-KHN"/>
-                        <outlet property="SchoolFilter" destination="cAS-eu-MGC" id="JJh-7j-dMj"/>
-                        <outlet property="SchoolFilters" destination="uCX-bU-qd4" id="BMn-wd-XC5"/>
-                        <outlet property="SchoolHappySwitch" destination="Iur-kv-3w0" id="6rh-0l-G6V"/>
+                        <outlet property="SchoolFilter" destination="cAS-eu-MGC" id="IJ8-om-Yge"/>
+                        <outlet property="SchoolHappySwitch" destination="Iur-kv-3w0" id="p7k-wT-AMR"/>
                         <outlet property="SchoolInfoBox" destination="8YK-wT-ALh" id="3qO-7v-c1i"/>
-                        <outlet property="WorkFilter" destination="Fzd-Vk-BwX" id="0yV-5k-vgD"/>
-                        <outlet property="WorkHappySwitch" destination="rwX-yS-YL8" id="MMV-pf-f4V"/>
+                        <outlet property="WorkFilter" destination="Fzd-Vk-BwX" id="MHd-ue-sdA"/>
+                        <outlet property="WorkHappySwitch" destination="rwX-yS-YL8" id="RXN-CW-CYO"/>
                         <outlet property="WorkInfoBox" destination="Ev2-Cv-x8e" id="Gxk-aQ-Zp8"/>
-                        <outlet property="fff" destination="5pU-8I-HnA" id="DEq-J2-w12"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LX4-PP-fk2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -705,6 +708,8 @@
         <class className="CreatorOptionsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatorOptionsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="AddSchoolFilters:"/>
+                <relationship kind="action" name="CreateChallenge:"/>
                 <relationship kind="action" name="ExcludeFemales:"/>
                 <relationship kind="action" name="ExcludeLoveHappy:"/>
                 <relationship kind="action" name="ExcludeSchoolHappy:"/>
@@ -732,7 +737,6 @@
                 <relationship kind="outlet" name="PetInfoBox" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="RiskFactor" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="SchoolFilter" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="SchoolFilters" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="SchoolHappySwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="SchoolInfoBox" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="WorkFilter" candidateClass="UIButton"/>
