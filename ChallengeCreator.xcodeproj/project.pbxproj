@@ -24,6 +24,7 @@
 		62B2D3801878F1200004E1E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B2D3581878F11F0004E1E6 /* Foundation.framework */; };
 		62B2D3881878F1200004E1E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62B2D3861878F1200004E1E6 /* InfoPlist.strings */; };
 		62B2D38B1878F1200004E1E6 /* ChallengeCreatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2D38A1878F1200004E1E6 /* ChallengeCreatorTests.m */; };
+		62B2D3961878F64E0004E1E6 /* CreatorOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2D3951878F64E0004E1E6 /* CreatorOptionsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		62B2D3871878F1200004E1E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		62B2D3891878F1200004E1E6 /* ChallengeCreatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChallengeCreatorTests.h; sourceTree = "<group>"; };
 		62B2D38A1878F1200004E1E6 /* ChallengeCreatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChallengeCreatorTests.m; sourceTree = "<group>"; };
+		62B2D3941878F64E0004E1E6 /* CreatorOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatorOptionsViewController.h; sourceTree = "<group>"; };
+		62B2D3951878F64E0004E1E6 /* CreatorOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatorOptionsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				62B2D3711878F1200004E1E6 /* MainStoryboard_iPad.storyboard */,
 				62B2D3741878F1200004E1E6 /* CreatorViewController.h */,
 				62B2D3751878F1200004E1E6 /* CreatorViewController.m */,
+				62B2D3941878F64E0004E1E6 /* CreatorOptionsViewController.h */,
+				62B2D3951878F64E0004E1E6 /* CreatorOptionsViewController.m */,
 				62B2D35D1878F11F0004E1E6 /* Supporting Files */,
 			);
 			path = ChallengeCreator;
@@ -278,6 +283,7 @@
 				62B2D3631878F11F0004E1E6 /* main.m in Sources */,
 				62B2D3671878F11F0004E1E6 /* CreatorAppDelegate.m in Sources */,
 				62B2D3761878F1200004E1E6 /* CreatorViewController.m in Sources */,
+				62B2D3961878F64E0004E1E6 /* CreatorOptionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

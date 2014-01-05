@@ -13,6 +13,7 @@
 @end
 
 @implementation CreatorViewController
+@synthesize correctlyLoadedXMLLabel;
 
 - (void)viewDidLoad
 {
@@ -26,4 +27,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
+
+- (IBAction)LoadChallengesXML:(id)sender {
+    NSString *docDir = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Challenges.xml"];
+    NSURL *url = [[NSURL alloc] initWithString:@"https://home.comcast.net/~jszymczyk/iBeHappy/Challenges.xml"];
+    NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    //Set delegate
+    [xmlParser setDelegate:self];
+    
+    //Start parsing the XML file.
+    bool success = [xmlParser parse];
+    if (success)
+    {
+        correctlyLoadedXMLLabel.text = @"No Errors";
+    }
+    else
+        correctlyLoadedXMLLabel.text = @"Error Error Error!!!";
+}
 @end
