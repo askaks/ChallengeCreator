@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CreatorViewController.h"
 @interface CreatorOptionsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *ChallengeTitle;
 @property (weak, nonatomic) IBOutlet UITextField *AgeMin;

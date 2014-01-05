@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "CreatorOptionsViewController.h"
 //#include <libxml/HTMLparser.h>
 
 @interface CreatorViewController : UIViewController <NSXMLParserDelegate>
