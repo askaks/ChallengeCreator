@@ -14,6 +14,8 @@
 
 @implementation CreatorOptionsViewController
 
+@synthesize SchoolFilter;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -38,8 +40,19 @@
 - (IBAction)CreateChallenge:(id)sender {
 }
 
-- (IBAction)AddSchoolFilters:(id)sender {
+- (IBAction)FilterLookingFor:(id)sender {
 }
+- (IBAction)FilterLove:(id)sender {
+}
+- (IBAction)FilterSchool:(id)sender {
+}
+- (IBAction)FilterWork:(id)sender {
+}
+- (IBAction)FilterChildren:(id)sender {
+}
+- (IBAction)FilterPets:(id)sender {
+}
+
 - (IBAction)ExcludeSchoolHappy:(id)sender {
 }
 

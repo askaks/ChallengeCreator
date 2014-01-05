@@ -17,7 +17,6 @@
 		62B2D36B1878F1200004E1E6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62B2D36A1878F1200004E1E6 /* Default@2x.png */; };
 		62B2D36D1878F1200004E1E6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62B2D36C1878F1200004E1E6 /* Default-568h@2x.png */; };
 		62B2D3701878F1200004E1E6 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B2D36E1878F1200004E1E6 /* MainStoryboard_iPhone.storyboard */; };
-		62B2D3731878F1200004E1E6 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B2D3711878F1200004E1E6 /* MainStoryboard_iPad.storyboard */; };
 		62B2D3761878F1200004E1E6 /* CreatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2D3751878F1200004E1E6 /* CreatorViewController.m */; };
 		62B2D37E1878F1200004E1E6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B2D37D1878F1200004E1E6 /* SenTestingKit.framework */; };
 		62B2D37F1878F1200004E1E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B2D3561878F11F0004E1E6 /* UIKit.framework */; };
@@ -53,7 +52,6 @@
 		62B2D36A1878F1200004E1E6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		62B2D36C1878F1200004E1E6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		62B2D36F1878F1200004E1E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		62B2D3721878F1200004E1E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		62B2D3741878F1200004E1E6 /* CreatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreatorViewController.h; sourceTree = "<group>"; };
 		62B2D3751878F1200004E1E6 /* CreatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreatorViewController.m; sourceTree = "<group>"; };
 		62B2D37C1878F1200004E1E6 /* ChallengeCreatorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengeCreatorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +126,6 @@
 				62B2D3651878F11F0004E1E6 /* CreatorAppDelegate.h */,
 				62B2D3661878F11F0004E1E6 /* CreatorAppDelegate.m */,
 				62B2D36E1878F1200004E1E6 /* MainStoryboard_iPhone.storyboard */,
-				62B2D3711878F1200004E1E6 /* MainStoryboard_iPad.storyboard */,
 				62B2D3741878F1200004E1E6 /* CreatorViewController.h */,
 				62B2D3751878F1200004E1E6 /* CreatorViewController.m */,
 				62B2D3941878F64E0004E1E6 /* CreatorOptionsViewController.h */,
@@ -250,7 +247,6 @@
 				62B2D36B1878F1200004E1E6 /* Default@2x.png in Resources */,
 				62B2D36D1878F1200004E1E6 /* Default-568h@2x.png in Resources */,
 				62B2D3701878F1200004E1E6 /* MainStoryboard_iPhone.storyboard in Resources */,
-				62B2D3731878F1200004E1E6 /* MainStoryboard_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,14 +322,6 @@
 				62B2D36F1878F1200004E1E6 /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		62B2D3711878F1200004E1E6 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				62B2D3721878F1200004E1E6 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		62B2D3861878F1200004E1E6 /* InfoPlist.strings */ = {
@@ -480,6 +468,7 @@
 				62B2D3901878F1200004E1E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		62B2D3911878F1200004E1E6 /* Build configuration list for PBXNativeTarget "ChallengeCreatorTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +477,7 @@
 				62B2D3931878F1200004E1E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
