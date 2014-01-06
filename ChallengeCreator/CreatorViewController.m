@@ -14,11 +14,15 @@
 
 @implementation CreatorViewController
 @synthesize correctlyLoadedXMLLabel;
+@synthesize Challenges;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+ 	// Do any additional setup after loading the view, typically from a nib.   
+    Challenges = [[NSMutableArray alloc] init];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,5 +49,19 @@
     }
     else
         correctlyLoadedXMLLabel.text = @"Error Error Error!!!";
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+//    if ([segue.identifier isEqualToString:@"ToIncome"])
+//    {
+//        incomeView = [segue destinationViewController];
+//        incomeView.profile = self.profile;
+//    }
+//    else {
+//        statusVC.profile = self.profile;
+//        [self.navigationController popViewControllerAnimated:YES];
+//        
+//    }
 }
 @end

@@ -9,7 +9,17 @@
 #import <UIKit/UIKit.h>
 
 #import "CreatorViewController.h"
+#import "PickerPopUpViewController.h"
+
+@class PickerPopUpViewController;
+
 @interface CreatorOptionsViewController : UIViewController
+{
+    PickerPopUpViewController *PickerPopUp;
+}
+
+@property (nonatomic, retain) PickerPopUpViewController *PickerPopUp;
+
 @property (weak, nonatomic) IBOutlet UITextField *ChallengeTitle;
 @property (weak, nonatomic) IBOutlet UITextField *AgeMin;
 @property (weak, nonatomic) IBOutlet UITextField *AgeMax;

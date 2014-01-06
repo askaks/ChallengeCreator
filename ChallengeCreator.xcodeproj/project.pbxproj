@@ -25,6 +25,8 @@
 		62B2D38B1878F1200004E1E6 /* ChallengeCreatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2D38A1878F1200004E1E6 /* ChallengeCreatorTests.m */; };
 		62B2D3961878F64E0004E1E6 /* CreatorOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2D3951878F64E0004E1E6 /* CreatorOptionsViewController.m */; };
 		62B2D39918793A920004E1E6 /* PickerPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2D39818793A920004E1E6 /* PickerPopUpViewController.m */; };
+		62FD17591879E38A00F63379 /* DailyChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FD17581879E38A00F63379 /* DailyChallenge.m */; };
+		62FD175C1879E3E100F63379 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FD175B1879E3E100F63379 /* Task.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,10 @@
 		62B2D3951878F64E0004E1E6 /* CreatorOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatorOptionsViewController.m; sourceTree = "<group>"; };
 		62B2D39718793A910004E1E6 /* PickerPopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerPopUpViewController.h; sourceTree = "<group>"; };
 		62B2D39818793A920004E1E6 /* PickerPopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerPopUpViewController.m; sourceTree = "<group>"; };
+		62FD17571879E38A00F63379 /* DailyChallenge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyChallenge.h; sourceTree = "<group>"; };
+		62FD17581879E38A00F63379 /* DailyChallenge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyChallenge.m; sourceTree = "<group>"; };
+		62FD175A1879E3E100F63379 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		62FD175B1879E3E100F63379 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,10 @@
 		62B2D35C1878F11F0004E1E6 /* ChallengeCreator */ = {
 			isa = PBXGroup;
 			children = (
+				62FD175A1879E3E100F63379 /* Task.h */,
+				62FD175B1879E3E100F63379 /* Task.m */,
+				62FD17571879E38A00F63379 /* DailyChallenge.h */,
+				62FD17581879E38A00F63379 /* DailyChallenge.m */,
 				62B2D3651878F11F0004E1E6 /* CreatorAppDelegate.h */,
 				62B2D3661878F11F0004E1E6 /* CreatorAppDelegate.m */,
 				62B2D36E1878F1200004E1E6 /* MainStoryboard_iPhone.storyboard */,
@@ -286,6 +296,8 @@
 				62B2D3761878F1200004E1E6 /* CreatorViewController.m in Sources */,
 				62B2D3961878F64E0004E1E6 /* CreatorOptionsViewController.m in Sources */,
 				62B2D39918793A920004E1E6 /* PickerPopUpViewController.m in Sources */,
+				62FD17591879E38A00F63379 /* DailyChallenge.m in Sources */,
+				62FD175C1879E3E100F63379 /* Task.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

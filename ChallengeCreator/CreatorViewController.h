@@ -14,6 +14,9 @@
 @interface CreatorViewController : UIViewController <NSXMLParserDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *correctlyLoadedXMLLabel;
+
+@property (nonatomic, retain) NSMutableArray *Challenges;
+
 - (IBAction)LoadChallengesXML:(id)sender;
 
 @end
