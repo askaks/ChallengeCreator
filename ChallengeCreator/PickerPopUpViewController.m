@@ -35,8 +35,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    Picker.delegate = self;
-//    [Picker selectRow:0 inComponent:0 animated:YES];
+    Picker.delegate = self;
+    [Picker selectRow:0 inComponent:0 animated:YES];
 	// Do any additional setup after loading the view.
 }
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -50,24 +50,24 @@ numberOfRowsInComponent:(NSInteger)component
     return [options count];
 }
 //
-//- (UIView *)pickerView:(UIPickerView *)pickerView
-//			viewForRow:(NSInteger)row
-//		  forComponent:(NSInteger)component
-//		   reusingView:(UIView *)view
-//{
-//	UILabel *eduLabel;
-//	eduLabel=[[UILabel alloc] initWithFrame:CGRectMake(0,0,180,32)];
-//	eduLabel.backgroundColor=[UIColor clearColor];
-//	eduLabel.text=[options objectAtIndex:row];
-//	//eduLabel.textAlignment = UITextAlignmentCenter;
-//	eduLabel.font = [UIFont systemFontOfSize:22];
-//	return eduLabel;
-//}
-//- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
-//	   inComponent:(NSInteger)component
-//{
-//	currentIndex= [pickerView selectedRowInComponent:0];
-//}
+- (UIView *)pickerView:(UIPickerView *)pickerView
+			viewForRow:(NSInteger)row
+		  forComponent:(NSInteger)component
+		   reusingView:(UIView *)view
+{
+	UILabel *eduLabel;
+	eduLabel=[[UILabel alloc] initWithFrame:CGRectMake(0,0,180,32)];
+	eduLabel.backgroundColor=[UIColor clearColor];
+	eduLabel.text=[options objectAtIndex:row];
+	//eduLabel.textAlignment = UITextAlignmentCenter;
+	eduLabel.font = [UIFont systemFontOfSize:22];
+	return eduLabel;
+}
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
+	   inComponent:(NSInteger)component
+{
+	currentIndex= [pickerView selectedRowInComponent:0];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
