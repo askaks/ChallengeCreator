@@ -74,10 +74,10 @@ numberOfRowsInComponent:(NSInteger)component
     // Dispose of any resources that can be recreated.
 }
 
-//- (IBAction)Add:(id)sender {
-//    NSString *option = [options objectAtIndex: currentIndex];
-//    [list addObject:option];
-//}
+- (IBAction)Add:(id)sender {
+    NSString *option = [options objectAtIndex: currentIndex];
+    [list addObject:option];
+}
 //
 //- (IBAction)Remove:(id)sender {
 //    NSString *option = [options objectAtIndex: currentIndex];
