@@ -117,7 +117,7 @@
                                     <action selector="Remove:" destination="jRd-b2-hZT" eventType="touchUpInside" id="Gf9-Lf-OEo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmz-Ik-hpf">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmz-Ik-hpf">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="73" id="Cqe-10-3ib"/>
                                 </constraints>
@@ -151,18 +151,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4rd-0B-VLH" firstAttribute="leading" secondItem="lQS-gv-1oj" secondAttribute="leading" constant="33" id="7Eq-FF-Sak"/>
                             <constraint firstItem="dmz-Ik-hpf" firstAttribute="baseline" secondItem="Lhj-8G-xtv" secondAttribute="baseline" type="default" id="7FZ-Af-aEI"/>
                             <constraint firstItem="9uh-3E-3xN" firstAttribute="centerX" secondItem="KAo-AL-w1K" secondAttribute="centerX" type="default" id="DWv-Ge-LhU"/>
                             <constraint firstItem="KAo-AL-w1K" firstAttribute="top" secondItem="9uh-3E-3xN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="EjW-u7-D7q"/>
-                            <constraint firstAttribute="bottom" secondItem="DOX-gX-MfY" secondAttribute="bottom" constant="179" id="MSM-bU-gj0"/>
+                            <constraint firstAttribute="trailing" secondItem="Lhj-8G-xtv" secondAttribute="trailing" constant="5" id="JOt-dZ-Sdb"/>
+                            <constraint firstAttribute="bottom" secondItem="4rd-0B-VLH" secondAttribute="bottom" constant="58" id="LuC-cF-dta"/>
                             <constraint firstItem="KAo-AL-w1K" firstAttribute="centerX" secondItem="dmz-Ik-hpf" secondAttribute="centerX" type="default" id="PB1-0P-7q8"/>
-                            <constraint firstItem="Lhj-8G-xtv" firstAttribute="trailing" secondItem="KAo-AL-w1K" secondAttribute="trailing" type="default" id="Wdh-Nl-Oyw"/>
                             <constraint firstItem="9uh-3E-3xN" firstAttribute="top" secondItem="lQS-gv-1oj" secondAttribute="top" constant="10" id="e52-qd-w4s"/>
-                            <constraint firstAttribute="bottom" secondItem="4rd-0B-VLH" secondAttribute="bottom" constant="85" id="gec-n5-bei"/>
                             <constraint firstItem="dmz-Ik-hpf" firstAttribute="baseline" secondItem="DOX-gX-MfY" secondAttribute="baseline" type="default" id="gvG-qb-heC"/>
+                            <constraint firstAttribute="bottom" secondItem="dmz-Ik-hpf" secondAttribute="bottom" constant="179" id="isR-aa-biX"/>
+                            <constraint firstAttribute="bottom" secondItem="Lhj-8G-xtv" secondAttribute="bottom" constant="105" id="jWe-6y-Neg"/>
                             <constraint firstItem="KAo-AL-w1K" firstAttribute="leading" secondItem="lQS-gv-1oj" secondAttribute="leading" constant="10" id="leg-CA-7DS"/>
-                            <constraint firstItem="4rd-0B-VLH" firstAttribute="centerX" secondItem="lQS-gv-1oj" secondAttribute="centerX" type="default" id="oli-kr-ern"/>
                             <constraint firstItem="DOX-gX-MfY" firstAttribute="leading" secondItem="KAo-AL-w1K" secondAttribute="leading" type="default" id="q3r-c4-NEj"/>
+                            <constraint firstAttribute="bottom" secondItem="DOX-gX-MfY" secondAttribute="bottom" constant="111" id="tQ6-Zu-IWI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="23M-AS-cGL"/>
@@ -355,7 +357,8 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="FilterLove:" destination="sDE-RR-EHX" eventType="touchUpInside" id="SOe-GV-ZKu"/>
+                                            <action selector="FilterLove:" destination="sDE-RR-EHX" eventType="touchUpInside" id="iEs-mt-3hO"/>
+                                            <segue destination="jRd-b2-hZT" kind="push" id="CJY-OI-X0r"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzd-Vk-BwX">
@@ -368,7 +371,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="ExcludeWorkHappy:" destination="sDE-RR-EHX" eventType="touchUpInside" id="iuf-cU-02q"/>
                                             <action selector="FilterWork:" destination="sDE-RR-EHX" eventType="touchUpInside" id="qaV-qq-V9x"/>
+                                            <segue destination="jRd-b2-hZT" kind="push" id="sef-Yg-MuF"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N12-Wf-Cd3">
@@ -419,7 +424,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="FilterChildren:" destination="sDE-RR-EHX" eventType="touchUpInside" id="Aug-Od-POV"/>
+                                            <action selector="FilterChildren:" destination="sDE-RR-EHX" eventType="touchUpInside" id="365-Ru-4mO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZK-EB-d4q">
@@ -435,7 +440,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="FilterPets:" destination="sDE-RR-EHX" eventType="touchUpInside" id="jbc-0z-lIr"/>
+                                            <action selector="FilterPets:" destination="sDE-RR-EHX" eventType="touchUpInside" id="Gnl-sB-akW"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pU-8I-HnA">
@@ -486,7 +491,8 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="FilterLookingFor:" destination="sDE-RR-EHX" eventType="touchUpInside" id="MCB-9q-o6x"/>
+                                            <action selector="FilterLookingFor:" destination="sDE-RR-EHX" eventType="touchUpInside" id="9SW-j2-utb"/>
+                                            <segue destination="jRd-b2-hZT" kind="push" id="eks-f9-Mah"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAS-eu-MGC">
@@ -790,4 +796,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="sef-Yg-MuF"/>
+    </inferredMetricsTieBreakers>
 </document>

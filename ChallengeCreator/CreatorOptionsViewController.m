@@ -50,8 +50,16 @@
 }
 
 - (IBAction)FilterLookingFor:(id)sender {
+    PickerPopUp = [[PickerPopUpViewController alloc] init];
+    PickerPopUp.title = @"Looking For";
+    PickerPopUp.options = [[NSArray alloc] initWithObjects:@"Female",@"Male",nil];
+    PickerPopUp.list = [[NSMutableArray alloc] init];
 }
 - (IBAction)FilterLove:(id)sender {
+    PickerPopUp = [[PickerPopUpViewController alloc] init];
+    PickerPopUp.title = @"Relationship Status";
+    PickerPopUp.options = [[NSArray alloc] initWithObjects:@"Single",@"Dating", @"Committed", @"Married",@"Divorced", @"Widowed", @"Not Looking",nil];
+    PickerPopUp.list = [[NSMutableArray alloc] init];
 }
 - (IBAction)FilterSchool:(id)sender {
     PickerPopUp = [[PickerPopUpViewController alloc] init];
@@ -61,10 +69,22 @@
     
 }
 - (IBAction)FilterWork:(id)sender {
+    PickerPopUp = [[PickerPopUpViewController alloc] init];
+    PickerPopUp.title = @"Work";
+    PickerPopUp.options = [[NSArray alloc] initWithObjects:@"Part Time",@"Blue Collar",@"Professional",@"Scholarship",@"Trust Fund Baby", @"Credit", @"Welfare",nil];
+    PickerPopUp.list = [[NSMutableArray alloc] init];
 }
 - (IBAction)FilterChildren:(id)sender {
+    PickerPopUp = [[PickerPopUpViewController alloc] init];
+    PickerPopUp.title = @"Children";
+    PickerPopUp.options = [[NSArray alloc] initWithObjects:@"None",@"child",@"children",@"babies",@"toddlers", @"adult children", @"teenagers",@"babies", @"step children", @"nieces/nephews", @"grandchildren",nil];
+    PickerPopUp.list = [[NSMutableArray alloc] init];
 }
 - (IBAction)FilterPets:(id)sender {
+    PickerPopUp = [[PickerPopUpViewController alloc] init];
+    PickerPopUp.title = @"Pets";
+    PickerPopUp.options = [[NSArray alloc] initWithObjects:@"none",@"can't",@"cat/cats",@"dog/dogs", @"cats and dogs", @"rodents",@"reptiles", @"farm animals",nil];
+    PickerPopUp.list = [[NSMutableArray alloc] init];
 }
 
 - (IBAction)ExcludeSchoolHappy:(id)sender {
