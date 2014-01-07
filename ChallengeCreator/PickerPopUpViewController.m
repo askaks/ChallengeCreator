@@ -20,6 +20,7 @@
 @synthesize options;
 @synthesize title;
 @synthesize currentIndex;
+@synthesize InfoBox;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -77,6 +78,8 @@ numberOfRowsInComponent:(NSInteger)component
 - (IBAction)Add:(id)sender {
     NSString *option = [options objectAtIndex: currentIndex];
     [list addObject:option];
+    NSString * combinedStuff = [list componentsJoinedByString:@"  "];
+    InfoBox.text = combinedStuff;
 }
 //
 //- (IBAction)Remove:(id)sender {

@@ -133,7 +133,6 @@
                                     <constraint firstAttribute="height" constant="51" id="BfC-eG-DzC"/>
                                     <constraint firstAttribute="width" constant="240" id="kPI-SH-tNx"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -167,6 +166,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="AddButton" destination="Lhj-8G-xtv" id="1pd-8O-JqD"/>
+                        <outlet property="InfoBox" destination="4rd-0B-VLH" id="kvp-FJ-GSF"/>
                         <outlet property="Picker" destination="KAo-AL-w1K" id="T5y-hb-EvR"/>
                         <outlet property="PickerLabel" destination="9uh-3E-3xN" id="wf1-47-7KV"/>
                     </connections>
@@ -772,6 +772,7 @@
                 <relationship kind="action" name="Add:"/>
                 <relationship kind="outlet" name="AddButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="DoneButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="InfoBox" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="Picker" candidateClass="UIPickerView"/>
                 <relationship kind="outlet" name="PickerLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="RemoveButton" candidateClass="UIButton"/>

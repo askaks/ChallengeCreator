@@ -31,5 +31,6 @@
 //- (IBAction)Remove:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *DoneButton;
 //- (IBAction)Done:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *InfoBox;
 
 @end
