@@ -82,10 +82,12 @@ numberOfRowsInComponent:(NSInteger)component
     InfoBox.text = combinedStuff;
 }
 //
-//- (IBAction)Remove:(id)sender {
-//    NSString *option = [options objectAtIndex: currentIndex];
-//    //[list removeObject:option];
-//}
+- (IBAction)Remove:(id)sender {
+     NSString *option = [options objectAtIndex: currentIndex];
+    [list removeObject:option];
+    NSString * combinedStuff = [list componentsJoinedByString:@"  "];
+    InfoBox.text = combinedStuff;
+}
 //- (IBAction)Done:(id)sender {
 //}
 @end

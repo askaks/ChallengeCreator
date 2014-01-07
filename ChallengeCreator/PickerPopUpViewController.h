@@ -28,9 +28,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *RemoveButton;
 @property (weak, nonatomic) IBOutlet UIButton *AddButton;
 - (IBAction)Add:(id)sender;
-//- (IBAction)Remove:(id)sender;
+- (IBAction)Remove:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *DoneButton;
-//- (IBAction)Done:(id)sender;
+- (IBAction)Done:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *InfoBox;
 
 @end

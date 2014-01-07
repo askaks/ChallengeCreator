@@ -113,6 +113,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Remove:" destination="jRd-b2-hZT" eventType="touchUpInside" id="Gf9-Lf-OEo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmz-Ik-hpf">
                                 <constraints>
@@ -169,6 +172,7 @@
                         <outlet property="InfoBox" destination="4rd-0B-VLH" id="kvp-FJ-GSF"/>
                         <outlet property="Picker" destination="KAo-AL-w1K" id="T5y-hb-EvR"/>
                         <outlet property="PickerLabel" destination="9uh-3E-3xN" id="wf1-47-7KV"/>
+                        <outlet property="RemoveButton" destination="DOX-gX-MfY" id="yuv-AE-kU2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1sx-DP-tJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -770,6 +774,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PickerPopUpViewController.h"/>
             <relationships>
                 <relationship kind="action" name="Add:"/>
+                <relationship kind="action" name="Done:"/>
+                <relationship kind="action" name="Remove:"/>
                 <relationship kind="outlet" name="AddButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="DoneButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="InfoBox" candidateClass="UITextView"/>
