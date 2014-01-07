@@ -16,6 +16,7 @@
 
 @synthesize SchoolFilter;
 @synthesize PickerPopUp;
+@synthesize Challenges;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,7 +41,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-        PickerPopUpViewController *p = [segue destinationViewController];
+    PickerPopUpViewController *p = [segue destinationViewController];
     p.options = PickerPopUp.options;
     p.title = PickerPopUp.title;
     p.list = PickerPopUp.list;

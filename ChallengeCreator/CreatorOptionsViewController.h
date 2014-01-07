@@ -18,6 +18,8 @@
 {
     PickerPopUpViewController *PickerPopUp;
 }
+@property (nonatomic, retain) NSMutableArray *Challenges;
+
 
 @property (nonatomic, retain) PickerPopUpViewController *PickerPopUp;
 

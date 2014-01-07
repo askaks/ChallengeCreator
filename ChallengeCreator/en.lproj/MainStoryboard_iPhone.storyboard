@@ -425,6 +425,7 @@
                                         </state>
                                         <connections>
                                             <action selector="FilterChildren:" destination="sDE-RR-EHX" eventType="touchUpInside" id="365-Ru-4mO"/>
+                                            <segue destination="jRd-b2-hZT" kind="push" id="lEJ-9A-ZnO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZK-EB-d4q">
@@ -441,6 +442,7 @@
                                         </state>
                                         <connections>
                                             <action selector="FilterPets:" destination="sDE-RR-EHX" eventType="touchUpInside" id="Gnl-sB-akW"/>
+                                            <segue destination="jRd-b2-hZT" kind="push" id="y0P-4y-BeP"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pU-8I-HnA">
@@ -797,6 +799,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sef-Yg-MuF"/>
+        <segue reference="y0P-4y-BeP"/>
     </inferredMetricsTieBreakers>
 </document>

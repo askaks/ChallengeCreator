@@ -53,15 +53,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-//    if ([segue.identifier isEqualToString:@"ToIncome"])
-//    {
-//        incomeView = [segue destinationViewController];
-//        incomeView.profile = self.profile;
-//    }
-//    else {
-//        statusVC.profile = self.profile;
-//        [self.navigationController popViewControllerAnimated:YES];
-//        
-//    }
+    CreatorOptionsViewController *OptionsSurvey = [segue destinationViewController];
+    OptionsSurvey.Challenges = Challenges;
 }
 @end
