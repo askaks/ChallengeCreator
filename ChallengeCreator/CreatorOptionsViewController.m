@@ -17,6 +17,11 @@
 @synthesize SchoolFilter;
 @synthesize PickerPopUp;
 @synthesize Challenges;
+@synthesize TheDailyChallenge;
+
+@synthesize ListOfChanges;
+
+@synthesize WorkingOn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,12 +29,14 @@
     if (self) {
         // Custom initialization
     }
+    TheDailyChallenge = [[DailyChallenge alloc] init];
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view.
 }
 
@@ -45,6 +52,9 @@
     p.options = PickerPopUp.options;
     p.title = PickerPopUp.title;
     p.list = PickerPopUp.list;
+    p.PopDailyChallenge = [[DailyChallenge alloc] init];
+    p.PopDailyChallenge = TheDailyChallenge;
+    
 }
 
 - (IBAction)CreateChallenge:(id)sender {
@@ -66,7 +76,8 @@
     PickerPopUp = [[PickerPopUpViewController alloc] init];
     PickerPopUp.title = @"School";
     PickerPopUp.options = [[NSArray alloc] initWithObjects:@"Grade School (in)",@"Junior High (in)",@"High school (in)",@"College (in)",@"Grad School (in)",@"Grade School",@"Junior High",@"High School",@"College",@"Grad School",nil];
-    PickerPopUp.list = [[NSMutableArray alloc] init];
+    //PickerPopUp.list = [[NSMutableArray alloc] init];
+    PickerPopUp.list = TheDailyChallenge.schoolLevelExcludes;
     
 }
 - (IBAction)FilterWork:(id)sender {

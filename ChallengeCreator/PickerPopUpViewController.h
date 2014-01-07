@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 #import "CreatorOptionsViewController.h"
+#import "DailyChallenge.h"
+
+@class DailyChallenge;
 
 @class CreatorOptionsViewController;
 
@@ -19,6 +22,7 @@
     NSString *title;
     NSInteger currentIndex;
 }
+@property (nonatomic, retain) DailyChallenge *PopDailyChallenge;
 @property (nonatomic, retain) NSMutableArray *list;
 @property NSInteger currentIndex;
 @property (nonatomic, retain) NSArray *options;

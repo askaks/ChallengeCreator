@@ -10,9 +10,10 @@
 
 #import "CreatorViewController.h"
 #import "PickerPopUpViewController.h"
-
+#import "DailyChallenge.h"
 
 @class PickerPopUpViewController;
+@class DailyChallenge;
 
 @interface CreatorOptionsViewController : UIViewController
 {
@@ -20,8 +21,11 @@
 }
 @property (nonatomic, retain) NSMutableArray *Challenges;
 
+@property (nonatomic, retain) NSMutableArray *ListOfChanges;
 
+@property (nonatomic, retain) DailyChallenge *TheDailyChallenge;
 @property (nonatomic, retain) PickerPopUpViewController *PickerPopUp;
+@property (nonatomic, retain) NSString *WorkingOn;
 
 @property (weak, nonatomic) IBOutlet UITextField *ChallengeTitle;
 @property (weak, nonatomic) IBOutlet UITextField *AgeMin;

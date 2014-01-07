@@ -21,6 +21,7 @@
 @synthesize title;
 @synthesize currentIndex;
 @synthesize InfoBox;
+@synthesize PopDailyChallenge;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -88,6 +89,15 @@ numberOfRowsInComponent:(NSInteger)component
     NSString * combinedStuff = [list componentsJoinedByString:@"  "];
     InfoBox.text = combinedStuff;
 }
+
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if(title isEqualToString:"School")
+//    {
+//        
+//    }
+//    
+//}
 //- (IBAction)Done:(id)sender {
 //}
 @end
