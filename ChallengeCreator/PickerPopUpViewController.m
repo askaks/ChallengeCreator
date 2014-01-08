@@ -92,22 +92,9 @@ numberOfRowsInComponent:(NSInteger)component
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-//    if([title isEqualToString:@"School"])
-//    {
-            CreatorOptionsViewController *optionsController = [segue destinationViewController];
-//        PopDailyChallenge.schoolLevelExcludes = [[NSMutableArray alloc] initWithArray:list copyItems:true];
-        optionsController.TheDailyChallenge = [[DailyChallenge alloc] init];
-        optionsController.TheDailyChallenge = PopDailyChallenge;
-        //optionsController.TheDailyChallenge.schoolLevelExcludes = [[NSMutableArray alloc] initWithArray:list copyItems:true];
-        //optionsController.TheDailyChallenge.schoolLevelExcludes = list;
-//    }
-//    else if([title isEqualToString:@"Work"])
-//    {
-//        CreatorOptionsViewController *optionsController = [segue destinationViewController];
-//        optionsController.TheDailyChallenge = [[DailyChallenge alloc] init];
-//        optionsController.TheDailyChallenge = PopDailyChallenge;
-//        optionsController.TheDailyChallenge.schoolLevelExcludes = list;
-//    }
+    CreatorOptionsViewController *optionsController = [segue destinationViewController];
+    optionsController.TheDailyChallenge = [[DailyChallenge alloc] init];
+    optionsController.TheDailyChallenge = PopDailyChallenge;
 }
 //- (IBAction)Done:(id)sender {
 //}
