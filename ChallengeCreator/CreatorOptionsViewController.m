@@ -51,7 +51,7 @@
     PickerPopUpViewController *p = [segue destinationViewController];
     p.options = PickerPopUp.options;
     p.title = PickerPopUp.title;
-    p.list = PickerPopUp.list;
+    p.list = [[NSMutableArray alloc] init];
     p.PopDailyChallenge = [[DailyChallenge alloc] init];
     p.PopDailyChallenge = TheDailyChallenge;
     
@@ -76,8 +76,9 @@
     PickerPopUp = [[PickerPopUpViewController alloc] init];
     PickerPopUp.title = @"School";
     PickerPopUp.options = [[NSArray alloc] initWithObjects:@"Grade School (in)",@"Junior High (in)",@"High school (in)",@"College (in)",@"Grad School (in)",@"Grade School",@"Junior High",@"High School",@"College",@"Grad School",nil];
-    //PickerPopUp.list = [[NSMutableArray alloc] init];
-    PickerPopUp.list = TheDailyChallenge.schoolLevelExcludes;
+    PickerPopUp.list = [[NSMutableArray alloc] init];
+    //PickerPopUp.list = TheDailyChallenge.schoolLevelExcludes;
+    PickerPopUp.PopDailyChallenge = [[DailyChallenge alloc] init];
     
 }
 - (IBAction)FilterWork:(id)sender {

@@ -21,6 +21,7 @@
     NSArray *options;
     NSString *title;
     NSInteger currentIndex;
+    DailyChallenge *PopDailyChallenge;
 }
 @property (nonatomic, retain) DailyChallenge *PopDailyChallenge;
 @property (nonatomic, retain) NSMutableArray *list;
