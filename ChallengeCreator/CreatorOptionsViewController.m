@@ -53,7 +53,7 @@
     p.title = PickerPopUp.title;
     p.list = [[NSMutableArray alloc] init];
     p.PopDailyChallenge = [[DailyChallenge alloc] init];
-    p.PopDailyChallenge = TheDailyChallenge;
+    //p.PopDailyChallenge = TheDailyChallenge;
     
 }
 
