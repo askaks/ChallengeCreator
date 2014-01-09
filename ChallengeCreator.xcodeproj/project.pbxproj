@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62A97A72187DE0C800E55D51 /* CreatorTaskFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A97A71187DE0C800E55D51 /* CreatorTaskFormViewController.m */; };
 		62B2D3571878F11F0004E1E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B2D3561878F11F0004E1E6 /* UIKit.framework */; };
 		62B2D3591878F11F0004E1E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B2D3581878F11F0004E1E6 /* Foundation.framework */; };
 		62B2D35B1878F11F0004E1E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B2D35A1878F11F0004E1E6 /* CoreGraphics.framework */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62A97A70187DE0C800E55D51 /* CreatorTaskFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatorTaskFormViewController.h; sourceTree = "<group>"; };
+		62A97A71187DE0C800E55D51 /* CreatorTaskFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatorTaskFormViewController.m; sourceTree = "<group>"; };
 		62B2D3531878F11F0004E1E6 /* ChallengeCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B2D3561878F11F0004E1E6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		62B2D3581878F11F0004E1E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -143,6 +146,8 @@
 				62B2D35D1878F11F0004E1E6 /* Supporting Files */,
 				62B2D39718793A910004E1E6 /* PickerPopUpViewController.h */,
 				62B2D39818793A920004E1E6 /* PickerPopUpViewController.m */,
+				62A97A70187DE0C800E55D51 /* CreatorTaskFormViewController.h */,
+				62A97A71187DE0C800E55D51 /* CreatorTaskFormViewController.m */,
 			);
 			path = ChallengeCreator;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				62B2D39918793A920004E1E6 /* PickerPopUpViewController.m in Sources */,
 				62FD17591879E38A00F63379 /* DailyChallenge.m in Sources */,
 				62FD175C1879E3E100F63379 /* Task.m in Sources */,
+				62A97A72187DE0C800E55D51 /* CreatorTaskFormViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -318,6 +318,10 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addTask:" destination="sDE-RR-EHX" eventType="touchUpInside" id="a8b-ZW-WHD"/>
+                                            <segue destination="mai-so-QUr" kind="push" identifier="ToTaskForm" id="JUH-F8-NcV"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4u-3l-X5C">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -652,15 +656,15 @@
             </objects>
             <point key="canvasLocation" x="1137" y="107"/>
         </scene>
-        <!--View Controller-->
+        <!--Creator Task Form View Controller-->
         <scene sceneID="ZXg-D1-LUI">
             <objects>
-                <viewController id="mai-so-QUr" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FzW-O6-dNv">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                <viewController id="mai-so-QUr" customClass="CreatorTaskFormViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FzW-O6-dNv" customClass="ADBannerView">
+                        <rect key="frame" x="0.0" y="20" width="320" height="980"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Task" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNW-lR-Ae8">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Task Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNW-lR-Ae8">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="80U-Ce-nEZ"/>
                                     <constraint firstAttribute="height" constant="34" id="Sze-Ze-8xx"/>
@@ -678,13 +682,13 @@
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKX-OT-3Ud">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="c2X-f3-zfW"/>
+                                    <constraint firstAttribute="width" constant="59" id="ndY-bX-G8u"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="603" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Test" translatesAutoresizingMaskIntoConstraints="NO" id="36J-Hl-GHb">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="603" contentMode="scaleToFill" scrollEnabled="NO" text="Test" translatesAutoresizingMaskIntoConstraints="NO" id="36J-Hl-GHb">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="VaY-gb-jxI"/>
@@ -692,25 +696,111 @@
                                 </constraints>
                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYN-7y-pWt">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="ENN-Zc-pQt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Add Task">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTask:" destination="mai-so-QUr" eventType="touchUpInside" id="f90-ie-ips"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqF-Wq-Iby">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="1C8-gn-uWO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="done:" destination="mai-so-QUr" eventType="touchUpInside" id="PLf-Oj-Gh9"/>
+                                    <segue destination="sDE-RR-EHX" kind="push" id="aWZ-38-nWl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUc-il-Neu">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="aEd-oF-jKw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Edit Task:">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="editTask:" destination="mai-so-QUr" eventType="touchUpInside" id="chA-sl-RKd"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3IC-Jt-r3Y">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7dS-Kq-4lE"/>
+                                    <constraint firstAttribute="width" constant="97" id="fu9-0c-GD9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r2h-cH-lAN">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="H5d-Ik-t6A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rKX-OT-3Ud" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="-1" id="8VG-Xj-jc8"/>
-                            <constraint firstItem="1Id-CU-rCq" firstAttribute="leading" secondItem="rKX-OT-3Ud" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="CXT-m6-e3z"/>
-                            <constraint firstItem="36J-Hl-GHb" firstAttribute="top" secondItem="FzW-O6-dNv" secondAttribute="top" constant="95" id="HZk-Ua-L5E"/>
-                            <constraint firstItem="36J-Hl-GHb" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="38" id="TT0-Vh-aZn"/>
+                            <constraint firstAttribute="trailing" secondItem="hqF-Wq-Iby" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="20R-9P-5O3"/>
+                            <constraint firstAttribute="trailing" secondItem="XYN-7y-pWt" secondAttribute="trailing" constant="28" id="5bz-O8-oJ8"/>
+                            <constraint firstItem="r2h-cH-lAN" firstAttribute="top" secondItem="FzW-O6-dNv" secondAttribute="top" constant="20" symbolic="YES" type="default" id="77J-OS-IhP"/>
+                            <constraint firstItem="1Id-CU-rCq" firstAttribute="top" secondItem="FzW-O6-dNv" secondAttribute="top" constant="211" id="8Ou-6f-iJc"/>
+                            <constraint firstItem="qNW-lR-Ae8" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="13" id="DmB-pw-SdS"/>
+                            <constraint firstItem="36J-Hl-GHb" firstAttribute="leading" secondItem="rKX-OT-3Ud" secondAttribute="leading" type="default" id="E6B-4g-Ivn"/>
+                            <constraint firstItem="NUc-il-Neu" firstAttribute="baseline" secondItem="XYN-7y-pWt" secondAttribute="baseline" type="default" id="FNN-B8-BFg"/>
+                            <constraint firstItem="NUc-il-Neu" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="25" id="RKl-Kx-wA7"/>
+                            <constraint firstItem="36J-Hl-GHb" firstAttribute="top" secondItem="qNW-lR-Ae8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="TBw-Ed-bFq"/>
+                            <constraint firstItem="3IC-Jt-r3Y" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="142" id="Uzg-Wc-msu"/>
+                            <constraint firstItem="1Id-CU-rCq" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="100" id="Wmc-At-WJC"/>
+                            <constraint firstItem="rKX-OT-3Ud" firstAttribute="baseline" secondItem="1Id-CU-rCq" secondAttribute="baseline" type="default" id="ZCW-xZ-wkX"/>
+                            <constraint firstItem="r2h-cH-lAN" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="67" id="b8v-rd-qYa"/>
+                            <constraint firstAttribute="bottom" secondItem="3IC-Jt-r3Y" secondAttribute="bottom" constant="109" id="byA-ir-ZrQ"/>
+                            <constraint firstAttribute="bottom" secondItem="hqF-Wq-Iby" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="cd0-lq-nfE"/>
+                            <constraint firstItem="rKX-OT-3Ud" firstAttribute="bottom" secondItem="1Id-CU-rCq" secondAttribute="bottom" type="default" id="kIE-ue-F9d"/>
                             <constraint firstItem="qNW-lR-Ae8" firstAttribute="top" secondItem="FzW-O6-dNv" secondAttribute="top" constant="20" symbolic="YES" type="default" id="lHS-h1-2wJ"/>
-                            <constraint firstItem="rKX-OT-3Ud" firstAttribute="top" secondItem="FzW-O6-dNv" secondAttribute="top" constant="219" id="pxC-fj-SVb"/>
-                            <constraint firstItem="1Id-CU-rCq" firstAttribute="top" secondItem="FzW-O6-dNv" secondAttribute="top" constant="225" id="sOu-rC-lYW"/>
-                            <constraint firstItem="qNW-lR-Ae8" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="13" id="vWI-IQ-jZC"/>
+                            <constraint firstItem="NUc-il-Neu" firstAttribute="baseline" secondItem="3IC-Jt-r3Y" secondAttribute="baseline" type="default" id="nCo-JF-MCn"/>
+                            <constraint firstAttribute="bottom" secondItem="XYN-7y-pWt" secondAttribute="bottom" constant="221" id="scF-dS-DT5"/>
+                            <constraint firstItem="36J-Hl-GHb" firstAttribute="leading" secondItem="qNW-lR-Ae8" secondAttribute="leading" type="default" id="wKh-ea-jWJ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Ae5-j8-m6s"/>
+                    <connections>
+                        <outlet property="addTaskButton" destination="XYN-7y-pWt" id="5X4-e9-Pzx"/>
+                        <outlet property="doneButton" destination="hqF-Wq-Iby" id="BcE-Ml-dM2"/>
+                        <outlet property="editTaskButton" destination="NUc-il-Neu" id="dt1-hK-oag"/>
+                        <outlet property="message" destination="36J-Hl-GHb" id="1bc-Zw-gWG"/>
+                        <outlet property="taskPoints" destination="1Id-CU-rCq" id="y3G-8e-1No"/>
+                        <outlet property="taskTitle" destination="r2h-cH-lAN" id="GaG-JV-n0R"/>
+                        <outlet property="titleToEdit" destination="3IC-Jt-r3Y" id="qc5-Fi-nCJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R5u-Pm-jXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1561" y="318"/>
+            <point key="canvasLocation" x="1683" y="107"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="skJ-R6-8U4">
@@ -745,6 +835,7 @@
                 <relationship kind="action" name="FilterPets:"/>
                 <relationship kind="action" name="FilterSchool:"/>
                 <relationship kind="action" name="FilterWork:"/>
+                <relationship kind="action" name="addTask:"/>
                 <relationship kind="outlet" name="AgeMax" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="AgeMin" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ChallengeTitle" candidateClass="UITextField"/>
@@ -767,6 +858,21 @@
                 <relationship kind="outlet" name="WorkFilter" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="WorkHappySwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="WorkInfoBox" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="CreatorTaskFormViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatorTaskFormViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addTask:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="editTask:"/>
+                <relationship kind="outlet" name="addTaskButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="editTaskButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="message" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="points" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskTitle" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="titleToEdit" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="CreatorViewController" superclassName="UIViewController">
@@ -800,7 +906,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qFJ-Vc-U9O"/>
         <segue reference="y0P-4y-BeP"/>
+        <segue reference="aWZ-38-nWl"/>
     </inferredMetricsTieBreakers>
 </document>

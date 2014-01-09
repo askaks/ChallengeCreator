@@ -12,12 +12,19 @@
 #import "PickerPopUpViewController.h"
 #import "DailyChallenge.h"
 
+#import "Task.h"
+#import "CreatorTaskFormViewController.h"
+
 @class PickerPopUpViewController;
 @class DailyChallenge;
+
+@class Task;
+@class CreatorTaskFormViewController;
 
 @interface CreatorOptionsViewController : UIViewController
 {
     PickerPopUpViewController *PickerPopUp;
+    CreatorTaskFormViewController *TaskForm;
 }
 @property (nonatomic, retain) NSMutableArray *Challenges;
 
@@ -25,6 +32,7 @@
 
 @property (nonatomic, retain) DailyChallenge *TheDailyChallenge;
 @property (nonatomic, retain) PickerPopUpViewController *PickerPopUp;
+@property (nonatomic, retain) CreatorTaskFormViewController *TaskForm;
 @property (nonatomic, retain) NSString *WorkingOn;
 
 @property (weak, nonatomic) IBOutlet UITextField *ChallengeTitle;
@@ -52,6 +60,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *WorkInfoBox;
 @property (weak, nonatomic) IBOutlet UITextView *ChildInfoBox;
 @property (weak, nonatomic) IBOutlet UITextView *PetInfoBox;
+- (IBAction)addTask:(id)sender;
 
 - (IBAction)ExcludeSchoolHappy:(id)sender;
 - (IBAction)ExcludeWorkHappy:(id)sender;

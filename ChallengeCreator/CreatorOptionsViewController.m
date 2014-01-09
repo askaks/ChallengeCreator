@@ -23,6 +23,8 @@
 
 @synthesize WorkingOn;
 
+@synthesize TaskForm;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -55,12 +57,21 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    PickerPopUpViewController *p = [segue destinationViewController];
-    p.options = PickerPopUp.options;
-    p.title = PickerPopUp.title;
-    p.list = PickerPopUp.list;
-    p.PopDailyChallenge = [[DailyChallenge alloc] init];
-    p.PopDailyChallenge = TheDailyChallenge;
+        if ([segue.identifier isEqualToString:@"ToTaskForm"])
+        {
+            CreatorTaskFormViewController *t = [segue destinationViewController];
+            t.listOfTasks = TaskForm.listOfTasks;
+            t.TaskFormDailyChallenge = TheDailyChallenge;
+        }
+    else
+    {
+        PickerPopUpViewController *p = [segue destinationViewController];
+        p.options = PickerPopUp.options;
+        p.title = PickerPopUp.title;
+        p.list = PickerPopUp.list;
+        p.PopDailyChallenge = [[DailyChallenge alloc] init];
+        p.PopDailyChallenge = TheDailyChallenge;
+    }
     
 }
 
@@ -109,6 +120,12 @@
     PickerPopUp.options = [[NSArray alloc] initWithObjects:@"none",@"can't",@"cat/cats",@"dog/dogs", @"cats and dogs", @"rodents",@"reptiles", @"farm animals",nil];
     NSMutableArray *list = TheDailyChallenge.petsExclude;
     PickerPopUp.list = &(*list);
+}
+
+- (IBAction)addTask:(id)sender {
+    TaskForm = [[CreatorTaskFormViewController alloc] init];
+    NSMutableArray *list = TheDailyChallenge.tasks;
+    TaskForm.listOfTasks = &(*list);
 }
 
 - (IBAction)ExcludeSchoolHappy:(id)sender {
