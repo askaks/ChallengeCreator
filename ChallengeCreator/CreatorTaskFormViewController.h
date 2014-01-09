@@ -30,6 +30,9 @@
 - (IBAction)addTask:(id)sender;
 - (IBAction)editTask:(id)sender;
 - (IBAction)done:(id)sender;
-- (void)printTaskToScreen: (NSMutableArray *) taskList;
+- (NSString *)printTaskToScreen: (NSMutableArray *) taskList;
+@property (weak, nonatomic) IBOutlet UIButton *removeTaskButton;
+- (IBAction)removeTask:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *infoBox;
 
 @end

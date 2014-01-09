@@ -329,7 +329,6 @@
                                             <constraint firstAttribute="width" constant="118" id="QtZ-kE-2kR"/>
                                             <constraint firstAttribute="height" constant="103" id="n2N-tK-rXZ"/>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -338,7 +337,6 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="118" id="IXL-8u-fzj"/>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -387,7 +385,6 @@
                                             <constraint firstAttribute="width" constant="152" id="KV6-Mi-atE"/>
                                             <constraint firstAttribute="height" constant="103" id="Z5g-aX-v23"/>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -396,7 +393,6 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="103" id="ctt-xd-Nut"/>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -456,7 +452,6 @@
                                             <constraint firstAttribute="height" constant="103" id="3Aq-4z-CZT"/>
                                             <constraint firstAttribute="width" constant="135" id="5mu-bI-2zW"/>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -465,7 +460,6 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="118" id="eIX-S2-FJE"/>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -758,6 +752,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZB2-H4-EUl">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Delete Task">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="removeTask:" destination="mai-so-QUr" eventType="touchUpInside" id="h4i-VC-m9k"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UxJ-ol-Xdk">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="jVD-E9-FZg"/>
+                                    <constraint firstAttribute="height" constant="128" id="zsd-RA-br2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="All Tasks:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rnn-yw-9lK">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="Jfz-0s-MbC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -766,20 +790,28 @@
                             <constraint firstItem="1Id-CU-rCq" firstAttribute="leading" secondItem="r2h-cH-lAN" secondAttribute="leading" type="default" id="9Oc-fh-6J8"/>
                             <constraint firstItem="r2h-cH-lAN" firstAttribute="leading" secondItem="qNW-lR-Ae8" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="C0B-6h-KdA"/>
                             <constraint firstItem="NUc-il-Neu" firstAttribute="baseline" secondItem="XYN-7y-pWt" secondAttribute="baseline" type="default" id="FNN-B8-BFg"/>
+                            <constraint firstAttribute="bottom" secondItem="ZB2-H4-EUl" secondAttribute="bottom" constant="45" id="HmO-hs-zk5"/>
                             <constraint firstItem="qNW-lR-Ae8" firstAttribute="leading" secondItem="rKX-OT-3Ud" secondAttribute="leading" type="default" id="ISc-8k-LfA"/>
+                            <constraint firstAttribute="bottom" secondItem="NUc-il-Neu" secondAttribute="bottom" constant="103" id="K13-A6-Sze"/>
+                            <constraint firstAttribute="bottom" secondItem="3IC-Jt-r3Y" secondAttribute="bottom" constant="83" id="KFO-fe-iuk"/>
+                            <constraint firstItem="Rnn-yw-9lK" firstAttribute="top" secondItem="36J-Hl-GHb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KaS-fh-gtV"/>
+                            <constraint firstItem="UxJ-ol-Xdk" firstAttribute="top" secondItem="FzW-O6-dNv" secondAttribute="top" constant="209" id="LBz-Qj-5qu"/>
                             <constraint firstItem="NUc-il-Neu" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="25" id="RKl-Kx-wA7"/>
                             <constraint firstItem="XYN-7y-pWt" firstAttribute="top" secondItem="hqF-Wq-Iby" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="TLo-3x-mvV"/>
+                            <constraint firstItem="Rnn-yw-9lK" firstAttribute="centerX" secondItem="rKX-OT-3Ud" secondAttribute="centerX" type="default" id="UxL-aQ-ptz"/>
                             <constraint firstItem="3IC-Jt-r3Y" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="142" id="Uzg-Wc-msu"/>
                             <constraint firstItem="rKX-OT-3Ud" firstAttribute="top" secondItem="qNW-lR-Ae8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VBK-0Z-TFW"/>
-                            <constraint firstAttribute="bottom" secondItem="3IC-Jt-r3Y" secondAttribute="bottom" constant="109" id="byA-ir-ZrQ"/>
+                            <constraint firstItem="UxJ-ol-Xdk" firstAttribute="leading" secondItem="36J-Hl-GHb" secondAttribute="leading" type="default" id="boD-45-JaV"/>
                             <constraint firstItem="36J-Hl-GHb" firstAttribute="top" secondItem="1Id-CU-rCq" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="cUB-OS-eR3"/>
                             <constraint firstItem="XYN-7y-pWt" firstAttribute="top" secondItem="1Id-CU-rCq" secondAttribute="top" type="default" id="ceE-wK-DQD"/>
-                            <constraint firstItem="XYN-7y-pWt" firstAttribute="top" secondItem="FzW-O6-dNv" secondAttribute="top" constant="62" id="dKh-oj-QTp"/>
                             <constraint firstItem="XYN-7y-pWt" firstAttribute="leading" secondItem="hqF-Wq-Iby" secondAttribute="leading" type="default" id="edK-32-AD5"/>
+                            <constraint firstItem="1Id-CU-rCq" firstAttribute="top" secondItem="FzW-O6-dNv" secondAttribute="top" constant="62" id="iqi-qC-m9y"/>
+                            <constraint firstItem="ZB2-H4-EUl" firstAttribute="leading" secondItem="NUc-il-Neu" secondAttribute="leading" type="default" id="j8t-z0-SbH"/>
                             <constraint firstItem="1Id-CU-rCq" firstAttribute="trailing" secondItem="r2h-cH-lAN" secondAttribute="trailing" type="default" id="kmz-yE-J4Z"/>
                             <constraint firstItem="qNW-lR-Ae8" firstAttribute="top" secondItem="FzW-O6-dNv" secondAttribute="top" constant="20" symbolic="YES" type="default" id="lHS-h1-2wJ"/>
                             <constraint firstAttribute="trailing" secondItem="hqF-Wq-Iby" secondAttribute="trailing" constant="5" id="lTf-FD-WvC"/>
                             <constraint firstItem="NUc-il-Neu" firstAttribute="baseline" secondItem="3IC-Jt-r3Y" secondAttribute="baseline" type="default" id="nCo-JF-MCn"/>
+                            <constraint firstItem="NUc-il-Neu" firstAttribute="trailing" secondItem="ZB2-H4-EUl" secondAttribute="trailing" type="default" id="oJE-HD-7IT"/>
                             <constraint firstItem="qNW-lR-Ae8" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="8" id="rad-bQ-nta"/>
                             <constraint firstItem="r2h-cH-lAN" firstAttribute="centerY" secondItem="qNW-lR-Ae8" secondAttribute="centerY" type="default" id="wh2-6m-HnS"/>
                             <constraint firstItem="XYN-7y-pWt" firstAttribute="trailing" secondItem="hqF-Wq-Iby" secondAttribute="trailing" type="default" id="xsK-2B-yje"/>
@@ -790,7 +822,9 @@
                         <outlet property="addTaskButton" destination="XYN-7y-pWt" id="5X4-e9-Pzx"/>
                         <outlet property="doneButton" destination="hqF-Wq-Iby" id="BcE-Ml-dM2"/>
                         <outlet property="editTaskButton" destination="NUc-il-Neu" id="dt1-hK-oag"/>
+                        <outlet property="infoBox" destination="UxJ-ol-Xdk" id="HJf-Ip-NtE"/>
                         <outlet property="message" destination="36J-Hl-GHb" id="1bc-Zw-gWG"/>
+                        <outlet property="removeTaskButton" destination="ZB2-H4-EUl" id="JSn-jm-TE6"/>
                         <outlet property="taskPoints" destination="1Id-CU-rCq" id="y3G-8e-1No"/>
                         <outlet property="taskTitle" destination="r2h-cH-lAN" id="GaG-JV-n0R"/>
                         <outlet property="titleToEdit" destination="3IC-Jt-r3Y" id="qc5-Fi-nCJ"/>
@@ -819,85 +853,6 @@
             <point key="canvasLocation" x="-189" y="-96"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CreatorOptionsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatorOptionsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="CreateChallenge:"/>
-                <relationship kind="action" name="ExcludeFemales:"/>
-                <relationship kind="action" name="ExcludeLoveHappy:"/>
-                <relationship kind="action" name="ExcludeSchoolHappy:"/>
-                <relationship kind="action" name="ExcludeWorkHappy:"/>
-                <relationship kind="action" name="FilterChildren:"/>
-                <relationship kind="action" name="FilterLookingFor:"/>
-                <relationship kind="action" name="FilterLove:"/>
-                <relationship kind="action" name="FilterPets:"/>
-                <relationship kind="action" name="FilterSchool:"/>
-                <relationship kind="action" name="FilterWork:"/>
-                <relationship kind="action" name="addTask:"/>
-                <relationship kind="outlet" name="AgeMax" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="AgeMin" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="ChallengeTitle" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="ChildFilter" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="ChildInfoBox" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="CreateChallengeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="ExcludeFemalesSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="LanguageRating" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="LookingFilter" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="LookingInfoBox" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="LoveFilter" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="LoveHappySwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="LoveInfoBox" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="PetFilter" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="PetInfoBox" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="RiskFactor" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="SchoolFilter" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="SchoolHappySwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="SchoolInfoBox" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="WorkFilter" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="WorkHappySwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="WorkInfoBox" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="CreatorTaskFormViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatorTaskFormViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addTask:"/>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="editTask:"/>
-                <relationship kind="outlet" name="addTaskButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="editTaskButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="message" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="taskPoints" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="taskTitle" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="titleToEdit" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="CreatorViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatorViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="LoadChallengesXML:"/>
-                <relationship kind="outlet" name="correctlyLoadedXMLLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PickerPopUpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PickerPopUpViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Add:"/>
-                <relationship kind="action" name="Remove:"/>
-                <relationship kind="outlet" name="AddButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="DoneButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="InfoBox" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="Picker" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="PickerLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="RemoveButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

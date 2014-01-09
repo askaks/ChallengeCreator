@@ -39,6 +39,34 @@
         _TheDailyChallenge = [[DailyChallenge alloc] init];
     }
     
+    else
+    {
+        if(_TheDailyChallenge.interestedInExcludes != nil)
+        {
+            _LookingInfoBox.text = [_TheDailyChallenge.interestedInExcludes componentsJoinedByString:@"  "];
+        }
+        if(_TheDailyChallenge.schoolLevelExcludes != nil)
+        {
+            _SchoolInfoBox.text = [_TheDailyChallenge.schoolLevelExcludes componentsJoinedByString:@"  "];
+        }
+        if(_TheDailyChallenge.workLevelExcludes != nil)
+        {
+            _WorkInfoBox.text = [_TheDailyChallenge.workLevelExcludes componentsJoinedByString:@"  "];
+        }
+        if(_TheDailyChallenge.relationshipLevelExcludes != nil)
+        {
+            _LoveInfoBox.text = [_TheDailyChallenge.relationshipLevelExcludes componentsJoinedByString:@"  "];
+        }
+        if(_TheDailyChallenge.kidsExclude != nil)
+        {
+            _ChildInfoBox.text = [_TheDailyChallenge.kidsExclude componentsJoinedByString:@"  "];
+        }
+        if(_TheDailyChallenge.petsExclude != nil)
+        {
+            _PetInfoBox.text = [_TheDailyChallenge.petsExclude componentsJoinedByString:@"  "];
+        }
+   
+    }
 	// Do any additional setup after loading the view.
 }
 

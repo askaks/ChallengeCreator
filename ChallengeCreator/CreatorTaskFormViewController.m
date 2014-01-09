@@ -40,6 +40,9 @@
     _message.returnKeyType = UIReturnKeyDone;
     _taskPoints.returnKeyType = UIReturnKeyDone;
     _titleToEdit.returnKeyType = UIReturnKeyDone;
+    _infoBox.text = [self printTaskToScreen:_listOfTasks];
+    //[printTaskToScreen _listOfTasks];
+    //_infoBox.text = [NSString stringWithFormat:@"Tasks: %@", pr];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,15 +81,17 @@
     //NSString * combinedStuff = [];
     //NSString * combinedStuff = [listOfTasks componentsJoinedByString:@"  "];
     //InfoBox.text = combinedStuff;
+    _infoBox.text = [self printTaskToScreen:_listOfTasks];
     
 }
-- (void)printTaskToScreen: (NSMutableArray *) taskList
+- (NSString*)printTaskToScreen: (NSMutableArray *) taskList
 {
-    NSString *combinedStuff;
+    NSString *combinedStuff = [[NSString alloc] init];
     for(Task *t in taskList)
     {
-        //combinedStuff = t.title + t.message;
+        combinedStuff = [NSString stringWithFormat:@"%@    %@: and message: %@     ", combinedStuff, t.title, t.message];
     }
+    return combinedStuff;
 }
 
 - (IBAction)editTask:(id)sender {
@@ -108,6 +113,7 @@
     taskToChange.title = newTask.title;
     taskToChange.message = newTask.message;
     taskToChange.points = newTask.points;
+    _infoBox.text = [self printTaskToScreen:_listOfTasks];
 //    [listOfTasks replaceObjectAtIndex:<#(NSUInteger)#> withObject:task];
 //    [self printTaskToScreen:listOfTasks];
 }
@@ -115,5 +121,23 @@
 
 - (IBAction)done:(id)sender {
     
+}
+- (IBAction)removeTask:(id)sender {
+    Task *taskToDelete = [[Task alloc] init];
+//    Task *newTask = [[Task alloc] init];
+//    if(_message.text != nil && _taskPoints.text != nil && _taskTitle.text != nil)
+//    {
+//        newTask = [[Task alloc] initWithMessage:_message.text points:_taskPoints.text.integerValue title:_taskTitle.text];
+//    }
+    for(Task *t in _listOfTasks )
+    {
+        if([t.title isEqualToString:_taskTitle.text])
+        {
+            taskToDelete = &(*t);
+            break;
+        }
+    }
+    [_listOfTasks removeObject:taskToDelete];
+    _infoBox.text = [self printTaskToScreen:_listOfTasks];
 }
 @end
