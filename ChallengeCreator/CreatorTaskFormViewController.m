@@ -14,13 +14,13 @@
 
 @implementation CreatorTaskFormViewController
 
-@synthesize TaskFormDailyChallenge;
-@synthesize listOfTasks;
-@synthesize task;
-@synthesize taskTitle;
-@synthesize message;
-@synthesize taskPoints;
-@synthesize titleToEdit;
+//@synthesize TaskFormDailyChallenge;
+//@synthesize listOfTasks;
+//@synthesize task;
+//@synthesize taskTitle;
+//@synthesize message;
+//@synthesize taskPoints;
+//@synthesize titleToEdit;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -36,10 +36,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    taskTitle.returnKeyType = UIReturnKeyDone;
-    message.returnKeyType = UIReturnKeyDone;
-    taskPoints.returnKeyType = UIReturnKeyDone;
-    titleToEdit.returnKeyType = UIReturnKeyDone;
+    _taskTitle.returnKeyType = UIReturnKeyDone;
+    _message.returnKeyType = UIReturnKeyDone;
+    _taskPoints.returnKeyType = UIReturnKeyDone;
+    _titleToEdit.returnKeyType = UIReturnKeyDone;
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,7 +47,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.taskTitle resignFirstResponder];
+    [self.message resignFirstResponder];
+   [self.taskPoints resignFirstResponder];
+    [self.titleToEdit resignFirstResponder];
+}
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
 	[textField resignFirstResponder];
@@ -59,17 +64,17 @@
 {
     CreatorOptionsViewController *optionsController = [segue destinationViewController];
     optionsController.TheDailyChallenge = [[DailyChallenge alloc] init];
-    optionsController.TheDailyChallenge = TaskFormDailyChallenge;
+    optionsController.TheDailyChallenge = _TaskFormDailyChallenge;
 }
 
 - (IBAction)addTask:(id)sender {
-
-    if(message.text != nil && taskPoints.text != nil && taskTitle.text != nil)
+    Task *task;
+    if(_message.text != nil && _taskPoints.text != nil && _taskTitle.text != nil)
     {
-        task = [[Task alloc] initWithMessage:message.text points:taskPoints.text.integerValue title:taskTitle.text];
+        task = [[Task alloc] initWithMessage:_message.text points:_taskPoints.text.integerValue title:_taskTitle.text];
     }
-    [listOfTasks addObject:task];
-    [self printTaskToScreen:listOfTasks];
+    [_listOfTasks addObject:task];
+    [self printTaskToScreen:_listOfTasks];
     //NSString * combinedStuff = [];
     //NSString * combinedStuff = [listOfTasks componentsJoinedByString:@"  "];
     //InfoBox.text = combinedStuff;
@@ -86,14 +91,26 @@
 
 - (IBAction)editTask:(id)sender {
 
-    if(message.text != nil && taskPoints.text != nil && taskTitle.text != nil)
+    Task *taskToChange = [[Task alloc] init];
+    Task *newTask = [[Task alloc] init];
+    if(_message.text != nil && _taskPoints.text != nil && _taskTitle.text != nil)
     {
-        task = [[Task alloc] initWithMessage:message.text points:taskPoints.text.integerValue title:taskTitle.text];
+        newTask = [[Task alloc] initWithMessage:_message.text points:_taskPoints.text.integerValue title:_taskTitle.text];
     }
-    listOfTasks inde
-    [listOfTasks replaceObjectAtIndex:<#(NSUInteger)#> withObject:task];
-    [self printTaskToScreen:listOfTasks];
-}   
+    for(Task *t in _listOfTasks )
+    {
+        if([t.title isEqualToString:newTask.title])
+        {
+            taskToChange = &(*t);
+            break;
+        }
+    }
+    taskToChange.title = newTask.title;
+    taskToChange.message = newTask.message;
+    taskToChange.points = newTask.points;
+//    [listOfTasks replaceObjectAtIndex:<#(NSUInteger)#> withObject:task];
+//    [self printTaskToScreen:listOfTasks];
+}
 
 
 - (IBAction)done:(id)sender {

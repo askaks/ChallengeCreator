@@ -16,7 +16,7 @@
 
 
 
-@synthesize TaskForm;
+//@synthesize TaskForm;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,7 +59,7 @@
     if ([segue.identifier isEqualToString:@"ToTaskForm"])
     {
         CreatorTaskFormViewController *t = [segue destinationViewController];
-        t.listOfTasks = TaskForm.listOfTasks;
+        t.listOfTasks = _TaskForm.listOfTasks;
         t.TaskFormDailyChallenge = _TheDailyChallenge;
     }
     else
@@ -121,9 +121,9 @@
 }
 
 - (IBAction)addTask:(id)sender {
-    TaskForm = [[CreatorTaskFormViewController alloc] init];
+    _TaskForm = [[CreatorTaskFormViewController alloc] init];
     NSMutableArray *list = _TheDailyChallenge.tasks;
-    TaskForm.listOfTasks = &(*list);
+    _TaskForm.listOfTasks = &(*list);
 }
 
 - (IBAction)ExcludeSchoolHappy:(id)sender {

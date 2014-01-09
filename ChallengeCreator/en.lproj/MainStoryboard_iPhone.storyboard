@@ -319,6 +319,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="addTask:" destination="sDE-RR-EHX" eventType="touchUpInside" id="oiZ-cs-11F"/>
                                             <segue destination="mai-so-QUr" kind="push" identifier="ToTaskForm" id="V5s-ym-xTP"/>
                                         </connections>
                                     </button>
@@ -818,6 +819,85 @@
             <point key="canvasLocation" x="-189" y="-96"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CreatorOptionsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatorOptionsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="CreateChallenge:"/>
+                <relationship kind="action" name="ExcludeFemales:"/>
+                <relationship kind="action" name="ExcludeLoveHappy:"/>
+                <relationship kind="action" name="ExcludeSchoolHappy:"/>
+                <relationship kind="action" name="ExcludeWorkHappy:"/>
+                <relationship kind="action" name="FilterChildren:"/>
+                <relationship kind="action" name="FilterLookingFor:"/>
+                <relationship kind="action" name="FilterLove:"/>
+                <relationship kind="action" name="FilterPets:"/>
+                <relationship kind="action" name="FilterSchool:"/>
+                <relationship kind="action" name="FilterWork:"/>
+                <relationship kind="action" name="addTask:"/>
+                <relationship kind="outlet" name="AgeMax" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="AgeMin" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ChallengeTitle" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ChildFilter" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ChildInfoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="CreateChallengeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ExcludeFemalesSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="LanguageRating" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="LookingFilter" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="LookingInfoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="LoveFilter" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="LoveHappySwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="LoveInfoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="PetFilter" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="PetInfoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="RiskFactor" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="SchoolFilter" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="SchoolHappySwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="SchoolInfoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="WorkFilter" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="WorkHappySwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="WorkInfoBox" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="CreatorTaskFormViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatorTaskFormViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addTask:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="editTask:"/>
+                <relationship kind="outlet" name="addTaskButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="editTaskButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="message" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="taskPoints" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskTitle" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="titleToEdit" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CreatorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatorViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="LoadChallengesXML:"/>
+                <relationship kind="outlet" name="correctlyLoadedXMLLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PickerPopUpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PickerPopUpViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Add:"/>
+                <relationship kind="action" name="Remove:"/>
+                <relationship kind="outlet" name="AddButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="DoneButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="InfoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="Picker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="PickerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="RemoveButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

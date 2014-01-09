@@ -15,7 +15,7 @@
 @class Task;
 @class CreatorOptionsViewController;
 
-@interface CreatorTaskFormViewController : UIViewController
+@interface CreatorTaskFormViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, retain) DailyChallenge *TaskFormDailyChallenge;
 @property (nonatomic, retain) NSMutableArray *listOfTasks;
