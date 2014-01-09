@@ -22,10 +22,8 @@
 @class CreatorTaskFormViewController;
 
 @interface CreatorOptionsViewController : UIViewController
-{
-    PickerPopUpViewController *PickerPopUp;
-    CreatorTaskFormViewController *TaskForm;
-}
+
+
 @property (nonatomic, retain) NSMutableArray *Challenges;
 
 @property (nonatomic, retain) NSMutableArray *ListOfChanges;

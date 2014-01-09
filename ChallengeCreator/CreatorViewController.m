@@ -13,15 +13,17 @@
 @end
 
 @implementation CreatorViewController
-@synthesize correctlyLoadedXMLLabel;
-@synthesize Challenges;
+
+
+//@synthesize correctlyLoadedXMLLabel;
+//@synthesize Challenges;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
  	// Do any additional setup after loading the view, typically from a nib.   
-    Challenges = [[NSMutableArray alloc] init];
+    _Challenges = [[NSMutableArray alloc] init];
 
 }
 
@@ -32,10 +34,8 @@
 }
 
 
-
-
 - (IBAction)LoadChallengesXML:(id)sender {
-    NSString *docDir = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Challenges.xml"];
+//    NSString *docDir = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Challenges.xml"];
     NSURL *url = [[NSURL alloc] initWithString:@"https://home.comcast.net/~jszymczyk/iBeHappy/Challenges.xml"];
     NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     //Set delegate
@@ -45,15 +45,15 @@
     bool success = [xmlParser parse];
     if (success)
     {
-        correctlyLoadedXMLLabel.text = @"No Errors";
+        _correctlyLoadedXMLLabel.text = @"No Errors";
     }
     else
-        correctlyLoadedXMLLabel.text = @"Error Error Error!!!";
+        _correctlyLoadedXMLLabel.text = @"Error Error Error!!!";
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     CreatorOptionsViewController *OptionsSurvey = [segue destinationViewController];
-    OptionsSurvey.Challenges = Challenges;
+    OptionsSurvey.Challenges = _Challenges;
 }
 @end

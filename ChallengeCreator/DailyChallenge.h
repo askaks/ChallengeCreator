@@ -11,34 +11,12 @@
 #import "Task.h"
 
 @interface DailyChallenge : NSObject <NSCoding, NSCopying> 
-{
-    NSString *title;          // int
-    NSMutableArray *tasks;  // tasks
-    NSString *ageMin;
-    NSString *ageMax;
 
-    NSMutableArray *genderExcludes;  // tasks
-    NSMutableArray *interestedInExcludes;  // tasks
-    
-    NSMutableArray *workLevelExcludes;  // tasks
-    NSMutableArray *workHappyExcludes;  // tasks
-    
-    NSMutableArray *schoolLevelExcludes;  // tasks
-    NSMutableArray *schoolHappyExcludes;  // tasks
-    
-    NSMutableArray *relationshipLevelExcludes;  // tasks
-    NSMutableArray *relationshipHappyExcludes;  // tasks
-    
-    NSMutableArray *kidsExclude;  // tasks
-    NSMutableArray *petsIndlude;  // tasks
-    
-    NSInteger pointsWorth;
-    NSInteger minimumRiskFactor;
-    NSInteger language;
-    
-    bool completed;
-    
-}
+//////////////////////////////////////////////////////
+//
+// no need to declare variable, just the @property
+//
+//////////////////////////////////////////////////////
 
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *ageMin;

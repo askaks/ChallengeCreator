@@ -10,20 +10,14 @@
 
 @implementation Task
 
-@synthesize message;
-@synthesize timeSpecific;
-@synthesize time;
-@synthesize points;
-@synthesize workSpecific;
-@synthesize completed;
 
 - (void)encodeWithCoder: (NSCoder *)encoder 
 {
-    [encoder encodeObject: message forKey: @"message"];
-    [encoder encodeObject: timeSpecific forKey: @"tspec"];
-    [encoder encodeObject: time forKey: @"time"];
-    [encoder encodeInteger: points forKey: @"points"];
-	[encoder encodeBool: completed forKey: @"completed"];
+    [encoder encodeObject:_message forKey: @"message"];
+    [encoder encodeObject:_timeSpecific forKey: @"tspec"];
+    [encoder encodeObject:_time forKey: @"time"];
+    [encoder encodeInteger:_points forKey: @"points"];
+	[encoder encodeBool:_completed forKey: @"completed"];
 }
 
 - (id)initWithCoder: (NSCoder *)decoder
@@ -38,6 +32,33 @@
     }    
 	return self;
 }
+
+- (id)initWithMessage:(NSString *)msg
+{
+ 	if (self == [super init]) 
+	{
+        _message = [[NSString alloc] initWithString: msg];
+        _time = [[NSString alloc] initWithFormat:@"%d", 0];
+        _timeSpecific = @"false";
+        _points =  25;
+        _completed = false;
+    }   
+    
+	return self;
+}
+
+//- (id)initWithMessage:(NSString *)msg
+//                 time:(NSString *)t
+//         timeSpecific:(NSString *)ts
+//               points:(NSInteger)iPoints // why (NSInteger *)?
+//               ageMin:(NSString *)min
+//               ageMax:(NSString *)max
+//           femaleExcl:(NSString *)female
+//             maleExcl:(NSString *)male
+//       schoolSpecific:(NSString *)ss
+//                scool:(NSString *)school
+//         workSpecific:(NSString *)ws
+//            completed:(bool)bCompleted
 //
 //- (id)initWithMessage:(NSString *)msg
 //{
@@ -58,10 +79,9 @@
 {
  	if (self == [super init])
 	{
-        message = [[NSString alloc] initWithString: msg];
-        points = iPoints;
-    }
-    
+        _message = [[NSString alloc] initWithString: msg];
+        _points = iPoints;
+    }   
 	return self;
 }
 
@@ -94,11 +114,11 @@
 {
 	Task *task = [[Task alloc] init];
     
-    task.message = [NSString stringWithString:message];
-    task.time = [NSString stringWithString:time];
-    task.timeSpecific = [NSString stringWithString:timeSpecific];
-    task.points = points;
-    task.completed = completed;
+    task.message = [NSString stringWithString:_message];
+    task.time = [NSString stringWithString:_time];
+    task.timeSpecific = [NSString stringWithString:_timeSpecific];
+    task.points = _points;
+    task.completed = _completed;
     
     return task;
 }

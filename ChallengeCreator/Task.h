@@ -9,20 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface Task : NSObject <NSCoding, NSCopying>
-{
-    NSString *message;      // text
-    NSString *timeSpecific; // bool
-    NSString *time;         // int
-    NSInteger points;     // int
-    bool *completed;     // int
-}
+
 
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic, retain) NSString *timeSpecific;
 @property (nonatomic, retain) NSString *time;
 @property (nonatomic, assign) NSInteger points;
 @property (nonatomic, retain) NSString *workSpecific;
-@property bool *completed;
+@property bool completed; // why was *completed?
 
 - (void)encodeWithCoder: (NSCoder *)encoder;
 - (id)initWithCoder: (NSCoder *)decoder;
@@ -30,7 +24,7 @@
 - (id)initWithMessage: (NSString *)msg
                  time: (NSString *)t
          timeSpecific: (NSString *)ts
-               points: (NSInteger *)iPoints
+               points: (NSInteger)iPoints
                ageMin: (NSString *)min
                ageMax: (NSString *)max
            femaleExcl: (NSString *)female

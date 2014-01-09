@@ -10,66 +10,48 @@
 
 @implementation DailyChallenge
 
-@synthesize title;
-@synthesize tasks;
-@synthesize ageMin;
-@synthesize ageMax;
-@synthesize genderExcludes;
-@synthesize interestedInExcludes;
-
-@synthesize workLevelExcludes;
-@synthesize workHappyExcludes;
-
-@synthesize schoolLevelExcludes;
-@synthesize schoolHappyExcludes;
-
-@synthesize relationshipLevelExcludes;
-@synthesize relationshipHappyExcludes;
-
-@synthesize pointsWorth;
-@synthesize completed;
-
-@synthesize kidsExclude;
-@synthesize petsExclude;
-//@synthesize personalityExclude;
-@synthesize language;
-@synthesize minimumRiskFactor;
+//////////////////////////////////////////////////////////////////////////
+//
+// no need to synthesize: all internal variables must be with underscore
+// like e.g. _title or self.title
+//
+//////////////////////////////////////////////////////////////////////////
 
 - (void)encodeWithCoder: (NSCoder *)encoder 
 {
-    [encoder encodeObject:title forKey: @"title"];
+    [encoder encodeObject:_title forKey:@"title"];
     
-    [encoder encodeObject:tasks forKey: @"tasks"];
+    [encoder encodeObject:_tasks forKey:@"tasks"];
     
-    [encoder encodeObject: ageMin forKey: @"min"];
+    [encoder encodeObject:_ageMin forKey:@"min"];
     
-	[encoder encodeObject: ageMax forKey: @"max"];
+	[encoder encodeObject:_ageMax forKey:@"max"];
     
-    [encoder encodeObject:genderExcludes forKey: @"genderExcludes"];
+    [encoder encodeObject:_genderExcludes forKey:@"genderExcludes"];
     
-    [encoder encodeObject: interestedInExcludes forKey: @"interestedInExcludes"];
+    [encoder encodeObject:_interestedInExcludes forKey:@"interestedInExcludes"];
     
-    [encoder encodeObject: schoolLevelExcludes forKey: @"schoolLevelExcludes"];
+    [encoder encodeObject:_schoolLevelExcludes forKey:@"schoolLevelExcludes"];
 
-    [encoder encodeObject: schoolHappyExcludes forKey: @"schoolHappyExcludes"];
+    [encoder encodeObject:_schoolHappyExcludes forKey:@"schoolHappyExcludes"];
    
-    [encoder encodeObject: workLevelExcludes forKey: @"workLevelExcludes"];
+    [encoder encodeObject:_workLevelExcludes forKey:@"workLevelExcludes"];
     
-    [encoder encodeObject: workHappyExcludes forKey: @"workHappyExcludes"];
+    [encoder encodeObject:_workHappyExcludes forKey:@"workHappyExcludes"];
 
-    [encoder encodeObject: relationshipLevelExcludes forKey: @"relationshipLevelExcludes"];
+    [encoder encodeObject:_relationshipLevelExcludes forKey:@"relationshipLevelExcludes"];
 
-    [encoder encodeObject: relationshipHappyExcludes forKey: @"relationshipHappyExcludes"];
+    [encoder encodeObject:_relationshipHappyExcludes forKey:@"relationshipHappyExcludes"];
     
-    [encoder encodeBool:completed forKey:@"completed" ];
+    [encoder encodeBool:_completed forKey:@"completed"];
 
-    [encoder encodeObject: petsExclude forKey: @"petsExclude"];
+    [encoder encodeObject:_petsExclude forKey:@"petsExclude"];
     
-    [encoder encodeObject: kidsExclude forKey: @"kidsExclude"];
+    [encoder encodeObject:_kidsExclude forKey:@"kidsExclude"];
     
-    [encoder encodeInteger:minimumRiskFactor forKey: @"minimumRiskFactor"];
-    [encoder encodeInteger:pointsWorth forKey: @"pointsWorth"];
-    [encoder encodeInteger: language forKey: @"language"];
+    [encoder encodeInteger:_minimumRiskFactor forKey:@"minimumRiskFactor"];
+    [encoder encodeInteger:_pointsWorth forKey:@"pointsWorth"];
+    [encoder encodeInteger:_language forKey:@"language"];
     
 }
 
@@ -77,33 +59,33 @@
 {
  	if (self == [super init]) 
 	{
-        title = @"start";
-        tasks = [[NSMutableArray alloc] init];
-        ageMax = [[NSString alloc] initWithFormat:@"%d", 0];
-        ageMin = [[NSString alloc] initWithFormat:@"%d", 0];
+        _title = @"start";
+        _tasks = [[NSMutableArray alloc] init];
+        _ageMax = [[NSString alloc] initWithFormat:@"%d", 0];
+        _ageMin = [[NSString alloc] initWithFormat:@"%d", 0];
 
-        genderExcludes = [[NSMutableArray alloc] init];
-        interestedInExcludes = [[NSMutableArray alloc] init];
+        _genderExcludes = [[NSMutableArray alloc] init];
+        _interestedInExcludes = [[NSMutableArray alloc] init];
         
-        schoolHappyExcludes = [[NSMutableArray alloc] init];
-        schoolLevelExcludes = [[NSMutableArray alloc] init];
+        _schoolHappyExcludes = [[NSMutableArray alloc] init];
+        _schoolLevelExcludes = [[NSMutableArray alloc] init];
         
-        workHappyExcludes = [[NSMutableArray alloc] init];
-        workLevelExcludes =[[NSMutableArray alloc] init];
+        _workHappyExcludes = [[NSMutableArray alloc] init];
+        _workLevelExcludes =[[NSMutableArray alloc] init];
         
-        relationshipHappyExcludes = [[NSMutableArray alloc] init];
-        relationshipLevelExcludes = [[NSMutableArray alloc] init];
+        _relationshipHappyExcludes = [[NSMutableArray alloc] init];
+        _relationshipLevelExcludes = [[NSMutableArray alloc] init];
 
-        kidsExclude = [[NSMutableArray alloc] init];
-        petsExclude = [[NSMutableArray alloc] init];
+        _kidsExclude = [[NSMutableArray alloc] init];
+        _petsExclude = [[NSMutableArray alloc] init];
         
 //        personalityExclude = [[NSMutableArray alloc] init];
         
-        language = 0;
+        _language = 0;
         
-        completed = false;
-        pointsWorth = 0;
-        minimumRiskFactor = 0;        
+        _completed = false;
+        _pointsWorth = 0;
+        _minimumRiskFactor = 0;
     }   
     
 	return self;
@@ -154,8 +136,8 @@
 {
  	if (self == [super init]) 
 	{
-        title = d; 
-        tasks = [[NSMutableArray alloc] initWithArray:array]; 
+        self.title = d;
+        self.tasks = [NSMutableArray arrayWithArray:array];
     }   
 	return self;
 }
@@ -164,33 +146,33 @@
 {
 	DailyChallenge *challenge = [[DailyChallenge alloc] init];
     
-    challenge.title = self.title;
-    challenge.tasks = [self.tasks copy];
-    challenge.ageMin = [NSString stringWithString:ageMin];
-	challenge.ageMax = [NSString stringWithString:ageMax];
+    challenge.title = _title;
+    challenge.tasks = [_tasks copy];
+    challenge.ageMin = [NSString stringWithString:_ageMin];
+	challenge.ageMax = [NSString stringWithString:_ageMax];
     
-    challenge.genderExcludes = [self.genderExcludes copy];
-    challenge.interestedInExcludes = [self.interestedInExcludes copy];
+    challenge.genderExcludes = [_genderExcludes copy];
+    challenge.interestedInExcludes = [_interestedInExcludes copy];
     
-    challenge.schoolLevelExcludes = [self.schoolLevelExcludes copy];
-    challenge.schoolHappyExcludes = [self.schoolHappyExcludes copy];
+    challenge.schoolLevelExcludes = [_schoolLevelExcludes copy];
+    challenge.schoolHappyExcludes = [_schoolHappyExcludes copy];
     
-    challenge.workLevelExcludes = [self.workLevelExcludes copy];
-    challenge.workHappyExcludes = [self.workHappyExcludes copy];
+    challenge.workLevelExcludes = [_workLevelExcludes copy];
+    challenge.workHappyExcludes = [_workHappyExcludes copy];
     
-    challenge.relationshipLevelExcludes = [self.relationshipLevelExcludes copy];
-    challenge.relationshipHappyExcludes = [self.relationshipHappyExcludes copy];
+    challenge.relationshipLevelExcludes = [_relationshipLevelExcludes copy];
+    challenge.relationshipHappyExcludes = [_relationshipHappyExcludes copy];
     
-    challenge.completed = self.completed;
+    challenge.completed = _completed;
     
-    challenge.kidsExclude = [self.kidsExclude copy];
-    challenge.petsExclude = [self.petsExclude copy];
+    challenge.kidsExclude = [_kidsExclude copy];
+    challenge.petsExclude = [_petsExclude copy];
     
 //    challenge.personalityExclude = [self.personalityExclude copy];
     
-    challenge.language = self.language;
-    challenge.pointsWorth = self.pointsWorth;
-    challenge.minimumRiskFactor = self.minimumRiskFactor;
+    challenge.language = _language;
+    challenge.pointsWorth = _pointsWorth;
+    challenge.minimumRiskFactor = _minimumRiskFactor;
     
     return challenge;
 }

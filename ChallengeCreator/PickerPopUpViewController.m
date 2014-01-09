@@ -14,14 +14,6 @@
 
 @implementation PickerPopUpViewController
 
-@synthesize PickerLabel;
-@synthesize Picker;
-@synthesize list;
-@synthesize options;
-@synthesize title;
-@synthesize currentIndex;
-@synthesize InfoBox;
-@synthesize PopDailyChallenge;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,8 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    Picker.delegate = self;
-    [Picker selectRow:0 inComponent:0 animated:YES];
+    
+    _Picker.delegate = self;
+    [_Picker selectRow:0 inComponent:0 animated:YES];
 	// Do any additional setup after loading the view.
 }
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -49,7 +42,7 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView
 numberOfRowsInComponent:(NSInteger)component
 {
-    return [options count];
+    return [_options count];
 }
 //
 - (UIView *)pickerView:(UIPickerView *)pickerView
@@ -60,7 +53,7 @@ numberOfRowsInComponent:(NSInteger)component
 	UILabel *eduLabel;
 	eduLabel=[[UILabel alloc] initWithFrame:CGRectMake(0,0,180,32)];
 	eduLabel.backgroundColor=[UIColor clearColor];
-	eduLabel.text=[options objectAtIndex:row];
+	eduLabel.text=[_options objectAtIndex:row];
 	//eduLabel.textAlignment = UITextAlignmentCenter;
 	eduLabel.font = [UIFont systemFontOfSize:22];
 	return eduLabel;
@@ -68,7 +61,7 @@ numberOfRowsInComponent:(NSInteger)component
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
 	   inComponent:(NSInteger)component
 {
-	currentIndex= [pickerView selectedRowInComponent:0];
+	_currentIndex= [pickerView selectedRowInComponent:0];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -77,25 +70,27 @@ numberOfRowsInComponent:(NSInteger)component
 }
 
 - (IBAction)Add:(id)sender {
-    NSString *option = [options objectAtIndex: currentIndex];
-    [list addObject:option];
-    NSString * combinedStuff = [list componentsJoinedByString:@"  "];
-    InfoBox.text = combinedStuff;
+    NSString *option = [_options objectAtIndex:_currentIndex];
+    [_list addObject:option];
+    NSString * combinedStuff = [_list componentsJoinedByString:@"  "];
+    _InfoBox.text = combinedStuff;
 }
 //
 - (IBAction)Remove:(id)sender {
-     NSString *option = [options objectAtIndex: currentIndex];
-    [list removeObject:option];
-    NSString * combinedStuff = [list componentsJoinedByString:@"  "];
-    InfoBox.text = combinedStuff;
+     NSString *option = [_options objectAtIndex:_currentIndex];
+    [_list removeObject:option];
+    NSString * combinedStuff = [_list componentsJoinedByString:@"  "];
+    _InfoBox.text = combinedStuff;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     CreatorOptionsViewController *optionsController = [segue destinationViewController];
     optionsController.TheDailyChallenge = [[DailyChallenge alloc] init];
-    optionsController.TheDailyChallenge = PopDailyChallenge;
+    optionsController.TheDailyChallenge = _PopDailyChallenge;
 }
+
 //- (IBAction)Done:(id)sender {
 //}
+
 @end
