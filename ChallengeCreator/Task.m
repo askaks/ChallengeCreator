@@ -14,10 +14,11 @@
 - (void)encodeWithCoder: (NSCoder *)encoder 
 {
     [encoder encodeObject:_message forKey: @"message"];
-    [encoder encodeObject:_timeSpecific forKey: @"tspec"];
-    [encoder encodeObject:_time forKey: @"time"];
+    [encoder encodeObject:_title forKey: @"title"];
+    //[encoder encodeObject:_timeSpecific forKey: @"tspec"];
+//    [encoder encodeObject:_time forKey: @"time"];
     [encoder encodeInteger:_points forKey: @"points"];
-	[encoder encodeBool:_completed forKey: @"completed"];
+//	[encoder encodeBool:_completed forKey: @"completed"];
 }
 
 - (id)initWithCoder: (NSCoder *)decoder
@@ -25,8 +26,9 @@
 	if (self == [super init]) 
     {
         self.message = [decoder decodeObjectForKey: @"message"];
+        self.title = [decoder decodeObjectForKey: @"title"];
         //self.timeSpecific = [decoder decodeObjectForKey: @"tspec"];
-        self.time = [decoder decodeObjectForKey: @"time"];
+//        self.time = [decoder decodeObjectForKey: @"time"];
         self.points = [decoder decodeIntegerForKey: @"points"];
         //self.completed = [decoder decodeBoolForKey: @"completed"];
     }    
@@ -38,11 +40,11 @@
  	if (self == [super init]) 
 	{
         _message = [[NSString alloc] initWithString: msg];
-        _time = [[NSString alloc] initWithFormat:@"%d", 0];
-        _timeSpecific = @"false";
+//        _time = [[NSString alloc] initWithFormat:@"%d", 0];
+//        _timeSpecific = @"false";
         _points =  25;
-        _completed = false;
-    }   
+//        _completed = false;
+    }
     
 	return self;
 }
@@ -76,11 +78,13 @@
 
 - (id)initWithMessage: (NSString *)msg
                points: (NSInteger)iPoints
+title:(NSString *)title
 {
  	if (self == [super init])
 	{
         _message = [[NSString alloc] initWithString: msg];
         _points = iPoints;
+        _title = title;
     }   
 	return self;
 }
@@ -115,10 +119,11 @@
 	Task *task = [[Task alloc] init];
     
     task.message = [NSString stringWithString:_message];
-    task.time = [NSString stringWithString:_time];
-    task.timeSpecific = [NSString stringWithString:_timeSpecific];
+//    task.time = [NSString stringWithString:_time];
+//    task.timeSpecific = [NSString stringWithString:_timeSpecific];
     task.points = _points;
-    task.completed = _completed;
+    task.title = [NSString stringWithString:_title];
+//    task.completed = _completed;
     
     return task;
 }

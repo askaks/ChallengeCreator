@@ -55,26 +55,48 @@
 	return YES;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    CreatorOptionsViewController *optionsController = [segue destinationViewController];
+    optionsController.TheDailyChallenge = [[DailyChallenge alloc] init];
+    optionsController.TheDailyChallenge = TaskFormDailyChallenge;
+}
+
 - (IBAction)addTask:(id)sender {
 
-    if(message != nil && taskPoints.text != nil)
+    if(message.text != nil && taskPoints.text != nil && taskTitle.text != nil)
     {
-        task = [[Task alloc] initWithMessage:message.text points:taskPoints.text.integerValue];
+        task = [[Task alloc] initWithMessage:message.text points:taskPoints.text.integerValue title:taskTitle.text];
     }
     [listOfTasks addObject:task];
-    NSString * combinedStuff = [listOfTasks componentsJoinedByString:@"  "];
+    [self printTaskToScreen:listOfTasks];
+    //NSString * combinedStuff = [];
+    //NSString * combinedStuff = [listOfTasks componentsJoinedByString:@"  "];
     //InfoBox.text = combinedStuff;
     
 }
-//- (void)printTaskToScreen: (NSMutableArray *) taskList
-//{
-//    for(Task *t in )
-//}
+- (void)printTaskToScreen: (NSMutableArray *) taskList
+{
+    NSString *combinedStuff;
+    for(Task *t in taskList)
+    {
+        //combinedStuff = t.title + t.message;
+    }
+}
 
 - (IBAction)editTask:(id)sender {
-}
+
+    if(message.text != nil && taskPoints.text != nil && taskTitle.text != nil)
+    {
+        task = [[Task alloc] initWithMessage:message.text points:taskPoints.text.integerValue title:taskTitle.text];
+    }
+    listOfTasks inde
+    [listOfTasks replaceObjectAtIndex:<#(NSUInteger)#> withObject:task];
+    [self printTaskToScreen:listOfTasks];
+}   
 
 
 - (IBAction)done:(id)sender {
+    
 }
 @end

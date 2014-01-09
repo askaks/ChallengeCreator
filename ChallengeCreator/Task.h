@@ -12,11 +12,12 @@
 
 
 @property (nonatomic, retain) NSString *message;
-@property (nonatomic, retain) NSString *timeSpecific;
-@property (nonatomic, retain) NSString *time;
+@property (nonatomic, retain) NSString *title;
+//@property (nonatomic, retain) NSString *timeSpecific;
+//@property (nonatomic, retain) NSString *time;
 @property (nonatomic, assign) NSInteger points;
-@property (nonatomic, retain) NSString *workSpecific;
-@property bool completed; // why was *completed?
+//@property (nonatomic, retain) NSString *workSpecific;
+//@property bool completed; // why was *completed?
 
 - (void)encodeWithCoder: (NSCoder *)encoder;
 - (id)initWithCoder: (NSCoder *)decoder;
@@ -35,6 +36,7 @@
             completed: (bool) bCompleted;
 
 - (id)initWithMessage: (NSString *)msg
-               points: (NSInteger )iPoints;
+               points: (NSInteger )iPoints
+                title: (NSString *)title;
 
 @end

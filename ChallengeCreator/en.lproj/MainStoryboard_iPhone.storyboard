@@ -663,23 +663,19 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="936"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Task Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNW-lR-Ae8">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Task Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNW-lR-Ae8">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="68" id="80U-Ce-nEZ"/>
-                                    <constraint firstAttribute="height" constant="34" id="Sze-Ze-8xx"/>
+                                    <constraint firstAttribute="width" constant="80" id="JmT-kB-AjS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Id-CU-rCq">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="Yh7-VT-FGz"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKX-OT-3Ud">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Points:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKX-OT-3Ud">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="ndY-bX-G8u"/>
                                 </constraints>
@@ -691,7 +687,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="VaY-gb-jxI"/>
-                                    <constraint firstAttribute="height" constant="75" id="WUo-kS-9J9"/>
+                                    <constraint firstAttribute="height" constant="75" id="cp1-Qs-oeG"/>
                                 </constraints>
                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="19"/>
@@ -699,7 +695,7 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYN-7y-pWt">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="ENN-Zc-pQt"/>
+                                    <constraint firstAttribute="height" constant="43" id="fLb-Uj-PVm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Add Task">
@@ -764,26 +760,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="hqF-Wq-Iby" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="20R-9P-5O3"/>
-                            <constraint firstAttribute="trailing" secondItem="XYN-7y-pWt" secondAttribute="trailing" constant="28" id="5bz-O8-oJ8"/>
-                            <constraint firstItem="r2h-cH-lAN" firstAttribute="top" secondItem="FzW-O6-dNv" secondAttribute="top" constant="20" symbolic="YES" type="default" id="77J-OS-IhP"/>
-                            <constraint firstItem="1Id-CU-rCq" firstAttribute="top" secondItem="FzW-O6-dNv" secondAttribute="top" constant="211" id="8Ou-6f-iJc"/>
-                            <constraint firstItem="qNW-lR-Ae8" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="13" id="DmB-pw-SdS"/>
-                            <constraint firstItem="36J-Hl-GHb" firstAttribute="leading" secondItem="rKX-OT-3Ud" secondAttribute="leading" type="default" id="E6B-4g-Ivn"/>
+                            <constraint firstItem="1Id-CU-rCq" firstAttribute="top" secondItem="qNW-lR-Ae8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5av-N2-YsF"/>
+                            <constraint firstItem="rKX-OT-3Ud" firstAttribute="leading" secondItem="36J-Hl-GHb" secondAttribute="leading" type="default" id="88u-9d-5kP"/>
+                            <constraint firstItem="1Id-CU-rCq" firstAttribute="leading" secondItem="r2h-cH-lAN" secondAttribute="leading" type="default" id="9Oc-fh-6J8"/>
+                            <constraint firstItem="r2h-cH-lAN" firstAttribute="leading" secondItem="qNW-lR-Ae8" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="C0B-6h-KdA"/>
                             <constraint firstItem="NUc-il-Neu" firstAttribute="baseline" secondItem="XYN-7y-pWt" secondAttribute="baseline" type="default" id="FNN-B8-BFg"/>
+                            <constraint firstItem="qNW-lR-Ae8" firstAttribute="leading" secondItem="rKX-OT-3Ud" secondAttribute="leading" type="default" id="ISc-8k-LfA"/>
                             <constraint firstItem="NUc-il-Neu" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="25" id="RKl-Kx-wA7"/>
-                            <constraint firstItem="36J-Hl-GHb" firstAttribute="top" secondItem="qNW-lR-Ae8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="TBw-Ed-bFq"/>
+                            <constraint firstItem="XYN-7y-pWt" firstAttribute="top" secondItem="hqF-Wq-Iby" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="TLo-3x-mvV"/>
                             <constraint firstItem="3IC-Jt-r3Y" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="142" id="Uzg-Wc-msu"/>
-                            <constraint firstItem="1Id-CU-rCq" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="100" id="Wmc-At-WJC"/>
-                            <constraint firstItem="rKX-OT-3Ud" firstAttribute="baseline" secondItem="1Id-CU-rCq" secondAttribute="baseline" type="default" id="ZCW-xZ-wkX"/>
-                            <constraint firstItem="r2h-cH-lAN" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="67" id="b8v-rd-qYa"/>
+                            <constraint firstItem="rKX-OT-3Ud" firstAttribute="top" secondItem="qNW-lR-Ae8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VBK-0Z-TFW"/>
                             <constraint firstAttribute="bottom" secondItem="3IC-Jt-r3Y" secondAttribute="bottom" constant="109" id="byA-ir-ZrQ"/>
-                            <constraint firstAttribute="bottom" secondItem="hqF-Wq-Iby" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="cd0-lq-nfE"/>
-                            <constraint firstItem="rKX-OT-3Ud" firstAttribute="bottom" secondItem="1Id-CU-rCq" secondAttribute="bottom" type="default" id="kIE-ue-F9d"/>
+                            <constraint firstItem="36J-Hl-GHb" firstAttribute="top" secondItem="1Id-CU-rCq" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="cUB-OS-eR3"/>
+                            <constraint firstItem="XYN-7y-pWt" firstAttribute="top" secondItem="1Id-CU-rCq" secondAttribute="top" type="default" id="ceE-wK-DQD"/>
+                            <constraint firstItem="XYN-7y-pWt" firstAttribute="top" secondItem="FzW-O6-dNv" secondAttribute="top" constant="62" id="dKh-oj-QTp"/>
+                            <constraint firstItem="XYN-7y-pWt" firstAttribute="leading" secondItem="hqF-Wq-Iby" secondAttribute="leading" type="default" id="edK-32-AD5"/>
+                            <constraint firstItem="1Id-CU-rCq" firstAttribute="trailing" secondItem="r2h-cH-lAN" secondAttribute="trailing" type="default" id="kmz-yE-J4Z"/>
                             <constraint firstItem="qNW-lR-Ae8" firstAttribute="top" secondItem="FzW-O6-dNv" secondAttribute="top" constant="20" symbolic="YES" type="default" id="lHS-h1-2wJ"/>
+                            <constraint firstAttribute="trailing" secondItem="hqF-Wq-Iby" secondAttribute="trailing" constant="5" id="lTf-FD-WvC"/>
                             <constraint firstItem="NUc-il-Neu" firstAttribute="baseline" secondItem="3IC-Jt-r3Y" secondAttribute="baseline" type="default" id="nCo-JF-MCn"/>
-                            <constraint firstAttribute="bottom" secondItem="XYN-7y-pWt" secondAttribute="bottom" constant="221" id="scF-dS-DT5"/>
-                            <constraint firstItem="36J-Hl-GHb" firstAttribute="leading" secondItem="qNW-lR-Ae8" secondAttribute="leading" type="default" id="wKh-ea-jWJ"/>
+                            <constraint firstItem="qNW-lR-Ae8" firstAttribute="leading" secondItem="FzW-O6-dNv" secondAttribute="leading" constant="8" id="rad-bQ-nta"/>
+                            <constraint firstItem="r2h-cH-lAN" firstAttribute="centerY" secondItem="qNW-lR-Ae8" secondAttribute="centerY" type="default" id="wh2-6m-HnS"/>
+                            <constraint firstItem="XYN-7y-pWt" firstAttribute="trailing" secondItem="hqF-Wq-Iby" secondAttribute="trailing" type="default" id="xsK-2B-yje"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ae5-j8-m6s"/>
@@ -820,85 +818,6 @@
             <point key="canvasLocation" x="-189" y="-96"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CreatorOptionsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatorOptionsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="CreateChallenge:"/>
-                <relationship kind="action" name="ExcludeFemales:"/>
-                <relationship kind="action" name="ExcludeLoveHappy:"/>
-                <relationship kind="action" name="ExcludeSchoolHappy:"/>
-                <relationship kind="action" name="ExcludeWorkHappy:"/>
-                <relationship kind="action" name="FilterChildren:"/>
-                <relationship kind="action" name="FilterLookingFor:"/>
-                <relationship kind="action" name="FilterLove:"/>
-                <relationship kind="action" name="FilterPets:"/>
-                <relationship kind="action" name="FilterSchool:"/>
-                <relationship kind="action" name="FilterWork:"/>
-                <relationship kind="action" name="addTask:"/>
-                <relationship kind="outlet" name="AgeMax" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="AgeMin" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="ChallengeTitle" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="ChildFilter" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="ChildInfoBox" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="CreateChallengeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="ExcludeFemalesSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="LanguageRating" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="LookingFilter" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="LookingInfoBox" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="LoveFilter" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="LoveHappySwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="LoveInfoBox" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="PetFilter" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="PetInfoBox" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="RiskFactor" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="SchoolFilter" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="SchoolHappySwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="SchoolInfoBox" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="WorkFilter" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="WorkHappySwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="WorkInfoBox" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="CreatorTaskFormViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatorTaskFormViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addTask:"/>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="editTask:"/>
-                <relationship kind="outlet" name="addTaskButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="editTaskButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="message" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="taskPoints" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="taskTitle" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="titleToEdit" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="CreatorViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatorViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="LoadChallengesXML:"/>
-                <relationship kind="outlet" name="correctlyLoadedXMLLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PickerPopUpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PickerPopUpViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Add:"/>
-                <relationship kind="action" name="Remove:"/>
-                <relationship kind="outlet" name="AddButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="DoneButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="InfoBox" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="Picker" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="PickerLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="RemoveButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

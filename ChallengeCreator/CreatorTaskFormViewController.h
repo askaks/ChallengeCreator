@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "DailyChallenge.h"
 #import "Task.h"
+#import "CreatorOptionsViewController.h"
 
 @class DailyChallenge;
 @class Task;
+@class CreatorOptionsViewController;
 
 @interface CreatorTaskFormViewController : UIViewController
 
