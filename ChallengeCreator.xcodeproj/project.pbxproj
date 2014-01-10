@@ -31,20 +31,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6216632B187FC06900BB5AE6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 62166326187FC06800BB5AE6 /* GDataXML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8A8D4E211382DA88006504B9;
-			remoteInfo = GDataXML;
-		};
-		6216632D187FC06900BB5AE6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 62166326187FC06800BB5AE6 /* GDataXML.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8A8D4EB7138312F1006504B9;
-			remoteInfo = Tests;
-		};
 		62B2D3811878F1200004E1E6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 62B2D34B1878F11F0004E1E6 /* Project object */;
@@ -55,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		62166326187FC06800BB5AE6 /* GDataXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GDataXML.xcodeproj; path = "../GDataXML-master/GDataXML.xcodeproj"; sourceTree = "<group>"; };
 		62A97A70187DE0C800E55D51 /* CreatorTaskFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatorTaskFormViewController.h; sourceTree = "<group>"; };
 		62A97A71187DE0C800E55D51 /* CreatorTaskFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatorTaskFormViewController.m; sourceTree = "<group>"; };
 		62B2D3531878F11F0004E1E6 /* ChallengeCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,19 +99,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		62166327187FC06800BB5AE6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6216632C187FC06900BB5AE6 /* libGDataXML.a */,
-				6216632E187FC06900BB5AE6 /* Tests.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		62B2D34A1878F11F0004E1E6 = {
 			isa = PBXGroup;
 			children = (
-				62166326187FC06800BB5AE6 /* GDataXML.xcodeproj */,
 				62B2D35C1878F11F0004E1E6 /* ChallengeCreator */,
 				62B2D3831878F1200004E1E6 /* ChallengeCreatorTests */,
 				62B2D3551878F11F0004E1E6 /* Frameworks */,
@@ -269,12 +244,6 @@
 			mainGroup = 62B2D34A1878F11F0004E1E6;
 			productRefGroup = 62B2D3541878F11F0004E1E6 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 62166327187FC06800BB5AE6 /* Products */;
-					ProjectRef = 62166326187FC06800BB5AE6 /* GDataXML.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				62B2D3521878F11F0004E1E6 /* ChallengeCreator */,
@@ -282,23 +251,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		6216632C187FC06900BB5AE6 /* libGDataXML.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libGDataXML.a;
-			remoteRef = 6216632B187FC06900BB5AE6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6216632E187FC06900BB5AE6 /* Tests.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = Tests.app;
-			remoteRef = 6216632D187FC06900BB5AE6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		62B2D3511878F11F0004E1E6 /* Resources */ = {
