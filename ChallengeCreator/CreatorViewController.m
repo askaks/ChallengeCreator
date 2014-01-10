@@ -51,6 +51,14 @@
         _correctlyLoadedXMLLabel.text = @"Error Error Error!!!";
 }
 
+- (IBAction)createXML:(id)sender {
+//    NSString * myCustomXMLString;
+//    myCustomXMLString = [NSString stringWithFormat:@"<bacon>%@</bacon>", aString];
+}
+
+- (IBAction)writeOutXML:(id)sender {
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     CreatorOptionsViewController *OptionsSurvey = [segue destinationViewController];

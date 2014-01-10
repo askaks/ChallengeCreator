@@ -17,7 +17,7 @@
 
 @interface PickerPopUpViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
-
+@property (nonatomic, retain) NSMutableArray *Challenges;
 @property (nonatomic, retain) DailyChallenge *PopDailyChallenge;
 @property (nonatomic, retain) NSMutableArray *list;
 @property NSInteger currentIndex;

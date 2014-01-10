@@ -21,7 +21,7 @@
 @class Task;
 @class CreatorTaskFormViewController;
 
-@interface CreatorOptionsViewController : UIViewController
+@interface CreatorOptionsViewController : UIViewController <UITextFieldDelegate>
 
 
 @property (nonatomic, retain) NSMutableArray *Challenges;
@@ -43,6 +43,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *SchoolHappySwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *WorkHappySwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *LoveHappySwitch;
+@property (weak, nonatomic) IBOutlet UILabel *challengePoints;
 
 @property (weak, nonatomic) IBOutlet UIButton *LookingFilter;
 @property (weak, nonatomic) IBOutlet UIButton *SchoolFilter;
@@ -58,6 +59,12 @@
 @property (weak, nonatomic) IBOutlet UITextView *WorkInfoBox;
 @property (weak, nonatomic) IBOutlet UITextView *ChildInfoBox;
 @property (weak, nonatomic) IBOutlet UITextView *PetInfoBox;
+@property (weak, nonatomic) IBOutlet UIButton *doneButton;
+
+- (IBAction)doneAddingChallenges:(id)sender;
+
+
+
 - (IBAction)addTask:(id)sender;
 
 - (IBAction)ExcludeSchoolHappy:(id)sender;
@@ -72,6 +79,10 @@
 - (IBAction)FilterChildren:(id)sender;
 - (IBAction)FilterPets:(id)sender;
 
+- (IBAction)setAgeMin:(id)sender;
+- (IBAction)setAgeMax:(id)sender;
+- (IBAction)setLanguage:(id)sender;
+- (IBAction)setRiskFactor:(id)sender;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *CreateChallengeButton;

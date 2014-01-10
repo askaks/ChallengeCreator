@@ -88,6 +88,7 @@ numberOfRowsInComponent:(NSInteger)component
     CreatorOptionsViewController *optionsController = [segue destinationViewController];
     optionsController.TheDailyChallenge = [[DailyChallenge alloc] init];
     optionsController.TheDailyChallenge = _PopDailyChallenge;
+    optionsController.Challenges = _Challenges;
 }
 
 //- (IBAction)Done:(id)sender {

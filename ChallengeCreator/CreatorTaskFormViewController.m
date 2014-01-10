@@ -68,6 +68,7 @@
     CreatorOptionsViewController *optionsController = [segue destinationViewController];
     optionsController.TheDailyChallenge = [[DailyChallenge alloc] init];
     optionsController.TheDailyChallenge = _TaskFormDailyChallenge;
+    optionsController.Challenges = _Challenges;
 }
 
 - (IBAction)addTask:(id)sender {
@@ -82,6 +83,7 @@
     //NSString * combinedStuff = [listOfTasks componentsJoinedByString:@"  "];
     //InfoBox.text = combinedStuff;
     _infoBox.text = [self printTaskToScreen:_listOfTasks];
+    _TaskFormDailyChallenge.pointsWorth += task.points;
     
 }
 - (NSString*)printTaskToScreen: (NSMutableArray *) taskList
@@ -110,10 +112,15 @@
             break;
         }
     }
+    _TaskFormDailyChallenge.pointsWorth -= taskToChange.points;
     taskToChange.title = newTask.title;
     taskToChange.message = newTask.message;
     taskToChange.points = newTask.points;
     _infoBox.text = [self printTaskToScreen:_listOfTasks];
+    
+;
+    _TaskFormDailyChallenge.pointsWorth += newTask.points;
+    
 //    [listOfTasks replaceObjectAtIndex:<#(NSUInteger)#> withObject:task];
 //    [self printTaskToScreen:listOfTasks];
 }
@@ -137,6 +144,7 @@
             break;
         }
     }
+        _TaskFormDailyChallenge.pointsWorth -= taskToDelete.points;
     [_listOfTasks removeObject:taskToDelete];
     _infoBox.text = [self printTaskToScreen:_listOfTasks];
 }

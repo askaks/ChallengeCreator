@@ -19,5 +19,7 @@
 
 
 - (IBAction)LoadChallengesXML:(id)sender;
+- (IBAction)createXML:(id)sender;
+- (IBAction)writeOutXML:(id)sender;
 
 @end

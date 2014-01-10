@@ -41,6 +41,8 @@
     
     else
     {
+        _challengePoints = [NSString stringWithFormat:@"%d", _TheDailyChallenge.pointsWorth];
+        
         if(_TheDailyChallenge.interestedInExcludes != nil)
         {
             _LookingInfoBox.text = [_TheDailyChallenge.interestedInExcludes componentsJoinedByString:@"  "];
@@ -68,7 +70,19 @@
    
     }
 	// Do any additional setup after loading the view.
+//    _AgeMax.returnKeyType = UIReturnKeyDone;
+//    _AgeMin.returnKeyType = UIReturnKeyDone;
+//    _LanguageRating.returnKeyType = UIReturnKeyDone;
+//    _RiskFactor.returnKeyType = UIReturnKeyDone;
 }
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.AgeMax resignFirstResponder];
+    [self.AgeMin resignFirstResponder];
+    [self.RiskFactor resignFirstResponder];
+    [self.LanguageRating resignFirstResponder];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -84,11 +98,18 @@
 //    p.list = _PickerPopUp.list;
 //    p.PopDailyChallenge = [[DailyChallenge alloc] init];
 //    p.PopDailyChallenge = _TheDailyChallenge;
+    
     if ([segue.identifier isEqualToString:@"ToTaskForm"])
     {
         CreatorTaskFormViewController *t = [segue destinationViewController];
         t.listOfTasks = _TaskForm.listOfTasks;
         t.TaskFormDailyChallenge = _TheDailyChallenge;
+        t.Challenges = _Challenges;
+    }
+    else if ([segue.identifier isEqualToString:@"ToMainCreator"])
+    {
+        CreatorViewController *c = [segue destinationViewController];
+        c.Challenges = _Challenges;
     }
     else
     {
@@ -98,6 +119,7 @@
         p.list = _PickerPopUp.list;
         p.PopDailyChallenge = [[DailyChallenge alloc] init];
         p.PopDailyChallenge = _TheDailyChallenge;
+        p.Challenges = _Challenges;
     }
 }
 
@@ -146,6 +168,24 @@
     _PickerPopUp.options = [[NSArray alloc] initWithObjects:@"none",@"can't",@"cat/cats",@"dog/dogs", @"cats and dogs", @"rodents",@"reptiles", @"farm animals",nil];
     NSMutableArray *list = _TheDailyChallenge.petsExclude;
     _PickerPopUp.list = &(*list);
+}
+
+- (IBAction)setAgeMin:(id)sender {
+    _TheDailyChallenge.ageMin = _AgeMin.text; }
+
+- (IBAction)setAgeMax:(id)sender {
+    _TheDailyChallenge.ageMax = _AgeMax.text;
+}
+
+- (IBAction)setLanguage:(id)sender {
+    _TheDailyChallenge.language = _LanguageRating.text.integerValue;
+}
+
+- (IBAction)setRiskFactor:(id)sender {
+    _TheDailyChallenge.minimumRiskFactor = _RiskFactor.text.integerValue;
+}
+
+- (IBAction)doneAddingChallenges:(id)sender {
 }
 
 - (IBAction)addTask:(id)sender {
