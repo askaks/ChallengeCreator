@@ -706,8 +706,6 @@
                     <navigationItem key="navigationItem" id="ejn-tV-Ity"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="AgeMax" destination="hKO-on-yR5" id="LWj-Tm-px9"/>
-                        <outlet property="AgeMin" destination="HJJ-yr-hVn" id="wBR-jD-hrT"/>
                         <outlet property="ChallengeTitle" destination="elY-WF-Zjj" id="CeR-9T-7yQ"/>
                         <outlet property="ChildFilter" destination="bsN-r4-oPv" id="49S-oU-ZJz"/>
                         <outlet property="ChildInfoBox" destination="N12-Wf-Cd3" id="Sje-6g-Pbl"/>
@@ -728,6 +726,8 @@
                         <outlet property="WorkFilter" destination="Fzd-Vk-BwX" id="MHd-ue-sdA"/>
                         <outlet property="WorkHappySwitch" destination="rwX-yS-YL8" id="RXN-CW-CYO"/>
                         <outlet property="WorkInfoBox" destination="Ev2-Cv-x8e" id="Gxk-aQ-Zp8"/>
+                        <outlet property="ageMaxField" destination="hKO-on-yR5" id="hZY-Yv-wZg"/>
+                        <outlet property="ageMinField" destination="HJJ-yr-hVn" id="Swe-fG-MAl"/>
                         <outlet property="challengePoints" destination="qcu-ea-jLA" id="YnR-NY-baf"/>
                         <outlet property="doneButton" destination="lGW-Zm-VYF" id="xVH-F6-3Ro"/>
                     </connections>

@@ -34,8 +34,8 @@
 @property (nonatomic, retain) NSString *WorkingOn;
 
 @property (weak, nonatomic) IBOutlet UITextField *ChallengeTitle;
-@property (weak, nonatomic) IBOutlet UITextField *AgeMin;
-@property (weak, nonatomic) IBOutlet UITextField *AgeMax;
+@property (weak, nonatomic) IBOutlet UITextField *ageMinField;
+@property (weak, nonatomic) IBOutlet UITextField *ageMaxField;
 @property (weak, nonatomic) IBOutlet UITextField *RiskFactor;
 @property (weak, nonatomic) IBOutlet UITextField *LanguageRating;
 
@@ -79,8 +79,8 @@
 - (IBAction)FilterChildren:(id)sender;
 - (IBAction)FilterPets:(id)sender;
 
-- (IBAction)setAgeMin:(id)sender;
-- (IBAction)setAgeMax:(id)sender;
+- (IBAction)setAgeMinField:(id)sender;
+- (IBAction)setAgeMaxField:(id)sender;
 - (IBAction)setLanguage:(id)sender;
 - (IBAction)setRiskFactor:(id)sender;
 

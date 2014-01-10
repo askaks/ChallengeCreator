@@ -77,8 +77,8 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.AgeMax resignFirstResponder];
-    [self.AgeMin resignFirstResponder];
+    [self.ageMaxField resignFirstResponder];
+    [self.ageMinField resignFirstResponder];
     [self.RiskFactor resignFirstResponder];
     [self.LanguageRating resignFirstResponder];
 }
@@ -170,11 +170,11 @@
     _PickerPopUp.list = &(*list);
 }
 
-- (IBAction)setAgeMin:(id)sender {
-    _TheDailyChallenge.ageMin = _AgeMin.text; }
+- (IBAction)setAgeMinField:(id)sender {
+    _TheDailyChallenge.ageMin = _ageMinField.text; }
 
-- (IBAction)setAgeMax:(id)sender {
-    _TheDailyChallenge.ageMax = _AgeMax.text;
+- (IBAction)setAgeMaxField:(id)sender {
+    _TheDailyChallenge.ageMax = _ageMaxField.text;
 }
 
 - (IBAction)setLanguage:(id)sender {
