@@ -16,7 +16,12 @@
 
 
 
-//@synthesize TaskForm;
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+	[textField resignFirstResponder];
+    
+	return YES;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
