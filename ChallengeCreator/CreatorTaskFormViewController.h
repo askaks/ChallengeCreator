@@ -28,12 +28,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *editTaskButton;
 @property (weak, nonatomic) IBOutlet UITextField *titleToEdit;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
+@property (weak, nonatomic) IBOutlet UIButton *removeTaskButton;
+@property (weak, nonatomic) IBOutlet UITextView *infoBox;
+
 - (IBAction)addTask:(id)sender;
 - (IBAction)editTask:(id)sender;
 - (IBAction)done:(id)sender;
 - (NSString *)printTaskToScreen: (NSMutableArray *) taskList;
-@property (weak, nonatomic) IBOutlet UIButton *removeTaskButton;
 - (IBAction)removeTask:(id)sender;
-@property (weak, nonatomic) IBOutlet UITextView *infoBox;
 
 @end

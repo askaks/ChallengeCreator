@@ -14,14 +14,6 @@
 
 @implementation CreatorTaskFormViewController
 
-//@synthesize TaskFormDailyChallenge;
-//@synthesize listOfTasks;
-//@synthesize task;
-//@synthesize taskTitle;
-//@synthesize message;
-//@synthesize taskPoints;
-//@synthesize titleToEdit;
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
