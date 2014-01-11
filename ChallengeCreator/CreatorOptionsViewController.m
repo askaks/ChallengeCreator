@@ -67,6 +67,10 @@
         {
             _PetInfoBox.text = [_TheDailyChallenge.petsExclude componentsJoinedByString:@"  "];
         }
+        if(_TheDailyChallenge.genderExcludes != nil)
+        {
+            _genderInfoBox.text = [_TheDailyChallenge.genderExcludes componentsJoinedByString:@"  "];
+        }
    
     }
 	// Do any additional setup after loading the view.
@@ -187,6 +191,11 @@
 }
 
 - (IBAction)filterGenderExclusions:(id)sender {
+    _PickerPopUp = [[PickerPopUpViewController alloc] init];
+    _PickerPopUp.title = @"Genders";
+    _PickerPopUp.options = [[NSArray alloc] initWithObjects:@"female",@"male",nil];
+    NSMutableArray *list = _TheDailyChallenge.genderExcludes;
+    _PickerPopUp.list = &(*list);
 }
 
 - (IBAction)doneAddingChallenges:(id)sender {

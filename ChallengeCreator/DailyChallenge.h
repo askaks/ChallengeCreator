@@ -36,8 +36,8 @@
 @property (nonatomic, retain) NSMutableArray *relationshipLevelExcludes;
 @property (nonatomic, retain) NSString *relationshipHappyExcludes;
 
-@property (nonatomic, retain) NSString *femaleExcl;
-@property (nonatomic, retain) NSString *maleExcl;
+@property (nonatomic, retain) NSMutableArray *femaleExcl;
+//@property (nonatomic, retain) NSString *maleExcl;
 @property (nonatomic, retain) NSString *schoolSpecific;
 @property (nonatomic, retain) NSString *schoolLevel;
 @property (nonatomic, retain) NSString *workSpecific;
