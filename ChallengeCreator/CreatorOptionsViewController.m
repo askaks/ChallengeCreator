@@ -23,10 +23,10 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-    }
-    if(_TheDailyChallenge == nil)
-    {
-        _TheDailyChallenge = [[DailyChallenge alloc] init];
+        if(_TheDailyChallenge == nil)
+        {
+            _TheDailyChallenge = [[DailyChallenge alloc] init];
+        }
     }
     return self;
 }
@@ -171,7 +171,8 @@
 }
 
 - (IBAction)setAgeMinField:(id)sender {
-    _TheDailyChallenge.ageMin = _ageMinField.text; }
+    _TheDailyChallenge.ageMin = _ageMinField.text;
+}
 
 - (IBAction)setAgeMaxField:(id)sender {
     _TheDailyChallenge.ageMax = _ageMaxField.text;

@@ -23,7 +23,8 @@
 
 - (id)initWithCoder: (NSCoder *)decoder
 {
-	if (self == [super init]) 
+    self = [super init];
+	if (self) 
     {
         self.message = [decoder decodeObjectForKey: @"message"];
         self.title = [decoder decodeObjectForKey: @"title"];
@@ -37,7 +38,8 @@
 
 - (id)initWithMessage:(NSString *)msg
 {
- 	if (self == [super init]) 
+    self = [super init];
+ 	if (self)
 	{
         _message = [[NSString alloc] initWithString: msg];
 //        _time = [[NSString alloc] initWithFormat:@"%d", 0];
@@ -80,7 +82,8 @@
                points: (NSInteger)iPoints
 title:(NSString *)title
 {
- 	if (self == [super init])
+    self = [super init];
+ 	if (self)
 	{
         _message = [[NSString alloc] initWithString: msg];
         _points = iPoints;

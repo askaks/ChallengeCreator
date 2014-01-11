@@ -57,7 +57,8 @@
 
 - (id)init
 {
- 	if (self == [super init]) 
+    self = [super init];
+ 	if (self)
 	{
         _title = @"start";
         _tasks = [[NSMutableArray alloc] init];
@@ -93,7 +94,8 @@
 
 - (id)initWithCoder: (NSCoder *)decoder
 {
-	if (self == [super init]) 
+    self = [super init];
+	if (self) 
     {
         self.title = [decoder decodeObjectForKey:@"title"];
         self.tasks = [decoder decodeObjectForKey:@"tasks"];
@@ -134,7 +136,8 @@
 - (id)initWithDay: (NSString *)d
             tasks: (NSMutableArray *)array
 {
- 	if (self == [super init]) 
+    self = [super init];
+ 	if (self) 
 	{
         self.title = d;
         self.tasks = [NSMutableArray arrayWithArray:array];
