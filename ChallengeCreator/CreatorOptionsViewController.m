@@ -186,7 +186,15 @@
     _TheDailyChallenge.minimumRiskFactor = _RiskFactor.text.integerValue;
 }
 
+- (IBAction)filterGenderExclusions:(id)sender {
+}
+
 - (IBAction)doneAddingChallenges:(id)sender {
+}
+
+- (IBAction)setChallengeTitle:(id)sender {
+    _TheDailyChallenge.title = _ChallengeTitle.text;
+    
 }
 
 - (IBAction)addTask:(id)sender {
@@ -196,20 +204,45 @@
 }
 
 - (IBAction)ExcludeSchoolHappy:(id)sender {
-    if (_SchoolHappySwitch.on == true)
+    if(_SchoolHappySwitch.on == true)
     {
-        // never commit with bugs!!!!!
-        _TheDailyChallenge.completed = true;
+        _TheDailyChallenge.schoolHappyExcludes = [[NSString alloc] initWithFormat:@"true"];
+    }
+    else
+    {
+        _TheDailyChallenge.schoolHappyExcludes = [[NSString alloc] initWithFormat:@"false"];
     }
 
 }
 
 - (IBAction)ExcludeWorkHappy:(id)sender {
+    if(_WorkHappySwitch.on == true)
+    {
+        _TheDailyChallenge.workHappyExcludes = [[NSString alloc] initWithFormat:@"true"];
+    }
+    else
+    {
+        _TheDailyChallenge.workHappyExcludes = [[NSString alloc] initWithFormat:@"false"];
+    }
 }
 
 - (IBAction)ExcludeLoveHappy:(id)sender {
+    if(_LoveHappySwitch.on == true)
+    {
+        _TheDailyChallenge.relationshipHappyExcludes = [[NSString alloc] initWithFormat:@"true"];
+    }
+    else
+    {
+        _TheDailyChallenge.relationshipHappyExcludes = [[NSString alloc] initWithFormat:@"false"];
+    }
 }
 
 - (IBAction)ExcludeFemales:(id)sender {
+    _PickerPopUp = [[PickerPopUpViewController alloc] init];
+    _PickerPopUp.title = @"Genders";
+    _PickerPopUp.options = [[NSArray alloc] initWithObjects:@"female",@"male",nil];
+    NSMutableArray *list = _TheDailyChallenge.femaleExcl;
+    _PickerPopUp.list = &(*list);
+
 }
 @end
