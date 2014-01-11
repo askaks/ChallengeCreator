@@ -43,6 +43,9 @@
     
     //Start parsing the XML file.
     bool success = [xmlParser parse];
+    NSData *xmlData = [[NSData alloc] initWithContentsOfURL:url];
+    _downloadedXML = [[NSString alloc] initWithData:xmlData encoding:NSUTF8StringEncoding];
+                                        
     if (success)
     {
         _correctlyLoadedXMLLabel.text = @"No Errors";
