@@ -42,12 +42,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.taskTitle resignFirstResponder];
     [self.message resignFirstResponder];
    [self.taskPoints resignFirstResponder];
     [self.titleToEdit resignFirstResponder];
 }
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
 	[textField resignFirstResponder];
@@ -78,6 +80,7 @@
     _TaskFormDailyChallenge.pointsWorth += task.points;
     
 }
+
 - (NSString*)printTaskToScreen: (NSMutableArray *) taskList
 {
     NSString *combinedStuff = [[NSString alloc] init];

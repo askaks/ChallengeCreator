@@ -27,6 +27,13 @@
 
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+	
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -34,8 +41,8 @@
 }
 
 
-- (IBAction)LoadChallengesXML:(id)sender {
-//    NSString *docDir = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Challenges.xml"];
+- (IBAction)LoadChallengesXML:(id)sender
+{
     NSURL *url = [[NSURL alloc] initWithString:@"https://home.comcast.net/~jszymczyk/iBeHappy/Challenges.xml"];
     NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     //Set delegate
@@ -54,9 +61,10 @@
         _correctlyLoadedXMLLabel.text = @"Error Error Error!!!";
 }
 
-- (IBAction)createXML:(id)sender {
-     NSString * myChallengeXMLString;
-//    myCustomXMLString = [NSString stringWithFormat:@"<bacon>%@</bacon>", aString]
+- (IBAction)createXML:(id)sender
+{
+    NSString * myChallengeXMLString;
+
     for (DailyChallenge *dailyChallenge in _Challenges)
     {
         NSString * femaleExcludeString = [[NSString alloc] init];
@@ -71,22 +79,22 @@
         NSString * childString = [[NSString alloc] init];
         
         
-        if(dailyChallenge.tasks == nil || dailyChallenge.tasks.count <= 0)
+        if (dailyChallenge.tasks == nil || dailyChallenge.tasks.count <= 0)
         {
             schoolString = @"";
         }
         else
         {
-        for (Task *task in dailyChallenge.tasks)
-        {
-            taskString = [NSString stringWithFormat:@"%@<Task><Message>%@</Message><TaskPoints>%d</TaskPoints></Task>", taskString, task.message, task.points];
+            for (Task *task in dailyChallenge.tasks)
+            {
+                taskString = [NSString stringWithFormat:@"%@<Task><Message>%@</Message><TaskPoints>%d</TaskPoints></Task>", taskString, task.message, task.points];
+            }
         }
-        }
         
         
         
         
-        if(dailyChallenge.schoolLevelExcludes == nil || dailyChallenge.schoolLevelExcludes.count <= 0)
+        if (dailyChallenge.schoolLevelExcludes == nil || dailyChallenge.schoolLevelExcludes.count <= 0)
         {
             schoolString = @"<ExcludeSchoolLevelFilters />";
         }
@@ -100,90 +108,89 @@
         
         
         
-        if(dailyChallenge.workLevelExcludes == nil || dailyChallenge.workLevelExcludes.count <= 0)
+        if (dailyChallenge.workLevelExcludes == nil || dailyChallenge.workLevelExcludes.count <= 0)
         {
             workString = @"<ExcludeWorkLevelFilters />";
         }
         else
         {
-        for (NSString *work in dailyChallenge.workLevelExcludes)
-        {
-            workString = [NSString stringWithFormat:@"%@<ExcludeWorkLevelFilters>%@</ExcludeWorkLevelFilters>", workString, work];
-        }
+            for (NSString *work in dailyChallenge.workLevelExcludes)
+            {
+                workString = [NSString stringWithFormat:@"%@<ExcludeWorkLevelFilters>%@</ExcludeWorkLevelFilters>", workString, work];
+            }
         }
         
             
-        if(dailyChallenge.relationshipLevelExcludes == nil || dailyChallenge.relationshipLevelExcludes <= 0)
+        if (dailyChallenge.relationshipLevelExcludes == nil || dailyChallenge.relationshipLevelExcludes <= 0)
         {
             relationshipString = @"<ExcludeRelationshipLevelFilters />";
         }
         else
         {
-        for (NSString *relationship in dailyChallenge.relationshipLevelExcludes)
-        {
-            relationshipString = [NSString stringWithFormat:@"%@<ExcludeRelationshipLevelFilters>%@</ExcludeRelationshipLevelFilters>", relationshipString, relationship];
+            for (NSString *relationship in dailyChallenge.relationshipLevelExcludes)
+            {
+                relationshipString = [NSString stringWithFormat:@"%@<ExcludeRelationshipLevelFilters>%@</ExcludeRelationshipLevelFilters>", relationshipString, relationship];
+            }
         }
-        }
-    
-        if(dailyChallenge.genderExcludes == nil || dailyChallenge.genderExcludes.count <= 0)
+        
+        if (dailyChallenge.genderExcludes == nil || dailyChallenge.genderExcludes.count <= 0)
         {
             femaleExcludeString = @"<ExcludeGenderFilters />";
         }
         else
         {
-        for (NSString *gender in dailyChallenge.genderExcludes)
-        {
-            femaleExcludeString = [NSString stringWithFormat:@"%@<ExcludeGenderFilters>%@</ExcludeGenderFilters>", femaleExcludeString, gender];
+            for (NSString *gender in dailyChallenge.genderExcludes)
+            {
+                femaleExcludeString = [NSString stringWithFormat:@"%@<ExcludeGenderFilters>%@</ExcludeGenderFilters>", femaleExcludeString, gender];
+            }
         }
-}
-
-
-        if(dailyChallenge.interestedInExcludes == nil || dailyChallenge.interestedInExcludes.count <= 0)
+        
+        
+        if (dailyChallenge.interestedInExcludes == nil || dailyChallenge.interestedInExcludes.count <= 0)
         {
             interestedInString = @"<ExcludeInterestedInFilters />";
         }
         else
         {
-        for (NSString *interested in dailyChallenge.interestedInExcludes)
-        {
-            interestedInString = [NSString stringWithFormat:@"%@<ExcludeGenderFilters>%@</ExcludeGenderFilters>", interestedInString, interested];
+            for (NSString *interested in dailyChallenge.interestedInExcludes)
+            {
+                interestedInString = [NSString stringWithFormat:@"%@<ExcludeGenderFilters>%@</ExcludeGenderFilters>", interestedInString, interested];
+            }
         }
-}
+        
 
-
-        if(dailyChallenge.kidsExclude == nil || dailyChallenge.kidsExclude.count <= 0)
+        if (dailyChallenge.kidsExclude == nil || dailyChallenge.kidsExclude.count <= 0)
         {
             childString = @"<ExcludeKidFilters />";
         }
         else
         {
-        for (NSString *kids in dailyChallenge.kidsExclude)
-        {
-            childString = [NSString stringWithFormat:@"%@<ExcludeKidFilters>%@</ExcludeKidFilters>", childString, kids];
+            for (NSString *kids in dailyChallenge.kidsExclude)
+            {
+                childString = [NSString stringWithFormat:@"%@<ExcludeKidFilters>%@</ExcludeKidFilters>", childString, kids];
+            }
         }
-}
-
-
-        if(dailyChallenge.petsExclude == nil || dailyChallenge.petsExclude.count <= 0)
+        
+        
+        if (dailyChallenge.petsExclude == nil || dailyChallenge.petsExclude.count <= 0)
         {
             petString = @"<ExcludePetFilters />";
         }
         else
         {
-        for (NSString *pets in dailyChallenge.petsExclude)
-        {
-            petString = [NSString stringWithFormat:@"%@<ExcludePetFilters>%@</ExcludePetFilters>", petString, pets];
+            for (NSString *pets in dailyChallenge.petsExclude)
+            {
+                petString = [NSString stringWithFormat:@"%@<ExcludePetFilters>%@</ExcludePetFilters>", petString, pets];
+            }
         }
-}
         
         myChallengeXMLString = [NSString stringWithFormat:@"%@<Challenge><Title>%@</Title><Points>%d</Points><LanguageRating>%d</LanguageRating><RiskFactor>%d</RiskFactor><AgeMin>%@</AgeMin><AgeMax>%@</AgeMax><Tasks>%@</Tasks><ExcludeWorkHappy>%@</ExcludeWorkHappy><ExcludeRelationshipHappy>%@</ExcludeRelationshipHappy><ExcludeSchoolHappy>%@</ExcludeSchoolHappy>%@%@%@%@%@</Challenge>",myChallengeXMLString,dailyChallenge.title, dailyChallenge.pointsWorth, dailyChallenge.language, dailyChallenge.minimumRiskFactor, dailyChallenge.ageMin, dailyChallenge.ageMax, dailyChallenge.workSpecific, dailyChallenge.relationshipSpecific, dailyChallenge.schoolSpecific, interestedInString, schoolString, workString, relationshipString, childString, petString];
         
     }
-        _tobeUploadedXML = [[NSString alloc] initWithString: myChallengeXMLString];
+    
+    _tobeUploadedXML = [[NSString alloc] initWithString: myChallengeXMLString];
     
 }
-
-
 
 - (IBAction)writeOutXML:(id)sender {
     

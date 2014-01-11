@@ -62,10 +62,12 @@
 @property (weak, nonatomic) IBOutlet UITextView *PetInfoBox;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
 
+@property (weak, nonatomic) IBOutlet UITextView *genderInfoBox;
+@property (weak, nonatomic) IBOutlet UIButton *CreateChallengeButton;
+
+
 - (IBAction)doneAddingChallenges:(id)sender;
 - (IBAction)setChallengeTitle:(id)sender;
-
-
 
 - (IBAction)addTask:(id)sender;
 
@@ -86,10 +88,9 @@
 - (IBAction)setLanguage:(id)sender;
 - (IBAction)setRiskFactor:(id)sender;
 - (IBAction)filterGenderExclusions:(id)sender;
-@property (weak, nonatomic) IBOutlet UITextView *genderInfoBox;
 
-
-@property (weak, nonatomic) IBOutlet UIButton *CreateChallengeButton;
-
+- (NSString *)challengesPath;
+- (void)archiveChallenges:(NSMutableArray *)array;
+- (NSMutableArray *)unarchiveChallenges;
 
 @end

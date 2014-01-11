@@ -15,6 +15,103 @@
 @implementation CreatorOptionsViewController
 
 
+- (NSString *)challengesPath
+{
+    NSString *docDir =
+	[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+										 NSUserDomainMask, YES) objectAtIndex: 0];
+	return [docDir stringByAppendingPathComponent: @"Challenge.dat"];
+}
+
+- (void)archiveChallenges:(NSMutableArray *)array
+{
+    NSString *filePath = [self challengesPath];
+    
+	if ([array count] > 0)
+    {
+        NSError *error = nil;
+        NSDictionary *attrib;
+        
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        
+        //
+        // check if file already exist
+        //
+        BOOL exist = [fileManager fileExistsAtPath:filePath];
+        BOOL success = YES;
+        if (YES == exist)
+        {
+            // UNLOCK THE FILE
+            attrib = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO]
+                                                 forKey:NSFileImmutable];
+            
+            success = [fileManager setAttributes:attrib
+                                    ofItemAtPath:filePath
+                                           error:&error];
+        }
+        if (YES == success)
+        {
+            // SAVE THE FILE
+            [NSKeyedArchiver archiveRootObject:array
+                                        toFile:filePath];
+            
+            // LOCK IT BACK
+            attrib = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
+                                                 forKey:NSFileImmutable];
+            
+            success = [fileManager setAttributes:attrib
+                                    ofItemAtPath:filePath
+                                           error:&error];
+            
+            if (NO == success) {
+                NSLog(@"Error: %@",[error localizedDescription]);
+            }
+        }
+        else {
+            NSLog(@"Could not UNLOCK the file.");
+        }
+	}
+	else {
+		
+		UIAlertView *alertView;
+		alertView = [[UIAlertView alloc]
+					 initWithTitle: @"EMPTY OBJECT"
+					 message: @"WARNING: Nothing was saved."
+					 delegate: nil
+					 cancelButtonTitle:@"OK"
+					 otherButtonTitles:nil];
+		[alertView show];
+	}
+}
+
+- (NSMutableArray *)unarchiveChallenges
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    NSString *filePath = [self challengesPath];
+    //
+    // check if file already exist
+    //
+    BOOL exist = [fileManager fileExistsAtPath:filePath];
+    if (NO == exist)
+    {
+        UIAlertView *alertView;
+        alertView = [[UIAlertView alloc]
+                     initWithTitle: @"FILE NOT FOUND"
+                     message: @"WARNING: nothing was unarchived."
+                     delegate: nil
+                     cancelButtonTitle:@"OK"
+                     otherButtonTitles:nil];
+        [alertView show];
+        
+        return nil;
+    }
+    
+	NSMutableArray *array = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+    
+	return array;
+}
+
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     
@@ -48,31 +145,31 @@
     {
         _challengePoints = [NSString stringWithFormat:@"%d", _TheDailyChallenge.pointsWorth];
         
-        if(_TheDailyChallenge.interestedInExcludes != nil)
+        if (_TheDailyChallenge.interestedInExcludes != nil)
         {
             _LookingInfoBox.text = [_TheDailyChallenge.interestedInExcludes componentsJoinedByString:@"  "];
         }
-        if(_TheDailyChallenge.schoolLevelExcludes != nil)
+        if (_TheDailyChallenge.schoolLevelExcludes != nil)
         {
             _SchoolInfoBox.text = [_TheDailyChallenge.schoolLevelExcludes componentsJoinedByString:@"  "];
         }
-        if(_TheDailyChallenge.workLevelExcludes != nil)
+        if (_TheDailyChallenge.workLevelExcludes != nil)
         {
             _WorkInfoBox.text = [_TheDailyChallenge.workLevelExcludes componentsJoinedByString:@"  "];
         }
-        if(_TheDailyChallenge.relationshipLevelExcludes != nil)
+        if (_TheDailyChallenge.relationshipLevelExcludes != nil)
         {
             _LoveInfoBox.text = [_TheDailyChallenge.relationshipLevelExcludes componentsJoinedByString:@"  "];
         }
-        if(_TheDailyChallenge.kidsExclude != nil)
+        if (_TheDailyChallenge.kidsExclude != nil)
         {
             _ChildInfoBox.text = [_TheDailyChallenge.kidsExclude componentsJoinedByString:@"  "];
         }
-        if(_TheDailyChallenge.petsExclude != nil)
+        if (_TheDailyChallenge.petsExclude != nil)
         {
             _PetInfoBox.text = [_TheDailyChallenge.petsExclude componentsJoinedByString:@"  "];
         }
-        if(_TheDailyChallenge.genderExcludes != nil)
+        if  (_TheDailyChallenge.genderExcludes != nil)
         {
             _genderInfoBox.text = [_TheDailyChallenge.genderExcludes componentsJoinedByString:@"  "];
         }
