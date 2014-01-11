@@ -28,16 +28,16 @@
 @property (nonatomic, retain) NSMutableArray *interestedInExcludes;
 
 @property (nonatomic, retain) NSMutableArray *workLevelExcludes;
-@property (nonatomic, retain) NSMutableArray *workHappyExcludes;
+@property (nonatomic, retain) NSString *workHappyExcludes;
 
 @property (nonatomic, retain) NSMutableArray *schoolLevelExcludes;
-@property (nonatomic, retain) NSMutableArray *schoolHappyExcludes;
+@property (nonatomic, retain) NSString *schoolHappyExcludes;
 
 @property (nonatomic, retain) NSMutableArray *relationshipLevelExcludes;
-@property (nonatomic, retain) NSMutableArray *relationshipHappyExcludes;
+@property (nonatomic, retain) NSString *relationshipHappyExcludes;
 
-@property (nonatomic, retain) NSString *femaleExcl;
-@property (nonatomic, retain) NSString *maleExcl;
+@property (nonatomic, retain) NSMutableArray *femaleExcl;
+//@property (nonatomic, retain) NSString *maleExcl;
 @property (nonatomic, retain) NSString *schoolSpecific;
 @property (nonatomic, retain) NSString *schoolLevel;
 @property (nonatomic, retain) NSString *workSpecific;

@@ -68,13 +68,13 @@
         _genderExcludes = [[NSMutableArray alloc] init];
         _interestedInExcludes = [[NSMutableArray alloc] init];
         
-        _schoolHappyExcludes = [[NSMutableArray alloc] init];
+        _schoolHappyExcludes = [[NSString alloc] initWithFormat:@"false"];
         _schoolLevelExcludes = [[NSMutableArray alloc] init];
         
-        _workHappyExcludes = [[NSMutableArray alloc] init];
+        _workHappyExcludes = [[NSString alloc] initWithFormat:@"false"];
         _workLevelExcludes =[[NSMutableArray alloc] init];
         
-        _relationshipHappyExcludes = [[NSMutableArray alloc] init];
+        _relationshipHappyExcludes = [[NSString alloc] initWithFormat:@"false"];
         _relationshipLevelExcludes = [[NSMutableArray alloc] init];
 
         _kidsExclude = [[NSMutableArray alloc] init];
@@ -158,13 +158,13 @@
     challenge.interestedInExcludes = [_interestedInExcludes copy];
     
     challenge.schoolLevelExcludes = [_schoolLevelExcludes copy];
-    challenge.schoolHappyExcludes = [_schoolHappyExcludes copy];
+    challenge.schoolHappyExcludes = [NSString stringWithString:_schoolHappyExcludes];
     
     challenge.workLevelExcludes = [_workLevelExcludes copy];
-    challenge.workHappyExcludes = [_workHappyExcludes copy];
+    challenge.workHappyExcludes = [NSString stringWithString:_workHappyExcludes];
     
     challenge.relationshipLevelExcludes = [_relationshipLevelExcludes copy];
-    challenge.relationshipHappyExcludes = [_relationshipHappyExcludes copy];
+    challenge.relationshipHappyExcludes = [NSString stringWithString:_relationshipHappyExcludes];
     
     challenge.completed = _completed;
     

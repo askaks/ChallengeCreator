@@ -51,6 +51,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *WorkFilter;
 @property (weak, nonatomic) IBOutlet UIButton *ChildFilter;
 @property (weak, nonatomic) IBOutlet UIButton *PetFilter;
+@property (weak, nonatomic) IBOutlet UIButton *femaleFilter;
 
 
 @property (weak, nonatomic) IBOutlet UITextView *LookingInfoBox;
@@ -62,6 +63,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
 
 - (IBAction)doneAddingChallenges:(id)sender;
+- (IBAction)setChallengeTitle:(id)sender;
 
 
 
@@ -83,6 +85,8 @@
 - (IBAction)setAgeMaxField:(id)sender;
 - (IBAction)setLanguage:(id)sender;
 - (IBAction)setRiskFactor:(id)sender;
+- (IBAction)filterGenderExclusions:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *genderInfoBox;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *CreateChallengeButton;
