@@ -232,7 +232,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <outlet property="delegate" destination="sDE-RR-EHX" id="rQN-c8-0OI"/>
+                                            <action selector="setChallengeTitle:" destination="sDE-RR-EHX" eventType="editingDidEnd" id="erX-GO-upv"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HJJ-yr-hVn">
@@ -619,7 +619,7 @@
                                     <constraint firstAttribute="bottom" secondItem="lGW-Zm-VYF" secondAttribute="bottom" constant="150" id="0M0-Cd-hcb"/>
                                     <constraint firstItem="elY-WF-Zjj" firstAttribute="baseline" secondItem="HJJ-yr-hVn" secondAttribute="baseline" type="default" id="16c-Lq-J5o"/>
                                     <constraint firstItem="YJi-Cr-1au" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="224" id="1Rh-lQ-iWG"/>
-                                    <constraint firstItem="gk5-QY-TWb" firstAttribute="top" secondItem="oZK-EB-d4q" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="20k-JP-KBt"/>
+                                    <constraint firstItem="qNx-nu-XNh" firstAttribute="top" secondItem="N12-Wf-Cd3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1Wg-lx-XBd"/>
                                     <constraint firstAttribute="trailing" secondItem="DrD-hd-aUE" secondAttribute="trailing" constant="-12" id="2Fy-xO-Y3v"/>
                                     <constraint firstItem="oz4-3R-JzP" firstAttribute="leading" secondItem="rwX-yS-YL8" secondAttribute="leading" type="default" id="2rV-ni-pY5"/>
                                     <constraint firstItem="hsi-qZ-rIB" firstAttribute="baseline" secondItem="R6W-bg-YcD" secondAttribute="baseline" type="default" id="32l-6R-fye"/>
@@ -676,7 +676,7 @@
                                     <constraint firstItem="lGW-Zm-VYF" firstAttribute="leading" secondItem="gk5-QY-TWb" secondAttribute="leading" type="default" id="ag3-v9-vYE"/>
                                     <constraint firstItem="675-MO-yLa" firstAttribute="leading" secondItem="orb-95-O21" secondAttribute="leading" type="default" id="av0-uU-nFv"/>
                                     <constraint firstItem="zqr-Xq-PP4" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="51" id="b8P-bf-Btq"/>
-                                    <constraint firstItem="E0Q-Vo-R9Y" firstAttribute="trailing" secondItem="Bgs-Go-C5h" secondAttribute="trailing" type="default" id="bLp-e0-Tf7"/>
+                                    <constraint firstItem="jck-fG-AGn" firstAttribute="top" secondItem="qNx-nu-XNh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bfP-TD-tjO"/>
                                     <constraint firstItem="hKO-on-yR5" firstAttribute="baseline" secondItem="hsi-qZ-rIB" secondAttribute="baseline" type="default" id="d3y-BJ-Rck"/>
                                     <constraint firstItem="bsN-r4-oPv" firstAttribute="baseline" secondItem="oZK-EB-d4q" secondAttribute="baseline" type="default" id="dXf-OD-pZh"/>
                                     <constraint firstItem="Iur-kv-3w0" firstAttribute="top" secondItem="J81-Zp-zyW" secondAttribute="top" constant="185" id="dkp-Uk-pWh"/>
@@ -694,7 +694,8 @@
                                     <constraint firstItem="o2c-tV-LOr" firstAttribute="leading" secondItem="hsi-qZ-rIB" secondAttribute="leading" type="default" id="jl1-ti-NPn"/>
                                     <constraint firstItem="5pU-8I-HnA" firstAttribute="leading" secondItem="S4u-3l-X5C" secondAttribute="leading" type="default" id="kcM-H8-Mv1"/>
                                     <constraint firstItem="rwX-yS-YL8" firstAttribute="top" secondItem="Iur-kv-3w0" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="neh-0Q-FcV"/>
-                                    <constraint firstItem="oZK-EB-d4q" firstAttribute="top" secondItem="YxA-5N-xlA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="oDS-34-CF7"/>
+                                    <constraint firstItem="oZK-EB-d4q" firstAttribute="top" secondItem="YxA-5N-xlA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="p15-Hp-gqo"/>
+                                    <constraint firstItem="qQs-2q-VGe" firstAttribute="trailing" secondItem="bsN-r4-oPv" secondAttribute="trailing" type="default" id="paj-QR-Xyd"/>
                                     <constraint firstItem="S4u-3l-X5C" firstAttribute="top" secondItem="uCX-bU-qd4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="puT-K2-4F5"/>
                                     <constraint firstItem="YJi-Cr-1au" firstAttribute="leading" secondItem="Bgs-Go-C5h" secondAttribute="leading" type="default" id="qhd-7f-OIN"/>
                                     <constraint firstItem="o2c-tV-LOr" firstAttribute="trailing" secondItem="qcu-ea-jLA" secondAttribute="trailing" type="default" id="rFS-RZ-ITN"/>
@@ -995,8 +996,10 @@
                 <relationship kind="action" name="FilterWork:"/>
                 <relationship kind="action" name="addTask:"/>
                 <relationship kind="action" name="doneAddingChallenges:"/>
+                <relationship kind="action" name="filterGenderExclusions:"/>
                 <relationship kind="action" name="setAgeMaxField:"/>
                 <relationship kind="action" name="setAgeMinField:"/>
+                <relationship kind="action" name="setChallengeTitle:"/>
                 <relationship kind="action" name="setLanguage:"/>
                 <relationship kind="action" name="setRiskFactor:"/>
                 <relationship kind="outlet" name="ChallengeTitle" candidateClass="UITextField"/>
