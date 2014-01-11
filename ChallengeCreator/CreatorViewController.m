@@ -179,12 +179,26 @@
         myChallengeXMLString = [NSString stringWithFormat:@"%@<Challenge><Title>%@</Title><Points>%d</Points><LanguageRating>%d</LanguageRating><RiskFactor>%d</RiskFactor><AgeMin>%@</AgeMin><AgeMax>%@</AgeMax><Tasks>%@</Tasks><ExcludeWorkHappy>%@</ExcludeWorkHappy><ExcludeRelationshipHappy>%@</ExcludeRelationshipHappy><ExcludeSchoolHappy>%@</ExcludeSchoolHappy>%@%@%@%@%@</Challenge>",myChallengeXMLString,dailyChallenge.title, dailyChallenge.pointsWorth, dailyChallenge.language, dailyChallenge.minimumRiskFactor, dailyChallenge.ageMin, dailyChallenge.ageMax, dailyChallenge.workSpecific, dailyChallenge.relationshipSpecific, dailyChallenge.schoolSpecific, interestedInString, schoolString, workString, relationshipString, childString, petString];
         
     }
+        _tobeUploadedXML = [[NSString alloc] initWithString: myChallengeXMLString];
     
 }
 
 
 
 - (IBAction)writeOutXML:(id)sender {
+    
+    //First delete last tag (challenges) from downloaded xml
+    [_downloadedXML delete:@"</Challenges>"];
+    _downloadedXML = [_downloadedXML stringByReplacingOccurrencesOfString:@"/Challenges>" withString:@""];
+    _tobeUploadedXML = [NSString stringWithFormat:@"%@%@/Challenges>", _downloadedXML, _tobeUploadedXML];
+    
+    [[NSFileManager defaultManager] createFileAtPath:@"Your/Path" contents:nil attributes:nil];
+    //This creates an empty file, which you can write to or read from. To write text (or XML), just use NSString's writeToFile:atomically:encoding:error: method like this
+    
+    //NSString *str = //Your text or XML
+    //[_tobeUploadedXML writeToFile:"Your/Path" atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    //To read from a file, just make an NSString with the contents of that file
+
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
