@@ -17,7 +17,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *correctlyLoadedXMLLabel;
 @property (nonatomic, retain) NSMutableArray *Challenges;
-
+@property (nonatomic, retain) NSString *downloadedXML;
+@property (nonatomic, retain) NSString *tobeUploadedXML;
 
 - (IBAction)LoadChallengesXML:(id)sender;
 - (IBAction)createXML:(id)sender;
