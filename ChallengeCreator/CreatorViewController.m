@@ -15,8 +15,13 @@
 @implementation CreatorViewController
 
 
-//@synthesize correctlyLoadedXMLLabel;
-//@synthesize Challenges;
+- (NSString *)filePath
+{
+    NSString *docDir =
+	[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+										 NSUserDomainMask, YES) objectAtIndex: 0];
+	return [docDir stringByAppendingPathComponent: @"XMLstring.dat"];
+}
 
 - (void)viewDidLoad
 {
@@ -64,7 +69,7 @@
 - (IBAction)createXML:(id)sender
 {
     NSString * myChallengeXMLString;
-
+    
     for (DailyChallenge *dailyChallenge in _Challenges)
     {
         NSString * femaleExcludeString = [[NSString alloc] init];
@@ -186,9 +191,16 @@
         
         myChallengeXMLString = [NSString stringWithFormat:@"%@<Challenge><Title>%@</Title><Points>%d</Points><LanguageRating>%d</LanguageRating><RiskFactor>%d</RiskFactor><AgeMin>%@</AgeMin><AgeMax>%@</AgeMax><Tasks>%@</Tasks><ExcludeWorkHappy>%@</ExcludeWorkHappy><ExcludeRelationshipHappy>%@</ExcludeRelationshipHappy><ExcludeSchoolHappy>%@</ExcludeSchoolHappy>%@%@%@%@%@</Challenge>",myChallengeXMLString,dailyChallenge.title, dailyChallenge.pointsWorth, dailyChallenge.language, dailyChallenge.minimumRiskFactor, dailyChallenge.ageMin, dailyChallenge.ageMax, dailyChallenge.workSpecific, dailyChallenge.relationshipSpecific, dailyChallenge.schoolSpecific, interestedInString, schoolString, workString, relationshipString, childString, petString];
         
+        NSString *filePath = [self filePath];
+        [myChallengeXMLString writeToFile:filePath atomically:NO encoding:NSStringEncodingConversionAllowLossy error:nil];
+        
     }
     
-    _tobeUploadedXML = [[NSString alloc] initWithString: myChallengeXMLString];
+    NSString *fileName = [self filePath];
+    
+    _tobeUploadedXML = @"testing writing XML to file";
+    
+    [_tobeUploadedXML writeToFile:fileName atomically:NO encoding:NSStringEncodingConversionAllowLossy error:nil];
     
 }
 
