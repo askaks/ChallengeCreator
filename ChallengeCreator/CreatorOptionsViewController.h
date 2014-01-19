@@ -21,7 +21,7 @@
 @class Task;
 @class CreatorTaskFormViewController;
 
-@interface CreatorOptionsViewController : UIViewController <UITextFieldDelegate>
+@interface CreatorOptionsViewController : UIViewController <UITextFieldDelegate,UITextViewDelegate>
 
 
 @property (nonatomic, retain) NSMutableArray *Challenges;

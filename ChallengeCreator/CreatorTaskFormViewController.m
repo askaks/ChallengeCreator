@@ -57,6 +57,24 @@
 	return YES;
 }
 
+
+-(BOOL):(UITextField *)textField
+{
+	[textField resignFirstResponder];
+	
+	return YES;
+}
+
+- (BOOL)textView:(UITextView *)textView
+shouldChangeTextInRange:(NSRange)range
+ replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"])
+    {
+        [textView resignFirstResponder];
+    }
+    return YES;
+}
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     CreatorOptionsViewController *optionsController = [segue destinationViewController];

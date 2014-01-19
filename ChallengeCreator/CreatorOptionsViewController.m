@@ -120,6 +120,16 @@
 	return YES;
 }
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if([text isEqualToString:@"\n"])
+    {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -230,6 +240,10 @@
 }
 
 - (IBAction)CreateChallenge:(id)sender {
+    if(_TheDailyChallenge != nil && _TheDailyChallenge.tasks != nil && _TheDailyChallenge.tasks.count >= 1)
+    {
+        [_Challenges addObject:_TheDailyChallenge];
+    }
 }
 
 - (IBAction)FilterLookingFor:(id)sender {
