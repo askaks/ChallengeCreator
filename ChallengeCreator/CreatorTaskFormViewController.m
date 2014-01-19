@@ -104,7 +104,7 @@ shouldChangeTextInRange:(NSRange)range
     NSString *combinedStuff = [[NSString alloc] init];
     for(Task *t in taskList)
     {
-        combinedStuff = [NSString stringWithFormat:@"%@    %@: and message: %@     ", combinedStuff, t.title, t.message];
+        combinedStuff = [NSString stringWithFormat:@"%@    Title: %@ message: %@ (%d pts)    \n", combinedStuff, t.title, t.message, t.points];
     }
     return combinedStuff;
 }
