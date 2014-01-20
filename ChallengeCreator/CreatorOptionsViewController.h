@@ -38,6 +38,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *ageMaxField;
 @property (weak, nonatomic) IBOutlet UITextField *RiskFactor;
 @property (weak, nonatomic) IBOutlet UITextField *LanguageRating;
+//@property (weak, nonatomic) IBOutlet UIButton *createChallenge;
 
 @property (weak, nonatomic) IBOutlet UISwitch *ExcludeFemalesSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *SchoolHappySwitch;
@@ -63,8 +64,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
 
 @property (weak, nonatomic) IBOutlet UITextView *genderInfoBox;
-@property (weak, nonatomic) IBOutlet UIButton *CreateChallengeButton;
-
+@property (weak, nonatomic) IBOutlet UIButton *createChallengeButton;
+@property (weak, nonatomic) IBOutlet UIView *challengePreviewScreen;
+@property (weak, nonatomic) IBOutlet UIButton *cancelAddChallenge;
+@property (weak, nonatomic) IBOutlet UITextView *challengeTextDisplay;
 
 - (IBAction)doneAddingChallenges:(id)sender;
 - (IBAction)setChallengeTitle:(id)sender;
@@ -92,5 +95,11 @@
 - (NSString *)challengesPath;
 - (void)archiveChallenges:(NSMutableArray *)array;
 - (NSMutableArray *)unarchiveChallenges;
+- (IBAction)previewAndConfirm:(id)sender;
+
+- (IBAction)cancelAddingChallenge:(id)sender;
+- (IBAction)CreateChallenge:(id)sender;
+
+- (IBAction)clearChallenge:(id)sender;
 
 @end

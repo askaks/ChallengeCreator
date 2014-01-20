@@ -112,6 +112,22 @@
 	return array;
 }
 
+- (IBAction)previewAndConfirm:(id)sender {
+    _cancelAddChallenge.hidden = false;
+    _createChallengeButton.hidden = false;
+    _challengePreviewScreen.hidden = false;
+    _challengeTextDisplay.hidden = false;
+    
+    NSString *combinedStuff = [[NSString alloc] init];
+    combinedStuff = [NSString stringWithFormat:@"Challenge Title: %@ \n for ages %@ - %@ \n lang: %d and riskFactor %d \n Looking For: %@ \n School: %@ \n Work: %@ \n Relationship: %@ \n Kids: %@ \n Pets: %@ \n", _TheDailyChallenge.title, _TheDailyChallenge.ageMin, _TheDailyChallenge.ageMax, _TheDailyChallenge.language, _TheDailyChallenge.minimumRiskFactor, _LookingInfoBox.text, _SchoolInfoBox.text, _WorkInfoBox.text, _LoveInfoBox.text, _ChildInfoBox.text, _PetInfoBox.text];
+    for(Task *t in _TheDailyChallenge.tasks)
+    {
+        combinedStuff = [NSString stringWithFormat:@"%@    Title: %@ message: %@ (%d pts)    \n", combinedStuff, t.title, t.message, t.points];
+    }
+    
+    _challengeTextDisplay.text = combinedStuff;
+}
+
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     
@@ -244,6 +260,19 @@
     {
         [_Challenges addObject:_TheDailyChallenge];
     }
+    _cancelAddChallenge.hidden = true;
+    _createChallengeButton.hidden = true;
+    _challengePreviewScreen.hidden = true;
+    _challengeTextDisplay.hidden = true;
+}
+
+- (IBAction)clearChallenge:(id)sender {
+    _TheDailyChallenge = [[DailyChallenge alloc] init];
+    _ageMinField.text = @"";
+    _ageMaxField.text = @"";
+    _RiskFactor.text = @"";
+    _LanguageRating.text =@"";
+    _ChallengeTitle.text =@"";
 }
 
 - (IBAction)FilterLookingFor:(id)sender {
@@ -369,5 +398,11 @@
     NSMutableArray *list = _TheDailyChallenge.femaleExcl;
     _PickerPopUp.list = &(*list);
 
+}
+- (IBAction)cancelAddingChallenge:(id)sender {
+    _cancelAddChallenge.hidden = true;
+    _createChallengeButton.hidden = true;
+    _challengePreviewScreen.hidden = true;
+    _challengeTextDisplay.hidden = true;
 }
 @end
