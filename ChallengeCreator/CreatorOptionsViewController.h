@@ -70,7 +70,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *challengeTextDisplay;
 
 - (IBAction)doneAddingChallenges:(id)sender;
-- (IBAction)setChallengeTitle:(id)sender;
+- (IBAction)setMyChallengeTitle:(id)sender;
 
 - (IBAction)addTask:(id)sender;
 
@@ -86,10 +86,10 @@
 - (IBAction)FilterChildren:(id)sender;
 - (IBAction)FilterPets:(id)sender;
 
-- (IBAction)setAgeMinField:(id)sender;
-- (IBAction)setAgeMaxField:(id)sender;
+- (IBAction)setMyAgeMinField:(id)sender;
+- (IBAction)setMyAgeMaxField:(id)sender;
 - (IBAction)setLanguage:(id)sender;
-- (IBAction)setRiskFactor:(id)sender;
+- (IBAction)setMyRiskFactor:(id)sender;
 - (IBAction)filterGenderExclusions:(id)sender;
 
 - (NSString *)challengesPath;

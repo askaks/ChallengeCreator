@@ -232,7 +232,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="setChallengeTitle:" destination="sDE-RR-EHX" eventType="editingDidEnd" id="SKE-qZ-97J"/>
+                                            <action selector="setMyChallengeTitle:" destination="sDE-RR-EHX" eventType="editingDidEnd" id="oaC-lQ-ZNi"/>
                                             <outlet property="delegate" destination="sDE-RR-EHX" id="fLQ-44-BKH"/>
                                         </connections>
                                     </textField>
@@ -243,7 +243,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="setAgeMinField:" destination="sDE-RR-EHX" eventType="editingDidEnd" id="0cm-H7-4aK"/>
+                                            <action selector="setMyAgeMinField:" destination="sDE-RR-EHX" eventType="editingDidEnd" id="wCy-wT-slK"/>
                                             <outlet property="delegate" destination="sDE-RR-EHX" id="NFF-Pa-C5g"/>
                                         </connections>
                                     </textField>
@@ -300,7 +300,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="setRiskFactor:" destination="sDE-RR-EHX" eventType="editingDidEnd" id="jbT-Jc-JrJ"/>
+                                            <action selector="setMyRiskFactor:" destination="sDE-RR-EHX" eventType="editingDidEnd" id="Ibx-0w-Yuv"/>
                                             <outlet property="delegate" destination="sDE-RR-EHX" id="DYr-or-EbX"/>
                                         </connections>
                                     </textField>
@@ -311,7 +311,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="setAgeMaxField:" destination="sDE-RR-EHX" eventType="editingDidEnd" id="e1r-Gh-lo9"/>
+                                            <action selector="setMyAgeMaxField:" destination="sDE-RR-EHX" eventType="editingDidEnd" id="0Vp-60-SNl"/>
                                             <outlet property="delegate" destination="sDE-RR-EHX" id="SfL-Wu-wSH"/>
                                         </connections>
                                     </textField>
@@ -1040,11 +1040,11 @@
                 <relationship kind="action" name="doneAddingChallenges:"/>
                 <relationship kind="action" name="filterGenderExclusions:"/>
                 <relationship kind="action" name="previewAndConfirm:"/>
-                <relationship kind="action" name="setAgeMaxField:"/>
-                <relationship kind="action" name="setAgeMinField:"/>
-                <relationship kind="action" name="setChallengeTitle:"/>
                 <relationship kind="action" name="setLanguage:"/>
-                <relationship kind="action" name="setRiskFactor:"/>
+                <relationship kind="action" name="setMyAgeMaxField:"/>
+                <relationship kind="action" name="setMyAgeMinField:"/>
+                <relationship kind="action" name="setMyChallengeTitle:"/>
+                <relationship kind="action" name="setMyRiskFactor:"/>
                 <relationship kind="outlet" name="ChallengeTitle" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="ChildFilter" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="ChildInfoBox" candidateClass="UITextView"/>

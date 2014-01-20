@@ -319,11 +319,11 @@
     _PickerPopUp.list = &(*list);
 }
 
-- (IBAction)setAgeMinField:(id)sender {
+- (IBAction)setMyAgeMinField:(id)sender {
     _TheDailyChallenge.ageMin = _ageMinField.text;
 }
 
-- (IBAction)setAgeMaxField:(id)sender {
+- (IBAction)setMyAgeMaxField:(id)sender {
     _TheDailyChallenge.ageMax = _ageMaxField.text;
 }
 
@@ -331,7 +331,7 @@
     _TheDailyChallenge.language = _LanguageRating.text.integerValue;
 }
 
-- (IBAction)setRiskFactor:(id)sender {
+- (IBAction)setMyRiskFactor:(id)sender {
     _TheDailyChallenge.minimumRiskFactor = _RiskFactor.text.integerValue;
 }
 
@@ -346,7 +346,7 @@
 - (IBAction)doneAddingChallenges:(id)sender {
 }
 
-- (IBAction)setChallengeTitle:(id)sender {
+- (IBAction)setMyChallengeTitle:(id)sender {
     _TheDailyChallenge.title = _ChallengeTitle.text;
     
 }
