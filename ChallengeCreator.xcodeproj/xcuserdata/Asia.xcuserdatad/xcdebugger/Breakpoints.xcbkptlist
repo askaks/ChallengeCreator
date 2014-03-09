@@ -59,19 +59,6 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "ChallengeCreator/CreatorViewController.m"
-         timestampString = "416099084.635568"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "47"
-         endingLineNumber = "47"
-         landmarkName = "-prepareForSegue:sender:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "ChallengeCreator/CreatorTaskFormViewController.m"
          timestampString = "411791725.469166"
          startingColumnNumber = "9223372036854775807"
@@ -145,45 +132,6 @@
          endingLineNumber = "141"
          landmarkName = "-textView:shouldChangeTextInRange:replacementText:"
          landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ChallengeCreator/CreatorOptionsViewController.h"
-         timestampString = "411918260.743446"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "36"
-         endingLineNumber = "36"
-         landmarkName = "ChallengeTitle"
-         landmarkType = "19">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ChallengeCreator/CreatorOptionsViewController.h"
-         timestampString = "411918563.542797"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "40"
-         endingLineNumber = "40"
-         landmarkName = "LanguageRating"
-         landmarkType = "19">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ChallengeCreator/CreatorOptionsViewController.h"
-         timestampString = "411918577.994071"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "35"
-         endingLineNumber = "35"
-         landmarkName = "@interface CreatorOptionsViewController"
-         landmarkType = "2">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
