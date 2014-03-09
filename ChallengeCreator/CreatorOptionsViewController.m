@@ -15,102 +15,102 @@
 @implementation CreatorOptionsViewController
 
 
-- (NSString *)challengesPath
-{
-    NSString *docDir =
-	[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-										 NSUserDomainMask, YES) objectAtIndex: 0];
-	return [docDir stringByAppendingPathComponent: @"Challenge.dat"];
-}
-
-- (void)archiveChallenges:(NSMutableArray *)array
-{
-    NSString *filePath = [self challengesPath];
-    
-	if ([array count] > 0)
-    {
-        NSError *error = nil;
-        NSDictionary *attrib;
-        
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        
-        //
-        // check if file already exist
-        //
-        BOOL exist = [fileManager fileExistsAtPath:filePath];
-        BOOL success = YES;
-        if (YES == exist)
-        {
-            // UNLOCK THE FILE
-            attrib = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO]
-                                                 forKey:NSFileImmutable];
-            
-            success = [fileManager setAttributes:attrib
-                                    ofItemAtPath:filePath
-                                           error:&error];
-        }
-        if (YES == success)
-        {
-            // SAVE THE FILE
-            [NSKeyedArchiver archiveRootObject:array
-                                        toFile:filePath];
-            
-            // LOCK IT BACK
-            attrib = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
-                                                 forKey:NSFileImmutable];
-            
-            success = [fileManager setAttributes:attrib
-                                    ofItemAtPath:filePath
-                                           error:&error];
-            
-            if (NO == success) {
-                NSLog(@"Error: %@",[error localizedDescription]);
-            }
-        }
-        else {
-            NSLog(@"Could not UNLOCK the file.");
-        }
-	}
-	else {
-		
-		UIAlertView *alertView;
-		alertView = [[UIAlertView alloc]
-					 initWithTitle: @"EMPTY OBJECT"
-					 message: @"WARNING: Nothing was saved."
-					 delegate: nil
-					 cancelButtonTitle:@"OK"
-					 otherButtonTitles:nil];
-		[alertView show];
-	}
-}
-
-- (NSMutableArray *)unarchiveChallenges
-{
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    NSString *filePath = [self challengesPath];
-    //
-    // check if file already exist
-    //
-    BOOL exist = [fileManager fileExistsAtPath:filePath];
-    if (NO == exist)
-    {
-        UIAlertView *alertView;
-        alertView = [[UIAlertView alloc]
-                     initWithTitle: @"FILE NOT FOUND"
-                     message: @"WARNING: nothing was unarchived."
-                     delegate: nil
-                     cancelButtonTitle:@"OK"
-                     otherButtonTitles:nil];
-        [alertView show];
-        
-        return nil;
-    }
-    
-	NSMutableArray *array = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
-    
-	return array;
-}
+//- (NSString *)challengesPath
+//{
+//    NSString *docDir =
+//	[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+//										 NSUserDomainMask, YES) objectAtIndex: 0];
+//	return [docDir stringByAppendingPathComponent: @"Challenge.dat"];
+//}
+//
+//- (void)archiveChallenges:(NSMutableArray *)array
+//{
+//    NSString *filePath = [self challengesPath];
+//    
+//	if ([array count] > 0)
+//    {
+//        NSError *error = nil;
+//        NSDictionary *attrib;
+//        
+//        NSFileManager *fileManager = [NSFileManager defaultManager];
+//        
+//        //
+//        // check if file already exist
+//        //
+//        BOOL exist = [fileManager fileExistsAtPath:filePath];
+//        BOOL success = YES;
+//        if (YES == exist)
+//        {
+//            // UNLOCK THE FILE
+//            attrib = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO]
+//                                                 forKey:NSFileImmutable];
+//            
+//            success = [fileManager setAttributes:attrib
+//                                    ofItemAtPath:filePath
+//                                           error:&error];
+//        }
+//        if (YES == success)
+//        {
+//            // SAVE THE FILE
+//            [NSKeyedArchiver archiveRootObject:array
+//                                        toFile:filePath];
+//            
+//            // LOCK IT BACK
+//            attrib = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
+//                                                 forKey:NSFileImmutable];
+//            
+//            success = [fileManager setAttributes:attrib
+//                                    ofItemAtPath:filePath
+//                                           error:&error];
+//            
+//            if (NO == success) {
+//                NSLog(@"Error: %@",[error localizedDescription]);
+//            }
+//        }
+//        else {
+//            NSLog(@"Could not UNLOCK the file.");
+//        }
+//	}
+//	else {
+//		
+//		UIAlertView *alertView;
+//		alertView = [[UIAlertView alloc]
+//					 initWithTitle: @"EMPTY OBJECT"
+//					 message: @"WARNING: Nothing was saved."
+//					 delegate: nil
+//					 cancelButtonTitle:@"OK"
+//					 otherButtonTitles:nil];
+//		[alertView show];
+//	}
+//}
+//
+//- (NSMutableArray *)unarchiveChallenges
+//{
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    
+//    NSString *filePath = [self challengesPath];
+//    //
+//    // check if file already exist
+//    //
+//    BOOL exist = [fileManager fileExistsAtPath:filePath];
+//    if (NO == exist)
+//    {
+//        UIAlertView *alertView;
+//        alertView = [[UIAlertView alloc]
+//                     initWithTitle: @"FILE NOT FOUND"
+//                     message: @"WARNING: nothing was unarchived."
+//                     delegate: nil
+//                     cancelButtonTitle:@"OK"
+//                     otherButtonTitles:nil];
+//        [alertView show];
+//        
+//        return nil;
+//    }
+//    
+//	NSMutableArray *array = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+//    
+//	return array;
+//}
 
 - (IBAction)previewAndConfirm:(id)sender {
     _cancelAddChallenge.hidden = false;
@@ -236,12 +236,12 @@
         CreatorTaskFormViewController *t = [segue destinationViewController];
         t.listOfTasks = _TaskForm.listOfTasks;
         t.TaskFormDailyChallenge = _TheDailyChallenge;
-        t.Challenges = _Challenges;
+        //t.Challenges = _Challenges;
     }
     else if ([segue.identifier isEqualToString:@"ToMainCreator"])
     {
         CreatorViewController *c = [segue destinationViewController];
-        c.Challenges = _Challenges;
+        //c.Challenges = _Challenges;
     }
     else
     {
@@ -251,14 +251,26 @@
         p.list = _PickerPopUp.list;
         p.PopDailyChallenge = [[DailyChallenge alloc] init];
         p.PopDailyChallenge = _TheDailyChallenge;
-        p.Challenges = _Challenges;
+        //p.Challenges = _Challenges;
     }
 }
+///XML VERSION
+//- (IBAction)CreateChallenge:(id)sender {
+//    if(_TheDailyChallenge != nil && _TheDailyChallenge.tasks != nil && _TheDailyChallenge.tasks.count >= 1)
+//    {
+//        [_Challenges addObject:_TheDailyChallenge];
+//    }
+//    _cancelAddChallenge.hidden = true;
+//    _createChallengeButton.hidden = true;
+//    _challengePreviewScreen.hidden = true;
+//    _challengeTextDisplay.hidden = true;
+//}
 
+//PARSE VERSION: this is where one challenge at a time will be added to Parse
 - (IBAction)CreateChallenge:(id)sender {
     if(_TheDailyChallenge != nil && _TheDailyChallenge.tasks != nil && _TheDailyChallenge.tasks.count >= 1)
     {
-        [_Challenges addObject:_TheDailyChallenge];
+ 
     }
     _cancelAddChallenge.hidden = true;
     _createChallengeButton.hidden = true;

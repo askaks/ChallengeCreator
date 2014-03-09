@@ -15,13 +15,13 @@
 @interface CreatorViewController : UIViewController <NSXMLParserDelegate>
 
 
-@property (weak, nonatomic) IBOutlet UILabel *correctlyLoadedXMLLabel;
-@property (nonatomic, retain) NSMutableArray *Challenges;
-@property (nonatomic, retain) NSString *downloadedXML;
-@property (nonatomic, retain) NSString *tobeUploadedXML;
+//@property (weak, nonatomic) IBOutlet UILabel *correctlyLoadedXMLLabel;
+//@property (nonatomic, retain) NSMutableArray *Challenges;
+//@property (nonatomic, retain) NSString *downloadedXML;
+//@property (nonatomic, retain) NSString *tobeUploadedXML;
 
-- (IBAction)LoadChallengesXML:(id)sender;
-- (IBAction)createXML:(id)sender;
-- (IBAction)writeOutXML:(id)sender;
+//- (IBAction)LoadChallengesXML:(id)sender;
+//- (IBAction)createXML:(id)sender;
+//- (IBAction)writeOutXML:(id)sender;
 
 @end

@@ -24,7 +24,7 @@
 @interface CreatorOptionsViewController : UIViewController <UITextFieldDelegate,UITextViewDelegate>
 
 
-@property (nonatomic, retain) NSMutableArray *Challenges;
+//@property (nonatomic, retain) NSMutableArray *Challenges;
 
 @property (nonatomic, retain) NSMutableArray *ListOfChanges;
 

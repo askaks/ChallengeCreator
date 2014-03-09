@@ -80,7 +80,7 @@ shouldChangeTextInRange:(NSRange)range
     CreatorOptionsViewController *optionsController = [segue destinationViewController];
     optionsController.TheDailyChallenge = [[DailyChallenge alloc] init];
     optionsController.TheDailyChallenge = _TaskFormDailyChallenge;
-    optionsController.Challenges = _Challenges;
+    //optionsController.Challenges = _Challenges;
 }
 
 - (IBAction)addTask:(id)sender {
