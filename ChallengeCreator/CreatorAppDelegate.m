@@ -8,13 +8,66 @@
 
 #import "CreatorAppDelegate.h"
 #import <Parse/Parse.h>
+#import "HappySignupViewController.h"
 
 @implementation CreatorAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    /*****                                        *****/
+    /***** from Parse Dashboard: Application keys *****/
+    /*****      *****/
+    [Parse setApplicationId:@"pvJll9oJhI8ggEF4lTN7J07bBj7VB7rw4fBp8vyh"
+                  clientKey:@"4kOhk0rB3Vd53uZH55vnZsS8a9DMgF4ZYidaCtvG"];
+    
+    //****************************************************************
+    // Used to control which users can access or modify a particular
+    // object:
+    //****************************************************************
+    PFACL *defaultACL = [PFACL ACL];
+    [defaultACL setPublicReadAccess:YES];
+    [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
+    
+    
+    //
+    // Get cached currentUser, if it was created already
+    //
+    PFUser *currentUser = [PFUser currentUser];
+    
+    // this would delete the current user and let you switch users
+    //    [PFUser logOut];
+    
+    if (currentUser)
+    {
+        NSLog(@"User exists so continue as usual");
+        
+        application.applicationIconBadgeNumber = 0;
+        
+        // Handle launching from a notification
+        UILocalNotification *localNotif =
+        [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+        if (localNotif) {
+            NSLog(@"Recieved Notification %@",localNotif);
+        }
+    }
+    //
+    // Go to signup
+    //
+    else
+    {
+        NSLog(@"User does not exist");
+        
+        _viewController = [[HappySignupViewController alloc] initWithNibName:@"HappySignupViewController" bundle:nil];
+        
+        self.window.rootViewController = _viewController;
+        
+        
+    }
+    
     return YES;
+
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

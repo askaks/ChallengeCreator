@@ -29,6 +29,15 @@
 		62FD17591879E38A00F63379 /* DailyChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FD17581879E38A00F63379 /* DailyChallenge.m */; };
 		62FD175C1879E3E100F63379 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FD175B1879E3E100F63379 /* Task.m */; };
 		62FD55C418CE1AC2002C8CF5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62FD55C318CE1AC2002C8CF5 /* Parse.framework */; };
+		62FD55C518CE1EE3002C8CF5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62FD55C318CE1AC2002C8CF5 /* Parse.framework */; };
+		62FD55C918CE55F2002C8CF5 /* HappySignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FD55C718CE55F2002C8CF5 /* HappySignupViewController.m */; };
+		62FD55CA18CE55F2002C8CF5 /* HappySignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62FD55C818CE55F2002C8CF5 /* HappySignupViewController.xib */; };
+		62FD55CC18CE5A44002C8CF5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62FD55CB18CE5A44002C8CF5 /* AudioToolbox.framework */; };
+		62FD55D418CE5B34002C8CF5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62FD55D318CE5B34002C8CF5 /* CFNetwork.framework */; };
+		62FD55D618CE5B47002C8CF5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62FD55D518CE5B47002C8CF5 /* Security.framework */; };
+		62FD55D818CE5B60002C8CF5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62FD55D718CE5B60002C8CF5 /* SystemConfiguration.framework */; };
+		62FD55DA18CE5B75002C8CF5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62FD55D918CE5B75002C8CF5 /* CoreLocation.framework */; };
+		62FD55E018CE5BFD002C8CF5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62FD55DF18CE5BFD002C8CF5 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +84,20 @@
 		62FD175A1879E3E100F63379 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		62FD175B1879E3E100F63379 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		62FD55C318CE1AC2002C8CF5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		62FD55C618CE55F2002C8CF5 /* HappySignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HappySignupViewController.h; sourceTree = "<group>"; };
+		62FD55C718CE55F2002C8CF5 /* HappySignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HappySignupViewController.m; sourceTree = "<group>"; };
+		62FD55C818CE55F2002C8CF5 /* HappySignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HappySignupViewController.xib; sourceTree = "<group>"; };
+		62FD55CB18CE5A44002C8CF5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		62FD55CD18CE5AC8002C8CF5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		62FD55CF18CE5AFC002C8CF5 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		62FD55D118CE5B1D002C8CF5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		62FD55D318CE5B34002C8CF5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		62FD55D518CE5B47002C8CF5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		62FD55D718CE5B60002C8CF5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		62FD55D918CE5B75002C8CF5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		62FD55DB18CE5B87002C8CF5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		62FD55DD18CE5BBB002C8CF5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		62FD55DF18CE5BFD002C8CF5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +105,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62FD55E018CE5BFD002C8CF5 /* MobileCoreServices.framework in Frameworks */,
+				62FD55DA18CE5B75002C8CF5 /* CoreLocation.framework in Frameworks */,
+				62FD55D818CE5B60002C8CF5 /* SystemConfiguration.framework in Frameworks */,
+				62FD55D618CE5B47002C8CF5 /* Security.framework in Frameworks */,
+				62FD55D418CE5B34002C8CF5 /* CFNetwork.framework in Frameworks */,
+				62FD55CC18CE5A44002C8CF5 /* AudioToolbox.framework in Frameworks */,
 				62FD55C418CE1AC2002C8CF5 /* Parse.framework in Frameworks */,
 				62B2D3571878F11F0004E1E6 /* UIKit.framework in Frameworks */,
 				62B2D3591878F11F0004E1E6 /* Foundation.framework in Frameworks */,
@@ -93,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62FD55C518CE1EE3002C8CF5 /* Parse.framework in Frameworks */,
 				62B2D37E1878F1200004E1E6 /* SenTestingKit.framework in Frameworks */,
 				62B2D37F1878F1200004E1E6 /* UIKit.framework in Frameworks */,
 				62B2D3801878F1200004E1E6 /* Foundation.framework in Frameworks */,
@@ -105,7 +135,17 @@
 		62B2D34A1878F11F0004E1E6 = {
 			isa = PBXGroup;
 			children = (
-				62FD55C318CE1AC2002C8CF5 /* Parse.framework */,
+				62FD55DF18CE5BFD002C8CF5 /* MobileCoreServices.framework */,
+				62FD55DD18CE5BBB002C8CF5 /* QuartzCore.framework */,
+				62FD55DB18CE5B87002C8CF5 /* StoreKit.framework */,
+				62FD55D918CE5B75002C8CF5 /* CoreLocation.framework */,
+				62FD55D718CE5B60002C8CF5 /* SystemConfiguration.framework */,
+				62FD55D518CE5B47002C8CF5 /* Security.framework */,
+				62FD55D318CE5B34002C8CF5 /* CFNetwork.framework */,
+				62FD55D118CE5B1D002C8CF5 /* MessageUI.framework */,
+				62FD55CF18CE5AFC002C8CF5 /* libxml2.dylib */,
+				62FD55CD18CE5AC8002C8CF5 /* libz.dylib */,
+				62FD55CB18CE5A44002C8CF5 /* AudioToolbox.framework */,
 				62B2D35C1878F11F0004E1E6 /* ChallengeCreator */,
 				62B2D3831878F1200004E1E6 /* ChallengeCreatorTests */,
 				62B2D3551878F11F0004E1E6 /* Frameworks */,
@@ -125,6 +165,7 @@
 		62B2D3551878F11F0004E1E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				62FD55C318CE1AC2002C8CF5 /* Parse.framework */,
 				62B2D3561878F11F0004E1E6 /* UIKit.framework */,
 				62B2D3581878F11F0004E1E6 /* Foundation.framework */,
 				62B2D35A1878F11F0004E1E6 /* CoreGraphics.framework */,
@@ -136,6 +177,9 @@
 		62B2D35C1878F11F0004E1E6 /* ChallengeCreator */ = {
 			isa = PBXGroup;
 			children = (
+				62FD55C618CE55F2002C8CF5 /* HappySignupViewController.h */,
+				62FD55C718CE55F2002C8CF5 /* HappySignupViewController.m */,
+				62FD55C818CE55F2002C8CF5 /* HappySignupViewController.xib */,
 				62FD175A1879E3E100F63379 /* Task.h */,
 				62FD175B1879E3E100F63379 /* Task.m */,
 				62FD17571879E38A00F63379 /* DailyChallenge.h */,
@@ -266,6 +310,7 @@
 				62B2D36B1878F1200004E1E6 /* Default@2x.png in Resources */,
 				62B2D36D1878F1200004E1E6 /* Default-568h@2x.png in Resources */,
 				62B2D3701878F1200004E1E6 /* MainStoryboard_iPhone.storyboard in Resources */,
+				62FD55CA18CE55F2002C8CF5 /* HappySignupViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +353,7 @@
 				62FD17591879E38A00F63379 /* DailyChallenge.m in Sources */,
 				62FD175C1879E3E100F63379 /* Task.m in Sources */,
 				62A97A72187DE0C800E55D51 /* CreatorTaskFormViewController.m in Sources */,
+				62FD55C918CE55F2002C8CF5 /* HappySignupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,8 +428,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				ONLY_ACTIVE_ARCH = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -407,7 +454,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -418,12 +467,14 @@
 		62B2D38F1878F1200004E1E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChallengeCreator/ChallengeCreator-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "ChallengeCreator/ChallengeCreator-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -433,12 +484,14 @@
 		62B2D3901878F1200004E1E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChallengeCreator/ChallengeCreator-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "ChallengeCreator/ChallengeCreator-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -448,10 +501,13 @@
 		62B2D3921878F1200004E1E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ChallengeCreator.app/ChallengeCreator";
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					/Users/Asia/Documents/GitHub/ChallengeCreator,
+					"\"$(SRCROOT)\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChallengeCreator/ChallengeCreator-Prefix.pch";
@@ -465,10 +521,13 @@
 		62B2D3931878F1200004E1E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ChallengeCreator.app/ChallengeCreator";
 				FRAMEWORK_SEARCH_PATHS = (
+					/Users/Asia/Documents/GitHub/ChallengeCreator,
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChallengeCreator/ChallengeCreator-Prefix.pch";
