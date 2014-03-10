@@ -7,6 +7,7 @@
 //
 
 #import "CreatorAppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation CreatorAppDelegate
 

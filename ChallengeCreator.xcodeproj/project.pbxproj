@@ -28,6 +28,7 @@
 		62B2D39918793A920004E1E6 /* PickerPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2D39818793A920004E1E6 /* PickerPopUpViewController.m */; };
 		62FD17591879E38A00F63379 /* DailyChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FD17581879E38A00F63379 /* DailyChallenge.m */; };
 		62FD175C1879E3E100F63379 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 62FD175B1879E3E100F63379 /* Task.m */; };
+		62FD55C418CE1AC2002C8CF5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62FD55C318CE1AC2002C8CF5 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		62FD17581879E38A00F63379 /* DailyChallenge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyChallenge.m; sourceTree = "<group>"; };
 		62FD175A1879E3E100F63379 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		62FD175B1879E3E100F63379 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		62FD55C318CE1AC2002C8CF5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62FD55C418CE1AC2002C8CF5 /* Parse.framework in Frameworks */,
 				62B2D3571878F11F0004E1E6 /* UIKit.framework in Frameworks */,
 				62B2D3591878F11F0004E1E6 /* Foundation.framework in Frameworks */,
 				62B2D35B1878F11F0004E1E6 /* CoreGraphics.framework in Frameworks */,
@@ -102,6 +105,7 @@
 		62B2D34A1878F11F0004E1E6 = {
 			isa = PBXGroup;
 			children = (
+				62FD55C318CE1AC2002C8CF5 /* Parse.framework */,
 				62B2D35C1878F11F0004E1E6 /* ChallengeCreator */,
 				62B2D3831878F1200004E1E6 /* ChallengeCreatorTests */,
 				62B2D3551878F11F0004E1E6 /* Frameworks */,
@@ -414,6 +418,10 @@
 		62B2D38F1878F1200004E1E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChallengeCreator/ChallengeCreator-Prefix.pch";
 				INFOPLIST_FILE = "ChallengeCreator/ChallengeCreator-Info.plist";
@@ -425,6 +433,10 @@
 		62B2D3901878F1200004E1E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChallengeCreator/ChallengeCreator-Prefix.pch";
 				INFOPLIST_FILE = "ChallengeCreator/ChallengeCreator-Info.plist";
