@@ -7,7 +7,7 @@
 //
 
 #import "CreatorOptionsViewController.h"
-
+#import <Parse/Parse.h>
 @interface CreatorOptionsViewController ()
 
 @end
@@ -117,6 +117,8 @@
     _createChallengeButton.hidden = false;
     _challengePreviewScreen.hidden = false;
     _challengeTextDisplay.hidden = false;
+    
+
     
     NSString *combinedStuff = [[NSString alloc] init];
     combinedStuff = [NSString stringWithFormat:@"Challenge Title: %@ \n for ages %@ - %@ \n lang: %d and riskFactor %d \n Looking For: %@ \n School: %@ \n Work: %@ \n Relationship: %@ \n Kids: %@ \n Pets: %@ \n", _TheDailyChallenge.title, _TheDailyChallenge.ageMin, _TheDailyChallenge.ageMax, _TheDailyChallenge.language, _TheDailyChallenge.minimumRiskFactor, _LookingInfoBox.text, _SchoolInfoBox.text, _WorkInfoBox.text, _LoveInfoBox.text, _ChildInfoBox.text, _PetInfoBox.text];
@@ -290,14 +292,42 @@
 - (IBAction)FilterLookingFor:(id)sender {
     _PickerPopUp = [[PickerPopUpViewController alloc] init];
     _PickerPopUp.title = @"Looking For";
-    _PickerPopUp.options = [[NSArray alloc] initWithObjects:@"Female",@"Male",nil];
+    _PickerPopUp.options = [[NSMutableArray alloc] initWithObjects:@"Female",@"Male",nil];
     NSMutableArray *list = _TheDailyChallenge.interestedInExcludes;
     _PickerPopUp.list = &(*list);
 }
 - (IBAction)FilterLove:(id)sender {
     _PickerPopUp = [[PickerPopUpViewController alloc] init];
     _PickerPopUp.title = @"Relationship Status";
-    _PickerPopUp.options = [[NSArray alloc] initWithObjects:@"Single",@"Dating", @"Committed", @"Married",@"Divorced", @"Widowed", @"Not Looking",nil];
+    
+    
+    [PFUser currentUser][@"name"] = @"Creator";
+    [[PFUser currentUser] saveInBackground];
+    
+    _PickerPopUp.options = [[NSMutableArray alloc] init ];
+    PFQuery *loveQuery = [PFQuery queryWithClassName:@"Options"];
+    
+    [loveQuery selectKeys:@[@"loveOptions"]];
+    [loveQuery whereKey:@"loveOptions" notEqualTo:@"N/A"];
+    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    NSArray *objects = [[NSArray alloc] init];
+    objects = [loveQuery findObjects];
+         if (objects != NULL)
+         {
+             for (PFObject *obj in objects)
+             {
+                 PFObject *loveOps = obj[@"loveOptions"];
+                 [ _PickerPopUp.options addObject:(loveOps)];
+             }
+         }
+         // The find succeeded. The first 100 objects are available in object
+         else
+         {
+             // Log details of the failure
+             NSLog(@"Error: Relationship objects not found");
+         }
+    
+//    _PickerPopUp.options = [[NSArray alloc] initWithObjects:@"Single",@"Dating", @"Committed", @"Married",@"Divorced", @"Widowed", @"Not Looking",nil];
     NSMutableArray *list = _TheDailyChallenge.relationshipLevelExcludes;
     _PickerPopUp.list = &(*list);
 }

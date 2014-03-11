@@ -21,7 +21,7 @@
 @property (nonatomic, retain) DailyChallenge *PopDailyChallenge;
 @property (nonatomic, retain) NSMutableArray *list;
 @property NSInteger currentIndex;
-@property (nonatomic, retain) NSArray *options;
+@property (nonatomic, retain) NSMutableArray *options;
 @property (nonatomic, retain) NSString *myTitle; // name title exist in UIViewController, read warnings, that's was a bad name for a variable!!!! TEST THE CODE!!!
 @property (weak, nonatomic) IBOutlet UILabel *PickerLabel;
 @property (weak, nonatomic) IBOutlet UIPickerView *Picker;
