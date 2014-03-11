@@ -79,7 +79,7 @@
 - (IBAction)ExcludeLoveHappy:(id)sender;
 - (IBAction)ExcludeFemales:(id)sender;
 
-- (IBAction)FilterLookingFor:(id)sender;
+- (IBAction)FilterPartners:(id)sender;
 - (IBAction)FilterLove:(id)sender;
 - (IBAction)FilterSchool:(id)sender;
 - (IBAction)FilterWork:(id)sender;
@@ -90,7 +90,7 @@
 - (IBAction)setMyAgeMaxField:(id)sender;
 - (IBAction)setLanguage:(id)sender;
 - (IBAction)setMyRiskFactor:(id)sender;
-- (IBAction)filterGenderExclusions:(id)sender;
+- (IBAction)filterSexes:(id)sender;
 
 - (NSString *)challengesPath;
 - (void)archiveChallenges:(NSMutableArray *)array;

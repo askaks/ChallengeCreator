@@ -479,7 +479,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="FilterLookingFor:" destination="sDE-RR-EHX" eventType="touchUpInside" id="9SW-j2-utb"/>
+                                            <action selector="FilterPartners:" destination="sDE-RR-EHX" eventType="touchUpInside" id="Phr-d4-7UH"/>
                                             <segue destination="jRd-b2-hZT" kind="push" id="eks-f9-Mah"/>
                                         </connections>
                                     </button>
@@ -543,7 +543,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="filterGenderExclusions:" destination="sDE-RR-EHX" eventType="touchUpInside" id="SZV-Kq-nMD"/>
+                                            <action selector="filterSexes:" destination="sDE-RR-EHX" eventType="touchUpInside" id="kbY-8z-SGB"/>
                                             <segue destination="jRd-b2-hZT" kind="push" id="zkL-kf-IwH"/>
                                         </connections>
                                     </button>

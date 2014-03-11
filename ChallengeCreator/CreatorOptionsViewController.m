@@ -289,20 +289,37 @@
     _ChallengeTitle.text =@"";
 }
 
-- (IBAction)FilterLookingFor:(id)sender {
+- (IBAction)FilterPartners:(id)sender {
     _PickerPopUp = [[PickerPopUpViewController alloc] init];
+    _PickerPopUp.options = [[NSMutableArray alloc] init ];
     _PickerPopUp.title = @"Looking For";
-    _PickerPopUp.options = [[NSMutableArray alloc] initWithObjects:@"Female",@"Male",nil];
+    PFQuery *partnerQuery = [PFQuery queryWithClassName:@"Options"];
+    
+    [partnerQuery selectKeys:@[@"partnerOptions"]];
+    [partnerQuery whereKey:@"partnerOptions" notEqualTo:@"N/A"];
+    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    NSArray *objects = [[NSArray alloc] init];
+    objects = [partnerQuery findObjects];
+    if (objects != NULL)
+    {
+        for (PFObject *obj in objects)
+        {
+            PFObject *partnerOps = obj[@"partnerOptions"];
+            [ _PickerPopUp.options addObject:(partnerOps)];
+        }
+    }
+    else
+    {
+        // Log details of the failure
+        NSLog(@"Error: Partner objects not found");
+    }
+    
     NSMutableArray *list = _TheDailyChallenge.interestedInExcludes;
     _PickerPopUp.list = &(*list);
 }
 - (IBAction)FilterLove:(id)sender {
     _PickerPopUp = [[PickerPopUpViewController alloc] init];
     _PickerPopUp.title = @"Relationship Status";
-    
-    
-    [PFUser currentUser][@"name"] = @"Creator";
-    [[PFUser currentUser] saveInBackground];
     
     _PickerPopUp.options = [[NSMutableArray alloc] init ];
     PFQuery *loveQuery = [PFQuery queryWithClassName:@"Options"];
@@ -320,43 +337,122 @@
                  [ _PickerPopUp.options addObject:(loveOps)];
              }
          }
-         // The find succeeded. The first 100 objects are available in object
          else
          {
              // Log details of the failure
              NSLog(@"Error: Relationship objects not found");
          }
-    
-//    _PickerPopUp.options = [[NSArray alloc] initWithObjects:@"Single",@"Dating", @"Committed", @"Married",@"Divorced", @"Widowed", @"Not Looking",nil];
     NSMutableArray *list = _TheDailyChallenge.relationshipLevelExcludes;
     _PickerPopUp.list = &(*list);
 }
 - (IBAction)FilterSchool:(id)sender {
     _PickerPopUp = [[PickerPopUpViewController alloc] init];
     _PickerPopUp.title = @"School";
+    
+    _PickerPopUp.options = [[NSMutableArray alloc] init ];
+    PFQuery *educationQuery = [PFQuery queryWithClassName:@"Options"];
+    
+    [educationQuery selectKeys:@[@"educationOptions"]];
+    [educationQuery whereKey:@"educationOptions" notEqualTo:@"N/A"];
+    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    NSArray *objects = [[NSArray alloc] init];
+    objects = [educationQuery findObjects];
+    if (objects != NULL)
+    {
+        for (PFObject *obj in objects)
+        {
+            PFObject *eduOps = obj[@"educationOptions"];
+            [ _PickerPopUp.options addObject:(eduOps)];
+        }
+    }
+    else
+    {
+        // Log details of the failure
+        NSLog(@"Error: Education objects not found");
+    }
     NSMutableArray *list = _TheDailyChallenge.schoolLevelExcludes;
     _PickerPopUp.list = &(*list);
-    _PickerPopUp.options = [[NSArray alloc] initWithObjects:@"Grade School (in)",@"Junior High (in)",@"High school (in)",@"College (in)",@"Grad School (in)",@"Grade School",@"Junior High",@"High School",@"College",@"Grad School",nil];
-    
 }
 - (IBAction)FilterWork:(id)sender {
     _PickerPopUp = [[PickerPopUpViewController alloc] init];
     _PickerPopUp.title = @"Work";
-    _PickerPopUp.options = [[NSArray alloc] initWithObjects:@"Part Time",@"Blue Collar",@"Professional",@"Scholarship",@"Trust Fund Baby", @"Credit", @"Welfare",nil];
+    _PickerPopUp.options = [[NSMutableArray alloc] init ];
+    PFQuery *incomeQuery = [PFQuery queryWithClassName:@"Options"];
+    
+    [incomeQuery selectKeys:@[@"incomeOptions"]];
+    [incomeQuery whereKey:@"incomeOptions" notEqualTo:@"N/A"];
+    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    NSArray *objects = [[NSArray alloc] init];
+    objects = [incomeQuery findObjects];
+    if (objects != NULL)
+    {
+        for (PFObject *obj in objects)
+        {
+            PFObject *incomeOps = obj[@"incomeOptions"];
+            [ _PickerPopUp.options addObject:(incomeOps)];
+        }
+    }
+    else
+    {
+        // Log details of the failure
+        NSLog(@"Error: Income objects not found");
+    }
+
     NSMutableArray *list = _TheDailyChallenge.workLevelExcludes;
     _PickerPopUp.list = &(*list);
 }
 - (IBAction)FilterChildren:(id)sender {
     _PickerPopUp = [[PickerPopUpViewController alloc] init];
     _PickerPopUp.title = @"Children";
-    _PickerPopUp.options = [[NSArray alloc] initWithObjects:@"None",@"child",@"children",@"babies",@"toddlers", @"adult children", @"teenagers",@"babies", @"step children", @"nieces/nephews", @"grandchildren",nil];
+    _PickerPopUp.options = [[NSMutableArray alloc] init ];
+    PFQuery *childQuery = [PFQuery queryWithClassName:@"Options"];
+    
+    [childQuery selectKeys:@[@"childOptions"]];
+    [childQuery whereKey:@"childOptions" notEqualTo:@"N/A"];
+    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    NSArray *objects = [[NSArray alloc] init];
+    objects = [childQuery findObjects];
+    if (objects != NULL)
+    {
+        for (PFObject *obj in objects)
+        {
+            PFObject *childOps = obj[@"childOptions"];
+            [ _PickerPopUp.options addObject:(childOps)];
+        }
+    }
+    else
+    {
+        // Log details of the failure
+        NSLog(@"Error: Children objects not found");
+    }
+
     NSMutableArray *list = _TheDailyChallenge.kidsExclude;
     _PickerPopUp.list = &(*list);
 }
 - (IBAction)FilterPets:(id)sender {
     _PickerPopUp = [[PickerPopUpViewController alloc] init];
     _PickerPopUp.title = @"Pets";
-    _PickerPopUp.options = [[NSArray alloc] initWithObjects:@"none",@"can't",@"cat/cats",@"dog/dogs", @"cats and dogs", @"rodents",@"reptiles", @"farm animals",nil];
+    _PickerPopUp.options = [[NSMutableArray alloc] init ];
+    PFQuery *petQuery = [PFQuery queryWithClassName:@"Options"];
+    
+    [petQuery selectKeys:@[@"petOptions"]];
+    [petQuery whereKey:@"petOptions" notEqualTo:@"N/A"];
+    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    NSArray *objects = [[NSArray alloc] init];
+    objects = [petQuery findObjects];
+    if (objects != NULL)
+    {
+        for (PFObject *obj in objects)
+        {
+            PFObject *petOps = obj[@"petOptions"];
+            [ _PickerPopUp.options addObject:(petOps)];
+        }
+    }
+    else
+    {
+        // Log details of the failure
+        NSLog(@"Error: Pet objects not found");
+    }
     NSMutableArray *list = _TheDailyChallenge.petsExclude;
     _PickerPopUp.list = &(*list);
 }
@@ -377,10 +473,30 @@
     _TheDailyChallenge.minimumRiskFactor = _RiskFactor.text.integerValue;
 }
 
-- (IBAction)filterGenderExclusions:(id)sender {
+- (IBAction)filterSexes:(id)sender {
     _PickerPopUp = [[PickerPopUpViewController alloc] init];
-    _PickerPopUp.title = @"Genders";
-    _PickerPopUp.options = [[NSArray alloc] initWithObjects:@"female",@"male",nil];
+    _PickerPopUp.title = @"Sex";
+    _PickerPopUp.options = [[NSMutableArray alloc] init ];
+    PFQuery *sexQuery = [PFQuery queryWithClassName:@"Options"];
+    
+    [sexQuery selectKeys:@[@"sexOptions"]];
+    [sexQuery whereKey:@"sexOptions" notEqualTo:@"N/A"];
+    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    NSArray *objects = [[NSArray alloc] init];
+    objects = [sexQuery findObjects];
+    if (objects != NULL)
+    {
+        for (PFObject *obj in objects)
+        {
+            PFObject *sexOps = obj[@"sexOptions"];
+            [ _PickerPopUp.options addObject:(sexOps)];
+        }
+    }
+    else
+    {
+        // Log details of the failure
+        NSLog(@"Error: No sex objects not found");
+    }
     NSMutableArray *list = _TheDailyChallenge.genderExcludes;
     _PickerPopUp.list = &(*list);
 }
