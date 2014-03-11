@@ -53,6 +53,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *ChildFilter;
 @property (weak, nonatomic) IBOutlet UIButton *PetFilter;
 @property (weak, nonatomic) IBOutlet UIButton *femaleFilter;
+@property (weak, nonatomic) IBOutlet UIButton *schoolSatisfaction;
+@property (weak, nonatomic) IBOutlet UIButton *relationshipSatisfaction;
+@property (weak, nonatomic) IBOutlet UIButton *workSatisfaction;
 
 
 @property (weak, nonatomic) IBOutlet UITextView *LookingInfoBox;
@@ -61,6 +64,10 @@
 @property (weak, nonatomic) IBOutlet UITextView *WorkInfoBox;
 @property (weak, nonatomic) IBOutlet UITextView *ChildInfoBox;
 @property (weak, nonatomic) IBOutlet UITextView *PetInfoBox;
+@property (weak, nonatomic) IBOutlet UITextView *relalationshipSatisfactionInfoBox;
+@property (weak, nonatomic) IBOutlet UITextView *schoolSatisfactionInfoBox;
+@property (weak, nonatomic) IBOutlet UITextView *workSatisfactionInfoBox;
+
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
 
 @property (weak, nonatomic) IBOutlet UITextView *genderInfoBox;

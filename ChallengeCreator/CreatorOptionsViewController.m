@@ -201,6 +201,19 @@
         {
             _genderInfoBox.text = [_TheDailyChallenge.genderExcludes componentsJoinedByString:@"  "];
         }
+        
+        if  (_TheDailyChallenge.relationshipHappyExcludes != nil)
+        {
+            _relalationshipSatisfactionInfoBox.text = [_TheDailyChallenge.relationshipHappyExcludes componentsJoinedByString:@"  "];
+        }
+        if  (_TheDailyChallenge.schoolHappyExcludes != nil)
+        {
+            _schoolSatisfactionInfoBox.text = [_TheDailyChallenge.schoolHappyExcludes componentsJoinedByString:@"  "];
+        }
+        if  (_TheDailyChallenge.workHappyExcludes != nil)
+        {
+            _workSatisfactionInfoBox.text = [_TheDailyChallenge.workHappyExcludes componentsJoinedByString:@"  "];
+        }
    
     }
 	// Do any additional setup after loading the view.
@@ -226,13 +239,6 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-//    PickerPopUpViewController *p = [segue destinationViewController];
-//    p.options = _PickerPopUp.options;
-//    p.title = _PickerPopUp.title;
-//    p.list = _PickerPopUp.list;
-//    p.PopDailyChallenge = [[DailyChallenge alloc] init];
-//    p.PopDailyChallenge = _TheDailyChallenge;
-    
     if ([segue.identifier isEqualToString:@"ToTaskForm"])
     {
         CreatorTaskFormViewController *t = [segue destinationViewController];
@@ -516,37 +522,91 @@
 }
 
 - (IBAction)ExcludeSchoolHappy:(id)sender {
-    if(_SchoolHappySwitch.on == true)
+    _PickerPopUp = [[PickerPopUpViewController alloc] init];
+    _PickerPopUp.title = @"Education Satisfaction";
+    
+    _PickerPopUp.options = [[NSMutableArray alloc] init ];
+    PFQuery *schoolQuery = [PFQuery queryWithClassName:@"Options"];
+    
+    [schoolQuery selectKeys:@[@"schoolSatisfactionOptions"]];
+    [schoolQuery whereKey:@"schoolSatisfactionOptions" notEqualTo:@"N/A"];
+    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    NSArray *objects = [[NSArray alloc] init];
+    objects = [schoolQuery findObjects];
+    if (objects != NULL)
     {
-        _TheDailyChallenge.schoolHappyExcludes = [[NSString alloc] initWithFormat:@"true"];
+        for (PFObject *obj in objects)
+        {
+            PFObject *schoolOps = obj[@"schoolSatisfactionOptions"];
+            [ _PickerPopUp.options addObject:(schoolOps)];
+        }
     }
     else
     {
-        _TheDailyChallenge.schoolHappyExcludes = [[NSString alloc] initWithFormat:@"false"];
+        // Log details of the failure
+        NSLog(@"Error: School Satisfaction objects not found");
     }
+    NSMutableArray *list = _TheDailyChallenge.schoolHappyExcludes;
+    _PickerPopUp.list = &(*list);
 
 }
 
 - (IBAction)ExcludeWorkHappy:(id)sender {
-    if(_WorkHappySwitch.on == true)
+    _PickerPopUp = [[PickerPopUpViewController alloc] init];
+    _PickerPopUp.title = @"Work Satisfaction";
+    
+    _PickerPopUp.options = [[NSMutableArray alloc] init ];
+    PFQuery *workQuery = [PFQuery queryWithClassName:@"Options"];
+    
+    [workQuery selectKeys:@[@"workSatisfactionOptions"]];
+    [workQuery whereKey:@"workSatisfactionOptions" notEqualTo:@"N/A"];
+    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    NSArray *objects = [[NSArray alloc] init];
+    objects = [workQuery findObjects];
+    if (objects != NULL)
     {
-        _TheDailyChallenge.workHappyExcludes = [[NSString alloc] initWithFormat:@"true"];
+        for (PFObject *obj in objects)
+        {
+            PFObject *workOps = obj[@"workSatisfactionOptions"];
+            [ _PickerPopUp.options addObject:(workOps)];
+        }
     }
     else
     {
-        _TheDailyChallenge.workHappyExcludes = [[NSString alloc] initWithFormat:@"false"];
+        // Log details of the failure
+        NSLog(@"Error: Work Satisfaction objects not found");
     }
+    NSMutableArray *list = _TheDailyChallenge.workHappyExcludes;
+    _PickerPopUp.list = &(*list);
 }
 
 - (IBAction)ExcludeLoveHappy:(id)sender {
-    if(_LoveHappySwitch.on == true)
+    _PickerPopUp = [[PickerPopUpViewController alloc] init];
+    _PickerPopUp.title = @"Love Satisfaction";
+    
+    _PickerPopUp.options = [[NSMutableArray alloc] init ];
+    PFQuery *loveQuery = [PFQuery queryWithClassName:@"Options"];
+    
+    [loveQuery selectKeys:@[@"loveSatisfactionOptions"]];
+    [loveQuery whereKey:@"loveSatisfactionOptions" notEqualTo:@"N/A"];
+    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    NSArray *objects = [[NSArray alloc] init];
+    objects = [loveQuery findObjects];
+    if (objects != NULL)
     {
-        _TheDailyChallenge.relationshipHappyExcludes = [[NSString alloc] initWithFormat:@"true"];
+        for (PFObject *obj in objects)
+        {
+            PFObject *loveOps = obj[@"loveSatisfactionOptions"];
+            [ _PickerPopUp.options addObject:(loveOps)];
+        }
     }
     else
     {
-        _TheDailyChallenge.relationshipHappyExcludes = [[NSString alloc] initWithFormat:@"false"];
+        // Log details of the failure
+        NSLog(@"Error: Love Satisfaction objects not found");
     }
+    NSMutableArray *list = _TheDailyChallenge.relationshipHappyExcludes;
+    _PickerPopUp.list = &(*list);
 }
 
 - (IBAction)ExcludeFemales:(id)sender {
