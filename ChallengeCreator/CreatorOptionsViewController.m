@@ -278,8 +278,11 @@
 - (IBAction)CreateChallenge:(id)sender {
     if(_TheDailyChallenge != nil && _TheDailyChallenge.tasks != nil && _TheDailyChallenge.tasks.count >= 1)
     {
- 
-    }
+        PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
+        gameScore[@"score"] = @1337;
+        gameScore[@"playerName"] = @"Sean Plott";
+        gameScore[@"cheatMode"] = @NO;
+        [gameScore saveInBackground];    }
     _cancelAddChallenge.hidden = true;
     _createChallengeButton.hidden = true;
     _challengePreviewScreen.hidden = true;
