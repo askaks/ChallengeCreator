@@ -109,4 +109,6 @@
 
 - (IBAction)clearChallenge:(id)sender;
 
+- (IBAction)areValidChallenges:(id)sender;
+
 @end

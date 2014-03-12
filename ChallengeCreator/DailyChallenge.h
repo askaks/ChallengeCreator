@@ -19,8 +19,11 @@
 //////////////////////////////////////////////////////
 
 @property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *ageMin;
-@property (nonatomic, retain) NSString *ageMax;
+@property (nonatomic, assign) NSInteger ageMin;
+@property (nonatomic, assign) NSInteger ageMax;
+@property (nonatomic, assign) NSInteger pointsWorth;
+@property (nonatomic, assign) NSInteger minimumRiskFactor;
+@property (nonatomic, assign) NSInteger language;
 
 
 @property (nonatomic, retain) NSMutableArray *genderExcludes;
@@ -57,9 +60,7 @@
 @property (nonatomic, retain) NSMutableArray *petsExclude;
 //@property (nonatomic, retain) NSMutableArray *personalityExclude;
 
-@property (nonatomic, assign) NSInteger pointsWorth;
-@property (nonatomic, assign) NSInteger minimumRiskFactor;
-@property (nonatomic, assign) NSInteger language;
+
 
 @property bool completed;
 

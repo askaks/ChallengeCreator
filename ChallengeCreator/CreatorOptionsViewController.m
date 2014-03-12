@@ -121,7 +121,7 @@
 
     
     NSString *combinedStuff = [[NSString alloc] init];
-    combinedStuff = [NSString stringWithFormat:@"Challenge Title: %@ \n for ages %@ - %@ \n lang: %d and riskFactor %d \n Looking For: %@ \n School: %@ \n Work: %@ \n Relationship: %@ \n Kids: %@ \n Pets: %@ \n", _TheDailyChallenge.title, _TheDailyChallenge.ageMin, _TheDailyChallenge.ageMax, _TheDailyChallenge.language, _TheDailyChallenge.minimumRiskFactor, _LookingInfoBox.text, _SchoolInfoBox.text, _WorkInfoBox.text, _LoveInfoBox.text, _ChildInfoBox.text, _PetInfoBox.text];
+    combinedStuff = [NSString stringWithFormat:@"Challenge Title: %@ \n for ages %d@ - %d@ \n lang: %d and riskFactor %d \n Looking For: %@ \n School: %@ \n Work: %@ \n Relationship: %@ \n Kids: %@ \n Pets: %@ \n", _TheDailyChallenge.title, _TheDailyChallenge.ageMin, _TheDailyChallenge.ageMax, _TheDailyChallenge.language, _TheDailyChallenge.minimumRiskFactor, _LookingInfoBox.text, _SchoolInfoBox.text, _WorkInfoBox.text, _LoveInfoBox.text, _ChildInfoBox.text, _PetInfoBox.text];
     for(Task *t in _TheDailyChallenge.tasks)
     {
         combinedStuff = [NSString stringWithFormat:@"%@    Title: %@ message: %@ (%d pts)    \n", combinedStuff, t.title, t.message, t.points];
@@ -276,17 +276,144 @@
 
 //PARSE VERSION: this is where one challenge at a time will be added to Parse
 - (IBAction)CreateChallenge:(id)sender {
-    if(_TheDailyChallenge != nil && _TheDailyChallenge.tasks != nil && _TheDailyChallenge.tasks.count >= 1)
+    if(_TheDailyChallenge != nil && _TheDailyChallenge.tasks != nil && _TheDailyChallenge.tasks.count >= 1 )
     {
-        PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
-        gameScore[@"score"] = @1337;
-        gameScore[@"playerName"] = @"Sean Plott";
-        gameScore[@"cheatMode"] = @NO;
-        [gameScore saveInBackground];    }
-    _cancelAddChallenge.hidden = true;
-    _createChallengeButton.hidden = true;
-    _challengePreviewScreen.hidden = true;
-    _challengeTextDisplay.hidden = true;
+        bool validChallenges = [self areValidChallenges];
+        if(validChallenges)
+        {
+            
+            PFObject *dailyChallenge = [PFObject objectWithClassName:@"Challenges"];
+            dailyChallenge[@"title"] = _TheDailyChallenge.title;
+            dailyChallenge[@"points"] = [NSNumber numberWithInteger:_TheDailyChallenge.pointsWorth];
+            dailyChallenge[@"ageMin"] = [NSNumber numberWithInteger:_TheDailyChallenge.ageMin];
+            dailyChallenge[@"ageMax"] = [NSNumber numberWithInteger:_TheDailyChallenge.ageMax];
+            dailyChallenge[@"languageRating"] =[NSNumber numberWithInteger:_TheDailyChallenge.language];
+            dailyChallenge[@"riskFactor"] = [NSNumber numberWithInteger:_TheDailyChallenge.minimumRiskFactor];
+            dailyChallenge[@"forSex"] = [_TheDailyChallenge.genderExcludes componentsJoinedByString:@" | "];
+            dailyChallenge[@"seekingWho"] = [_TheDailyChallenge.interestedInExcludes componentsJoinedByString:@" | "];
+            dailyChallenge[@"eduIncludes"] = [_TheDailyChallenge.schoolLevelExcludes componentsJoinedByString:@" | "];
+            dailyChallenge[@"relationshipIncludes"] = [_TheDailyChallenge.relationshipLevelExcludes componentsJoinedByString:@" | "];
+            dailyChallenge[@"incomeIncludes"] = [_TheDailyChallenge.workLevelExcludes componentsJoinedByString:@" | "];
+            dailyChallenge[@"childIncludes"] = [_TheDailyChallenge.kidsExclude componentsJoinedByString:@" | "];
+            dailyChallenge[@"petIncludes"] = [_TheDailyChallenge.petsExclude componentsJoinedByString:@" | "];
+            dailyChallenge[@"happyWithLove"] = [_TheDailyChallenge.relationshipHappyExcludes componentsJoinedByString:@" | "];
+            dailyChallenge[@"happyWithSchool"] = [_TheDailyChallenge.schoolHappyExcludes componentsJoinedByString:@" | "];
+            dailyChallenge[@"happyWithWork"] = [_TheDailyChallenge.workHappyExcludes componentsJoinedByString:@" | "];
+            
+            //Now that dailyChallenge is added to Parse.Challenges
+            //we need its objectId to put its tasks into Parse.Tasks
+            [dailyChallenge saveEventually:^(BOOL succeeded, NSError *error) {
+                NSInteger taskCount = 0;
+                for(Task *task in _TheDailyChallenge.tasks)
+                {
+                    PFObject *taskObj = [PFObject objectWithClassName:@"Tasks"];
+                    taskObj[@"action"] = task.message;
+                    taskObj[@"points"] = [NSNumber numberWithInteger:task.points];
+                    taskObj[@"taskNumber"] = [NSNumber numberWithInteger:taskCount];
+                    taskCount++;
+                    [taskObj saveEventually:^(BOOL succeeded, NSError *error) {
+                        PFRelation *relationChallengeToTask = [taskObj relationforKey:@"challenge"];
+                        [relationChallengeToTask addObject:dailyChallenge];
+                    }];
+                }
+            }];
+            _cancelAddChallenge.hidden = true;
+            _createChallengeButton.hidden = true;
+            _challengePreviewScreen.hidden = true;
+            _challengeTextDisplay.hidden = true;
+        }
+        else
+        {
+            _challengeTextDisplay.text = @"INVALID CHALLENGE";
+        }
+    }
+
+}
+
+
+- (BOOL)areValidChallenges{
+
+    BOOL valid = true;
+    
+    NSString *a = [_TheDailyChallenge.genderExcludes componentsJoinedByString:@""];
+    NSString *b = [_TheDailyChallenge.interestedInExcludes componentsJoinedByString:@""];
+    NSString *c = [_TheDailyChallenge.schoolLevelExcludes componentsJoinedByString:@""];
+    NSString *d = [_TheDailyChallenge.relationshipLevelExcludes componentsJoinedByString:@""];
+    NSString *e = [_TheDailyChallenge.workLevelExcludes componentsJoinedByString:@""];
+    NSString *f = [_TheDailyChallenge.kidsExclude componentsJoinedByString:@""];
+    NSString *g = [_TheDailyChallenge.petsExclude componentsJoinedByString:@""];
+    NSString *h = [_TheDailyChallenge.relationshipHappyExcludes componentsJoinedByString:@""];
+    NSString *i = [_TheDailyChallenge.schoolHappyExcludes componentsJoinedByString:@""];
+    NSString *j = [_TheDailyChallenge.workHappyExcludes componentsJoinedByString:@""];
+
+    if([_TheDailyChallenge.title isEqualToString:@""])
+    {
+        return false;
+    }
+    else if(_TheDailyChallenge.pointsWorth <= 0)
+    {
+        return false;
+    }
+    else if(_TheDailyChallenge.ageMin <= 0)
+    {
+        return false;
+    }
+    else if(_TheDailyChallenge.ageMax <= 0 || _TheDailyChallenge.ageMax > 1001)
+    {
+        return false;
+    }
+    else if(_TheDailyChallenge.language <= 0)
+    {
+        return false;
+    }
+    else if(_TheDailyChallenge.minimumRiskFactor <= 0)
+    {
+        return false;
+    }
+    else if([a isEqualToString:@""])
+    {
+        return false;
+    }
+    else if([b isEqualToString:@""])
+    {
+        return false;
+    }
+    else if([c isEqualToString:@""])
+    {
+        return false;
+    }
+    else if([d isEqualToString:@""])
+    {
+        return false;
+    }
+    else if([e isEqualToString:@""])
+    {
+        return false;
+    }
+    else if([f isEqualToString:@""])
+    {
+        return false;
+    }
+    else if([g isEqualToString:@""])
+    {
+        return false;
+    }
+    else if([h isEqualToString:@""])
+    {
+        return false;
+    }
+    else if([i isEqualToString:@""])
+    {
+        return false;
+    }
+    else if([j isEqualToString:@""])
+    {
+        return false;
+    }
+
+
+
+    return valid;
 }
 
 - (IBAction)clearChallenge:(id)sender {
@@ -467,11 +594,11 @@
 }
 
 - (IBAction)setMyAgeMinField:(id)sender {
-    _TheDailyChallenge.ageMin = _ageMinField.text;
+    _TheDailyChallenge.ageMin = _ageMinField.text.integerValue;
 }
 
 - (IBAction)setMyAgeMaxField:(id)sender {
-    _TheDailyChallenge.ageMax = _ageMaxField.text;
+    _TheDailyChallenge.ageMax = _ageMaxField.text.integerValue;
 }
 
 - (IBAction)setLanguage:(id)sender {

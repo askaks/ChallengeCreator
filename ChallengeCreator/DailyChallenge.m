@@ -21,11 +21,12 @@
 {
     [encoder encodeObject:_title forKey:@"title"];
     
-    [encoder encodeObject:_tasks forKey:@"tasks"];
-    
-    [encoder encodeObject:_ageMin forKey:@"min"];
-    
-	[encoder encodeObject:_ageMax forKey:@"max"];
+    [encoder encodeObject:_tasks forKey:@"tasks"];    
+    [encoder encodeInteger:_ageMin forKey:@"min"];
+	[encoder encodeInteger:_ageMax forKey:@"max"];
+    [encoder encodeInteger:_minimumRiskFactor forKey:@"minimumRiskFactor"];
+    [encoder encodeInteger:_pointsWorth forKey:@"pointsWorth"];
+    [encoder encodeInteger:_language forKey:@"language"];
     
     [encoder encodeObject:_genderExcludes forKey:@"genderExcludes"];
     
@@ -49,9 +50,7 @@
     
     [encoder encodeObject:_kidsExclude forKey:@"kidsExclude"];
     
-    [encoder encodeInteger:_minimumRiskFactor forKey:@"minimumRiskFactor"];
-    [encoder encodeInteger:_pointsWorth forKey:@"pointsWorth"];
-    [encoder encodeInteger:_language forKey:@"language"];
+
     
 }
 
@@ -62,8 +61,11 @@
 	{
         _title = @"start";
         _tasks = [[NSMutableArray alloc] init];
-        _ageMax = [[NSString alloc] initWithFormat:@"%d", 0];
-        _ageMin = [[NSString alloc] initWithFormat:@"%d", 0];
+        _ageMax = 100;
+        _ageMin = 1;
+        _pointsWorth = 0;
+        _minimumRiskFactor = 0;
+        _language = 0;
 
         _genderExcludes = [[NSMutableArray alloc] init];
         _interestedInExcludes = [[NSMutableArray alloc] init];
@@ -81,12 +83,10 @@
         _petsExclude = [[NSMutableArray alloc] init];
         
 //        personalityExclude = [[NSMutableArray alloc] init];
-        
-        _language = 0;
+
         
         _completed = false;
-        _pointsWorth = 0;
-        _minimumRiskFactor = 0;
+
     }   
     
 	return self;
@@ -99,8 +99,11 @@
     {
         self.title = [decoder decodeObjectForKey:@"title"];
         self.tasks = [decoder decodeObjectForKey:@"tasks"];
-        self.ageMin = [decoder decodeObjectForKey: @"min"];
-		self.ageMax = [decoder decodeObjectForKey: @"max"];
+        self.ageMin = [decoder decodeIntegerForKey: @"min"];
+		self.ageMax = [decoder decodeIntegerForKey: @"max"];
+        self.language = [decoder decodeIntegerForKey: @"language"];
+        self.minimumRiskFactor = [decoder decodeIntegerForKey: @"minimumRiskFactor"];
+        self.pointsWorth = [decoder decodeIntegerForKey: @"pointsWorth"];
 
         self.genderExcludes = [decoder decodeObjectForKey:@"genderExcludes"];
 
@@ -123,11 +126,7 @@
         self.kidsExclude = [decoder decodeObjectForKey: @"kidsExclude"];
         
         self.petsExclude = [decoder decodeObjectForKey: @"petsExclude"];
-        
-        self.language = [decoder decodeIntegerForKey: @"language"];
-        self.minimumRiskFactor = [decoder decodeIntegerForKey: @"minimumRiskFactor"];
-        
-        self.pointsWorth = [decoder decodeIntegerForKey: @"pointsWorth"];
+
         
     }
 	return self;
@@ -151,8 +150,11 @@
     
     challenge.title = _title;
     challenge.tasks = [_tasks copy];
-    challenge.ageMin = [NSString stringWithString:_ageMin];
-	challenge.ageMax = [NSString stringWithString:_ageMax];
+    challenge.ageMin = _ageMin;
+	challenge.ageMax = _ageMax;
+    challenge.language = _language;
+    challenge.pointsWorth = _pointsWorth;
+    challenge.minimumRiskFactor = _minimumRiskFactor;
     
     challenge.genderExcludes = [_genderExcludes copy];
     challenge.interestedInExcludes = [_interestedInExcludes copy];
@@ -170,12 +172,7 @@
     
     challenge.kidsExclude = [_kidsExclude copy];
     challenge.petsExclude = [_petsExclude copy];
-    
-//    challenge.personalityExclude = [self.personalityExclude copy];
-    
-    challenge.language = _language;
-    challenge.pointsWorth = _pointsWorth;
-    challenge.minimumRiskFactor = _minimumRiskFactor;
+
     
     return challenge;
 }
