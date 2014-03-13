@@ -171,8 +171,31 @@
     
     else
     {
-        _challengePoints = [NSString stringWithFormat:@"%d", _TheDailyChallenge.pointsWorth];
+        if (_TheDailyChallenge.title != nil)
+        {
+            self.ChallengeTitle.text = _TheDailyChallenge.title;
+        }
+        if (_TheDailyChallenge.pointsWorth > 0)
+        {
+            self.challengePoints.text = [NSString stringWithFormat:@"%d", _TheDailyChallenge.pointsWorth];
+        }
+        if (_TheDailyChallenge.ageMax > 0)
+        {
+            self.ageMaxField.text = [NSString stringWithFormat:@"%d", _TheDailyChallenge.ageMax];
+        }
         
+        if (_TheDailyChallenge.ageMin > 0)
+        {
+            self.ageMinField.text = [NSString stringWithFormat:@"%d", _TheDailyChallenge.ageMin];
+        }
+        if (_TheDailyChallenge.language > 0)
+        {
+            self.ageMinField.text = [NSString stringWithFormat:@"%d", _TheDailyChallenge.ageMin];
+        }
+        if (_TheDailyChallenge.minimumRiskFactor > 0)
+        {
+            self.RiskFactor.text = [NSString stringWithFormat:@"%d", _TheDailyChallenge.minimumRiskFactor];
+        }
         if (_TheDailyChallenge.interestedInExcludes != nil)
         {
             _LookingInfoBox.text = [_TheDailyChallenge.interestedInExcludes componentsJoinedByString:@"  "];

@@ -8,38 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ChallengeCreator/CreatorOptionsViewController.m"
-         timestampString = "416358464.246124"
+         timestampString = "416364041.866732"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "595"
-         endingLineNumber = "595"
-         landmarkName = "@implementation CreatorOptionsViewController"
-         landmarkType = "3">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ChallengeCreator/CreatorOptionsViewController.m"
-         timestampString = "416355354.835861"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "174"
-         endingLineNumber = "174"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ChallengeCreator/PickerPopUpViewController.m"
-         timestampString = "416355605.880547"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "89"
-         endingLineNumber = "89"
-         landmarkName = "-prepareForSegue:sender:"
+         startingLineNumber = "378"
+         endingLineNumber = "378"
+         landmarkName = "-areValidChallenges"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -47,24 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ChallengeCreator/CreatorOptionsViewController.m"
-         timestampString = "416358464.246124"
+         timestampString = "416364041.866732"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "355"
-         endingLineNumber = "355"
-         landmarkName = "-areValidChallenges:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ChallengeCreator/CreatorOptionsViewController.m"
-         timestampString = "416358246.3778"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "327"
-         endingLineNumber = "327"
+         startingLineNumber = "350"
+         endingLineNumber = "350"
          landmarkName = "-CreateChallenge:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,12 +34,38 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ChallengeCreator/CreatorOptionsViewController.m"
-         timestampString = "416358256.084759"
+         timestampString = "416364041.866732"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "281"
-         endingLineNumber = "281"
+         startingLineNumber = "304"
+         endingLineNumber = "304"
          landmarkName = "-CreateChallenge:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChallengeCreator/CreatorOptionsViewController.m"
+         timestampString = "416364041.866732"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "361"
+         endingLineNumber = "361"
+         landmarkName = "-areValidChallenges"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChallengeCreator/CreatorOptionsViewController.m"
+         timestampString = "416394112.502651"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "632"
+         endingLineNumber = "632"
+         landmarkName = "-setMyRiskFactor:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

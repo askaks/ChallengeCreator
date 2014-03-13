@@ -63,9 +63,9 @@
         _tasks = [[NSMutableArray alloc] init];
         _ageMax = 100;
         _ageMin = 1;
-        _pointsWorth = 0;
-        _minimumRiskFactor = 0;
-        _language = 0;
+        _pointsWorth = 1;
+        _minimumRiskFactor = 1;
+        _language = 1;
 
         _genderExcludes = [[NSMutableArray alloc] init];
         _interestedInExcludes = [[NSMutableArray alloc] init];
