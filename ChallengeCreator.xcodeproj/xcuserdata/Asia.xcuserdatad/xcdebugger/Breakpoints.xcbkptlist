@@ -60,12 +60,77 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ChallengeCreator/CreatorOptionsViewController.m"
-         timestampString = "416394112.502651"
+         timestampString = "417562468.680028"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "308"
+         endingLineNumber = "308"
+         landmarkName = "-CreateChallenge:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChallengeCreator/CreatorOptionsViewController.m"
+         timestampString = "417562905.702125"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "620"
+         endingLineNumber = "620"
+         landmarkName = "-setMyAgeMinField:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChallengeCreator/CreatorOptionsViewController.m"
+         timestampString = "417562908.227152"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "632"
          endingLineNumber = "632"
          landmarkName = "-setMyRiskFactor:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChallengeCreator/CreatorOptionsViewController.m"
+         timestampString = "417563120.16249"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "624"
+         endingLineNumber = "624"
+         landmarkName = "-setMyAgeMaxField:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChallengeCreator/CreatorOptionsViewController.m"
+         timestampString = "417563121.658386"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "628"
+         endingLineNumber = "628"
+         landmarkName = "-setLanguage:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ChallengeCreator/CreatorOptionsViewController.m"
+         timestampString = "417563896.06344"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "317"
+         endingLineNumber = "317"
+         landmarkName = "-CreateChallenge:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

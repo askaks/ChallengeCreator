@@ -809,6 +809,7 @@
                         <outlet property="LoveInfoBox" destination="S4u-3l-X5C" id="bEN-vy-mdB"/>
                         <outlet property="PetFilter" destination="oZK-EB-d4q" id="OKy-yn-B5T"/>
                         <outlet property="PetInfoBox" destination="gk5-QY-TWb" id="0AK-3u-26Q"/>
+                        <outlet property="RiskFactor" destination="R6W-bg-YcD" id="oyW-FK-lhl"/>
                         <outlet property="SchoolFilter" destination="cAS-eu-MGC" id="IJ8-om-Yge"/>
                         <outlet property="SchoolInfoBox" destination="8YK-wT-ALh" id="3qO-7v-c1i"/>
                         <outlet property="WorkFilter" destination="Fzd-Vk-BwX" id="MHd-ue-sdA"/>
@@ -1072,6 +1073,108 @@
             <point key="canvasLocation" x="-189" y="-96"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CreatorOptionsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatorOptionsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="CreateChallenge:"/>
+                <relationship kind="action" name="ExcludeFemales:"/>
+                <relationship kind="action" name="ExcludeLoveHappy:"/>
+                <relationship kind="action" name="ExcludeSchoolHappy:"/>
+                <relationship kind="action" name="ExcludeWorkHappy:"/>
+                <relationship kind="action" name="FilterChildren:"/>
+                <relationship kind="action" name="FilterLove:"/>
+                <relationship kind="action" name="FilterPartners:"/>
+                <relationship kind="action" name="FilterPets:"/>
+                <relationship kind="action" name="FilterSchool:"/>
+                <relationship kind="action" name="FilterWork:"/>
+                <relationship kind="action" name="addTask:"/>
+                <relationship kind="action" name="areValidChallenges:"/>
+                <relationship kind="action" name="cancelAddingChallenge:"/>
+                <relationship kind="action" name="clearChallenge:"/>
+                <relationship kind="action" name="doneAddingChallenges:"/>
+                <relationship kind="action" name="filterSexes:"/>
+                <relationship kind="action" name="previewAndConfirm:"/>
+                <relationship kind="action" name="setLanguage:"/>
+                <relationship kind="action" name="setMyAgeMaxField:"/>
+                <relationship kind="action" name="setMyAgeMinField:"/>
+                <relationship kind="action" name="setMyChallengeTitle:"/>
+                <relationship kind="action" name="setMyRiskFactor:"/>
+                <relationship kind="outlet" name="ChallengeTitle" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ChildFilter" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ChildInfoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="ExcludeFemalesSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="LanguageRating" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="LookingFilter" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="LookingInfoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="LoveFilter" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="LoveHappySwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="LoveInfoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="PetFilter" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="PetInfoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="RiskFactor" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="SchoolFilter" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="SchoolHappySwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="SchoolInfoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="WorkFilter" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="WorkHappySwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="WorkInfoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="ageMaxField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ageMinField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="cancelAddChallenge" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="challengePoints" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="challengePreviewScreen" candidateClass="UIView"/>
+                <relationship kind="outlet" name="challengeTextDisplay" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="createChallengeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="femaleFilter" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="genderInfoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="relalationshipSatisfactionInfoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="relationshipSatisfaction" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="schoolSatisfaction" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="schoolSatisfactionInfoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="workSatisfaction" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="workSatisfactionInfoBox" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="CreatorTaskFormViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatorTaskFormViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addTask:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="editTask:"/>
+                <relationship kind="action" name="removeTask:"/>
+                <relationship kind="outlet" name="addTaskButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="editTaskButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="infoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="message" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="removeTaskButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="taskPoints" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="taskTitle" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="titleToEdit" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CreatorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatorViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PickerPopUpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PickerPopUpViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Add:"/>
+                <relationship kind="action" name="Remove:"/>
+                <relationship kind="outlet" name="AddButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="DoneButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="InfoBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="Picker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="PickerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="RemoveButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -190,7 +190,7 @@
         }
         if (_TheDailyChallenge.language > 0)
         {
-            self.ageMinField.text = [NSString stringWithFormat:@"%d", _TheDailyChallenge.ageMin];
+            self.LanguageRating.text = [NSString stringWithFormat:@"%d", _TheDailyChallenge.language];
         }
         if (_TheDailyChallenge.minimumRiskFactor > 0)
         {
