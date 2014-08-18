@@ -164,6 +164,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // in viewDidLoad:
+    //
+    UIScrollView *myScrollView;
+    UIView *contentView;
+    // scrollview won't scroll unless content size explicitly set
+    //
+    
+    [myScrollView addSubview:contentView];//if the contentView is not already inside your scrollview in your xib/StoryBoard doc
+    
+    myScrollView.contentSize = contentView.frame.size; //sets ScrollView content size
+    
+    
+    self.myLargeUIScrollView.contentSize = CGSizeMake(320, 1000);
+    
     if (_TheDailyChallenge == nil )
     {
         _TheDailyChallenge = [[DailyChallenge alloc] init];
@@ -177,7 +191,7 @@
         }
         if (_TheDailyChallenge.pointsWorth > 0)
         {
-            self.challengePoints.text = [NSString stringWithFormat:@"%d", _TheDailyChallenge.pointsWorth];
+            self.challengePoints.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.pointsWorth];
         }
         if (_TheDailyChallenge.ageMax > 0)
         {
@@ -194,7 +208,7 @@
         }
         if (_TheDailyChallenge.minimumRiskFactor > 0)
         {
-            self.RiskFactor.text = [NSString stringWithFormat:@"%d", _TheDailyChallenge.minimumRiskFactor];
+            self.RiskFactor.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.minimumRiskFactor];
         }
         if (_TheDailyChallenge.interestedInExcludes != nil)
         {

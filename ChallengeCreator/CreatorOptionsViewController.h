@@ -26,6 +26,8 @@
 
 //@property (nonatomic, retain) NSMutableArray *Challenges;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *myLargeUIScrollView;
+
 @property (nonatomic, retain) NSMutableArray *ListOfChanges;
 
 @property (nonatomic, retain) DailyChallenge *TheDailyChallenge;

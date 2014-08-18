@@ -30,6 +30,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
 @property (weak, nonatomic) IBOutlet UIButton *removeTaskButton;
 @property (weak, nonatomic) IBOutlet UITextView *infoBox;
+@property (weak, nonatomic) IBOutlet UIScrollView *myTaskScrollView;
+@property (weak, nonatomic) IBOutlet UITextField *taskTitleTextField;
+
 
 - (IBAction)addTask:(id)sender;
 - (IBAction)editTask:(id)sender;

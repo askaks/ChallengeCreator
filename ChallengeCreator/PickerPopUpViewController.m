@@ -85,6 +85,12 @@ numberOfRowsInComponent:(NSInteger)component
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if(self.addAllSwitch)
+    {
+        [ _list addObjectsFromArray:_options];
+            NSString * combinedStuff = [_list componentsJoinedByString:@"  "];
+        _InfoBox.text = combinedStuff;
+    }
     CreatorOptionsViewController *optionsController = [segue destinationViewController];
     optionsController.TheDailyChallenge = [[DailyChallenge alloc] init];
     optionsController.TheDailyChallenge = _PopDailyChallenge;

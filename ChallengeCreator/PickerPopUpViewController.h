@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *Picker;
 @property (weak, nonatomic) IBOutlet UIButton *RemoveButton;
 @property (weak, nonatomic) IBOutlet UIButton *AddButton;
+@property (weak, nonatomic) IBOutlet UISwitch *addAllSwitch;
 
 
 - (IBAction)Add:(id)sender;
