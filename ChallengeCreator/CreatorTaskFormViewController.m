@@ -36,8 +36,9 @@
     _infoBox.text = [self printTaskToScreen:_listOfTasks];
     _taskTitleTextField.returnKeyType = UIReturnKeyDone;
     
-    _taskTitle.text = [NSString stringWithFormat:@"Task %lu \n", (unsigned long)_listOfTasks.count];
-    _taskTitleTextField.text = _taskTitle.text;
+    //_taskTitle.text = [NSString stringWithFormat:@"Task %lu \n", (unsigned long)_listOfTasks.count + 1];
+    //_taskTitle.text = [NSString stringWithFormat:@"Task %lu \n", (unsigned long)_listOfTasks.count + 1];
+    _taskTitleTextField.text = [NSString stringWithFormat:@"Task %lu \n", (unsigned long)_listOfTasks.count + 1];
     
     //[printTaskToScreen _listOfTasks];
     //_infoBox.text = [NSString stringWithFormat:@"Tasks: %@", pr];
@@ -87,33 +88,33 @@ shouldChangeTextInRange:(NSRange)range
     CreatorOptionsViewController *optionsController = [segue destinationViewController];
     optionsController.TheDailyChallenge = [[DailyChallenge alloc] init];
     optionsController.TheDailyChallenge = _TaskFormDailyChallenge;
-    //optionsController.Challenges = _Challenges;
 }
 
 - (IBAction)addTask:(id)sender {
     Task *task;
     if(_message.text != nil && _taskPoints.text != nil && _taskTitle.text != nil)
     {
-        task = [[Task alloc] initWithMessage:_message.text points:_taskPoints.text.integerValue title:_taskTitle.text];
+        NSString * titleAdjusted = [ _taskTitleTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+        task = [[Task alloc] initWithMessage:_message.text points:_taskPoints.text.integerValue title:titleAdjusted];
     }
-    [_listOfTasks addObject:task];
-    [self printTaskToScreen:_listOfTasks];
-    //NSString * combinedStuff = [];
-    //NSString * combinedStuff = [listOfTasks componentsJoinedByString:@"  "];
-    //InfoBox.text = combinedStuff;
-    _infoBox.text = [self printTaskToScreen:_listOfTasks];
-    _TaskFormDailyChallenge.pointsWorth += task.points;
-    
+    if (task != nil) {
+        [_listOfTasks addObject:task];
+        [self printTaskToScreen:_listOfTasks];
+        _infoBox.text = [self printTaskToScreen:_listOfTasks];
+        _TaskFormDailyChallenge.pointsWorth += task.points;
+    }
+    _taskTitleTextField.text = [NSString stringWithFormat:@"Task %lu \n", (unsigned long)_listOfTasks.count + 1];
 }
 
 - (NSString*)printTaskToScreen: (NSMutableArray *) taskList
 {
     NSString *combinedStuff = [[NSString alloc] init];
-        _taskTitle.text = [NSString stringWithFormat:@"Task %lu \n \n", (unsigned long)_listOfTasks.count];
-        _taskTitleTextField.text = _taskTitle.text;
+        //_taskTitle.text = [NSString stringWithFormat:@"Task %lu \n \n", (unsigned long)_listOfTasks.count];
+        _taskTitleTextField.text = [NSString stringWithFormat:@"Task %lu \n \n", (unsigned long)_listOfTasks.count];
     for(Task *t in taskList)
     {
-        combinedStuff = [NSString stringWithFormat:@"%@    Title: %@ message: %@ (%d pts)    \n", combinedStuff, t.title, t.message, t.points];
+        combinedStuff = [NSString stringWithFormat:@"%@    Title: %@ message: %@ (%ld pts)    \n", combinedStuff, t.title, t.message, (long)t.points];
     }
     return combinedStuff;
 }
@@ -122,9 +123,11 @@ shouldChangeTextInRange:(NSRange)range
 
     Task *taskToChange = [[Task alloc] init];
     Task *newTask = [[Task alloc] init];
+    //make sure the task to replace is not null
     if(_message.text != nil && _taskPoints.text != nil && _taskTitle.text != nil)
     {
-        newTask = [[Task alloc] initWithMessage:_message.text points:_taskPoints.text.integerValue title:_taskTitle.text];
+        NSString * titleAdjusted = [ _titleToEdit.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        newTask = [[Task alloc] initWithMessage:_message.text points:_taskPoints.text.integerValue title:titleAdjusted];
     }
     for(Task *t in _listOfTasks )
     {
@@ -141,13 +144,7 @@ shouldChangeTextInRange:(NSRange)range
         taskToChange.points = newTask.points;
         _infoBox.text = [self printTaskToScreen:_listOfTasks];
     }
-
-    
-;
     _TaskFormDailyChallenge.pointsWorth += newTask.points;
-    
-//    [listOfTasks replaceObjectAtIndex:<#(NSUInteger)#> withObject:task];
-//    [self printTaskToScreen:listOfTasks];
 }
 
 
@@ -156,14 +153,11 @@ shouldChangeTextInRange:(NSRange)range
 }
 - (IBAction)removeTask:(id)sender {
     Task *taskToDelete = [[Task alloc] init];
-//    Task *newTask = [[Task alloc] init];
-//    if(_message.text != nil && _taskPoints.text != nil && _taskTitle.text != nil)
-//    {
-//        newTask = [[Task alloc] initWithMessage:_message.text points:_taskPoints.text.integerValue title:_taskTitle.text];
-//    }
+    
+    NSString * adjustedTitleToRemove = [ _titleToEdit.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     for(Task *t in _listOfTasks )
     {
-        if([t.title isEqualToString: (NSString *)_titleToEdit.text])
+        if([t.title isEqualToString: adjustedTitleToRemove])
         {
             taskToDelete = &(*t);
             break;

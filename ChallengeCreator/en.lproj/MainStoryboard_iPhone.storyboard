@@ -151,7 +151,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="J81-Zp-zyW">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="696"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Challenge Title" borderStyle="roundedRect" minimumFontSize="17" id="elY-WF-Zjj">
@@ -451,7 +451,7 @@
                                         </connections>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" id="ZgK-KP-IUr">
-                                        <rect key="frame" x="4" y="5" width="312" height="1016"/>
+                                        <rect key="frame" x="4" y="15" width="312" height="1016"/>
                                         <subviews>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7GK-er-NEZ">
                                                 <rect key="frame" x="17" y="941" width="128" height="30"/>
@@ -534,7 +534,7 @@
             <objects>
                 <viewController id="mai-so-QUr" customClass="CreatorTaskFormViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FzW-O6-dNv" customClass="ADBannerView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1020"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="boW-ck-v05">
@@ -561,8 +561,8 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="603" contentMode="scaleToFill" scrollEnabled="NO" text="Task action" id="36J-Hl-GHb">
-                                        <rect key="frame" x="14" y="107" width="193" height="75"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="603" contentMode="scaleToFill" id="36J-Hl-GHb">
+                                        <rect key="frame" x="7" y="96" width="301" height="127"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="19"/>
@@ -572,7 +572,8 @@
                                         </connections>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XYN-7y-pWt">
-                                        <rect key="frame" x="89" y="178" width="100" height="46"/>
+                                        <rect key="frame" x="237" y="224" width="71" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Add Task">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -581,7 +582,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hqF-Wq-Iby">
-                                        <rect key="frame" x="161" y="490" width="111" height="48"/>
+                                        <rect key="frame" x="206" y="527" width="72" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Done">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -591,8 +593,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NUc-il-Neu">
-                                        <rect key="frame" x="107" y="436" width="100" height="46"/>
-                                        <state key="normal" title="Edit Task:">
+                                        <rect key="frame" x="115" y="498" width="76" height="32"/>
+                                        <state key="normal" title="Edit Task">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -600,7 +602,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="3IC-Jt-r3Y">
-                                        <rect key="frame" x="7" y="400" width="100" height="38"/>
+                                        <rect key="frame" x="7" y="480" width="100" height="38"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -616,7 +618,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZB2-H4-EUl">
-                                        <rect key="frame" x="7" y="436" width="100" height="46"/>
+                                        <rect key="frame" x="120" y="473" width="80" height="29"/>
                                         <state key="normal" title="Delete Task">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -625,7 +627,7 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="UxJ-ol-Xdk">
-                                        <rect key="frame" x="7" y="240" width="281" height="152"/>
+                                        <rect key="frame" x="4" y="286" width="310" height="136"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -634,7 +636,7 @@
                                         </connections>
                                     </textView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="List of Tasks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rnn-yw-9lK">
-                                        <rect key="frame" x="7" y="211" width="111" height="21"/>
+                                        <rect key="frame" x="7" y="257" width="111" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -648,6 +650,13 @@
                                             <outlet property="delegate" destination="mai-so-QUr" id="uvQ-6a-kjD"/>
                                         </connections>
                                     </textField>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Existing Task:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CEG-aU-cK5">
+                                        <rect key="frame" x="7" y="444" width="179" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </scrollView>
                         </subviews>

@@ -61,9 +61,9 @@
 	{
         _title = @"start";
         _tasks = [[NSMutableArray alloc] init];
-        _ageMax = 100;
+        _ageMax = 200;
         _ageMin = 1;
-        _pointsWorth = 1;
+        _pointsWorth = 0;
         _minimumRiskFactor = 1;
         _language = 1;
 

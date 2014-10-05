@@ -183,8 +183,8 @@
         _TheDailyChallenge = [[DailyChallenge alloc] init];
     }
     
-    else
-    {
+//    else
+//    {
         if (_TheDailyChallenge.title != nil)
         {
             self.ChallengeTitle.text = _TheDailyChallenge.title;
@@ -195,7 +195,7 @@
         }
         if (_TheDailyChallenge.ageMax > 0)
         {
-            self.ageMaxField.text = [NSString stringWithFormat:@"%d", _TheDailyChallenge.ageMax];
+            self.ageMaxField.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.ageMax];
         }
         
         if (_TheDailyChallenge.ageMin > 0)
@@ -252,7 +252,7 @@
             _workSatisfactionInfoBox.text = [_TheDailyChallenge.workHappyExcludes componentsJoinedByString:@"  "];
         }
    
-    }
+//    }
 	// Do any additional setup after loading the view.
 //    _AgeMax.returnKeyType = UIReturnKeyDone;
 //    _AgeMin.returnKeyType = UIReturnKeyDone;
@@ -460,6 +460,8 @@
     _RiskFactor.text = @"";
     _LanguageRating.text =@"";
     _ChallengeTitle.text =@"";
+    _TheDailyChallenge.pointsWorth = 0;
+    
 }
 
 - (IBAction)FilterPartners:(id)sender {
