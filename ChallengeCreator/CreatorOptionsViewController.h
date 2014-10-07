@@ -77,6 +77,12 @@
 @property (weak, nonatomic) IBOutlet UIView *challengePreviewScreen;
 @property (weak, nonatomic) IBOutlet UIButton *cancelAddChallenge;
 @property (weak, nonatomic) IBOutlet UITextView *challengeTextDisplay;
+@property (weak, nonatomic) IBOutlet UISwitch *deleteOriginalInParseSwitch;
+@property bool *loadedFromParse;
+@property (nonatomic, retain) NSString *objectIdInParse;
+@property (weak, nonatomic) IBOutlet UIView *objectIdInTextbox;
+@property (weak, nonatomic) IBOutlet UITextField *objectIdTextbox;
+
 
 - (IBAction)doneAddingChallenges:(id)sender;
 - (IBAction)setMyChallengeTitle:(id)sender;
@@ -112,5 +118,7 @@
 - (IBAction)clearChallenge:(id)sender;
 
 - (IBAction)areValidChallenges:(id)sender;
+- (IBAction)loadFromParseAction:(id)sender;
+- (IBAction)deleteOriginalAction:(id)sender;
 
 @end

@@ -128,14 +128,14 @@ shouldChangeTextInRange:(NSRange)range
     {
         NSString * titleAdjusted = [ _titleToEdit.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         newTask = [[Task alloc] initWithMessage:_message.text points:_taskPoints.text.integerValue title:titleAdjusted];
-    }
     for(Task *t in _listOfTasks )
     {
-        if([t.title isEqualToString:newTask.title])
+        if([t.title caseInsensitiveCompare:titleAdjusted]== NSOrderedSame)
         {
             taskToChange = &(*t);
             break;
         }
+    }
     }
     if (taskToChange != NULL) {
         _TaskFormDailyChallenge.pointsWorth -= taskToChange.points;
@@ -157,7 +157,7 @@ shouldChangeTextInRange:(NSRange)range
     NSString * adjustedTitleToRemove = [ _titleToEdit.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     for(Task *t in _listOfTasks )
     {
-        if([t.title isEqualToString: adjustedTitleToRemove])
+        if([t.title caseInsensitiveCompare:adjustedTitleToRemove]== NSOrderedSame)
         {
             taskToDelete = &(*t);
             break;

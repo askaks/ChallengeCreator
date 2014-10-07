@@ -121,10 +121,10 @@
 
     
     NSString *combinedStuff = [[NSString alloc] init];
-    combinedStuff = [NSString stringWithFormat:@"Challenge Title: %@ \n for ages %d@ - %d@ \n lang: %d and riskFactor %d \n Looking For: %@ \n School: %@ \n Work: %@ \n Relationship: %@ \n Kids: %@ \n Pets: %@ \n", _TheDailyChallenge.title, _TheDailyChallenge.ageMin, _TheDailyChallenge.ageMax, _TheDailyChallenge.language, _TheDailyChallenge.minimumRiskFactor, _LookingInfoBox.text, _SchoolInfoBox.text, _WorkInfoBox.text, _LoveInfoBox.text, _ChildInfoBox.text, _PetInfoBox.text];
+    combinedStuff = [NSString stringWithFormat:@"Challenge Title: %@ \n for ages %d@ - %d@ \n lang: %d and riskFactor %d \n Looking For: %@ \n School: %@ \n Work: %@ \n Relationship: %@ \n Kids: %@ \n Pets: %@ \n", _TheDailyChallenge.title, (long)_TheDailyChallenge.ageMin, _TheDailyChallenge.ageMax, _TheDailyChallenge.language, _TheDailyChallenge.minimumRiskFactor, _LookingInfoBox.text, _SchoolInfoBox.text, _WorkInfoBox.text, _LoveInfoBox.text, _ChildInfoBox.text, _PetInfoBox.text];
     for(Task *t in _TheDailyChallenge.tasks)
     {
-        combinedStuff = [NSString stringWithFormat:@"%@    Title: %@ message: %@ (%d pts)    \n", combinedStuff, t.title, t.message, t.points];
+        combinedStuff = [NSString stringWithFormat:@"%@    Title: %@ message: %@ (%ld pts)    \n", combinedStuff, t.title, t.message, (long)t.points];
     }
     
     _challengeTextDisplay.text = combinedStuff;
@@ -200,11 +200,11 @@
         
         if (_TheDailyChallenge.ageMin > 0)
         {
-            self.ageMinField.text = [NSString stringWithFormat:@"%d", _TheDailyChallenge.ageMin];
+            self.ageMinField.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.ageMin];
         }
         if (_TheDailyChallenge.language > 0)
         {
-            self.LanguageRating.text = [NSString stringWithFormat:@"%d", _TheDailyChallenge.language];
+            self.LanguageRating.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.language];
         }
         if (_TheDailyChallenge.minimumRiskFactor > 0)
         {
@@ -792,4 +792,137 @@
     _challengePreviewScreen.hidden = true;
     _challengeTextDisplay.hidden = true;
 }
+
+
+- (IBAction)deleteOriginalAction:(id)sender {
+    if (_deleteOriginalInParseSwitch.on) {
+    }
+}
+- (IBAction)loadFromParseAction:(id)sender
+{
+    NSString * objectIdAdjusted = [ _objectIdTextbox.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if(![objectIdAdjusted isEqualToString: @""])
+    {
+        PFQuery *challengeQuery = [PFQuery queryWithClassName:@"Challenges"];
+        [challengeQuery whereKey:@"objectId" equalTo:objectIdAdjusted];     //An Apple a Day
+        //[challengeQuery whereKey:@"title" containsString:@"An Apple a Day"];
+        NSArray *objects = nil;
+        objects = [challengeQuery findObjects];
+        if (objects != NULL)
+        {
+            //should be only one
+            for (PFObject *challengeObj in objects)
+            {
+                _TheDailyChallenge.title = challengeObj[@"title"];
+                _TheDailyChallenge.pointsWorth = [challengeObj[@"points"] integerValue];
+                _TheDailyChallenge.ageMin = [challengeObj[@"ageMin"] integerValue];
+                _TheDailyChallenge.ageMax = [challengeObj[@"ageMax"] integerValue];
+                _TheDailyChallenge.language  = [challengeObj[@"languageRating"] integerValue];
+                _TheDailyChallenge.minimumRiskFactor = [challengeObj[@"riskFactor"] integerValue];
+                _TheDailyChallenge.genderExcludes = [challengeObj[@"forSex"] componentsSeparatedByString:@" | "];
+                _TheDailyChallenge.interestedInExcludes  = [challengeObj[@"seekingWho"] componentsSeparatedByString:@" | "];
+                _TheDailyChallenge.schoolLevelExcludes = [challengeObj[@"eduIncludes"] componentsSeparatedByString:@" | "];
+                _TheDailyChallenge.relationshipLevelExcludes  = [challengeObj[@"relationshipIncludes"] componentsSeparatedByString:@" | "];
+                _TheDailyChallenge.workLevelExcludes = [challengeObj[@"incomeIncludes"] componentsSeparatedByString:@" | "];
+                _TheDailyChallenge.kidsExclude = [challengeObj[@"childIncludes"] componentsSeparatedByString:@" | "];
+                _TheDailyChallenge.petsExclude = [challengeObj[@"petIncludes"] componentsSeparatedByString:@" | "];
+                _TheDailyChallenge.relationshipHappyExcludes = [challengeObj[@"happyWithLove"] componentsSeparatedByString:@" | "];
+                _TheDailyChallenge.schoolHappyExcludes = [challengeObj[@"happyWithSchool"]  componentsSeparatedByString:@" | "];
+                _TheDailyChallenge.workHappyExcludes = [challengeObj[@"happyWithWork"] componentsSeparatedByString:@" | "];
+                
+                PFQuery *taskQuery = [PFQuery queryWithClassName:@"Tasks"];
+                [taskQuery whereKey:@"challengeID" containsString:(NSString*)(objectIdAdjusted)];
+                NSArray *objects = [taskQuery findObjects]; //]:^(NSArray *objects, NSError *error){
+                if (objects != NULL)
+                {
+                    for (PFObject *objTasks in objects)
+                    {
+                        NSString *actionObj = objTasks[@"action"];
+                        NSNumber *pointObj = objTasks[@"points"];
+                        NSNumber *taskObj = objTasks[@"taskNumber"];
+                        //Task *task  = [[Task alloc] initWithMessageAndPoints:actionObj points:[pointObj integerValue]];
+                        NSString * title = [NSString stringWithFormat:@"Task %@",[taskObj stringValue]];
+                        Task *task  = [[Task alloc] initWithMessage:actionObj points:[pointObj integerValue] title:title];
+                        [_TheDailyChallenge.tasks addObject:task];
+                    }//for Tasks
+                }//if task Objects aren't null
+            }//for Challenge objects
+            [self fillFormViewWithNewInfo];
+        }//if Challenge Objects isn't null
+    }
+}
+
+- (BOOL)fillFormViewWithNewInfo
+{
+    if (_TheDailyChallenge == nil )
+    {
+        _TheDailyChallenge = [[DailyChallenge alloc] init];
+    }
+    if (_TheDailyChallenge.title != nil)
+    {
+        self.ChallengeTitle.text = _TheDailyChallenge.title;
+    }
+    if (_TheDailyChallenge.pointsWorth > 0)
+    {
+        self.challengePoints.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.pointsWorth];
+    }
+    if (_TheDailyChallenge.ageMax > 0)
+    {
+        self.ageMaxField.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.ageMax];
+    }
+    if (_TheDailyChallenge.ageMin > 0)
+    {
+        self.ageMinField.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.ageMin];
+    }
+    if (_TheDailyChallenge.language > 0)
+    {
+        self.LanguageRating.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.language];
+    }
+    if (_TheDailyChallenge.minimumRiskFactor > 0)
+    {
+        self.RiskFactor.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.minimumRiskFactor];
+    }
+    if (_TheDailyChallenge.interestedInExcludes != nil)
+    {
+        _LookingInfoBox.text = [_TheDailyChallenge.interestedInExcludes componentsJoinedByString:@"  "];
+    }
+    if (_TheDailyChallenge.schoolLevelExcludes != nil)
+    {
+        _SchoolInfoBox.text = [_TheDailyChallenge.schoolLevelExcludes componentsJoinedByString:@"  "];
+    }
+    if (_TheDailyChallenge.workLevelExcludes != nil)
+    {
+        _WorkInfoBox.text = [_TheDailyChallenge.workLevelExcludes componentsJoinedByString:@"  "];
+    }
+    if (_TheDailyChallenge.relationshipLevelExcludes != nil)
+    {
+        _LoveInfoBox.text = [_TheDailyChallenge.relationshipLevelExcludes componentsJoinedByString:@"  "];
+    }
+    if (_TheDailyChallenge.kidsExclude != nil)
+    {
+        _ChildInfoBox.text = [_TheDailyChallenge.kidsExclude componentsJoinedByString:@"  "];
+    }
+    if (_TheDailyChallenge.petsExclude != nil)
+    {
+        _PetInfoBox.text = [_TheDailyChallenge.petsExclude componentsJoinedByString:@"  "];
+    }
+    if  (_TheDailyChallenge.genderExcludes != nil)
+    {
+        _genderInfoBox.text = [_TheDailyChallenge.genderExcludes componentsJoinedByString:@"  "];
+    }
+    if  (_TheDailyChallenge.relationshipHappyExcludes != nil)
+    {
+        _relalationshipSatisfactionInfoBox.text = [_TheDailyChallenge.relationshipHappyExcludes componentsJoinedByString:@"  "];
+    }
+    if  (_TheDailyChallenge.schoolHappyExcludes != nil)
+    {
+        _schoolSatisfactionInfoBox.text = [_TheDailyChallenge.schoolHappyExcludes componentsJoinedByString:@"  "];
+    }
+    if  (_TheDailyChallenge.workHappyExcludes != nil)
+    {
+        _workSatisfactionInfoBox.text = [_TheDailyChallenge.workHappyExcludes componentsJoinedByString:@"  "];
+    }
+}
+
+
 @end

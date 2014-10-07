@@ -26,20 +26,20 @@
 @property (nonatomic, assign) NSInteger language;
 
 
-@property (nonatomic, retain) NSMutableArray *genderExcludes;
+@property (nonatomic, retain) NSArray *genderExcludes;
 
-@property (nonatomic, retain) NSMutableArray *interestedInExcludes;
+@property (nonatomic, retain) NSArray *interestedInExcludes;
 
-@property (nonatomic, retain) NSMutableArray *workLevelExcludes;
-@property (nonatomic, retain) NSMutableArray *workHappyExcludes;
+@property (nonatomic, retain) NSArray *workLevelExcludes;
+@property (nonatomic, retain) NSArray *workHappyExcludes;
 
-@property (nonatomic, retain) NSMutableArray *schoolLevelExcludes;
-@property (nonatomic, retain) NSMutableArray *schoolHappyExcludes;
+@property (nonatomic, retain) NSArray *schoolLevelExcludes;
+@property (nonatomic, retain) NSArray *schoolHappyExcludes;
 
-@property (nonatomic, retain) NSMutableArray *relationshipLevelExcludes;
-@property (nonatomic, retain) NSMutableArray *relationshipHappyExcludes;
+@property (nonatomic, retain) NSArray *relationshipLevelExcludes;
+@property (nonatomic, retain) NSArray *relationshipHappyExcludes;
 
-@property (nonatomic, retain) NSMutableArray *femaleExcl;
+@property (nonatomic, retain) NSArray *femaleExcl;
 //@property (nonatomic, retain) NSString *maleExcl;
 @property (nonatomic, retain) NSString *schoolSpecific;
 @property (nonatomic, retain) NSString *schoolLevel;
@@ -56,8 +56,8 @@
 @property (nonatomic, retain) NSMutableArray *schoolExcludes;
 @property (nonatomic, retain) NSMutableArray *workExcludes;
 
-@property (nonatomic, retain) NSMutableArray *kidsExclude;
-@property (nonatomic, retain) NSMutableArray *petsExclude;
+@property (nonatomic, retain) NSArray *kidsExclude;
+@property (nonatomic, retain) NSArray *petsExclude;
 //@property (nonatomic, retain) NSMutableArray *personalityExclude;
 
 
