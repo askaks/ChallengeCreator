@@ -35,13 +35,8 @@
     _titleToEdit.returnKeyType = UIReturnKeyDone;
     _infoBox.text = [self printTaskToScreen:_listOfTasks];
     _taskTitleTextField.returnKeyType = UIReturnKeyDone;
-    
-    //_taskTitle.text = [NSString stringWithFormat:@"Task %lu \n", (unsigned long)_listOfTasks.count + 1];
-    //_taskTitle.text = [NSString stringWithFormat:@"Task %lu \n", (unsigned long)_listOfTasks.count + 1];
     _taskTitleTextField.text = [NSString stringWithFormat:@"Task %lu \n", (unsigned long)_listOfTasks.count + 1];
-    
-    //[printTaskToScreen _listOfTasks];
-    //_infoBox.text = [NSString stringWithFormat:@"Tasks: %@", pr];
+    [self printTaskToScreen:_TaskFormDailyChallenge.tasks];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,7 +48,7 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.taskTitle resignFirstResponder];
     [self.message resignFirstResponder];
-   [self.taskPoints resignFirstResponder];
+    [self.taskPoints resignFirstResponder];
     [self.titleToEdit resignFirstResponder];
     [self.taskTitleTextField resignFirstResponder];
 }
@@ -114,7 +109,7 @@ shouldChangeTextInRange:(NSRange)range
         _taskTitleTextField.text = [NSString stringWithFormat:@"Task %lu \n \n", (unsigned long)_listOfTasks.count];
     for(Task *t in taskList)
     {
-        combinedStuff = [NSString stringWithFormat:@"%@    Title: %@ message: %@ (%ld pts)    \n", combinedStuff, t.title, t.message, (long)t.points];
+        combinedStuff = [NSString stringWithFormat:@"%@    Title: %@\nMessage: %@ (%ld pts)    \n", combinedStuff, t.title, t.message, (long)t.points];
     }
     return combinedStuff;
 }

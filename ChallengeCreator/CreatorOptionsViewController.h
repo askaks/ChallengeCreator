@@ -83,6 +83,8 @@
 @property (weak, nonatomic) IBOutlet UIView *objectIdInTextbox;
 @property (weak, nonatomic) IBOutlet UITextField *objectIdTextbox;
 
+//@property (nonatomic, retain) NFObject *challengeObject;
+//@property (nonatomic, retain) NSArray *taskObject;
 
 - (IBAction)doneAddingChallenges:(id)sender;
 - (IBAction)setMyChallengeTitle:(id)sender;

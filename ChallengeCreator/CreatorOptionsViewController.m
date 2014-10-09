@@ -15,116 +15,17 @@
 @implementation CreatorOptionsViewController
 
 
-//- (NSString *)challengesPath
-//{
-//    NSString *docDir =
-//	[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-//										 NSUserDomainMask, YES) objectAtIndex: 0];
-//	return [docDir stringByAppendingPathComponent: @"Challenge.dat"];
-//}
-//
-//- (void)archiveChallenges:(NSMutableArray *)array
-//{
-//    NSString *filePath = [self challengesPath];
-//    
-//	if ([array count] > 0)
-//    {
-//        NSError *error = nil;
-//        NSDictionary *attrib;
-//        
-//        NSFileManager *fileManager = [NSFileManager defaultManager];
-//        
-//        //
-//        // check if file already exist
-//        //
-//        BOOL exist = [fileManager fileExistsAtPath:filePath];
-//        BOOL success = YES;
-//        if (YES == exist)
-//        {
-//            // UNLOCK THE FILE
-//            attrib = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO]
-//                                                 forKey:NSFileImmutable];
-//            
-//            success = [fileManager setAttributes:attrib
-//                                    ofItemAtPath:filePath
-//                                           error:&error];
-//        }
-//        if (YES == success)
-//        {
-//            // SAVE THE FILE
-//            [NSKeyedArchiver archiveRootObject:array
-//                                        toFile:filePath];
-//            
-//            // LOCK IT BACK
-//            attrib = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
-//                                                 forKey:NSFileImmutable];
-//            
-//            success = [fileManager setAttributes:attrib
-//                                    ofItemAtPath:filePath
-//                                           error:&error];
-//            
-//            if (NO == success) {
-//                NSLog(@"Error: %@",[error localizedDescription]);
-//            }
-//        }
-//        else {
-//            NSLog(@"Could not UNLOCK the file.");
-//        }
-//	}
-//	else {
-//		
-//		UIAlertView *alertView;
-//		alertView = [[UIAlertView alloc]
-//					 initWithTitle: @"EMPTY OBJECT"
-//					 message: @"WARNING: Nothing was saved."
-//					 delegate: nil
-//					 cancelButtonTitle:@"OK"
-//					 otherButtonTitles:nil];
-//		[alertView show];
-//	}
-//}
-//
-//- (NSMutableArray *)unarchiveChallenges
-//{
-//    NSFileManager *fileManager = [NSFileManager defaultManager];
-//    
-//    NSString *filePath = [self challengesPath];
-//    //
-//    // check if file already exist
-//    //
-//    BOOL exist = [fileManager fileExistsAtPath:filePath];
-//    if (NO == exist)
-//    {
-//        UIAlertView *alertView;
-//        alertView = [[UIAlertView alloc]
-//                     initWithTitle: @"FILE NOT FOUND"
-//                     message: @"WARNING: nothing was unarchived."
-//                     delegate: nil
-//                     cancelButtonTitle:@"OK"
-//                     otherButtonTitles:nil];
-//        [alertView show];
-//        
-//        return nil;
-//    }
-//    
-//	NSMutableArray *array = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
-//    
-//	return array;
-//}
-
 - (IBAction)previewAndConfirm:(id)sender {
     _cancelAddChallenge.hidden = false;
     _createChallengeButton.hidden = false;
     _challengePreviewScreen.hidden = false;
     _challengeTextDisplay.hidden = false;
     
-
-    
     NSString *combinedStuff = [[NSString alloc] init];
-    combinedStuff = [NSString stringWithFormat:@"Challenge Title: %@ \n for ages %d@ - %d@ \n lang: %d and riskFactor %d \n Looking For: %@ \n School: %@ \n Work: %@ \n Relationship: %@ \n Kids: %@ \n Pets: %@ \n", _TheDailyChallenge.title, (long)_TheDailyChallenge.ageMin, _TheDailyChallenge.ageMax, _TheDailyChallenge.language, _TheDailyChallenge.minimumRiskFactor, _LookingInfoBox.text, _SchoolInfoBox.text, _WorkInfoBox.text, _LoveInfoBox.text, _ChildInfoBox.text, _PetInfoBox.text];
+    combinedStuff = [NSString stringWithFormat:@"CHALLENGE: %@ \nFOR AGES %ld - %ld\nLANGUAGE: %ld\nRISK FACTOR %ld\nLOOKING FOR: %@\nSCHOOL: %@\n\nWORK: %@\n\nRELATIONSHIP: %@\n\nKIDS: %@\n\nPETS: %@\n\n", _TheDailyChallenge.title, (long)_TheDailyChallenge.ageMin, (long)_TheDailyChallenge.ageMax, (long)_TheDailyChallenge.language, (long)_TheDailyChallenge.minimumRiskFactor, _LookingInfoBox.text, _SchoolInfoBox.text, _WorkInfoBox.text, _LoveInfoBox.text, _ChildInfoBox.text, _PetInfoBox.text];
     for(Task *t in _TheDailyChallenge.tasks)
     {
-        combinedStuff = [NSString stringWithFormat:@"%@    Title: %@ message: %@ (%ld pts)    \n", combinedStuff, t.title, t.message, (long)t.points];
+        combinedStuff = [NSString stringWithFormat:@"%@ TITLE: %@\nMESSAGE: %@ (%ld PTS)    \n", combinedStuff, t.title, t.message, (long)t.points];
     }
     
     _challengeTextDisplay.text = combinedStuff;
@@ -347,6 +248,9 @@
                     taskObj[@"action"] = task.message;
                     taskObj[@"points"] = [NSNumber numberWithInteger:task.points];
                     taskObj[@"taskNumber"] = [NSNumber numberWithInteger:taskCount];
+                    taskObj[@"parentChallenge"] = dailyChallenge;
+                    // Add a relation between the Post with objectId "1zEcyElZ80" and the comment
+                    taskObj[@"parent"] = [PFObject objectWithoutDataWithClassName:@"Challenge" objectId:dailyChallenge.objectId];
                     taskCount++;
                     [taskObj saveEventually:^(BOOL succeeded, NSError *error) {
                         PFRelation *relationChallengeToTask = [taskObj relationforKey:@"challenge"];
@@ -364,7 +268,34 @@
             _challengeTextDisplay.text = @"INVALID CHALLENGE";
         }
     }
-
+    
+    //If to DELETE old challenge
+    if(_deleteOriginalInParseSwitch.on && ![_objectIdInParse isEqualToString: @""])
+    {
+        PFQuery *challengeQuery = [PFQuery queryWithClassName:@"Challenges"];
+        [challengeQuery whereKey:@"objectId" equalTo:_objectIdInParse];     //An Apple a Day
+        //[challengeQuery whereKey:@"title" containsString:@"An Apple a Day"];
+        NSArray *objects = nil;
+        objects = [challengeQuery findObjects];
+        if (objects != NULL)
+        {
+            //should be only one
+            for (PFObject *challengeObj in objects)
+            {
+                [challengeObj deleteInBackground];
+                PFQuery *taskQuery = [PFQuery queryWithClassName:@"Tasks"];
+                [taskQuery whereKey:@"challengeID" containsString:(NSString*)(_objectIdInParse)];
+                NSArray *objects = [taskQuery findObjects];
+                if (objects != NULL)
+                {
+                    for (PFObject *objTasks in objects)
+                    {
+                        [objTasks deleteInBackground];
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -796,6 +727,7 @@
 
 - (IBAction)deleteOriginalAction:(id)sender {
     if (_deleteOriginalInParseSwitch.on) {
+        
     }
 }
 - (IBAction)loadFromParseAction:(id)sender
@@ -805,6 +737,7 @@
     {
         PFQuery *challengeQuery = [PFQuery queryWithClassName:@"Challenges"];
         [challengeQuery whereKey:@"objectId" equalTo:objectIdAdjusted];     //An Apple a Day
+
         //[challengeQuery whereKey:@"title" containsString:@"An Apple a Day"];
         NSArray *objects = nil;
         objects = [challengeQuery findObjects];
@@ -813,6 +746,8 @@
             //should be only one
             for (PFObject *challengeObj in objects)
             {
+                _objectIdInParse = objectIdAdjusted;
+                
                 _TheDailyChallenge.title = challengeObj[@"title"];
                 _TheDailyChallenge.pointsWorth = [challengeObj[@"points"] integerValue];
                 _TheDailyChallenge.ageMin = [challengeObj[@"ageMin"] integerValue];
@@ -831,10 +766,16 @@
                 _TheDailyChallenge.workHappyExcludes = [challengeObj[@"happyWithWork"] componentsSeparatedByString:@" | "];
                 
                 PFQuery *taskQuery = [PFQuery queryWithClassName:@"Tasks"];
-                [taskQuery whereKey:@"challengeID" containsString:(NSString*)(objectIdAdjusted)];
+                [taskQuery whereKey:@"parentChallenge"
+                        equalTo:[PFObject objectWithoutDataWithClassName:@"Challenges" objectId:objectIdAdjusted]];
+//                [taskQuery whereKey:@"parentChallenge"
+//                            equalTo:challengeObj];
+        
+                //[taskQuery whereKey:@"parentChallenge" containsString:(objectIdAdjusted)];
                 NSArray *objects = [taskQuery findObjects]; //]:^(NSArray *objects, NSError *error){
                 if (objects != NULL)
                 {
+                    //_taskObject = objects;
                     for (PFObject *objTasks in objects)
                     {
                         NSString *actionObj = objTasks[@"action"];
@@ -852,7 +793,7 @@
     }
 }
 
-- (BOOL)fillFormViewWithNewInfo
+- (void)fillFormViewWithNewInfo
 {
     if (_TheDailyChallenge == nil )
     {
