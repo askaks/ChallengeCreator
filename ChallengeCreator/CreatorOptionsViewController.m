@@ -766,12 +766,20 @@
                 _TheDailyChallenge.workHappyExcludes = [challengeObj[@"happyWithWork"] componentsSeparatedByString:@" | "];
                 
                 PFQuery *taskQuery = [PFQuery queryWithClassName:@"Tasks"];
-                [taskQuery whereKey:@"parentChallenge"
-                        equalTo:[PFObject objectWithoutDataWithClassName:@"Challenges" objectId:objectIdAdjusted]];
-//                [taskQuery whereKey:@"parentChallenge"
-//                            equalTo:challengeObj];
-        
-                //[taskQuery whereKey:@"parentChallenge" containsString:(objectIdAdjusted)];
+
+                //[taskQuery whereKey:@"parentChallenge" equalTo:[PFObject objectWithoutDataWithClassName:@"Challenges" objectId:objectIdAdjusted]];
+                        //[taskQuery whereKey:@"parentChallenge" equalTo:challengeObj];
+                        //[taskQuery whereKey:@"parentChallenge" containsString:(objectIdAdjusted)];
+                NSDate *now = [NSDate date];
+                NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+                NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:now];
+                [components setDay:6];
+                NSDate *october6 = [calendar dateFromComponents:components];
+                [components setDay:4];
+                NSDate *october4 = [calendar dateFromComponents:components];
+                //[taskQuery whereKey:@"createdAt" containsString:(objectIdAdjusted)];
+                [taskQuery whereKey:@"createdAt" greaterThan:october4];
+                [taskQuery whereKey:@"createdAt" lessThan:october6];
                 NSArray *objects = [taskQuery findObjects]; //]:^(NSArray *objects, NSError *error){
                 if (objects != NULL)
                 {
