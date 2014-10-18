@@ -279,7 +279,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Creator;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Joanna Szymczyk";
 			};
 			buildConfigurationList = 62B2D34E1878F11F0004E1E6 /* Build configuration list for PBXProject "ChallengeCreator" */;
@@ -430,7 +430,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
