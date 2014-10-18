@@ -17,9 +17,9 @@
 
 @interface CreatorTaskFormViewController : UIViewController <UITextFieldDelegate>
 
-@property (nonatomic, retain) NSMutableArray *Challenges;
+//@property (nonatomic, retain) NSMutableArray *Challenges;
 @property (nonatomic, retain) DailyChallenge *TaskFormDailyChallenge;
-@property (nonatomic, retain) NSMutableArray *listOfTasks;
+//@property (nonatomic, retain) NSMutableArray *listOfTasks;
 @property (nonatomic, retain) Task *task;
 @property (weak, nonatomic) IBOutlet UITextField *taskTitle;
 @property (weak, nonatomic) IBOutlet UITextView *message;

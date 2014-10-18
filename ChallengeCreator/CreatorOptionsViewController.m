@@ -180,8 +180,8 @@
     if ([segue.identifier isEqualToString:@"ToTaskForm"])
     {
         CreatorTaskFormViewController *t = [segue destinationViewController];
-        t.listOfTasks = _TaskForm.listOfTasks;
-        t.TaskFormDailyChallenge = _TheDailyChallenge;
+//        t.listOfTasks = _TaskForm.listOfTasks;
+          t.TaskFormDailyChallenge = _TheDailyChallenge;
         //t.Challenges = _Challenges;
     }
     else if ([segue.identifier isEqualToString:@"ToMainCreator"])
@@ -617,8 +617,8 @@
 
 - (IBAction)addTask:(id)sender {
     _TaskForm = [[CreatorTaskFormViewController alloc] init];
-    NSMutableArray *list = _TheDailyChallenge.tasks;
-    _TaskForm.listOfTasks = &(*list);
+//    NSMutableArray *list = _TheDailyChallenge.tasks;
+//    _TaskForm.listOfTasks = &(*list);
 }
 
 - (IBAction)ExcludeSchoolHappy:(id)sender {
