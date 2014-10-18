@@ -21,17 +21,26 @@
 @property (nonatomic, retain) DailyChallenge *TaskFormDailyChallenge;
 //@property (nonatomic, retain) NSMutableArray *listOfTasks;
 @property (nonatomic, retain) Task *task;
-@property (weak, nonatomic) IBOutlet UITextField *taskTitle;
-@property (weak, nonatomic) IBOutlet UITextView *message;
-@property (weak, nonatomic) IBOutlet UITextField *taskPoints;
+@property (weak, nonatomic) IBOutlet UITextField *taskTitleTextView;
+@property (weak, nonatomic) IBOutlet UITextView *messageTextView;
+@property (weak, nonatomic) IBOutlet UITextField *taskPointsTextView;
 @property (weak, nonatomic) IBOutlet UIButton *addTaskButton;
 @property (weak, nonatomic) IBOutlet UIButton *editTaskButton;
-@property (weak, nonatomic) IBOutlet UITextField *titleToEdit;
+@property (weak, nonatomic) IBOutlet UITextField *titleToEditTextField;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
 @property (weak, nonatomic) IBOutlet UIButton *removeTaskButton;
-@property (weak, nonatomic) IBOutlet UITextView *infoBox;
+@property (weak, nonatomic) IBOutlet UITextView *infoBoxTextField;
 @property (weak, nonatomic) IBOutlet UIScrollView *myTaskScrollView;
 @property (weak, nonatomic) IBOutlet UITextField *taskTitleTextField;
+@property (weak, nonatomic) IBOutlet UISwitch *reminderSwitch;
+@property (weak, nonatomic) IBOutlet UITextField *reminderTimeTextField;
+@property (weak, nonatomic) IBOutlet UITextView *reminderMessageTextField;
+@property (weak, nonatomic) IBOutlet UILabel *reeminderTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *reminderMessageLabel;
+
+
+
+- (IBAction)reminderSwitchAction:(id)sender;
 
 
 - (IBAction)addTask:(id)sender;

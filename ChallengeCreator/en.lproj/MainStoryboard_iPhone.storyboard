@@ -574,7 +574,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="boW-ck-v05">
-                                <rect key="frame" x="0.0" y="-135" width="320" height="586"/>
+                                <rect key="frame" x="9" y="-100" width="320" height="586"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Task Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qNW-lR-Ae8">
@@ -625,24 +625,17 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="3lT-4j-j6k" userLabel="Switch - Reminder On?">
                                         <rect key="frame" x="162" y="338" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </switch>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="603" contentMode="scaleToFill" id="7vn-7l-6HE" userLabel="Text View - Reminder Message">
-                                        <rect key="frame" x="7" y="435" width="301" height="65"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <connections>
-                                            <outlet property="delegate" destination="mai-so-QUr" id="gmd-0v-Xtd"/>
+                                            <action selector="reminderSwitchAction:" destination="mai-so-QUr" eventType="valueChanged" id="J2i-BX-1Lm"/>
                                         </connections>
-                                    </textView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time to Remind:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zP2-s5-GtB" userLabel="Label - Time to Remind">
-                                        <rect key="frame" x="7" y="377" width="133" height="21"/>
+                                    </switch>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time to Remind:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zP2-s5-GtB" userLabel="Label - Time to Remind">
+                                        <rect key="frame" x="7" y="381" width="133" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="HF2-bg-i3J" userLabel="Round Style Text Field  - Time to Remind">
+                                    <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" id="HF2-bg-i3J" userLabel="Round Style Text Field  - Time to Remind">
                                         <rect key="frame" x="148" y="377" width="100" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -650,6 +643,22 @@
                                             <outlet property="delegate" destination="mai-so-QUr" id="QQa-Lb-JEA"/>
                                         </connections>
                                     </textField>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Reminder Message:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lgn-E8-aSK" userLabel="Label - Reminder Message">
+                                        <rect key="frame" x="7" y="412" width="160" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" tag="603" contentMode="scaleToFill" id="7vn-7l-6HE" userLabel="Text View - Reminder Message">
+                                        <rect key="frame" x="10" y="441" width="301" height="65"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="mai-so-QUr" id="gmd-0v-Xtd"/>
+                                        </connections>
+                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XYN-7y-pWt">
                                         <rect key="frame" x="214" y="505" width="86" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -716,12 +725,6 @@
                                             <action selector="editTask:" destination="mai-so-QUr" eventType="touchUpInside" id="chA-sl-RKd"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Reminder Message:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lgn-E8-aSK" userLabel="Label - Reminder Message">
-                                        <rect key="frame" x="7" y="406" width="160" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hqF-Wq-Iby">
@@ -743,14 +746,19 @@
                         <outlet property="addTaskButton" destination="XYN-7y-pWt" id="5X4-e9-Pzx"/>
                         <outlet property="doneButton" destination="hqF-Wq-Iby" id="BcE-Ml-dM2"/>
                         <outlet property="editTaskButton" destination="NUc-il-Neu" id="dt1-hK-oag"/>
-                        <outlet property="infoBox" destination="UxJ-ol-Xdk" id="HJf-Ip-NtE"/>
-                        <outlet property="message" destination="36J-Hl-GHb" id="1bc-Zw-gWG"/>
+                        <outlet property="infoBoxTextField" destination="UxJ-ol-Xdk" id="Bmj-kg-uOx"/>
+                        <outlet property="messageTextView" destination="36J-Hl-GHb" id="wS4-uK-fyf"/>
                         <outlet property="myTaskScrollView" destination="boW-ck-v05" id="kgu-p5-ioE"/>
+                        <outlet property="reeminderTimeLabel" destination="zP2-s5-GtB" id="5PK-9V-JOJ"/>
+                        <outlet property="reminderMessageLabel" destination="lgn-E8-aSK" id="XSE-6Y-kj6"/>
+                        <outlet property="reminderMessageTextField" destination="7vn-7l-6HE" id="Hop-Oa-cgo"/>
+                        <outlet property="reminderSwitch" destination="3lT-4j-j6k" id="VGk-H4-nXI"/>
+                        <outlet property="reminderTimeTextField" destination="HF2-bg-i3J" id="hwh-Uf-xIv"/>
                         <outlet property="removeTaskButton" destination="ZB2-H4-EUl" id="JSn-jm-TE6"/>
-                        <outlet property="taskPoints" destination="1Id-CU-rCq" id="y3G-8e-1No"/>
-                        <outlet property="taskTitle" destination="r2h-cH-lAN" id="GaG-JV-n0R"/>
+                        <outlet property="taskPointsTextView" destination="1Id-CU-rCq" id="3F2-iJ-kQD"/>
                         <outlet property="taskTitleTextField" destination="Moq-1W-Oz7" id="cOa-wA-6Aw"/>
-                        <outlet property="titleToEdit" destination="3IC-Jt-r3Y" id="qc5-Fi-nCJ"/>
+                        <outlet property="taskTitleTextView" destination="r2h-cH-lAN" id="yna-Fy-djL"/>
+                        <outlet property="titleToEditTextField" destination="3IC-Jt-r3Y" id="hZc-FN-k3A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R5u-Pm-jXC" userLabel="First Responder" sceneMemberID="firstResponder"/>

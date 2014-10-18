@@ -13,8 +13,9 @@
 
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *reminderMessage;
 //@property (nonatomic, retain) NSString *timeSpecific;
-//@property (nonatomic, retain) NSString *time;
+@property (nonatomic, retain) NSString *reminderTime;
 @property (nonatomic, assign) NSInteger points;
 //@property (nonatomic, retain) NSString *workSpecific;
 //@property bool completed; // why was *completed?
@@ -39,4 +40,9 @@
                points: (NSInteger )iPoints
                 title: (NSString *)title;
 
+- (id)initWithMessage:(NSString *)msg
+               points:(NSInteger)iPoints
+                 time:(NSString *)t
+      reminderMessage:(NSString *)reminderMsg
+            taskTitle:(NSString *)title;
 @end
