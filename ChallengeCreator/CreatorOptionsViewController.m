@@ -25,7 +25,14 @@
     combinedStuff = [NSString stringWithFormat:@"CHALLENGE: %@ \nFOR AGES %ld - %ld\nLANGUAGE: %ld\nRISK FACTOR %ld\nLOOKING FOR: %@\nSCHOOL: %@\n\nWORK: %@\n\nRELATIONSHIP: %@\n\nKIDS: %@\n\nPETS: %@\n\n", _TheDailyChallenge.title, (long)_TheDailyChallenge.ageMin, (long)_TheDailyChallenge.ageMax, (long)_TheDailyChallenge.language, (long)_TheDailyChallenge.minimumRiskFactor, _LookingInfoBox.text, _SchoolInfoBox.text, _WorkInfoBox.text, _LoveInfoBox.text, _ChildInfoBox.text, _PetInfoBox.text];
     for(Task *t in _TheDailyChallenge.tasks)
     {
-        combinedStuff = [NSString stringWithFormat:@"%@ TITLE: %@\nMESSAGE: %@ (%ld PTS)    \n", combinedStuff, t.title, t.message, (long)t.points];
+        if(![t.reminderMessage isEqual:@""])
+        {
+            combinedStuff = [NSString stringWithFormat:@"%@ TITLE: %@\nMESSAGE: %@ (%ld PTS) \n Remind at %@ o'clock \n with Message: %@\n", combinedStuff, t.title, t.message, (long)t.points, t.reminderTime, t.reminderMessage];
+        }
+        else
+        {
+            combinedStuff = [NSString stringWithFormat:@"%@ TITLE: %@\nMESSAGE: %@ (%ld PTS)    \n", combinedStuff, t.title, t.message, (long)t.points];
+        }
     }
     
     _challengeTextDisplay.text = combinedStuff;
@@ -248,6 +255,8 @@
                     taskObj[@"action"] = task.message;
                     taskObj[@"points"] = [NSNumber numberWithInteger:task.points];
                     taskObj[@"taskNumber"] = [NSNumber numberWithInteger:taskCount];
+                    taskObj[@"reminderMessage"] = task.reminderMessage;
+                    taskObj[@"reminderTime"] = task.reminderTime;
                     taskObj[@"parentChallenge"] = dailyChallenge;
                     // Add a relation between the Post with objectId "1zEcyElZ80" and the comment
                     taskObj[@"parent"] = [PFObject objectWithoutDataWithClassName:@"Challenge" objectId:dailyChallenge.objectId];
@@ -786,12 +795,22 @@
                     //_taskObject = objects;
                     for (PFObject *objTasks in objects)
                     {
+                        Task *task;
                         NSString *actionObj = objTasks[@"action"];
                         NSNumber *pointObj = objTasks[@"points"];
                         NSNumber *taskObj = objTasks[@"taskNumber"];
-                        //Task *task  = [[Task alloc] initWithMessageAndPoints:actionObj points:[pointObj integerValue]];
                         NSString * title = [NSString stringWithFormat:@"Task %@",[taskObj stringValue]];
-                        Task *task  = [[Task alloc] initWithMessage:actionObj points:[pointObj integerValue] title:title];
+                        if(objTasks[@"reminderMessage"] != nil && objTasks[@"reminderTime"] != nil)
+                        {
+                            NSString *reminder = objTasks[@"reminderMessage"];
+                            NSString *time = objTasks[@"reminderTime"];
+                            task  = [[Task alloc] initWithMessage:actionObj points:[pointObj integerValue] time:time reminderMessage:reminder taskTitle:title];
+                        }
+                        else
+                        {
+                           task  = [[Task alloc] initWithMessage:actionObj points:[pointObj integerValue] title:title];
+                        }
+
                         [_TheDailyChallenge.tasks addObject:task];
                     }//for Tasks
                 }//if task Objects aren't null
