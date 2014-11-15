@@ -82,6 +82,7 @@
 @property (nonatomic, retain) NSString *objectIdInParse;
 @property (weak, nonatomic) IBOutlet UIView *objectIdInTextbox;
 @property (weak, nonatomic) IBOutlet UITextField *objectIdTextbox;
+@property (weak, nonatomic) IBOutlet UITextField *happinessTextField;
 
 //@property (nonatomic, retain) NFObject *challengeObject;
 //@property (nonatomic, retain) NSArray *taskObject;
@@ -107,6 +108,8 @@
 - (IBAction)setMyAgeMaxField:(id)sender;
 - (IBAction)setLanguage:(id)sender;
 - (IBAction)setMyRiskFactor:(id)sender;
+- (IBAction)setHappiness:(id)sender;
+
 - (IBAction)filterSexes:(id)sender;
 
 - (NSString *)challengesPath;

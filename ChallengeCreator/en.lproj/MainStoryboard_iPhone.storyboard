@@ -99,8 +99,8 @@
                                     <segue destination="sDE-RR-EHX" kind="push" id="qFJ-Vc-U9O"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4rd-0B-VLH">
-                                <rect key="frame" x="20" y="383" width="289" height="63"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="4rd-0B-VLH">
+                                <rect key="frame" x="15" y="325" width="289" height="63"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -113,11 +113,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="FlH-1h-UNx">
-                                <rect key="frame" x="236" y="393" width="51" height="31"/>
+                                <rect key="frame" x="236" y="390" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add All" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xvt-ZP-Tp1">
-                                <rect key="frame" x="150" y="389" width="78" height="39"/>
+                                <rect key="frame" x="150" y="386" width="78" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -151,7 +151,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="J81-Zp-zyW">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="339"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Challenge Title" borderStyle="roundedRect" minimumFontSize="17" id="elY-WF-Zjj">
@@ -199,21 +199,6 @@
                                             <outlet property="delegate" destination="sDE-RR-EHX" id="SfL-Wu-wSH"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="RiskFactor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hsi-qZ-rIB">
-                                        <rect key="frame" x="165" y="118" width="94" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="R6W-bg-YcD">
-                                        <rect key="frame" x="250" y="110" width="48" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="setMyRiskFactor:" destination="sDE-RR-EHX" eventType="editingDidEnd" id="Ibx-0w-Yuv"/>
-                                            <outlet property="delegate" destination="sDE-RR-EHX" id="DYr-or-EbX"/>
-                                        </connections>
-                                    </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Language" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o2c-tV-LOr">
                                         <rect key="frame" x="165" y="80" width="84" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -229,59 +214,38 @@
                                             <outlet property="delegate" destination="sDE-RR-EHX" id="hbY-CV-qr9"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cAS-eu-MGC">
-                                        <rect key="frame" x="16" y="312" width="128" height="20"/>
-                                        <state key="normal" title="School Options">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Happiness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ABe-V7-aUt">
+                                        <rect key="frame" x="79" y="159" width="84" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="o7h-aZ-Fj9" userLabel="Round Style Text Field - Happiness Rating">
+                                        <rect key="frame" x="174" y="155" width="48" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="FilterSchool:" destination="sDE-RR-EHX" eventType="touchUpInside" id="v0F-24-fIy"/>
-                                            <segue destination="jRd-b2-hZT" kind="push" id="Jtf-uu-xTI"/>
+                                            <action selector="setHappiness:" destination="sDE-RR-EHX" eventType="editingDidEnd" id="AfZ-zC-LLe"/>
+                                            <outlet property="delegate" destination="sDE-RR-EHX" id="vZZ-QU-ReQ"/>
                                         </connections>
-                                    </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="8YK-wT-ALh">
-                                        <rect key="frame" x="16" y="341" width="128" height="50"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RJH-IV-SV8">
-                                        <rect key="frame" x="177" y="312" width="128" height="20"/>
-                                        <state key="normal" title="S. Satisfaction">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                    </textField>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="RiskFactor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hsi-qZ-rIB">
+                                        <rect key="frame" x="165" y="118" width="94" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="R6W-bg-YcD">
+                                        <rect key="frame" x="250" y="110" width="48" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="ExcludeSchoolHappy:" destination="sDE-RR-EHX" eventType="touchUpInside" id="3a5-7V-vZy"/>
-                                            <segue destination="jRd-b2-hZT" kind="push" id="Sg0-Jz-Gdj"/>
+                                            <action selector="setMyRiskFactor:" destination="sDE-RR-EHX" eventType="editingDidEnd" id="Ibx-0w-Yuv"/>
+                                            <outlet property="delegate" destination="sDE-RR-EHX" id="DYr-or-EbX"/>
                                         </connections>
-                                    </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="RM5-qV-zaO">
-                                        <rect key="frame" x="176" y="341" width="128" height="50"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="675-MO-yLa">
-                                        <rect key="frame" x="176" y="409" width="128" height="30"/>
-                                        <state key="normal" title="Partner Options">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="FilterPartners:" destination="sDE-RR-EHX" eventType="touchUpInside" id="Phr-d4-7UH"/>
-                                            <segue destination="jRd-b2-hZT" kind="push" id="eks-f9-Mah"/>
-                                        </connections>
-                                    </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="5pU-8I-HnA">
-                                        <rect key="frame" x="177" y="438.5" width="128" height="50"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uCX-bU-qd4">
-                                        <rect key="frame" x="16" y="231" width="128" height="28"/>
+                                        <rect key="frame" x="16" y="218" width="128" height="28"/>
                                         <state key="normal" title="Relations Options">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -290,8 +254,15 @@
                                             <segue destination="jRd-b2-hZT" kind="push" id="CJY-OI-X0r"/>
                                         </connections>
                                     </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="S4u-3l-X5C">
+                                        <rect key="frame" x="16" y="242" width="128" height="74"/>
+                                        <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iQO-mB-fi2">
-                                        <rect key="frame" x="177" y="231" width="128" height="30"/>
+                                        <rect key="frame" x="177" y="218" width="128" height="30"/>
                                         <state key="normal" title="R. Satisfaction">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -300,15 +271,49 @@
                                             <segue destination="jRd-b2-hZT" kind="push" id="nHg-3B-kfl"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="N5e-Hd-lfU">
-                                        <rect key="frame" x="177" y="256" width="128" height="50"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="N5e-Hd-lfU">
+                                        <rect key="frame" x="177" y="241" width="128" height="74"/>
+                                        <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cAS-eu-MGC">
+                                        <rect key="frame" x="16" y="327" width="128" height="20"/>
+                                        <state key="normal" title="School Options">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="FilterSchool:" destination="sDE-RR-EHX" eventType="touchUpInside" id="v0F-24-fIy"/>
+                                            <segue destination="jRd-b2-hZT" kind="push" id="Jtf-uu-xTI"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="8YK-wT-ALh">
+                                        <rect key="frame" x="16" y="346" width="128" height="69"/>
+                                        <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RJH-IV-SV8">
+                                        <rect key="frame" x="177" y="327" width="128" height="20"/>
+                                        <state key="normal" title="S. Satisfaction">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ExcludeSchoolHappy:" destination="sDE-RR-EHX" eventType="touchUpInside" id="3a5-7V-vZy"/>
+                                            <segue destination="jRd-b2-hZT" kind="push" id="Sg0-Jz-Gdj"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="RM5-qV-zaO">
+                                        <rect key="frame" x="176" y="346" width="128" height="70"/>
+                                        <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qNx-nu-XNh">
-                                        <rect key="frame" x="16" y="403" width="128" height="43"/>
+                                        <rect key="frame" x="16" y="421" width="128" height="43"/>
                                         <state key="normal" title="Sex Options">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -317,45 +322,28 @@
                                             <segue destination="jRd-b2-hZT" kind="push" id="zkL-kf-IwH"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="jck-fG-AGn">
-                                        <rect key="frame" x="16" y="438" width="128" height="50"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="jck-fG-AGn">
+                                        <rect key="frame" x="16" y="456" width="128" height="50"/>
+                                        <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bsN-r4-oPv">
-                                        <rect key="frame" x="16" y="591" width="128" height="30"/>
-                                        <state key="normal" title="Children Options">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="675-MO-yLa">
+                                        <rect key="frame" x="176" y="427" width="128" height="30"/>
+                                        <state key="normal" title="Partner Options">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="FilterChildren:" destination="sDE-RR-EHX" eventType="touchUpInside" id="365-Ru-4mO"/>
-                                            <segue destination="jRd-b2-hZT" kind="push" id="lEJ-9A-ZnO"/>
+                                            <action selector="FilterPartners:" destination="sDE-RR-EHX" eventType="touchUpInside" id="Phr-d4-7UH"/>
+                                            <segue destination="jRd-b2-hZT" kind="push" id="eks-f9-Mah"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="N12-Wf-Cd3">
-                                        <rect key="frame" x="16" y="616" width="128" height="50"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="5pU-8I-HnA">
+                                        <rect key="frame" x="177" y="457" width="128" height="50"/>
+                                        <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oZK-EB-d4q">
-                                        <rect key="frame" x="176" y="591" width="128" height="30"/>
-                                        <state key="normal" title="Pet Options">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="FilterPets:" destination="sDE-RR-EHX" eventType="touchUpInside" id="Gnl-sB-akW"/>
-                                            <segue destination="jRd-b2-hZT" kind="push" id="y0P-4y-BeP"/>
-                                        </connections>
-                                    </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="gk5-QY-TWb">
-                                        <rect key="frame" x="176" y="616" width="128" height="50"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fzd-Vk-BwX">
@@ -369,11 +357,11 @@
                                             <segue destination="jRd-b2-hZT" kind="push" id="sef-Yg-MuF"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Ev2-Cv-x8e">
-                                        <rect key="frame" x="16" y="533" width="128" height="50"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="Ev2-Cv-x8e">
+                                        <rect key="frame" x="16" y="531" width="128" height="64"/>
+                                        <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oxd-D3-QZt">
@@ -386,22 +374,49 @@
                                             <segue destination="jRd-b2-hZT" kind="push" id="sRd-lu-EWu"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="2v1-2i-3jR">
-                                        <rect key="frame" x="176" y="533" width="128" height="50"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="2v1-2i-3jR">
+                                        <rect key="frame" x="176" y="531" width="128" height="64"/>
+                                        <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="S4u-3l-X5C">
-                                        <rect key="frame" x="16" y="257" width="128" height="50"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bsN-r4-oPv">
+                                        <rect key="frame" x="16" y="591" width="128" height="30"/>
+                                        <state key="normal" title="Children Options">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="FilterChildren:" destination="sDE-RR-EHX" eventType="touchUpInside" id="365-Ru-4mO"/>
+                                            <segue destination="jRd-b2-hZT" kind="push" id="lEJ-9A-ZnO"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="N12-Wf-Cd3">
+                                        <rect key="frame" x="16" y="616" width="128" height="50"/>
+                                        <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oZK-EB-d4q">
+                                        <rect key="frame" x="176" y="591" width="128" height="30"/>
+                                        <state key="normal" title="Pet Options">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="FilterPets:" destination="sDE-RR-EHX" eventType="touchUpInside" id="Gnl-sB-akW"/>
+                                            <segue destination="jRd-b2-hZT" kind="push" id="y0P-4y-BeP"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="gk5-QY-TWb">
+                                        <rect key="frame" x="176" y="616" width="128" height="50"/>
+                                        <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZED-CZ-lz8">
-                                        <rect key="frame" x="97" y="167" width="128" height="30"/>
+                                        <rect key="frame" x="97" y="195" width="128" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Add Tasks"/>
                                         <connections>
@@ -551,6 +566,7 @@
                         <outlet property="doneButton" destination="lGW-Zm-VYF" id="xVH-F6-3Ro"/>
                         <outlet property="femaleFilter" destination="qNx-nu-XNh" id="YOB-NN-vLp"/>
                         <outlet property="genderInfoBox" destination="jck-fG-AGn" id="HHi-pD-OVz"/>
+                        <outlet property="happinessTextField" destination="o7h-aZ-Fj9" id="3ul-1S-T9q"/>
                         <outlet property="myLargeUIScrollView" destination="J81-Zp-zyW" id="O7K-NX-rkJ"/>
                         <outlet property="objectIdTextbox" destination="e4K-pQ-JaC" id="nle-ws-Hf6"/>
                         <outlet property="relalationshipSatisfactionInfoBox" destination="N5e-Hd-lfU" id="Ojn-E8-s9n"/>
@@ -574,17 +590,17 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="boW-ck-v05">
-                                <rect key="frame" x="9" y="-100" width="320" height="586"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="506"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Task Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qNW-lR-Ae8">
-                                        <rect key="frame" x="7" y="149" width="80" height="34"/>
+                                        <rect key="frame" x="6" y="107" width="80" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Moq-1W-Oz7" userLabel="Round Style Text Field - Task Title">
-                                        <rect key="frame" x="94" y="151" width="100" height="30"/>
+                                        <rect key="frame" x="93" y="109" width="100" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -593,13 +609,13 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Points:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rKX-OT-3Ud">
-                                        <rect key="frame" x="7" y="190" width="59" height="21"/>
+                                        <rect key="frame" x="6" y="148" width="59" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1Id-CU-rCq" userLabel="Round Style Text Field  - Points">
-                                        <rect key="frame" x="94" y="187" width="100" height="30"/>
+                                        <rect key="frame" x="93" y="145" width="100" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -607,8 +623,8 @@
                                         </connections>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="603" contentMode="scaleToFill" id="36J-Hl-GHb" userLabel="Text View - Task Message">
-                                        <rect key="frame" x="7" y="222" width="301" height="105"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="6" y="180" width="308" height="105"/>
+                                        <color key="backgroundColor" red="0.8482128578" green="0.97533554639999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -617,26 +633,26 @@
                                         </connections>
                                     </textView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Send Reminder?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5qb-Jb-rKU" userLabel="Label - Reminder">
-                                        <rect key="frame" x="7" y="335" width="136" height="34"/>
+                                        <rect key="frame" x="6" y="293" width="136" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="3lT-4j-j6k" userLabel="Switch - Reminder On?">
-                                        <rect key="frame" x="162" y="338" width="51" height="31"/>
+                                        <rect key="frame" x="161" y="296" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="reminderSwitchAction:" destination="mai-so-QUr" eventType="valueChanged" id="J2i-BX-1Lm"/>
                                         </connections>
                                     </switch>
                                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time to Remind:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zP2-s5-GtB" userLabel="Label - Time to Remind">
-                                        <rect key="frame" x="7" y="381" width="133" height="21"/>
+                                        <rect key="frame" x="6" y="339" width="133" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" id="HF2-bg-i3J" userLabel="Round Style Text Field  - Time to Remind">
-                                        <rect key="frame" x="148" y="377" width="100" height="30"/>
+                                        <rect key="frame" x="147" y="335" width="100" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -644,13 +660,13 @@
                                         </connections>
                                     </textField>
                                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Reminder Message:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lgn-E8-aSK" userLabel="Label - Reminder Message">
-                                        <rect key="frame" x="7" y="412" width="160" height="21"/>
+                                        <rect key="frame" x="6" y="370" width="160" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" tag="603" contentMode="scaleToFill" id="7vn-7l-6HE" userLabel="Text View - Reminder Message">
-                                        <rect key="frame" x="10" y="441" width="301" height="65"/>
+                                        <rect key="frame" x="6" y="399" width="301" height="65"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="19"/>
@@ -660,7 +676,7 @@
                                         </connections>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XYN-7y-pWt">
-                                        <rect key="frame" x="214" y="505" width="86" height="35"/>
+                                        <rect key="frame" x="213" y="463" width="86" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Add Task">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -670,7 +686,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="r2h-cH-lAN">
-                                        <rect key="frame" x="94" y="182" width="100" height="0.0"/>
+                                        <rect key="frame" x="93" y="140" width="100" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -678,14 +694,14 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="List of Tasks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rnn-yw-9lK">
-                                        <rect key="frame" x="7" y="576" width="111" height="21"/>
+                                        <rect key="frame" x="6" y="534" width="111" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="UxJ-ol-Xdk" userLabel="Text View - List of All Tasks">
-                                        <rect key="frame" x="7" y="614" width="310" height="136"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="UxJ-ol-Xdk" userLabel="Text View - List of All Tasks">
+                                        <rect key="frame" x="4" y="563" width="310" height="136"/>
+                                        <color key="backgroundColor" red="0.84821285779232769" green="0.97533554641450482" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <connections>
@@ -693,14 +709,14 @@
                                         </connections>
                                     </textView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Existing Task:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CEG-aU-cK5" userLabel="Label - Edit Existing Task:">
-                                        <rect key="frame" x="7" y="806" width="179" height="21"/>
+                                        <rect key="frame" x="6" y="764" width="179" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="3IC-Jt-r3Y" userLabel="Round Style Text Field - Edit or Delete Task">
-                                        <rect key="frame" x="7" y="836" width="100" height="38"/>
+                                        <rect key="frame" x="6" y="794" width="100" height="38"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -708,7 +724,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZB2-H4-EUl">
-                                        <rect key="frame" x="120" y="829" width="80" height="29"/>
+                                        <rect key="frame" x="119" y="787" width="80" height="29"/>
                                         <state key="normal" title="Delete Task">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -717,12 +733,91 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NUc-il-Neu">
-                                        <rect key="frame" x="115" y="862" width="76" height="32"/>
+                                        <rect key="frame" x="114" y="820" width="76" height="32"/>
                                         <state key="normal" title="Edit Task">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="editTask:" destination="mai-so-QUr" eventType="touchUpInside" id="chA-sl-RKd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="n4v-S0-j8p">
+                                        <rect key="frame" x="96" y="-4" width="147" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Upload Using JSON">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="editedAll:" destination="mai-so-QUr" eventType="touchUpInside" id="Zf2-w3-LL6"/>
+                                        </connections>
+                                    </button>
+                                    <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="QKh-20-tOb">
+                                        <rect key="frame" x="6" y="33" width="309" height="437"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.9075133317846843" green="0.86131367115827862" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <mutableString key="text">{
+    "This Challenge": [
+        {
+            "title": "Task 1",
+            "points": "Jason Shapiro",
+            "reminderTime": "9:00 AM",
+            "reminderMessage": "Matisse",
+            "message": "Explore the topics and tools related to Test Driven Development."
+        },
+        {
+            "title": "Task 2",
+            "points": "Jim White",
+            "reminderTime": "9:00 AM",
+            "reminderMessage": "Rothko",
+            "message": "Discuss the latest set of tools used to help ease software development."
+        },
+    ],
+    "Tuesday": [
+        {
+            "title": "MongoDB",
+            "speaker": "DavinMickelson",
+            "time": "1: 00PM",
+            "room": "Picasso",
+            "details": "Learnabout\"NoSQL\"databases."
+        },
+        {
+            "title": "DebuggingwithXcode",
+            "speaker": "JasonShapiro",
+            "time": "1: 00PM",
+            "room": "VanGogh",
+            "details": "ExploredifferentpatternsfordebuggingyouriOSapps."
+        }
+    ],
+    "Wednesday": [
+        {
+            "title": "Scrum Master",
+            "speaker": "Davin Mickelson",
+            "time": "1:00 PM",
+            "room": "Matisse",
+            "details": "Learn the roles and responsibilities of a Scrum Master"
+        },                                       
+        {
+            "title": "Design Patterns",
+            "speaker": "Jim White",
+            "time": "1:00 PM",
+            "room": "Rothko",
+            "details": "Apply best practices and sound architectures to software design."
+        }
+    ]
+}</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0VT-gc-ktH">
+                                        <rect key="frame" x="183.5" y="38" width="124" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.69941581318382973" green="0.69385850095250801" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="Create JSON">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createJSON:" destination="mai-so-QUr" eventType="touchUpInside" id="0yJ-2m-JqK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -744,9 +839,12 @@
                     <navigationItem key="navigationItem" id="Ae5-j8-m6s"/>
                     <connections>
                         <outlet property="addTaskButton" destination="XYN-7y-pWt" id="5X4-e9-Pzx"/>
+                        <outlet property="createJSONButton" destination="0VT-gc-ktH" id="AkT-wZ-i42"/>
                         <outlet property="doneButton" destination="hqF-Wq-Iby" id="BcE-Ml-dM2"/>
                         <outlet property="editTaskButton" destination="NUc-il-Neu" id="dt1-hK-oag"/>
+                        <outlet property="editedAllButton" destination="n4v-S0-j8p" id="Hi0-XX-Ijx"/>
                         <outlet property="infoBoxTextField" destination="UxJ-ol-Xdk" id="Bmj-kg-uOx"/>
+                        <outlet property="jsonTextView" destination="QKh-20-tOb" id="vji-9L-l1g"/>
                         <outlet property="messageTextView" destination="36J-Hl-GHb" id="wS4-uK-fyf"/>
                         <outlet property="myTaskScrollView" destination="boW-ck-v05" id="kgu-p5-ioE"/>
                         <outlet property="reeminderTimeLabel" destination="zP2-s5-GtB" id="5PK-9V-JOJ"/>
@@ -763,7 +861,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R5u-Pm-jXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1623" y="283"/>
+            <point key="canvasLocation" x="1642" y="131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="skJ-R6-8U4">

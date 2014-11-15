@@ -27,7 +27,7 @@
     [encoder encodeInteger:_minimumRiskFactor forKey:@"minimumRiskFactor"];
     [encoder encodeInteger:_pointsWorth forKey:@"pointsWorth"];
     [encoder encodeInteger:_language forKey:@"language"];
-    
+    [encoder encodeInteger:_happiness forKey:@"happiness"];
     [encoder encodeObject:_genderExcludes forKey:@"genderExcludes"];
     
     [encoder encodeObject:_interestedInExcludes forKey:@"interestedInExcludes"];
@@ -49,9 +49,6 @@
     [encoder encodeObject:_petsExclude forKey:@"petsExclude"];
     
     [encoder encodeObject:_kidsExclude forKey:@"kidsExclude"];
-    
-
-    
 }
 
 - (id)init
@@ -66,7 +63,8 @@
         _pointsWorth = 0;
         _minimumRiskFactor = 1;
         _language = 1;
-
+        _happiness = 1;
+        
         _genderExcludes = [[NSMutableArray alloc] init];
         _interestedInExcludes = [[NSMutableArray alloc] init];
         
@@ -102,6 +100,8 @@
         self.ageMin = [decoder decodeIntegerForKey: @"min"];
 		self.ageMax = [decoder decodeIntegerForKey: @"max"];
         self.language = [decoder decodeIntegerForKey: @"language"];
+        self.happiness = [decoder decodeIntegerForKey:@"happiness"];
+        
         self.minimumRiskFactor = [decoder decodeIntegerForKey: @"minimumRiskFactor"];
         self.pointsWorth = [decoder decodeIntegerForKey: @"pointsWorth"];
 
@@ -153,6 +153,7 @@
     challenge.ageMin = _ageMin;
 	challenge.ageMax = _ageMax;
     challenge.language = _language;
+    challenge.happiness = _happiness;
     challenge.pointsWorth = _pointsWorth;
     challenge.minimumRiskFactor = _minimumRiskFactor;
     

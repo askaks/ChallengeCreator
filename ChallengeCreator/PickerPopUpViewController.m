@@ -33,6 +33,13 @@
     _Picker.delegate = self;
     [_Picker selectRow:0 inComponent:0 animated:YES];
 	// Do any additional setup after loading the view.
+    NSString * combinedStuff;
+    if(_addAllSwitch.on && _list.count == 0)
+    {
+        [_list addObjectsFromArray:_options];
+    }
+    combinedStuff = [_list componentsJoinedByString:@"  "];
+    _InfoBox.text = combinedStuff;
 }
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -74,6 +81,7 @@ numberOfRowsInComponent:(NSInteger)component
     [_list addObject:option];
     NSString * combinedStuff = [_list componentsJoinedByString:@"  "];
     _InfoBox.text = combinedStuff;
+    self.addAllSwitch.on = false;
 }
 //
 - (IBAction)Remove:(id)sender {
@@ -85,19 +93,17 @@ numberOfRowsInComponent:(NSInteger)component
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if(self.addAllSwitch)
-    {
-        [ _list addObjectsFromArray:_options];
-            NSString * combinedStuff = [_list componentsJoinedByString:@"  "];
-        _InfoBox.text = combinedStuff;
-    }
+//    if(self.addAllSwitch.on)
+//    {
+//        [ _list addObjectsFromArray:_options];
+//            NSString * combinedStuff = [_list componentsJoinedByString:@"  "];
+//        _InfoBox.text = combinedStuff;
+//    }
     CreatorOptionsViewController *optionsController = [segue destinationViewController];
     optionsController.TheDailyChallenge = [[DailyChallenge alloc] init];
     optionsController.TheDailyChallenge = _PopDailyChallenge;
    // optionsController.Challenges = _Challenges;
 }
 
-//- (IBAction)Done:(id)sender {
-//}
 
 @end

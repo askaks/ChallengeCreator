@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		531EE0121A16C5A30046E823 /* JSON Text Format in Resources */ = {isa = PBXBuildFile; fileRef = 531EE0111A16C5A30046E823 /* JSON Text Format */; };
 		62A97A72187DE0C800E55D51 /* CreatorTaskFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A97A71187DE0C800E55D51 /* CreatorTaskFormViewController.m */; };
 		62B2D3571878F11F0004E1E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B2D3561878F11F0004E1E6 /* UIKit.framework */; };
 		62B2D3591878F11F0004E1E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B2D3581878F11F0004E1E6 /* Foundation.framework */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		531EE0111A16C5A30046E823 /* JSON Text Format */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "JSON Text Format"; sourceTree = "<group>"; };
 		62A97A70187DE0C800E55D51 /* CreatorTaskFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatorTaskFormViewController.h; sourceTree = "<group>"; };
 		62A97A71187DE0C800E55D51 /* CreatorTaskFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatorTaskFormViewController.m; sourceTree = "<group>"; };
 		62B2D3531878F11F0004E1E6 /* ChallengeCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +198,7 @@
 				62B2D39818793A920004E1E6 /* PickerPopUpViewController.m */,
 				62A97A70187DE0C800E55D51 /* CreatorTaskFormViewController.h */,
 				62A97A71187DE0C800E55D51 /* CreatorTaskFormViewController.m */,
+				531EE0111A16C5A30046E823 /* JSON Text Format */,
 			);
 			path = ChallengeCreator;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				62B2D3691878F11F0004E1E6 /* Default.png in Resources */,
 				62B2D36B1878F1200004E1E6 /* Default@2x.png in Resources */,
 				62B2D36D1878F1200004E1E6 /* Default-568h@2x.png in Resources */,
+				531EE0121A16C5A30046E823 /* JSON Text Format in Resources */,
 				62B2D3701878F1200004E1E6 /* MainStoryboard_iPhone.storyboard in Resources */,
 				62FD55CA18CE55F2002C8CF5 /* HappySignupViewController.xib in Resources */,
 			);

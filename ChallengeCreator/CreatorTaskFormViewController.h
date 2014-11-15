@@ -37,6 +37,9 @@
 @property (weak, nonatomic) IBOutlet UITextView *reminderMessageTextField;
 @property (weak, nonatomic) IBOutlet UILabel *reeminderTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *reminderMessageLabel;
+@property (weak, nonatomic) IBOutlet UIButton *editedAllButton;
+@property (weak, nonatomic) IBOutlet UITextView *jsonTextView;
+@property (weak, nonatomic) IBOutlet UIButton *createJSONButton;
 
 
 
@@ -48,5 +51,7 @@
 - (IBAction)done:(id)sender;
 - (NSString *)printTaskToScreen: (NSMutableArray *) taskList;
 - (IBAction)removeTask:(id)sender;
+- (IBAction)editedAll:(id)sender;
+- (IBAction)createJSON:(id)sender;
 
 @end

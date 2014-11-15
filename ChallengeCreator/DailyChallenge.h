@@ -24,7 +24,7 @@
 @property (nonatomic, assign) NSInteger pointsWorth;
 @property (nonatomic, assign) NSInteger minimumRiskFactor;
 @property (nonatomic, assign) NSInteger language;
-
+@property (nonatomic, assign) NSInteger happiness;
 
 @property (nonatomic, retain) NSArray *genderExcludes;
 

@@ -1,0 +1,85 @@
+
+{
+    "This Challenge": [
+        {
+            "title": "Task 1",
+            "points": "Jason Shapiro",
+            "reminderTime": "9:00 AM",
+            "reminderMessage": "Matisse",
+            "message": "Explore the topics and tools related to Test Driven Development."
+        },
+        {
+            "title": "Task 2",
+            "points": "Jim White",
+            "reminderTime": "9:00 AM",
+            "reminderMessage": "Rothko",
+            "message": "Discuss the latest set of tools used to help ease software development."
+        },
+                {
+            "title": "Task 3",
+            "points": "Jim White",
+            "reminderTime": "9:00 AM",
+            "reminderMessage": "Rothko",
+            "message": "Discuss the latest set of tools used to help ease software development."
+        }
+    ],
+    "Next Challenge": [],
+    "Wednesday": []
+}
+{
+    "This Challenge": [
+        {
+            "title": "Task 1",
+            "points": "Jason Shapiro",
+            "reminderTime": "9:00 AM",
+            "reminderMessage": "Matisse",
+            "message": "Explore the topics and tools related to Test Driven Development."
+        },
+        {
+            "title": "Task 2",
+            "points": "Jim White",
+            "reminderTime": "9:00 AM",
+            "reminderMessage": "Rothko",
+            "message": "Discuss the latest set of tools used to help ease software development."
+        },
+                {
+            "title": "Task 3",
+            "points": "Jim White",
+            "reminderTime": "9:00 AM",
+            "reminderMessage": "Rothko",
+            "message": "Discuss the latest set of tools used to help ease software development."
+        },
+    ],
+    "Next Challenge": [
+        {
+            "title": "MongoDB",
+            "speaker": "DavinMickelson",
+            "time": "1: 00PM",
+            "room": "Picasso",
+            "details": "Learnabout\"NoSQL\"databases."
+        },
+        {
+            "title": "DebuggingwithXcode",
+            "speaker": "JasonShapiro",
+            "time": "1: 00PM",
+            "room": "VanGogh",
+            "details": "ExploredifferentpatternsfordebuggingyouriOSapps."
+        }
+    ],
+    "Wednesday": [
+        {
+            "title": "Scrum Master",
+            "speaker": "Davin Mickelson",
+            "time": "1:00 PM",
+            "room": "Matisse",
+            "details": "Learn the roles and responsibilities of a Scrum Master"
+        },                                       
+        {
+            "title": "Design Patterns",
+            "speaker": "Jim White",
+            "time": "1:00 PM",
+            "room": "Rothko",
+            "details": "Apply best practices and sound architectures to software design."
+        }
+    ]
+}

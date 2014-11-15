@@ -114,6 +114,10 @@
         {
             self.LanguageRating.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.language];
         }
+    if(_TheDailyChallenge.happiness > 0)
+    {
+        self.happinessTextField.text = [NSString stringWithFormat:@"%ld",  (long) _TheDailyChallenge.happiness];
+    }
         if (_TheDailyChallenge.minimumRiskFactor > 0)
         {
             self.RiskFactor.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.minimumRiskFactor];
@@ -234,6 +238,7 @@
             dailyChallenge[@"ageMax"] = [NSNumber numberWithInteger:_TheDailyChallenge.ageMax];
             dailyChallenge[@"languageRating"] =[NSNumber numberWithInteger:_TheDailyChallenge.language];
             dailyChallenge[@"riskFactor"] = [NSNumber numberWithInteger:_TheDailyChallenge.minimumRiskFactor];
+            dailyChallenge[@"happiness"] = [NSNumber numberWithInt:_TheDailyChallenge.happiness];
             dailyChallenge[@"forSex"] = [_TheDailyChallenge.genderExcludes componentsJoinedByString:@" | "];
             dailyChallenge[@"seekingWho"] = [_TheDailyChallenge.interestedInExcludes componentsJoinedByString:@" | "];
             dailyChallenge[@"eduIncludes"] = [_TheDailyChallenge.schoolLevelExcludes componentsJoinedByString:@" | "];
@@ -255,8 +260,12 @@
                     taskObj[@"action"] = task.message;
                     taskObj[@"points"] = [NSNumber numberWithInteger:task.points];
                     taskObj[@"taskNumber"] = [NSNumber numberWithInteger:taskCount];
-                    taskObj[@"reminderMessage"] = task.reminderMessage;
-                    taskObj[@"reminderTime"] = task.reminderTime;
+                    if(task.reminderMessage != nil && task.reminderTime != nil)
+                    {
+                        taskObj[@"reminderMessage"] = task.reminderMessage;
+                        taskObj[@"reminderTime"] = task.reminderTime;
+                    }
+
                     taskObj[@"parentChallenge"] = dailyChallenge;
                     // Add a relation between the Post with objectId "1zEcyElZ80" and the comment
                     taskObj[@"parent"] = [PFObject objectWithoutDataWithClassName:@"Challenge" objectId:dailyChallenge.objectId];
@@ -344,6 +353,10 @@
         return false;
     }
     else if(_TheDailyChallenge.minimumRiskFactor <= 0)
+    {
+        return false;
+    }
+    else if(_TheDailyChallenge.happiness <= 0)
     {
         return false;
     }
@@ -588,6 +601,10 @@
     _TheDailyChallenge.minimumRiskFactor = _RiskFactor.text.integerValue;
 }
 
+- (IBAction)setHappiness:(id)sender {
+    _TheDailyChallenge.happiness = _happinessTextField.text.integerValue;
+}
+
 - (IBAction)filterSexes:(id)sender {
     _PickerPopUp = [[PickerPopUpViewController alloc] init];
     _PickerPopUp.title = @"Sex";
@@ -763,6 +780,12 @@
                 _TheDailyChallenge.ageMax = [challengeObj[@"ageMax"] integerValue];
                 _TheDailyChallenge.language  = [challengeObj[@"languageRating"] integerValue];
                 _TheDailyChallenge.minimumRiskFactor = [challengeObj[@"riskFactor"] integerValue];
+                _TheDailyChallenge.happiness = [challengeObj[@"happiness"] integerValue];
+                if((_TheDailyChallenge.happiness == 0))
+                   {
+                       _TheDailyChallenge.happiness = 1;
+                   }
+                    
                 _TheDailyChallenge.genderExcludes = [challengeObj[@"forSex"] componentsSeparatedByString:@" | "];
                 _TheDailyChallenge.interestedInExcludes  = [challengeObj[@"seekingWho"] componentsSeparatedByString:@" | "];
                 _TheDailyChallenge.schoolLevelExcludes = [challengeObj[@"eduIncludes"] componentsSeparatedByString:@" | "];
@@ -777,18 +800,18 @@
                 PFQuery *taskQuery = [PFQuery queryWithClassName:@"Tasks"];
 
                 //[taskQuery whereKey:@"parentChallenge" equalTo:[PFObject objectWithoutDataWithClassName:@"Challenges" objectId:objectIdAdjusted]];
-                        //[taskQuery whereKey:@"parentChallenge" equalTo:challengeObj];
+                [taskQuery whereKey:@"parentChallenge" equalTo:challengeObj];
                         //[taskQuery whereKey:@"parentChallenge" containsString:(objectIdAdjusted)];
-                NSDate *now = [NSDate date];
-                NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-                NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:now];
-                [components setDay:6];
-                NSDate *october6 = [calendar dateFromComponents:components];
-                [components setDay:4];
-                NSDate *october4 = [calendar dateFromComponents:components];
-                //[taskQuery whereKey:@"createdAt" containsString:(objectIdAdjusted)];
-                [taskQuery whereKey:@"createdAt" greaterThan:october4];
-                [taskQuery whereKey:@"createdAt" lessThan:october6];
+//                NSDate *now = [NSDate date];
+//                NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+//                NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:now];
+//                [components setDay:6];
+//                NSDate *october6 = [calendar dateFromComponents:components];
+//                [components setDay:4];
+//                NSDate *october4 = [calendar dateFromComponents:components];
+                ////[taskQuery whereKey:@"createdAt" containsString:(objectIdAdjusted)];
+//                [taskQuery whereKey:@"createdAt" greaterThan:october4];
+//                [taskQuery whereKey:@"createdAt" lessThan:october6];
                 NSArray *objects = [taskQuery findObjects]; //]:^(NSArray *objects, NSError *error){
                 if (objects != NULL)
                 {
@@ -830,25 +853,29 @@
     {
         self.ChallengeTitle.text = _TheDailyChallenge.title;
     }
-    if (_TheDailyChallenge.pointsWorth > 0)
+    if (_TheDailyChallenge.pointsWorth >= 0)
     {
         self.challengePoints.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.pointsWorth];
     }
-    if (_TheDailyChallenge.ageMax > 0)
+    if (_TheDailyChallenge.ageMax >= 0)
     {
         self.ageMaxField.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.ageMax];
     }
-    if (_TheDailyChallenge.ageMin > 0)
+    if (_TheDailyChallenge.ageMin >= 0)
     {
         self.ageMinField.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.ageMin];
     }
-    if (_TheDailyChallenge.language > 0)
+    if (_TheDailyChallenge.language >= 0)
     {
         self.LanguageRating.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.language];
     }
-    if (_TheDailyChallenge.minimumRiskFactor > 0)
+    if (_TheDailyChallenge.minimumRiskFactor >= 0)
     {
         self.RiskFactor.text = [NSString stringWithFormat:@"%ld", (long)_TheDailyChallenge.minimumRiskFactor];
+    }
+    if (_TheDailyChallenge.happiness >= 0)
+    {
+        self.happinessTextField.text = [NSString stringWithFormat:@"%ld", (long) _TheDailyChallenge.happiness];
     }
     if (_TheDailyChallenge.interestedInExcludes != nil)
     {

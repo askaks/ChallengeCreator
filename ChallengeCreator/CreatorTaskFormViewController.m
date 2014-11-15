@@ -117,7 +117,7 @@ shouldChangeTextInRange:(NSRange)range
 
 - (IBAction)addTask:(id)sender {
     Task *task;
-    if(![_messageTextView.text isEqual:@""]&& ![_taskPointsTextView.text isEqual:@""] && ![_taskTitleTextView.text isEqual:@""])
+    if(![_messageTextView.text isEqual:@""]&& ![_taskPointsTextView.text isEqual:@""] && ![_taskTitleTextField.text isEqual:@""])
     {
         NSString * titleAdjusted = [ _taskTitleTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         if(_reminderSwitch.on)
@@ -212,5 +212,69 @@ shouldChangeTextInRange:(NSRange)range
         [_TaskFormDailyChallenge.tasks removeObject:taskToDelete];
         _infoBoxTextField.text = [self printTaskToScreen:_TaskFormDailyChallenge.tasks];
     }
+}
+
+- (IBAction)editedAll:(id)sender {
+    _jsonTextView.hidden = false;
+    _createJSONButton.hidden = false;
+    _editedAllButton.hidden = true;
+}
+
+- (IBAction)createJSON:(id)sender {
+    _jsonTextView.hidden = true;
+    _createJSONButton.hidden = true;
+    _editedAllButton.hidden = false;
+    NSData *returnedData = [_jsonTextView.text dataUsingEncoding:NSStringEncodingConversionAllowLossy];
+    NSError *error = nil;
+
+    id object = [NSJSONSerialization
+                 JSONObjectWithData:returnedData
+                 options:0
+                 error:&error];
+
+    if( error )
+    {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+    else {
+        NSDictionary *allCourses = object;
+        NSArray *thisChallenge = allCourses[@"This Challenge"];
+        Task *newJTask;
+        for ( NSDictionary *tasklets in thisChallenge )
+        {
+            NSLog(@"----");
+            NSLog(@"Title: %@", tasklets[@"title"] );
+            NSLog(@"Speaker: %@", tasklets[@"points"] );
+            NSLog(@"Time: %@", tasklets[@"reminderTime"] );
+            NSLog(@"Room: %@", tasklets[@"reminderMessage"] );
+            NSLog(@"Details: %@", tasklets[@"message"] );
+            NSLog(@"----");
+            
+            NSString *jTitle = tasklets[@"title"];
+            NSString *jPoints = tasklets[@"points"];
+            NSString *jReminderTime = tasklets[@"reminderTime"];
+            NSString *jReminderMessage = tasklets[@"reminderMessage"];
+            NSString *jMessage = tasklets[@"message"];
+            if(jReminderMessage != nil && jReminderTime != nil)
+            {
+                newJTask = [[Task alloc] initWithMessage:jMessage points:jPoints.integerValue time:jReminderTime reminderMessage:jReminderMessage taskTitle:jTitle];
+            }
+            else
+            {
+                newJTask = [[Task alloc] initWithMessage:jMessage points:jPoints.integerValue title:jTitle];
+            }
+            if (newJTask != nil) {
+                [_TaskFormDailyChallenge.tasks addObject:newJTask];
+                [self printTaskToScreen:_TaskFormDailyChallenge.tasks];
+                _infoBoxTextField.text = [self printTaskToScreen:_TaskFormDailyChallenge.tasks];
+                _TaskFormDailyChallenge.pointsWorth += newJTask.points;
+            }
+        }
+    }
+    
+//    Read more: http://www.intertech.com/Blog/basic-json-parsing-in-ios/#ixzz3J5MCDgvf
+//    Follow us: @IntertechInc on Twitter | Intertech on Facebook
+    
+
 }
 @end
