@@ -218,6 +218,55 @@ shouldChangeTextInRange:(NSRange)range
     _jsonTextView.hidden = false;
     _createJSONButton.hidden = false;
     _editedAllButton.hidden = true;
+    if(_TaskFormDailyChallenge.tasks.count > 0)
+    {
+        //Display in JSON form
+        NSMutableArray *thisChallenge = [[NSMutableArray alloc] init];
+        NSError *error = nil;
+        NSDictionary *allCourses = [[NSDictionary alloc] init];
+        //NSArray *thisChallenge = allCourses[@"This Challenge"];
+        NSMutableArray *arrayOfTaskDicionaries = [[NSMutableArray alloc] init];
+        for (Task *t in _TaskFormDailyChallenge.tasks)
+        {
+            NSString *jTitle = t.title;
+            NSString *jPoints = [NSString stringWithFormat:@"%d", t.points];
+            NSString *jReminderTime = t.reminderTime;
+            NSString *jReminderMessage = t.reminderMessage;
+            NSString *jMessage = t.message;
+            NSArray *keys, *obs;
+            if(jReminderTime != nil && jReminderMessage != nil)
+            {
+                keys=[[NSArray alloc]initWithObjects:@"title", @"points",@"reminderTime", @"reminderMessage", @"message", nil];
+                obs=[[NSArray alloc]initWithObjects:jTitle, jPoints, jReminderMessage, jReminderTime, jMessage, nil];
+            }
+            else
+            {
+                keys=[[NSArray alloc]initWithObjects:@"title", @"points", @"message", nil];
+                obs= [[NSArray alloc] initWithObjects:jTitle, jPoints, jMessage, nil];
+            }
+            //Each task is a dictionary
+            NSDictionary *dict=[NSDictionary dictionaryWithObjects:obs forKeys:keys];
+            //NSDictionary *tasktionary=[NSDictionary dictionaryWithObjects:obs forKeys:keys];
+            [arrayOfTaskDicionaries addObject:dict];
+        }
+      
+        allCourses = [NSDictionary dictionaryWithObject:arrayOfTaskDicionaries forKey:@"This Challenge"];
+            //
+            NSData *jsonData=[NSJSONSerialization dataWithJSONObject:allCourses options:NSJSONWritingPrettyPrinted error:&error];
+        NSString *jasonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        
+        self.jsonTextView.text = jasonString;
+    }
+}
+
+- (void)logTask:(NSDictionary *)tasklets {
+    NSLog(@"----");
+    NSLog(@"Title: %@", tasklets[@"title"] );
+    NSLog(@"Speaker: %@", tasklets[@"points"] );
+    NSLog(@"Time: %@", tasklets[@"reminderTime"] );
+    NSLog(@"Room: %@", tasklets[@"reminderMessage"] );
+    NSLog(@"Details: %@", tasklets[@"message"] );
+    NSLog(@"----");
 }
 
 - (IBAction)createJSON:(id)sender {
@@ -237,18 +286,14 @@ shouldChangeTextInRange:(NSRange)range
         NSLog(@"%@", [error localizedDescription]);
     }
     else {
-        NSDictionary *allCourses = object;
-        NSArray *thisChallenge = allCourses[@"This Challenge"];
+        //Clear existing Tasks in DailyChallenge
+        [self.TaskFormDailyChallenge.tasks removeAllObjects];
+        NSDictionary *allCoursesDictionary = object;
+        NSArray *thisChallengeArray = allCoursesDictionary[@"This Challenge"];
         Task *newJTask;
-        for ( NSDictionary *tasklets in thisChallenge )
+        for ( NSDictionary *tasklets in thisChallengeArray )
         {
-            NSLog(@"----");
-            NSLog(@"Title: %@", tasklets[@"title"] );
-            NSLog(@"Speaker: %@", tasklets[@"points"] );
-            NSLog(@"Time: %@", tasklets[@"reminderTime"] );
-            NSLog(@"Room: %@", tasklets[@"reminderMessage"] );
-            NSLog(@"Details: %@", tasklets[@"message"] );
-            NSLog(@"----");
+            [self logTask:tasklets];
             
             NSString *jTitle = tasklets[@"title"];
             NSString *jPoints = tasklets[@"points"];

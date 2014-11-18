@@ -214,14 +214,20 @@
                                             <outlet property="delegate" destination="sDE-RR-EHX" id="hbY-CV-qr9"/>
                                         </connections>
                                     </textField>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="RiskFactor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hsi-qZ-rIB">
+                                        <rect key="frame" x="165" y="118" width="94" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Happiness" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ABe-V7-aUt">
-                                        <rect key="frame" x="79" y="159" width="84" height="21"/>
+                                        <rect key="frame" x="79" y="151" width="84" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="o7h-aZ-Fj9" userLabel="Round Style Text Field - Happiness Rating">
-                                        <rect key="frame" x="174" y="155" width="48" height="30"/>
+                                        <rect key="frame" x="174" y="147" width="48" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -229,14 +235,49 @@
                                             <outlet property="delegate" destination="sDE-RR-EHX" id="vZZ-QU-ReQ"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="RiskFactor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hsi-qZ-rIB">
-                                        <rect key="frame" x="165" y="118" width="94" height="21"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jWb-V1-Ed3">
+                                        <rect key="frame" x="12" y="189" width="165" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Load Challenge to Edit">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loadFromParseAction:" destination="sDE-RR-EHX" eventType="touchUpInside" id="VRr-Uv-Mp0"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="e4K-pQ-JaC">
+                                        <rect key="frame" x="187" y="190" width="97" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="sDE-RR-EHX" id="wEj-Hq-8lV"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Original" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pGO-Gc-2xs">
+                                        <rect key="frame" x="18" y="225" width="156" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="IlK-0g-dVR">
+                                        <rect key="frame" x="136" y="220" width="51" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="deleteOriginalAction:" destination="sDE-RR-EHX" eventType="valueChanged" id="WP1-Hb-uwD"/>
+                                        </connections>
+                                    </switch>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZED-CZ-lz8">
+                                        <rect key="frame" x="97" y="249" width="128" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Add Tasks"/>
+                                        <connections>
+                                            <action selector="addTask:" destination="sDE-RR-EHX" eventType="touchUpInside" id="oiZ-cs-11F"/>
+                                            <segue destination="mai-so-QUr" kind="push" identifier="ToTaskForm" id="V5s-ym-xTP"/>
+                                        </connections>
+                                    </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="R6W-bg-YcD">
-                                        <rect key="frame" x="250" y="110" width="48" height="30"/>
+                                        <rect key="frame" x="250" y="136" width="48" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -245,7 +286,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uCX-bU-qd4">
-                                        <rect key="frame" x="16" y="218" width="128" height="28"/>
+                                        <rect key="frame" x="16" y="271" width="128" height="28"/>
                                         <state key="normal" title="Relations Options">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -255,14 +296,14 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="S4u-3l-X5C">
-                                        <rect key="frame" x="16" y="242" width="128" height="74"/>
+                                        <rect key="frame" x="16" y="295" width="128" height="74"/>
                                         <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iQO-mB-fi2">
-                                        <rect key="frame" x="177" y="218" width="128" height="30"/>
+                                        <rect key="frame" x="177" y="271" width="128" height="30"/>
                                         <state key="normal" title="R. Satisfaction">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -272,14 +313,14 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="N5e-Hd-lfU">
-                                        <rect key="frame" x="177" y="241" width="128" height="74"/>
+                                        <rect key="frame" x="177" y="295" width="128" height="74"/>
                                         <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cAS-eu-MGC">
-                                        <rect key="frame" x="16" y="327" width="128" height="20"/>
+                                        <rect key="frame" x="16" y="381" width="128" height="20"/>
                                         <state key="normal" title="School Options">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -289,14 +330,14 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="8YK-wT-ALh">
-                                        <rect key="frame" x="16" y="346" width="128" height="69"/>
+                                        <rect key="frame" x="16" y="400" width="128" height="69"/>
                                         <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RJH-IV-SV8">
-                                        <rect key="frame" x="177" y="327" width="128" height="20"/>
+                                        <rect key="frame" x="177" y="381" width="128" height="20"/>
                                         <state key="normal" title="S. Satisfaction">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -306,14 +347,14 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="RM5-qV-zaO">
-                                        <rect key="frame" x="176" y="346" width="128" height="70"/>
+                                        <rect key="frame" x="176" y="400" width="128" height="70"/>
                                         <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qNx-nu-XNh">
-                                        <rect key="frame" x="16" y="421" width="128" height="43"/>
+                                        <rect key="frame" x="16" y="475" width="128" height="43"/>
                                         <state key="normal" title="Sex Options">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -323,14 +364,14 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="jck-fG-AGn">
-                                        <rect key="frame" x="16" y="456" width="128" height="50"/>
+                                        <rect key="frame" x="16" y="510" width="128" height="50"/>
                                         <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="675-MO-yLa">
-                                        <rect key="frame" x="176" y="427" width="128" height="30"/>
+                                        <rect key="frame" x="176" y="481" width="128" height="30"/>
                                         <state key="normal" title="Partner Options">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -340,14 +381,14 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="5pU-8I-HnA">
-                                        <rect key="frame" x="177" y="457" width="128" height="50"/>
+                                        <rect key="frame" x="177" y="511" width="128" height="50"/>
                                         <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fzd-Vk-BwX">
-                                        <rect key="frame" x="16" y="508" width="128" height="30"/>
+                                        <rect key="frame" x="16" y="562" width="128" height="30"/>
                                         <state key="normal" title="Work Options">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -358,14 +399,14 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="Ev2-Cv-x8e">
-                                        <rect key="frame" x="16" y="531" width="128" height="64"/>
+                                        <rect key="frame" x="16" y="585" width="128" height="64"/>
                                         <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oxd-D3-QZt">
-                                        <rect key="frame" x="177" y="508" width="128" height="30"/>
+                                        <rect key="frame" x="177" y="562" width="128" height="30"/>
                                         <state key="normal" title="W. Satisfaction">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -375,14 +416,14 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="2v1-2i-3jR">
-                                        <rect key="frame" x="176" y="531" width="128" height="64"/>
+                                        <rect key="frame" x="176" y="585" width="128" height="64"/>
                                         <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bsN-r4-oPv">
-                                        <rect key="frame" x="16" y="591" width="128" height="30"/>
+                                        <rect key="frame" x="16" y="645" width="128" height="30"/>
                                         <state key="normal" title="Children Options">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -392,14 +433,14 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="N12-Wf-Cd3">
-                                        <rect key="frame" x="16" y="616" width="128" height="50"/>
+                                        <rect key="frame" x="16" y="670" width="128" height="50"/>
                                         <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oZK-EB-d4q">
-                                        <rect key="frame" x="176" y="591" width="128" height="30"/>
+                                        <rect key="frame" x="176" y="645" width="128" height="30"/>
                                         <state key="normal" title="Pet Options">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -409,23 +450,14 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="gk5-QY-TWb">
-                                        <rect key="frame" x="176" y="616" width="128" height="50"/>
+                                        <rect key="frame" x="176" y="670" width="128" height="50"/>
                                         <color key="backgroundColor" red="0.63902866630507782" green="0.72857364121565926" blue="0.83234969429347827" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZED-CZ-lz8">
-                                        <rect key="frame" x="97" y="195" width="128" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Add Tasks"/>
-                                        <connections>
-                                            <action selector="addTask:" destination="sDE-RR-EHX" eventType="touchUpInside" id="oiZ-cs-11F"/>
-                                            <segue destination="mai-so-QUr" kind="push" identifier="ToTaskForm" id="V5s-ym-xTP"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lGW-Zm-VYF">
-                                        <rect key="frame" x="234" y="867" width="70" height="30"/>
+                                        <rect key="frame" x="234" y="893" width="70" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Done">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -436,13 +468,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Challenge For Points:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qQs-2q-VGe">
-                                        <rect key="frame" x="13" y="670" width="168" height="21"/>
+                                        <rect key="frame" x="13" y="702" width="168" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qcu-ea-jLA">
-                                        <rect key="frame" x="189" y="670" width="74" height="21"/>
+                                        <rect key="frame" x="189" y="702" width="74" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <color key="textColor" red="1" green="0.0046786634059999997" blue="0.061586604029999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -466,38 +498,6 @@
                                             <action selector="previewAndConfirm:" destination="sDE-RR-EHX" eventType="touchUpInside" id="0au-hx-izp"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jWb-V1-Ed3">
-                                        <rect key="frame" x="59" y="800" width="165" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Load Challenge to Edit">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="loadFromParseAction:" destination="sDE-RR-EHX" eventType="touchUpInside" id="VRr-Uv-Mp0"/>
-                                        </connections>
-                                    </button>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="IlK-0g-dVR">
-                                        <rect key="frame" x="11" y="857" width="51" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <connections>
-                                            <action selector="deleteOriginalAction:" destination="sDE-RR-EHX" eventType="valueChanged" id="WP1-Hb-uwD"/>
-                                        </connections>
-                                    </switch>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Original" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pGO-Gc-2xs">
-                                        <rect key="frame" x="18" y="834" width="156" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="e4K-pQ-JaC">
-                                        <rect key="frame" x="13" y="767" width="97" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="sDE-RR-EHX" id="wEj-Hq-8lV"/>
-                                        </connections>
-                                    </textField>
                                     <view hidden="YES" contentMode="scaleToFill" id="ZgK-KP-IUr">
                                         <rect key="frame" x="4" y="80" width="312" height="1016"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
