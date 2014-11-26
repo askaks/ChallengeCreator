@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		531EE0121A16C5A30046E823 /* JSON Text Format in Resources */ = {isa = PBXBuildFile; fileRef = 531EE0111A16C5A30046E823 /* JSON Text Format */; };
+		533782661A24E5A0000D24C0 /* OneChallengeJSON in Resources */ = {isa = PBXBuildFile; fileRef = 533782651A24E5A0000D24C0 /* OneChallengeJSON */; };
 		62A97A72187DE0C800E55D51 /* CreatorTaskFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A97A71187DE0C800E55D51 /* CreatorTaskFormViewController.m */; };
 		62B2D3571878F11F0004E1E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B2D3561878F11F0004E1E6 /* UIKit.framework */; };
 		62B2D3591878F11F0004E1E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B2D3581878F11F0004E1E6 /* Foundation.framework */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		531EE0111A16C5A30046E823 /* JSON Text Format */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "JSON Text Format"; sourceTree = "<group>"; };
+		533782651A24E5A0000D24C0 /* OneChallengeJSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OneChallengeJSON; sourceTree = "<group>"; };
 		62A97A70187DE0C800E55D51 /* CreatorTaskFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatorTaskFormViewController.h; sourceTree = "<group>"; };
 		62A97A71187DE0C800E55D51 /* CreatorTaskFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatorTaskFormViewController.m; sourceTree = "<group>"; };
 		62B2D3531878F11F0004E1E6 /* ChallengeCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +201,7 @@
 				62A97A70187DE0C800E55D51 /* CreatorTaskFormViewController.h */,
 				62A97A71187DE0C800E55D51 /* CreatorTaskFormViewController.m */,
 				531EE0111A16C5A30046E823 /* JSON Text Format */,
+				533782651A24E5A0000D24C0 /* OneChallengeJSON */,
 			);
 			path = ChallengeCreator;
 			sourceTree = "<group>";
@@ -273,7 +276,7 @@
 			name = ChallengeCreatorTests;
 			productName = ChallengeCreatorTests;
 			productReference = 62B2D37C1878F1200004E1E6 /* ChallengeCreatorTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -315,6 +318,7 @@
 				531EE0121A16C5A30046E823 /* JSON Text Format in Resources */,
 				62B2D3701878F1200004E1E6 /* MainStoryboard_iPhone.storyboard in Resources */,
 				62FD55CA18CE55F2002C8CF5 /* HappySignupViewController.xib in Resources */,
+				533782661A24E5A0000D24C0 /* OneChallengeJSON in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

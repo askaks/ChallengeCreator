@@ -25,7 +25,7 @@
     [encoder encodeInteger:_ageMin forKey:@"min"];
 	[encoder encodeInteger:_ageMax forKey:@"max"];
     [encoder encodeInteger:_minimumRiskFactor forKey:@"minimumRiskFactor"];
-    [encoder encodeInteger:_pointsWorth forKey:@"pointsWorth"];
+    //[encoder encodeInteger:_pointsWorth forKey:@"pointsWorth"];
     [encoder encodeInteger:_language forKey:@"language"];
     [encoder encodeInteger:_happiness forKey:@"happiness"];
     [encoder encodeObject:_genderExcludes forKey:@"genderExcludes"];
@@ -60,7 +60,7 @@
         _tasks = [[NSMutableArray alloc] init];
         _ageMax = 200;
         _ageMin = 1;
-        _pointsWorth = 0;
+        //_pointsWorth = 0;
         _minimumRiskFactor = 1;
         _language = 1;
         _happiness = 1;
@@ -103,7 +103,7 @@
         self.happiness = [decoder decodeIntegerForKey:@"happiness"];
         
         self.minimumRiskFactor = [decoder decodeIntegerForKey: @"minimumRiskFactor"];
-        self.pointsWorth = [decoder decodeIntegerForKey: @"pointsWorth"];
+        //self.pointsWorth = [decoder decodeIntegerForKey: @"pointsWorth"];
 
         self.genderExcludes = [decoder decodeObjectForKey:@"genderExcludes"];
 
@@ -144,6 +144,15 @@
 	return self;
 }
 
+- (NSInteger)getPointTotal
+{
+    NSInteger total = 0;
+    for (Task *task in self.tasks) {
+        total += task.points;
+    }
+    return total;
+}
+
 - (id)copyWithZone:(NSZone *)zone
 {
 	DailyChallenge *challenge = [[DailyChallenge alloc] init];
@@ -154,7 +163,7 @@
 	challenge.ageMax = _ageMax;
     challenge.language = _language;
     challenge.happiness = _happiness;
-    challenge.pointsWorth = _pointsWorth;
+    //challenge.pointsWorth = _pointsWorth;
     challenge.minimumRiskFactor = _minimumRiskFactor;
     
     challenge.genderExcludes = [_genderExcludes copy];

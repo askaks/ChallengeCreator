@@ -50,36 +50,36 @@
             "message": "Discuss the latest set of tools used to help ease software development."
         },
     ],
-    "Next Challenge": [
-        {
-            "title": "MongoDB",
-            "speaker": "DavinMickelson",
-            "time": "1: 00PM",
-            "room": "Picasso",
-            "details": "Learnabout\"NoSQL\"databases."
-        },
-        {
-            "title": "DebuggingwithXcode",
-            "speaker": "JasonShapiro",
-            "time": "1: 00PM",
-            "room": "VanGogh",
-            "details": "ExploredifferentpatternsfordebuggingyouriOSapps."
-        }
-    ],
-    "Wednesday": [
-        {
-            "title": "Scrum Master",
-            "speaker": "Davin Mickelson",
-            "time": "1:00 PM",
-            "room": "Matisse",
-            "details": "Learn the roles and responsibilities of a Scrum Master"
-        },                                       
-        {
-            "title": "Design Patterns",
-            "speaker": "Jim White",
-            "time": "1:00 PM",
-            "room": "Rothko",
-            "details": "Apply best practices and sound architectures to software design."
-        }
-    ]
+    "Next Challenge": [{},{}],
+    "Wednesday": []
 }
+
+
+
+{
+"This Challenge" : [
+{
+"points" : "15",
+"title" : "Question 1",
+"message" : "Are you heading to school today?  Which way are you going to go? What's there along the way?  How well do you know the route, can you imagine it in your head now?  Are there trees along the way?  What kind?  Any coffee shops?  Anything you've been putting off visiting?"
+},
+{
+"points" : "50",
+"title" : "Task 2",
+"message" : "Well you won't get to visit anything there today.  Your challenge for today is to take a different route to school.  Catch a different bus, or take a different turn, a few streets earlier, and see if you can make your way to school.  Or maybe just leave earlier and take an earlier bus.  Plan it out beforehand or challenge your sense of direction, either way you're taking a different path today."
+},
+{
+"points" : "40",
+"title" : "Task 2",
+"message" : "Take the controls back from autopilot, look around and really take in what you see.  Tomorrow, or even on your way back today, you might go back to your usual route, so take this chance to explore."
+},
+{
+"points" : "40",
+"title" : "Task 3",
+"message" : "Be careful though, you don't want this to be the route you meet a bad fate on.  Make sure you stay safe and vigigilant and the only fate you'll meet is the one you want."
+}
+]
+}
+
+
+

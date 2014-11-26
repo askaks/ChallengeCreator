@@ -21,7 +21,8 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, assign) NSInteger ageMin;
 @property (nonatomic, assign) NSInteger ageMax;
-@property (nonatomic, assign) NSInteger pointsWorth;
+//@property (nonatomic, assign) NSInteger pointsWorth;
+@property (getter=getPointTotal, readonly) NSInteger pointsWorth;
 @property (nonatomic, assign) NSInteger minimumRiskFactor;
 @property (nonatomic, assign) NSInteger language;
 @property (nonatomic, assign) NSInteger happiness;
@@ -71,6 +72,6 @@
             tasks: (NSMutableArray *)array;
 
 - (id)copyWithZone:(NSZone *)zone;
-
+- (NSInteger)getPointTotal;
 
 @end

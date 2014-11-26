@@ -413,7 +413,7 @@
     _RiskFactor.text = @"";
     _LanguageRating.text =@"";
     _ChallengeTitle.text =@"";
-    _TheDailyChallenge.pointsWorth = 0;
+    //_TheDailyChallenge.pointsWorth = 0;
     
 }
 
@@ -775,7 +775,7 @@
                 _objectIdInParse = objectIdAdjusted;
                 
                 _TheDailyChallenge.title = challengeObj[@"title"];
-                _TheDailyChallenge.pointsWorth = [challengeObj[@"points"] integerValue];
+                //_TheDailyChallenge.pointsWorth = [challengeObj[@"points"] integerValue];
                 _TheDailyChallenge.ageMin = [challengeObj[@"ageMin"] integerValue];
                 _TheDailyChallenge.ageMax = [challengeObj[@"ageMax"] integerValue];
                 _TheDailyChallenge.language  = [challengeObj[@"languageRating"] integerValue];

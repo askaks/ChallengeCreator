@@ -137,7 +137,7 @@ shouldChangeTextInRange:(NSRange)range
         [_TaskFormDailyChallenge.tasks addObject:task];
         [self printTaskToScreen:_TaskFormDailyChallenge.tasks];
         _infoBoxTextField.text = [self printTaskToScreen:_TaskFormDailyChallenge.tasks];
-        _TaskFormDailyChallenge.pointsWorth += task.points;
+        //_TaskFormDailyChallenge.pointsWorth += task.points;
     }
     _taskTitleTextField.text = [NSString stringWithFormat:@"Task %lu \n", (unsigned long)_TaskFormDailyChallenge.tasks.count + 1];
 }
@@ -181,13 +181,13 @@ shouldChangeTextInRange:(NSRange)range
     }
     }
     if (taskToChange != NULL) {
-        _TaskFormDailyChallenge.pointsWorth -= taskToChange.points;
+        //_TaskFormDailyChallenge.pointsWorth -= taskToChange.points;
         taskToChange.title = newTask.title;
         taskToChange.message = newTask.message;
         taskToChange.points = newTask.points;
         _infoBoxTextField.text = [self printTaskToScreen:_TaskFormDailyChallenge.tasks];
     }
-    _TaskFormDailyChallenge.pointsWorth += newTask.points;
+    //_TaskFormDailyChallenge.pointsWorth += newTask.points;
 }
 
 
@@ -208,7 +208,7 @@ shouldChangeTextInRange:(NSRange)range
     }
     if(taskToDelete != NULL)
     {
-        _TaskFormDailyChallenge.pointsWorth -= taskToDelete.points;
+        //_TaskFormDailyChallenge.pointsWorth -= taskToDelete.points;
         [_TaskFormDailyChallenge.tasks removeObject:taskToDelete];
         _infoBoxTextField.text = [self printTaskToScreen:_TaskFormDailyChallenge.tasks];
     }
@@ -288,6 +288,7 @@ shouldChangeTextInRange:(NSRange)range
     else {
         //Clear existing Tasks in DailyChallenge
         [self.TaskFormDailyChallenge.tasks removeAllObjects];
+        //self.TaskFormDailyChallenge.pointsWorth = 0;
         NSDictionary *allCoursesDictionary = object;
         NSArray *thisChallengeArray = allCoursesDictionary[@"This Challenge"];
         Task *newJTask;
@@ -312,7 +313,7 @@ shouldChangeTextInRange:(NSRange)range
                 [_TaskFormDailyChallenge.tasks addObject:newJTask];
                 [self printTaskToScreen:_TaskFormDailyChallenge.tasks];
                 _infoBoxTextField.text = [self printTaskToScreen:_TaskFormDailyChallenge.tasks];
-                _TaskFormDailyChallenge.pointsWorth += newJTask.points;
+                //_TaskFormDailyChallenge.pointsWorth += newJTask.points;
             }
         }
     }

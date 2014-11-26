@@ -61,9 +61,28 @@ numberOfRowsInComponent:(NSInteger)component
 	eduLabel=[[UILabel alloc] initWithFrame:CGRectMake(0,0,180,32)];
 	eduLabel.backgroundColor=[UIColor clearColor];
 	eduLabel.text=[_options objectAtIndex:row];
-	//eduLabel.textAlignment = UITextAlignmentCenter;
-	eduLabel.font = [UIFont systemFontOfSize:22];
+    int a = eduLabel.text.length;
+    if(eduLabel.text.length > 22)
+    {
+        	eduLabel.font = [UIFont systemFontOfSize:10];
+    }
+	else
+    {
+        eduLabel.font = [UIFont systemFontOfSize:18];
+    }
 	return eduLabel;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
+    switch(component) {
+        case 0: return 22;
+        case 1: return 44;
+        case 2: return 88;
+        default: return 22;
+    }
+    
+    //NOT REACHED
+    return 22;
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
 	   inComponent:(NSInteger)component
@@ -76,9 +95,18 @@ numberOfRowsInComponent:(NSInteger)component
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)clearAllOptions:(id)sender {
+    [_list removeAllObjects];
+    _InfoBox.text = @"";
+    _addAllSwitch.on = false;
+}
+
 - (IBAction)Add:(id)sender {
     NSString *option = [_options objectAtIndex:_currentIndex];
-    [_list addObject:option];
+    if (![_list containsObject:option]) {
+            [_list addObject:option];
+    }
+
     NSString * combinedStuff = [_list componentsJoinedByString:@"  "];
     _InfoBox.text = combinedStuff;
     self.addAllSwitch.on = false;
@@ -106,4 +134,20 @@ numberOfRowsInComponent:(NSInteger)component
 }
 
 
+- (void)addObjectsFromArrayWithoutDuplicates:(NSMutableArray *)addingTo
+                                      arrayAddingFrom:(NSMutableArray *)addingFrom {
+    for (NSString *str in addingFrom)
+    {
+        if( ![addingTo containsObject:str])
+        {
+            [addingTo addObject:str];
+        }
+    }
+}
+
+- (IBAction)addAllSwitchedOn:(id)sender {
+    [self addObjectsFromArrayWithoutDuplicates:_list arrayAddingFrom:_options];
+  NSString *combinedStuff = [_list componentsJoinedByString:@"  "];
+_InfoBox.text = combinedStuff;
+}
 @end

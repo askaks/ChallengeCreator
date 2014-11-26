@@ -29,11 +29,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *AddButton;
 @property (weak, nonatomic) IBOutlet UISwitch *addAllSwitch;
 
+- (IBAction)clearAllOptions:(id)sender;
 
 - (IBAction)Add:(id)sender;
 - (IBAction)Remove:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *DoneButton;
 //- (IBAction)Done:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *InfoBox;
+- (IBAction)addAllSwitchedOn:(id)sender;
 
 @end
