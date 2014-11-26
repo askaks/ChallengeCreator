@@ -512,18 +512,25 @@
                                         </connections>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" id="ZgK-KP-IUr">
-                                        <rect key="frame" x="4" y="80" width="312" height="1016"/>
+                                        <rect key="frame" x="0.0" y="52" width="319" height="555"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MiddleBackgroundWhiteHalfRound.png" id="0Vv-tM-C5K">
+                                                <rect key="frame" x="-10" y="-9" width="341" height="599"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                             <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="aUn-5b-939">
-                                                <rect key="frame" x="6" y="131" width="301" height="466"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="15" y="56" width="281" height="440"/>
+                                                <color key="backgroundColor" red="0.69941581320000001" green="0.69385850100000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" red="0.90751333180000004" green="0.86131367120000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7GK-er-NEZ">
-                                                <rect key="frame" x="0.0" y="567" width="128" height="30"/>
+                                                <rect key="frame" x="0.0" y="520.5" width="128" height="30"/>
+                                                <color key="backgroundColor" red="0.69941581320000001" green="0.69385850100000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -531,8 +538,9 @@
                                                     <action selector="cancelAddingChallenge:" destination="sDE-RR-EHX" eventType="touchUpInside" id="yzF-Fv-vpa"/>
                                                 </connections>
                                             </button>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LTw-bq-wd8">
-                                                <rect key="frame" x="148" y="567" width="128" height="30"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LTw-bq-wd8">
+                                                <rect key="frame" x="194" y="520.5" width="88" height="35"/>
+                                                <color key="backgroundColor" red="0.69941581320000001" green="0.69385850100000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Add">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -541,7 +549,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="0.084959817619866929" blue="0.18775901478987111" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -894,6 +902,9 @@
             <point key="canvasLocation" x="-189" y="-96"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MiddleBackgroundWhiteHalfRound.png" width="760" height="980"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

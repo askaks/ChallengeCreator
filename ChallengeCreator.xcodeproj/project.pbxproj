@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		531EE0121A16C5A30046E823 /* JSON Text Format in Resources */ = {isa = PBXBuildFile; fileRef = 531EE0111A16C5A30046E823 /* JSON Text Format */; };
 		533782661A24E5A0000D24C0 /* OneChallengeJSON in Resources */ = {isa = PBXBuildFile; fileRef = 533782651A24E5A0000D24C0 /* OneChallengeJSON */; };
+		5337826B1A255B65000D24C0 /* MiddleBackgroundWhiteChiseledHalfRound.png in Resources */ = {isa = PBXBuildFile; fileRef = 533782671A255B65000D24C0 /* MiddleBackgroundWhiteChiseledHalfRound.png */; };
+		5337826C1A255B65000D24C0 /* MiddleBackgroundWhiteFullRound.png in Resources */ = {isa = PBXBuildFile; fileRef = 533782681A255B65000D24C0 /* MiddleBackgroundWhiteFullRound.png */; };
+		5337826D1A255B65000D24C0 /* MiddleBackgroundWhiteHalfRound.png in Resources */ = {isa = PBXBuildFile; fileRef = 533782691A255B65000D24C0 /* MiddleBackgroundWhiteHalfRound.png */; };
+		5337826E1A255B65000D24C0 /* OrangeDifferentGradientHighRaisedButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5337826A1A255B65000D24C0 /* OrangeDifferentGradientHighRaisedButton.png */; };
 		62A97A72187DE0C800E55D51 /* CreatorTaskFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A97A71187DE0C800E55D51 /* CreatorTaskFormViewController.m */; };
 		62B2D3571878F11F0004E1E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B2D3561878F11F0004E1E6 /* UIKit.framework */; };
 		62B2D3591878F11F0004E1E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B2D3581878F11F0004E1E6 /* Foundation.framework */; };
@@ -55,6 +59,10 @@
 /* Begin PBXFileReference section */
 		531EE0111A16C5A30046E823 /* JSON Text Format */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "JSON Text Format"; sourceTree = "<group>"; };
 		533782651A24E5A0000D24C0 /* OneChallengeJSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OneChallengeJSON; sourceTree = "<group>"; };
+		533782671A255B65000D24C0 /* MiddleBackgroundWhiteChiseledHalfRound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiddleBackgroundWhiteChiseledHalfRound.png; sourceTree = "<group>"; };
+		533782681A255B65000D24C0 /* MiddleBackgroundWhiteFullRound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiddleBackgroundWhiteFullRound.png; sourceTree = "<group>"; };
+		533782691A255B65000D24C0 /* MiddleBackgroundWhiteHalfRound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiddleBackgroundWhiteHalfRound.png; sourceTree = "<group>"; };
+		5337826A1A255B65000D24C0 /* OrangeDifferentGradientHighRaisedButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrangeDifferentGradientHighRaisedButton.png; sourceTree = "<group>"; };
 		62A97A70187DE0C800E55D51 /* CreatorTaskFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatorTaskFormViewController.h; sourceTree = "<group>"; };
 		62A97A71187DE0C800E55D51 /* CreatorTaskFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatorTaskFormViewController.m; sourceTree = "<group>"; };
 		62B2D3531878F11F0004E1E6 /* ChallengeCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +189,10 @@
 		62B2D35C1878F11F0004E1E6 /* ChallengeCreator */ = {
 			isa = PBXGroup;
 			children = (
+				533782671A255B65000D24C0 /* MiddleBackgroundWhiteChiseledHalfRound.png */,
+				533782681A255B65000D24C0 /* MiddleBackgroundWhiteFullRound.png */,
+				533782691A255B65000D24C0 /* MiddleBackgroundWhiteHalfRound.png */,
+				5337826A1A255B65000D24C0 /* OrangeDifferentGradientHighRaisedButton.png */,
 				62FD55C618CE55F2002C8CF5 /* HappySignupViewController.h */,
 				62FD55C718CE55F2002C8CF5 /* HappySignupViewController.m */,
 				62FD55C818CE55F2002C8CF5 /* HappySignupViewController.xib */,
@@ -312,12 +324,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				62B2D3611878F11F0004E1E6 /* InfoPlist.strings in Resources */,
+				5337826B1A255B65000D24C0 /* MiddleBackgroundWhiteChiseledHalfRound.png in Resources */,
 				62B2D3691878F11F0004E1E6 /* Default.png in Resources */,
+				5337826E1A255B65000D24C0 /* OrangeDifferentGradientHighRaisedButton.png in Resources */,
 				62B2D36B1878F1200004E1E6 /* Default@2x.png in Resources */,
 				62B2D36D1878F1200004E1E6 /* Default-568h@2x.png in Resources */,
 				531EE0121A16C5A30046E823 /* JSON Text Format in Resources */,
 				62B2D3701878F1200004E1E6 /* MainStoryboard_iPhone.storyboard in Resources */,
 				62FD55CA18CE55F2002C8CF5 /* HappySignupViewController.xib in Resources */,
+				5337826C1A255B65000D24C0 /* MiddleBackgroundWhiteFullRound.png in Resources */,
+				5337826D1A255B65000D24C0 /* MiddleBackgroundWhiteHalfRound.png in Resources */,
 				533782661A24E5A0000D24C0 /* OneChallengeJSON in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
