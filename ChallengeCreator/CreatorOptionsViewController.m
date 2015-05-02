@@ -761,12 +761,20 @@
     NSString * objectIdAdjusted = [ _objectIdTextbox.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     if(![objectIdAdjusted isEqualToString: @""])
     {
-        PFQuery *challengeQuery = [PFQuery queryWithClassName:@"Challenges"];
-        [challengeQuery whereKey:@"objectId" equalTo:objectIdAdjusted];     //An Apple a Day
-
-        //[challengeQuery whereKey:@"title" containsString:@"An Apple a Day"];
         NSArray *objects = nil;
+        
+        //Now searching by titles
+        PFQuery *challengeQuery = [PFQuery queryWithClassName:@"Challenges"];
+        [challengeQuery whereKey:@"title" containsString:objectIdAdjusted];
         objects = [challengeQuery findObjects];
+
+        //now try to search by  objectID
+        if(objects == NULL || objects.count <= 0)
+        {
+            challengeQuery = [PFQuery queryWithClassName:@"Challenges"];
+            [challengeQuery whereKey:@"objectId" equalTo:objectIdAdjusted];     //An Apple a Day
+            objects = [challengeQuery findObjects];
+        }
         if (objects != NULL)
         {
             //should be only one
