@@ -197,7 +197,7 @@
     }
     else if ([segue.identifier isEqualToString:@"ToMainCreator"])
     {
-        CreatorViewController *c = [segue destinationViewController];
+        //CreatorViewController *c = [segue destinationViewController];
         //c.Challenges = _Challenges;
     }
     else
@@ -238,7 +238,7 @@
             dailyChallenge[@"ageMax"] = [NSNumber numberWithInteger:_TheDailyChallenge.ageMax];
             dailyChallenge[@"languageRating"] =[NSNumber numberWithInteger:_TheDailyChallenge.language];
             dailyChallenge[@"riskFactor"] = [NSNumber numberWithInteger:_TheDailyChallenge.minimumRiskFactor];
-            dailyChallenge[@"happiness"] = [NSNumber numberWithInt:_TheDailyChallenge.happiness];
+            dailyChallenge[@"happiness"] = [NSNumber numberWithInt:(int)_TheDailyChallenge.happiness];
             dailyChallenge[@"forSex"] = [_TheDailyChallenge.genderExcludes componentsJoinedByString:@" | "];
             dailyChallenge[@"seekingWho"] = [_TheDailyChallenge.interestedInExcludes componentsJoinedByString:@" | "];
             dailyChallenge[@"eduIncludes"] = [_TheDailyChallenge.schoolLevelExcludes componentsJoinedByString:@" | "];
@@ -292,7 +292,6 @@
     {
         PFQuery *challengeQuery = [PFQuery queryWithClassName:@"Challenges"];
         [challengeQuery whereKey:@"objectId" equalTo:_objectIdInParse];     //An Apple a Day
-        //[challengeQuery whereKey:@"title" containsString:@"An Apple a Day"];
         NSArray *objects = nil;
         objects = [challengeQuery findObjects];
         if (objects != NULL)
@@ -413,8 +412,6 @@
     _RiskFactor.text = @"";
     _LanguageRating.text =@"";
     _ChallengeTitle.text =@"";
-    //_TheDailyChallenge.pointsWorth = 0;
-    
 }
 
 - (IBAction)FilterPartners:(id)sender {
@@ -425,7 +422,6 @@
     
     [partnerQuery selectKeys:@[@"partnerOptions"]];
     [partnerQuery whereKey:@"partnerOptions" notEqualTo:@"N/A"];
-    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
     NSArray *objects = [[NSArray alloc] init];
     objects = [partnerQuery findObjects];
     if (objects != NULL)
@@ -454,7 +450,6 @@
     
     [loveQuery selectKeys:@[@"loveOptions"]];
     [loveQuery whereKey:@"loveOptions" notEqualTo:@"N/A"];
-    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
     NSArray *objects = [[NSArray alloc] init];
     objects = [loveQuery findObjects];
          if (objects != NULL)
@@ -482,7 +477,6 @@
     
     [educationQuery selectKeys:@[@"educationOptions"]];
     [educationQuery whereKey:@"educationOptions" notEqualTo:@"N/A"];
-    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
     NSArray *objects = [[NSArray alloc] init];
     objects = [educationQuery findObjects];
     if (objects != NULL)
@@ -509,7 +503,6 @@
     
     [incomeQuery selectKeys:@[@"incomeOptions"]];
     [incomeQuery whereKey:@"incomeOptions" notEqualTo:@"N/A"];
-    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
     NSArray *objects = [[NSArray alloc] init];
     objects = [incomeQuery findObjects];
     if (objects != NULL)
@@ -537,7 +530,6 @@
     
     [childQuery selectKeys:@[@"childOptions"]];
     [childQuery whereKey:@"childOptions" notEqualTo:@"N/A"];
-    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
     NSArray *objects = [[NSArray alloc] init];
     objects = [childQuery findObjects];
     if (objects != NULL)
@@ -565,7 +557,6 @@
     
     [petQuery selectKeys:@[@"petOptions"]];
     [petQuery whereKey:@"petOptions" notEqualTo:@"N/A"];
-    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
     NSArray *objects = [[NSArray alloc] init];
     objects = [petQuery findObjects];
     if (objects != NULL)
@@ -613,7 +604,6 @@
     
     [sexQuery selectKeys:@[@"sexOptions"]];
     [sexQuery whereKey:@"sexOptions" notEqualTo:@"N/A"];
-    //[loveQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
     NSArray *objects = [[NSArray alloc] init];
     objects = [sexQuery findObjects];
     if (objects != NULL)
@@ -643,8 +633,6 @@
 
 - (IBAction)addTask:(id)sender {
     _TaskForm = [[CreatorTaskFormViewController alloc] init];
-//    NSMutableArray *list = _TheDailyChallenge.tasks;
-//    _TaskForm.listOfTasks = &(*list);
 }
 
 - (IBAction)ExcludeSchoolHappy:(id)sender {
@@ -738,7 +726,7 @@
 - (IBAction)ExcludeFemales:(id)sender {
     _PickerPopUp = [[PickerPopUpViewController alloc] init];
     _PickerPopUp.title = @"Genders";
-    _PickerPopUp.options = [[NSArray alloc] initWithObjects:@"female",@"male",nil];
+    _PickerPopUp.options = [[NSMutableArray alloc] initWithObjects:@"female",@"male",nil];
     NSMutableArray *list = _TheDailyChallenge.femaleExcl;
     _PickerPopUp.list = &(*list);
 
@@ -794,32 +782,20 @@
                        _TheDailyChallenge.happiness = 1;
                    }
                     
-                _TheDailyChallenge.genderExcludes = [challengeObj[@"forSex"] componentsSeparatedByString:@" | "];
-                _TheDailyChallenge.interestedInExcludes  = [challengeObj[@"seekingWho"] componentsSeparatedByString:@" | "];
-                _TheDailyChallenge.schoolLevelExcludes = [challengeObj[@"eduIncludes"] componentsSeparatedByString:@" | "];
-                _TheDailyChallenge.relationshipLevelExcludes  = [challengeObj[@"relationshipIncludes"] componentsSeparatedByString:@" | "];
-                _TheDailyChallenge.workLevelExcludes = [challengeObj[@"incomeIncludes"] componentsSeparatedByString:@" | "];
-                _TheDailyChallenge.kidsExclude = [challengeObj[@"childIncludes"] componentsSeparatedByString:@" | "];
-                _TheDailyChallenge.petsExclude = [challengeObj[@"petIncludes"] componentsSeparatedByString:@" | "];
-                _TheDailyChallenge.relationshipHappyExcludes = [challengeObj[@"happyWithLove"] componentsSeparatedByString:@" | "];
-                _TheDailyChallenge.schoolHappyExcludes = [challengeObj[@"happyWithSchool"]  componentsSeparatedByString:@" | "];
-                _TheDailyChallenge.workHappyExcludes = [challengeObj[@"happyWithWork"] componentsSeparatedByString:@" | "];
+                _TheDailyChallenge.genderExcludes = [[challengeObj[@"forSex"] componentsSeparatedByString:@" | "] mutableCopy];
+                _TheDailyChallenge.interestedInExcludes  = [[challengeObj[@"seekingWho"] componentsSeparatedByString:@" | "] mutableCopy];
+                _TheDailyChallenge.schoolLevelExcludes = [[challengeObj[@"eduIncludes"] componentsSeparatedByString:@" | "] mutableCopy];
+                _TheDailyChallenge.relationshipLevelExcludes  = [[challengeObj[@"relationshipIncludes"] componentsSeparatedByString:@" | "] mutableCopy];
+                _TheDailyChallenge.workLevelExcludes = [[challengeObj[@"incomeIncludes"] componentsSeparatedByString:@" | "] mutableCopy];
+                _TheDailyChallenge.kidsExclude = [[challengeObj[@"childIncludes"] componentsSeparatedByString:@" | "] mutableCopy];
+                _TheDailyChallenge.petsExclude = [[challengeObj[@"petIncludes"] componentsSeparatedByString:@" | "] mutableCopy];
+                _TheDailyChallenge.relationshipHappyExcludes = [[challengeObj[@"happyWithLove"] componentsSeparatedByString:@" | "] mutableCopy];
+                _TheDailyChallenge.schoolHappyExcludes = [[challengeObj[@"happyWithSchool"]  componentsSeparatedByString:@" | "] mutableCopy];
+                _TheDailyChallenge.workHappyExcludes = [[challengeObj[@"happyWithWork"] componentsSeparatedByString:@" | "] mutableCopy];
                 
                 PFQuery *taskQuery = [PFQuery queryWithClassName:@"Tasks"];
 
-                //[taskQuery whereKey:@"parentChallenge" equalTo:[PFObject objectWithoutDataWithClassName:@"Challenges" objectId:objectIdAdjusted]];
                 [taskQuery whereKey:@"parentChallenge" equalTo:challengeObj];
-                        //[taskQuery whereKey:@"parentChallenge" containsString:(objectIdAdjusted)];
-//                NSDate *now = [NSDate date];
-//                NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-//                NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:now];
-//                [components setDay:6];
-//                NSDate *october6 = [calendar dateFromComponents:components];
-//                [components setDay:4];
-//                NSDate *october4 = [calendar dateFromComponents:components];
-                ////[taskQuery whereKey:@"createdAt" containsString:(objectIdAdjusted)];
-//                [taskQuery whereKey:@"createdAt" greaterThan:october4];
-//                [taskQuery whereKey:@"createdAt" lessThan:october6];
                 NSArray *objects = [taskQuery findObjects]; //]:^(NSArray *objects, NSError *error){
                 if (objects != NULL)
                 {

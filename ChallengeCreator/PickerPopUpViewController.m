@@ -61,7 +61,6 @@ numberOfRowsInComponent:(NSInteger)component
 	eduLabel=[[UILabel alloc] initWithFrame:CGRectMake(0,0,180,32)];
 	eduLabel.backgroundColor=[UIColor clearColor];
 	eduLabel.text=[_options objectAtIndex:row];
-    int a = eduLabel.text.length;
     if(eduLabel.text.length > 22)
     {
         	eduLabel.font = [UIFont systemFontOfSize:10];
@@ -96,6 +95,7 @@ numberOfRowsInComponent:(NSInteger)component
 }
 
 - (IBAction)clearAllOptions:(id)sender {
+    if([_list count])
     [_list removeAllObjects];
     _InfoBox.text = @"";
     _addAllSwitch.on = false;

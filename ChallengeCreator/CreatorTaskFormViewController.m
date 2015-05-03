@@ -42,7 +42,7 @@
     _infoBoxTextField.text = [self printTaskToScreen:_TaskFormDailyChallenge.tasks];
     _taskTitleTextField.returnKeyType = UIReturnKeyDone;
     NSInteger taskCount = _TaskFormDailyChallenge.tasks.count;
-    _taskTitleTextField.text = [NSString stringWithFormat:@"Task %d \n", (taskCount + 1) ];
+    _taskTitleTextField.text = [NSString stringWithFormat:@"Task %ld \n", (taskCount + 1) ];
     [self printTaskToScreen:_TaskFormDailyChallenge.tasks];
 }
 
@@ -147,7 +147,7 @@ shouldChangeTextInRange:(NSRange)range
     NSString *combinedStuff = [[NSString alloc] init];
         //_taskTitle.text = [NSString stringWithFormat:@"Task %lu \n \n", (unsigned long)_listOfTasks.count];
     NSInteger taskCount = _TaskFormDailyChallenge.tasks.count;
-        _taskTitleTextField.text = [NSString stringWithFormat:@"Task %d \n \n", (taskCount + 1)];
+        _taskTitleTextField.text = [NSString stringWithFormat:@"Task %ld \n \n", (taskCount + 1)];
     for(Task *t in taskList)
     {
         if(_reminderSwitch.on)
@@ -221,7 +221,7 @@ shouldChangeTextInRange:(NSRange)range
     if(_TaskFormDailyChallenge.tasks.count > 0)
     {
         //Display in JSON form
-        NSMutableArray *thisChallenge = [[NSMutableArray alloc] init];
+        //NSMutableArray *thisChallenge = [[NSMutableArray alloc] init];
         NSError *error = nil;
         NSDictionary *allCourses = [[NSDictionary alloc] init];
         //NSArray *thisChallenge = allCourses[@"This Challenge"];
@@ -229,7 +229,7 @@ shouldChangeTextInRange:(NSRange)range
         for (Task *t in _TaskFormDailyChallenge.tasks)
         {
             NSString *jTitle = t.title;
-            NSString *jPoints = [NSString stringWithFormat:@"%d", t.points];
+            NSString *jPoints = [NSString stringWithFormat:@"%ld", (long)t.points];
             NSString *jReminderTime = t.reminderTime;
             NSString *jReminderMessage = t.reminderMessage;
             NSString *jMessage = t.message;
