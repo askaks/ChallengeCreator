@@ -18,7 +18,7 @@
     [encoder encodeObject:_message forKey: @"message"];
     [encoder encodeObject:_reminderMessage forKey: @"reminderMessage"];
     [encoder encodeObject:_reminderTime forKey: @"reminderTime"];
-//	[encoder encodeBool:_completed forKey: @"completed"];
+	[encoder encodeBool:_timeSpecific forKey: @"timeSpecific"];
 }
 
 - (id)initWithCoder: (NSCoder *)decoder
@@ -31,6 +31,7 @@
         self.message = [decoder decodeObjectForKey: @"message"];
         self.reminderMessage = [decoder decodeObjectForKey: @"reminderMessage"];
         self.reminderTime = [decoder decodeObjectForKey: @"reminderTime"];
+        self.timeSpecific = [decoder decodeBoolForKey:@"timeSpecific"];
     }    
 	return self;
 }
@@ -43,27 +44,44 @@
         _title = @"Title";
         _message = [[NSString alloc] initWithString: msg];
         _points =  25;
+        _timeSpecific = false;
     }
 	return self;
 }
-- (id)initWithMessage:(NSString *)msg
-               points:(NSInteger)iPoints
-                 time:(NSString *)t
-      reminderMessage:(NSString *)reminderMsg
-            taskTitle:(NSString *)title
-{
-    self = [super init];
- 	if (self)
-	{
-        _title = title;
-        _message = msg;
-        _points = iPoints;
-        _reminderTime = t;
-        _reminderMessage = reminderMsg;
-    }
-	return self;
-}
+//- (id)initWithMessage:(NSString *)msg
+//               points:(NSInteger)iPoints
+//                 time:(NSString *)t
+//      reminderMessage:(NSString *)reminderMsg
+//            taskTitle:(NSString *)title
+//         timeSpecific:(BOOL) tS
+//{
+//    self = [super init];
+// 	if (self)
+//	{
+//        _title = title;
+//        _message = msg;
+//        _points = iPoints;
+//        _reminderTime = t;
+//        _reminderMessage = reminderMsg;
+//        _timeSpecific = tS;
+//    }
+//	return self;
+//}
 
+- (id) initWithMessage:(NSString *)msg points:(NSInteger)iPoints time:(NSString *)t reminderMessage:(NSString *)reminderMsg taskTitle:(NSString *)title timeSpec:(BOOL)timeS
+{
+        self = [super init];
+     	if (self)
+    	{
+            _title = title;
+            _message = msg;
+            _points = iPoints;
+            _reminderTime = t;
+            _reminderMessage = reminderMsg;
+            _timeSpecific = timeS;
+        }
+    	return self;
+}
 
 - (id)initWithMessage: (NSString *)msg
                points: (NSInteger)iPoints
@@ -75,6 +93,7 @@
         _message = [[NSString alloc] initWithString: msg];
         _points = iPoints;
         _title = title;
+        _timeSpecific = false;
     }   
 	return self;
 }
@@ -88,6 +107,7 @@
     task.reminderMessage = [NSString stringWithString:_reminderMessage];
     task.points = _points;
     task.title = [NSString stringWithString:_title];
+    task.timeSpecific = _timeSpecific;
     return task;
 }
 

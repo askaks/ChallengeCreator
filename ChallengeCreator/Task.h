@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSString *reminderTime;
 @property (nonatomic, assign) NSInteger points;
 //@property (nonatomic, retain) NSString *workSpecific;
-//@property bool completed; // why was *completed?
+@property bool timeSpecific;
 
 - (void)encodeWithCoder: (NSCoder *)encoder;
 - (id)initWithCoder: (NSCoder *)decoder;
@@ -44,5 +44,6 @@
                points:(NSInteger)iPoints
                  time:(NSString *)t
       reminderMessage:(NSString *)reminderMsg
-            taskTitle:(NSString *)title;
+            taskTitle:(NSString *)title
+             timeSpec:(BOOL) timeS;
 @end

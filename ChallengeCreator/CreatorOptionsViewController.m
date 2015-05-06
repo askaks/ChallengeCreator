@@ -264,6 +264,7 @@
                     {
                         taskObj[@"reminderMessage"] = task.reminderMessage;
                         taskObj[@"reminderTime"] = task.reminderTime;
+                        taskObj[@"timeSpecific"] =[NSNumber numberWithBool:task.timeSpecific];
                     }
 
                     taskObj[@"parentChallenge"] = dailyChallenge;
@@ -811,7 +812,8 @@
                         {
                             NSString *reminder = objTasks[@"reminderMessage"];
                             NSString *time = objTasks[@"reminderTime"];
-                            task  = [[Task alloc] initWithMessage:actionObj points:[pointObj integerValue] time:time reminderMessage:reminder taskTitle:title];
+                            BOOL timeSpecific = objTasks[@"timeSpecific"];
+                            task  = [[Task alloc] initWithMessage:actionObj points:[pointObj integerValue] time:time reminderMessage:reminder taskTitle:title timeSpec:timeSpecific];
                         }
                         else
                         {

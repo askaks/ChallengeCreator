@@ -124,7 +124,8 @@ shouldChangeTextInRange:(NSRange)range
         {
             if(![_reminderMessageTextField.text isEqual:@""] && ![_reminderTimeTextField.text isEqual:@""])
             {
-                task = [[Task alloc] initWithMessage:_messageTextView.text points:_taskPointsTextView.text.integerValue time:_reminderTimeTextField.text reminderMessage:_reminderMessageTextField.text taskTitle:_taskTitleTextField.text];
+               // task = [[Task alloc] initWithMessage:_messageTextView.text points:_taskPointsTextView.text.integerValue time:_reminderTimeTextField.text reminderMessage:_reminderMessageTextField.text taskTitle:_taskTitleTextField.text timeSpec:true];
+                task = [[Task alloc] initWithMessage:_messageTextView.text points:_taskPointsTextView.text.integerValue  time:_reminderTimeTextField.text reminderMessage:_reminderMessageTextField.text taskTitle:_taskTitleTextField.text timeSpec:_reminderSwitch.on];
             }
         }
         else
@@ -303,7 +304,7 @@ shouldChangeTextInRange:(NSRange)range
             NSString *jMessage = tasklets[@"message"];
             if(jReminderMessage != nil && jReminderTime != nil)
             {
-                newJTask = [[Task alloc] initWithMessage:jMessage points:jPoints.integerValue time:jReminderTime reminderMessage:jReminderMessage taskTitle:jTitle];
+                newJTask = [[Task alloc] initWithMessage:jMessage points:jPoints.integerValue time:jReminderTime reminderMessage:jReminderMessage taskTitle:jTitle timeSpec:true];
             }
             else
             {
