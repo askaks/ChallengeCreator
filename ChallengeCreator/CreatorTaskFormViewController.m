@@ -125,7 +125,7 @@ shouldChangeTextInRange:(NSRange)range
             if(![_reminderMessageTextField.text isEqual:@""] && ![_reminderTimeTextField.text isEqual:@""])
             {
                // task = [[Task alloc] initWithMessage:_messageTextView.text points:_taskPointsTextView.text.integerValue time:_reminderTimeTextField.text reminderMessage:_reminderMessageTextField.text taskTitle:_taskTitleTextField.text timeSpec:true];
-                task = [[Task alloc] initWithMessage:_messageTextView.text points:_taskPointsTextView.text.integerValue  time:_reminderTimeTextField.text reminderMessage:_reminderMessageTextField.text taskTitle:_taskTitleTextField.text timeSpec:_reminderSwitch.on];
+                task = [[Task alloc] initWithMessage:_messageTextView.text points:_taskPointsTextView.text.integerValue  time:_reminderTimeTextField.text reminderMessage:_reminderMessageTextField.text taskTitle:_taskTitleTextField.text];
             }
         }
         else
@@ -238,7 +238,7 @@ shouldChangeTextInRange:(NSRange)range
             if(jReminderTime != nil && jReminderMessage != nil)
             {
                 keys=[[NSArray alloc]initWithObjects:@"title", @"points",@"reminderTime", @"reminderMessage", @"message", nil];
-                obs=[[NSArray alloc]initWithObjects:jTitle, jPoints, jReminderMessage, jReminderTime, jMessage, nil];
+                obs=[[NSArray alloc]initWithObjects:jTitle, jPoints, jReminderTime,jReminderMessage, jMessage, nil];
             }
             else
             {
@@ -304,7 +304,7 @@ shouldChangeTextInRange:(NSRange)range
             NSString *jMessage = tasklets[@"message"];
             if(jReminderMessage != nil && jReminderTime != nil)
             {
-                newJTask = [[Task alloc] initWithMessage:jMessage points:jPoints.integerValue time:jReminderTime reminderMessage:jReminderMessage taskTitle:jTitle timeSpec:true];
+                newJTask = [[Task alloc] initWithMessage:jMessage points:jPoints.integerValue time:jReminderTime reminderMessage:jReminderMessage taskTitle:jTitle];
             }
             else
             {

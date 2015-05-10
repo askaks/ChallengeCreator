@@ -18,23 +18,11 @@
 @property (nonatomic, retain) NSString *reminderTime;
 @property (nonatomic, assign) NSInteger points;
 //@property (nonatomic, retain) NSString *workSpecific;
-@property bool timeSpecific;
+@property bool setReminder;
 
 - (void)encodeWithCoder: (NSCoder *)encoder;
 - (id)initWithCoder: (NSCoder *)decoder;
 
-//- (id)initWithMessage: (NSString *)msg
-//                 time: (NSString *)t
-//         timeSpecific: (NSString *)ts
-//               points: (NSInteger)iPoints
-//               ageMin: (NSString *)min
-//               ageMax: (NSString *)max
-//           femaleExcl: (NSString *)female
-//             maleExcl: (NSString *)male
-//       schoolSpecific: (NSString *)ss
-//                scool: (NSString *)school
-//         workSpecific: (NSString *)ws
-//            completed: (bool) bCompleted;
 
 - (id)initWithMessage: (NSString *)msg
                points: (NSInteger )iPoints
@@ -44,6 +32,5 @@
                points:(NSInteger)iPoints
                  time:(NSString *)t
       reminderMessage:(NSString *)reminderMsg
-            taskTitle:(NSString *)title
-             timeSpec:(BOOL) timeS;
+            taskTitle:(NSString *)title;
 @end

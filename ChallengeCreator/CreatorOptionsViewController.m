@@ -25,7 +25,7 @@
     combinedStuff = [NSString stringWithFormat:@"CHALLENGE: %@ \nFOR AGES %ld - %ld\nLANGUAGE: %ld\nRISK FACTOR %ld\nLOOKING FOR: %@\nSCHOOL: %@\n\nWORK: %@\n\nRELATIONSHIP: %@\n\nKIDS: %@\n\nPETS: %@\n\n", _TheDailyChallenge.title, (long)_TheDailyChallenge.ageMin, (long)_TheDailyChallenge.ageMax, (long)_TheDailyChallenge.language, (long)_TheDailyChallenge.minimumRiskFactor, _LookingInfoBox.text, _SchoolInfoBox.text, _WorkInfoBox.text, _LoveInfoBox.text, _ChildInfoBox.text, _PetInfoBox.text];
     for(Task *t in _TheDailyChallenge.tasks)
     {
-        if(![t.reminderMessage isEqual:@""])
+        if(t.setReminder)
         {
             combinedStuff = [NSString stringWithFormat:@"%@ TITLE: %@\nMESSAGE: %@ (%ld PTS) \n Remind at %@ o'clock \n with Message: %@\n", combinedStuff, t.title, t.message, (long)t.points, t.reminderTime, t.reminderMessage];
         }
@@ -260,11 +260,12 @@
                     taskObj[@"action"] = task.message;
                     taskObj[@"points"] = [NSNumber numberWithInteger:task.points];
                     taskObj[@"taskNumber"] = [NSNumber numberWithInteger:taskCount];
-                    if(task.reminderMessage != nil && task.reminderTime != nil)
+                    taskObj[@"remind"] =[NSNumber numberWithBool:task.setReminder];
+                    if(task.setReminder)
                     {
                         taskObj[@"reminderMessage"] = task.reminderMessage;
                         taskObj[@"reminderTime"] = task.reminderTime;
-                        taskObj[@"timeSpecific"] =[NSNumber numberWithBool:task.timeSpecific];
+
                     }
 
                     taskObj[@"parentChallenge"] = dailyChallenge;
@@ -808,12 +809,12 @@
                         NSNumber *pointObj = objTasks[@"points"];
                         NSNumber *taskObj = objTasks[@"taskNumber"];
                         NSString * title = [NSString stringWithFormat:@"Task %@",[taskObj stringValue]];
-                        if(objTasks[@"reminderMessage"] != nil && objTasks[@"reminderTime"] != nil)
+                        BOOL setReminder = [objTasks[@"remind"] boolValue];
+                        if(setReminder)
                         {
                             NSString *reminder = objTasks[@"reminderMessage"];
                             NSString *time = objTasks[@"reminderTime"];
-                            BOOL timeSpecific = objTasks[@"timeSpecific"];
-                            task  = [[Task alloc] initWithMessage:actionObj points:[pointObj integerValue] time:time reminderMessage:reminder taskTitle:title timeSpec:timeSpecific];
+                            task  = [[Task alloc] initWithMessage:actionObj points:[pointObj integerValue] time:time reminderMessage:reminder taskTitle:title];
                         }
                         else
                         {

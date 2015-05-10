@@ -18,7 +18,7 @@
     [encoder encodeObject:_message forKey: @"message"];
     [encoder encodeObject:_reminderMessage forKey: @"reminderMessage"];
     [encoder encodeObject:_reminderTime forKey: @"reminderTime"];
-	[encoder encodeBool:_timeSpecific forKey: @"timeSpecific"];
+	[encoder encodeBool:_setReminder forKey: @"timeSpecific"];
 }
 
 - (id)initWithCoder: (NSCoder *)decoder
@@ -31,7 +31,7 @@
         self.message = [decoder decodeObjectForKey: @"message"];
         self.reminderMessage = [decoder decodeObjectForKey: @"reminderMessage"];
         self.reminderTime = [decoder decodeObjectForKey: @"reminderTime"];
-        self.timeSpecific = [decoder decodeBoolForKey:@"timeSpecific"];
+        self.setReminder = [decoder decodeBoolForKey:@"timeSpecific"];
     }    
 	return self;
 }
@@ -44,7 +44,7 @@
         _title = @"Title";
         _message = [[NSString alloc] initWithString: msg];
         _points =  25;
-        _timeSpecific = false;
+        _setReminder = false;
     }
 	return self;
 }
@@ -68,7 +68,7 @@
 //	return self;
 //}
 
-- (id) initWithMessage:(NSString *)msg points:(NSInteger)iPoints time:(NSString *)t reminderMessage:(NSString *)reminderMsg taskTitle:(NSString *)title timeSpec:(BOOL)timeS
+- (id) initWithMessage:(NSString *)msg points:(NSInteger)iPoints time:(NSString *)t reminderMessage:(NSString *)reminderMsg taskTitle:(NSString *)title
 {
         self = [super init];
      	if (self)
@@ -78,7 +78,7 @@
             _points = iPoints;
             _reminderTime = t;
             _reminderMessage = reminderMsg;
-            _timeSpecific = timeS;
+            _setReminder = true;
         }
     	return self;
 }
@@ -93,7 +93,7 @@
         _message = [[NSString alloc] initWithString: msg];
         _points = iPoints;
         _title = title;
-        _timeSpecific = false;
+        _setReminder = false;
     }   
 	return self;
 }
@@ -107,7 +107,7 @@
     task.reminderMessage = [NSString stringWithString:_reminderMessage];
     task.points = _points;
     task.title = [NSString stringWithString:_title];
-    task.timeSpecific = _timeSpecific;
+    task.setReminder = _setReminder;
     return task;
 }
 
